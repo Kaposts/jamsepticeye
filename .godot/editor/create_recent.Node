@@ -1,0 +1,10 @@
+Button
+Node
+CanvasLayer
+Camera2D
+Sprite2D
+CollisionShape2D
+CharacterBody2D
+RigidBody2D
+State
+StaticBody2D
