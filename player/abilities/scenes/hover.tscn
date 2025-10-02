@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1ofqb1lsir5q"]
+
+[ext_resource type="Script" uid="uid://dnptqgi5vsp60" path="res://player/abilities/hover.gd" id="1_e3n6l"]
+
+[node name="hover" type="Node"]
+script = ExtResource("1_e3n6l")

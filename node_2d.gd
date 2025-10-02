@@ -6,6 +6,7 @@ extends Node2D
 @export var claw: PackedScene
 @export var finger: PackedScene
 @export var grapple: PackedScene
+@export var hover: PackedScene
 
 var player: CharacterBody2D
 
@@ -17,6 +18,7 @@ var player: CharacterBody2D
 @onready var finger_button: Button = %FingerButton
 @onready var get_all_button: Button = %GetAllButton
 @onready var reset_button: Button = %ResetButton
+@onready var hover_button: Button = %HoverButton
 
 
 func _ready() -> void:
@@ -28,6 +30,7 @@ func _ready() -> void:
 	finger_button.pressed.connect(_on_finger_button_pressed)
 	get_all_button.pressed.connect(_on_get_all_button_pressed)
 	reset_button.pressed.connect(_on_reset_button_pressed)
+	hover_button.pressed.connect(_on_hover_button_pressed)
 
 
 func add_ability(scene: PackedScene, button: Button):
@@ -62,6 +65,9 @@ func _on_grapple_button_pressed() -> void:
 func _on_finger_button_pressed() -> void:
 	add_ability(finger, finger_button)
 
+func _on_hover_button_pressed() -> void:
+	player.can_hover = true
+
 func _on_reset_button_pressed() -> void:
 	player.abilities = []
 
@@ -72,3 +78,4 @@ func _on_get_all_button_pressed() -> void:
 	_on_claw_button_pressed()
 	_on_wall_jump_button_pressed()
 	_on_grapple_button_pressed()
+	_on_hover_button_pressed()
