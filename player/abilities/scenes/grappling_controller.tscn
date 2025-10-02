@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cniq56pqu6e6o"]
+
+[ext_resource type="Script" uid="uid://d3pxxlqpx8md3" path="res://player/abilities/grappling_controller.gd" id="1_pmft6"]
+
+[node name="GrappleController" type="Node2D"]
+script = ExtResource("1_pmft6")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(100, 0)
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0, 0)
+default_color = Color(0.7176254, 0.09759989, 0.49610084, 1)

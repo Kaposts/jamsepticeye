@@ -1,1 +1,6 @@
 res://node_2d.tscn
+res://node_2d.gd
+res://player/abilities/grappling_controller.gd
+res://player/abilities/scenes/grappling_controller.tscn
+res://player/player.tscn
+res://player/player.gd
