@@ -25,6 +25,9 @@ var abilities: Array = []
 @export_group("Claw Variables")
 @export var wall_slide_speed: float = 80.0
 
+@export_group("finger variables")
+@export var finger_force: Vector2 = Vector2(2000, -400)
+
 @export_group("Grapple Variables")
 @export var grapple_rest_length: float = 50.0
 @export var grapple_stiffness: float = 100.0
