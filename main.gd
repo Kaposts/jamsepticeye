@@ -13,6 +13,7 @@ var player: CharacterBody2D
 @onready var claw_button: Button = %ClawButton
 @onready var wall_jump_button: Button = %WallJumpButton
 @onready var grapple_button: Button = %GrappleButton
+@onready var all_abilities_button: Button = %AllAbilitiesButton
 
 
 func _ready() -> void:
@@ -23,6 +24,8 @@ func _ready() -> void:
 	claw_button.pressed.connect(_on_claw_button_pressed)
 	wall_jump_button.pressed.connect(_on_wall_jump_button_pressed)
 	grapple_button.pressed.connect(_on_grapple_button_pressed)
+	
+	all_abilities_button.pressed.connect(_on_all_abilities_button_pressed)
 
 
 func add_ability(scene: PackedScene, button: Button):
@@ -58,9 +61,11 @@ func _on_button_5_pressed() -> void:
 	player.abilities = []
 
 
-func _on_button_6_pressed() -> void:
+func _on_all_abilities_button_pressed() -> void:
 	_on_run_button_pressed()
 	_on_jump_button_pressed()
 	_on_claw_button_pressed()
 	_on_wall_jump_button_pressed()
 	_on_grapple_button_pressed()
+	
+	all_abilities_button.disabled = true                  

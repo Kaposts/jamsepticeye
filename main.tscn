@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c4d7f3xrnao6t"]
+[gd_scene load_steps=18 format=3 uid="uid://c4d7f3xrnao6t"]
 
 [ext_resource type="Script" uid="uid://cfrfbn0olp7q8" path="res://main.gd" id="1_4c57u"]
 [ext_resource type="PackedScene" uid="uid://ckd22726wqe7y" path="res://player/abilities/scenes/walk.tscn" id="2_efxa6"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://c42tatqhkdecw" path="res://player/player.tscn" id="8_yaehf"]
 [ext_resource type="Script" uid="uid://bkag1adotndfr" path="res://player/abilities/ability_data.gd" id="9_074og"]
 [ext_resource type="Script" uid="uid://f8s22nkom4lc" path="res://deathbox.gd" id="10_cegan"]
+[ext_resource type="PackedScene" uid="uid://bwov0qyiqp3cr" path="res://camera/camera_focus_object.tscn" id="10_dg77c"]
+[ext_resource type="PackedScene" uid="uid://c7edv1edu6rrw" path="res://camera/player_follow_camera.tscn" id="10_efxa6"]
 
 [sub_resource type="Resource" id="Resource_ir8iy"]
 script = ExtResource("9_074og")
@@ -256,6 +258,11 @@ ability_scenes = Array[ExtResource("9_074og")]([SubResource("Resource_ir8iy"), S
 [node name="Player" parent="." instance=ExtResource("8_yaehf")]
 position = Vector2(-1, 0)
 
+[node name="CameraFocusObject" parent="Player" instance=ExtResource("10_dg77c")]
+
+[node name="PlayerFollowCamera" parent="Player/CameraFocusObject" instance=ExtResource("10_efxa6")]
+position = Vector2(1, 0)
+
 [node name="AbilitiesButtons" type="CanvasLayer" parent="."]
 
 [node name="RunButton" type="Button" parent="AbilitiesButtons"]
@@ -310,7 +317,8 @@ focus_mode = 0
 text = "reset
 "
 
-[node name="Button6" type="Button" parent="AbilitiesButtons"]
+[node name="AllAbilitiesButton" type="Button" parent="AbilitiesButtons"]
+unique_name_in_owner = true
 offset_left = 578.0
 offset_top = 40.0
 offset_right = 633.0
@@ -497,5 +505,5 @@ texture = ExtResource("6_vivmo")
 [connection signal="pressed" from="AbilitiesButtons/ClawButton" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="AbilitiesButtons/WallJumpButton" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="AbilitiesButtons/Button5" to="." method="_on_button_5_pressed"]
-[connection signal="pressed" from="AbilitiesButtons/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="AbilitiesButtons/AllAbilitiesButton" to="." method="_on_button_6_pressed"]
 [connection signal="body_entered" from="deathbox" to="deathbox" method="_on_body_entered"]

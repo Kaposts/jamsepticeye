@@ -1,9 +1,10 @@
 Node2D
 Node
+StateMachine
+Camera2D
 Sprite2D
 Parallax2D
 ParallaxLayer
-Camera2D
 Button
 CollisionShape2D
 Area2D
