@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c4d7f3xrnao6t"]
+[gd_scene load_steps=19 format=3 uid="uid://c4d7f3xrnao6t"]
 
 [ext_resource type="Script" uid="uid://cfrfbn0olp7q8" path="res://main.gd" id="1_4c57u"]
 [ext_resource type="PackedScene" uid="uid://ckd22726wqe7y" path="res://player/abilities/scenes/walk.tscn" id="2_efxa6"]
@@ -32,6 +32,9 @@ metadata/_custom_type_script = "uid://bkag1adotndfr"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
 size = Vector2(125, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dg77c"]
+size = Vector2(120.83346, 9.671637)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdubu"]
 size = Vector2(128, 128)
@@ -255,12 +258,14 @@ script = ExtResource("7_2cqfq")
 player_scene = ExtResource("8_yaehf")
 ability_scenes = Array[ExtResource("9_074og")]([SubResource("Resource_ir8iy"), SubResource("Resource_hqns4"), SubResource("Resource_0h7mo")])
 
-[node name="Player" parent="." instance=ExtResource("8_yaehf")]
+[node name="Player" parent="." node_paths=PackedStringArray("camera_focus_object") instance=ExtResource("8_yaehf")]
+position = Vector2(-1, 0)
+camera_focus_object = NodePath("../CameraFocusObject")
+
+[node name="CameraFocusObject" parent="." instance=ExtResource("10_dg77c")]
 position = Vector2(-1, 0)
 
-[node name="CameraFocusObject" parent="Player" instance=ExtResource("10_dg77c")]
-
-[node name="PlayerFollowCamera" parent="Player/CameraFocusObject" instance=ExtResource("10_efxa6")]
+[node name="PlayerFollowCamera" parent="CameraFocusObject" instance=ExtResource("10_efxa6")]
 position = Vector2(1, 0)
 
 [node name="AbilitiesButtons" type="CanvasLayer" parent="."]
@@ -332,6 +337,8 @@ text = "get all
 [node name="StaticBody2D" type="StaticBody2D" parent="temp"]
 position = Vector2(0, 75)
 scale = Vector2(60.600006, 1)
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D"]
 position = Vector2(-0.5, 0)
@@ -344,6 +351,8 @@ texture = ExtResource("6_vivmo")
 [node name="StaticBody2D2" type="StaticBody2D" parent="temp"]
 position = Vector2(-206.00002, -148)
 scale = Vector2(0.23999977, 2.6799994)
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D2"]
 position = Vector2(-0.5, 0)
@@ -355,6 +364,8 @@ texture = ExtResource("6_vivmo")
 [node name="StaticBody2D4" type="StaticBody2D" parent="temp"]
 position = Vector2(-85.000015, -231)
 scale = Vector2(0.23999977, 2.6799994)
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D4"]
 position = Vector2(-0.5, 0)
@@ -366,6 +377,8 @@ texture = ExtResource("6_vivmo")
 [node name="StaticBody2D5" type="StaticBody2D" parent="temp"]
 position = Vector2(178, -292.00003)
 scale = Vector2(0.6399995, 2.6799994)
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D5"]
 position = Vector2(-0.5, 0)
@@ -389,6 +402,8 @@ texture = ExtResource("6_vivmo")
 [node name="StaticBody2D7" type="StaticBody2D" parent="temp"]
 position = Vector2(434.00003, -163)
 scale = Vector2(2.8399982, 0.4399991)
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D7"]
 position = Vector2(-0.5, 0)
@@ -400,6 +415,8 @@ texture = ExtResource("6_vivmo")
 [node name="StaticBody2D8" type="StaticBody2D" parent="temp"]
 position = Vector2(1042, -157.00002)
 scale = Vector2(2.8399982, 0.4399991)
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D8"]
 position = Vector2(-0.5, 0)
@@ -411,6 +428,8 @@ texture = ExtResource("6_vivmo")
 [node name="StaticBody2D9" type="StaticBody2D" parent="temp"]
 position = Vector2(1566, -161.00002)
 scale = Vector2(2.8399982, 0.4399991)
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D9"]
 position = Vector2(-0.5, 0)
@@ -422,6 +441,8 @@ texture = ExtResource("6_vivmo")
 [node name="StaticBody2D10" type="StaticBody2D" parent="temp"]
 position = Vector2(2142, -151)
 scale = Vector2(2.8399982, 0.4399991)
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D10"]
 position = Vector2(-0.5, 0)
@@ -433,12 +454,76 @@ texture = ExtResource("6_vivmo")
 [node name="StaticBody2D6" type="StaticBody2D" parent="temp"]
 position = Vector2(15.000008, -436.00003)
 scale = Vector2(0.23999977, 2.6799994)
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D6"]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D6"]
+texture = ExtResource("6_vivmo")
+
+[node name="HookableObject" type="StaticBody2D" parent="temp"]
+modulate = Color(0.6805836, 0.8393545, 0.35524824, 1)
+position = Vector2(376.00003, -122)
+scale = Vector2(0.23999977, 2.6799994)
+collision_layer = 6
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="temp/HookableObject"]
+shape = SubResource("RectangleShape2D_dg77c")
+
+[node name="Icon" type="Sprite2D" parent="temp/HookableObject"]
+scale = Vector2(2.4531271, 0.083138905)
+texture = ExtResource("6_vivmo")
+
+[node name="HookableObject2" type="StaticBody2D" parent="temp"]
+modulate = Color(0.6805836, 0.8393545, 0.35524824, 1)
+position = Vector2(130, -193)
+scale = Vector2(0.23999977, 2.6799994)
+collision_layer = 6
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="temp/HookableObject2"]
+position = Vector2(64.708435, 0)
+shape = SubResource("RectangleShape2D_dg77c")
+
+[node name="Icon" type="Sprite2D" parent="temp/HookableObject2"]
+position = Vector2(63.916714, 0)
+scale = Vector2(1.4544284, 0.083138905)
+texture = ExtResource("6_vivmo")
+
+[node name="HookableObject3" type="StaticBody2D" parent="temp"]
+modulate = Color(0.6805836, 0.8393545, 0.35524824, 1)
+position = Vector2(44.000004, -326)
+scale = Vector2(0.23999977, 2.6799994)
+collision_layer = 6
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="temp/HookableObject3"]
+position = Vector2(-52.08339, 0.014923096)
+shape = SubResource("RectangleShape2D_dg77c")
+
+[node name="Icon" type="Sprite2D" parent="temp/HookableObject3"]
+position = Vector2(-78.50007, -0.048506152)
+scale = Vector2(1.2265636, 0.082380995)
+texture = ExtResource("6_vivmo")
+
+[node name="HookableObject4" type="StaticBody2D" parent="temp"]
+modulate = Color(0.6805836, 0.8393545, 0.35524824, 1)
+position = Vector2(120, -439)
+scale = Vector2(0.23999977, 2.6799994)
+collision_layer = 6
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="temp/HookableObject4"]
+position = Vector2(35.416687, 0)
+shape = SubResource("RectangleShape2D_dg77c")
+
+[node name="Icon" type="Sprite2D" parent="temp/HookableObject4"]
+position = Vector2(63.916714, 0)
+scale = Vector2(1.4544284, 0.083138905)
 texture = ExtResource("6_vivmo")
 
 [node name="deathbox" type="Area2D" parent="."]
