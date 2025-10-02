@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://dv5cmacfuyn72" path="res://player/abilities/claw.gd" id="1_gqlem"]
 
-[node name="claw" type="Node"]
+[node name="Claw" type="Node"]
 script = ExtResource("1_gqlem")

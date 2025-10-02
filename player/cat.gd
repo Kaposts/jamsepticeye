@@ -103,6 +103,3 @@ func perform_wall_jump(dir: int):
 	
 	velocity.y = wall_jump_force.y
 	wall_jump_lock_counter = 0.0 # optional: no lock
-
-
-

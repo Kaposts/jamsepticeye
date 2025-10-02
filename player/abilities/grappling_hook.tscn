@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cniq56pqu6e6o"]
+
+[ext_resource type="Script" uid="uid://du1sa42282jo4" path="res://player/abilities/grappling_hook.gd" id="1_pmft6"]
+
+[node name="GrapplingHook" type="Node2D"]
+script = ExtResource("1_pmft6")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(50, 0)

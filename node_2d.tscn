@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4d7f3xrnao6t"]
+[gd_scene load_steps=10 format=3 uid="uid://cfjwwfga2l0oe"]
 
 [ext_resource type="Script" uid="uid://blm6nncupiinf" path="res://player/player.gd" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://cfrfbn0olp7q8" path="res://node_2d.gd" id="1_epypp"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cubwhapt2w0ek" path="res://player/abilities/jump.tscn" id="3_q6r6c"]
 [ext_resource type="PackedScene" uid="uid://ckd22726wqe7y" path="res://player/abilities/walk.tscn" id="4_0hol4"]
 [ext_resource type="PackedScene" uid="uid://vww1wc6puvgb" path="res://player/abilities/claw.tscn" id="4_kdubu"]
+[ext_resource type="PackedScene" uid="uid://cniq56pqu6e6o" path="res://player/abilities/grappling_hook.tscn" id="5_d21ai"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
 size = Vector2(125, 126)
@@ -17,6 +18,7 @@ script = ExtResource("1_epypp")
 run = ExtResource("4_0hol4")
 jump = ExtResource("3_q6r6c")
 claw = ExtResource("4_kdubu")
+grappling_hook = ExtResource("5_d21ai")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 75)
@@ -84,18 +86,18 @@ shape = SubResource("RectangleShape2D_q6r6c")
 [node name="Icon" type="Sprite2D" parent="StaticBody2D6"]
 texture = ExtResource("2_epypp")
 
-[node name="player" type="CharacterBody2D" parent="." groups=["player"]]
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 script = ExtResource("1_0e48y")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CircleShape2D_wtcfe")
 
-[node name="Sprite2D" type="Sprite2D" parent="player"]
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
 position = Vector2(-9.536743e-07, 4.7683716e-07)
 scale = Vector2(0.15624999, 0.15625)
 texture = ExtResource("2_epypp")
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="Camera2D" type="Camera2D" parent="Player"]
 visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -131,6 +133,13 @@ offset_right = 174.0
 offset_bottom = 154.0
 text = "wall jump"
 
+[node name="GrapplingHookButton" type="Button" parent="CanvasLayer"]
+offset_left = 15.0
+offset_top = 156.0
+offset_right = 176.0
+offset_bottom = 187.0
+text = "GrapplingHook"
+
 [node name="Button5" type="Button" parent="CanvasLayer"]
 offset_left = 579.0
 offset_top = 9.0
@@ -144,4 +153,5 @@ text = "reset
 [connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="CanvasLayer/GrapplingHookButton" to="." method="_on_grappling_hook_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button5" to="." method="_on_button_5_pressed"]

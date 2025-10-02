@@ -3,6 +3,7 @@ extends Node2D
 @export var run: PackedScene
 @export var jump: PackedScene
 @export var claw: PackedScene
+@export var grappling_hook: PackedScene
 
 var p
 
@@ -29,3 +30,7 @@ func _on_button_4_pressed() -> void:
 
 func _on_button_5_pressed() -> void:
 	p.abilities = []
+
+
+func _on_grappling_hook_button_pressed() -> void:
+	add_abbility(grappling_hook)
