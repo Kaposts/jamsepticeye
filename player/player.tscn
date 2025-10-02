@@ -5,7 +5,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wtcfe"]
 
-[node name="player" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_rkbax")
 wall_jump_force = Vector2(350, -400)
 
@@ -16,6 +16,3 @@ shape = SubResource("CircleShape2D_wtcfe")
 position = Vector2(-9.536743e-07, 4.7683716e-07)
 scale = Vector2(0.15624999, 0.15625)
 texture = ExtResource("2_g1dw6")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(2, -80)

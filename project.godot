@@ -28,6 +28,7 @@ window/stretch/mode="canvas_items"
 
 [editor]
 
+movie_writer/movie_file="D:/GodotGameProjects/jamsepticeye/media/movies/output.avi"
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
