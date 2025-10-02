@@ -1,0 +1,147 @@
+[gd_scene load_steps=9 format=3 uid="uid://c4d7f3xrnao6t"]
+
+[ext_resource type="Script" uid="uid://blm6nncupiinf" path="res://player/player.gd" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://cfrfbn0olp7q8" path="res://node_2d.gd" id="1_epypp"]
+[ext_resource type="Texture2D" uid="uid://do08i2uckbad3" path="res://icon.svg" id="2_epypp"]
+[ext_resource type="PackedScene" uid="uid://cubwhapt2w0ek" path="res://player/abilities/jump.tscn" id="3_q6r6c"]
+[ext_resource type="PackedScene" uid="uid://ckd22726wqe7y" path="res://player/abilities/walk.tscn" id="4_0hol4"]
+[ext_resource type="PackedScene" uid="uid://vww1wc6puvgb" path="res://player/abilities/claw.tscn" id="4_kdubu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
+size = Vector2(125, 126)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wtcfe"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_epypp")
+run = ExtResource("4_0hol4")
+jump = ExtResource("3_q6r6c")
+claw = ExtResource("4_kdubu")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 75)
+scale = Vector2(3.5199997, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Icon" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("2_epypp")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-206.00002, -148)
+scale = Vector2(0.23999977, 2.6799994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Icon" type="Sprite2D" parent="StaticBody2D2"]
+texture = ExtResource("2_epypp")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(205.99998, -144)
+scale = Vector2(0.23999977, 2.6799994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Icon" type="Sprite2D" parent="StaticBody2D3"]
+texture = ExtResource("2_epypp")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(-85.000015, -231)
+scale = Vector2(0.23999977, 2.6799994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Icon" type="Sprite2D" parent="StaticBody2D4"]
+texture = ExtResource("2_epypp")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(115, -291)
+scale = Vector2(0.23999977, 2.6799994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Icon" type="Sprite2D" parent="StaticBody2D5"]
+texture = ExtResource("2_epypp")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+position = Vector2(15.000008, -436.00003)
+scale = Vector2(0.23999977, 2.6799994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Icon" type="Sprite2D" parent="StaticBody2D6"]
+texture = ExtResource("2_epypp")
+
+[node name="player" type="CharacterBody2D" parent="." groups=["player"]]
+script = ExtResource("1_0e48y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+shape = SubResource("CircleShape2D_wtcfe")
+
+[node name="Sprite2D" type="Sprite2D" parent="player"]
+position = Vector2(-9.536743e-07, 4.7683716e-07)
+scale = Vector2(0.15624999, 0.15625)
+texture = ExtResource("2_epypp")
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 174.0
+offset_bottom = 47.0
+focus_mode = 0
+text = "FISH WITH NIKES"
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+offset_left = 13.0
+offset_top = 51.0
+offset_right = 174.0
+offset_bottom = 82.0
+focus_mode = 0
+text = "wing"
+
+[node name="Button3" type="Button" parent="CanvasLayer"]
+offset_left = 13.0
+offset_top = 87.0
+offset_right = 174.0
+offset_bottom = 118.0
+focus_mode = 0
+text = "claws"
+
+[node name="Button4" type="Button" parent="CanvasLayer"]
+offset_left = 13.0
+offset_top = 123.0
+offset_right = 174.0
+offset_bottom = 154.0
+text = "wall jump"
+
+[node name="Button5" type="Button" parent="CanvasLayer"]
+offset_left = 579.0
+offset_top = 9.0
+offset_right = 627.0
+offset_bottom = 40.0
+focus_mode = 0
+text = "reset
+"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button5" to="." method="_on_button_5_pressed"]
