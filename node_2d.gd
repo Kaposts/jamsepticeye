@@ -5,23 +5,28 @@ extends Node2D
 @export var claw: PackedScene
 @export var grappling_hook: PackedScene
 
-var p
+var p = CharacterBody2D
 
 func _ready():
 	p = get_tree().get_first_node_in_group('player')
 
 func _on_button_pressed() -> void:
-	add_abbility(run)
+	add_abbility(run, $CanvasLayer/Button)
 
-func add_abbility(scene: PackedScene):
-	var ability: Node = scene.instantiate()
+
+func add_abbility(scene: PackedScene, button: Button):
+	var ability = scene.instantiate()
 	p.abilities.append(ability)
+	p.add_child(ability)
+	
+	button.disabled = true
+
 
 func _on_button_2_pressed() -> void:
-	add_abbility(jump)
+	add_abbility(jump, $CanvasLayer/Button2)
 
 func _on_button_3_pressed() -> void:
-	add_abbility(claw)
+	add_abbility(claw, $CanvasLayer/Button3)
 
 
 func _on_button_4_pressed() -> void:
@@ -33,4 +38,4 @@ func _on_button_5_pressed() -> void:
 
 
 func _on_grappling_hook_button_pressed() -> void:
-	add_abbility(grappling_hook)
+	add_abbility(grappling_hook, $CanvasLayer/GrapplingHookButton)

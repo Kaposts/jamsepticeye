@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cubwhapt2w0ek" path="res://player/abilities/jump.tscn" id="3_q6r6c"]
 [ext_resource type="PackedScene" uid="uid://ckd22726wqe7y" path="res://player/abilities/walk.tscn" id="4_0hol4"]
 [ext_resource type="PackedScene" uid="uid://vww1wc6puvgb" path="res://player/abilities/claw.tscn" id="4_kdubu"]
-[ext_resource type="PackedScene" uid="uid://cniq56pqu6e6o" path="res://player/abilities/grappling_hook.tscn" id="5_d21ai"]
+[ext_resource type="PackedScene" uid="uid://cniq56pqu6e6o" path="res://player/abilities/grappling_controller.tscn" id="5_d21ai"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
 size = Vector2(125, 126)
@@ -19,6 +19,55 @@ run = ExtResource("4_0hol4")
 jump = ExtResource("3_q6r6c")
 claw = ExtResource("4_kdubu")
 grappling_hook = ExtResource("5_d21ai")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 174.0
+offset_bottom = 47.0
+focus_mode = 0
+text = "FISH WITH NIKES"
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+offset_left = 13.0
+offset_top = 51.0
+offset_right = 174.0
+offset_bottom = 82.0
+focus_mode = 0
+text = "wing"
+
+[node name="Button3" type="Button" parent="CanvasLayer"]
+offset_left = 13.0
+offset_top = 87.0
+offset_right = 174.0
+offset_bottom = 118.0
+focus_mode = 0
+text = "claws"
+
+[node name="Button4" type="Button" parent="CanvasLayer"]
+offset_left = 13.0
+offset_top = 123.0
+offset_right = 174.0
+offset_bottom = 154.0
+text = "wall jump"
+
+[node name="GrapplingHookButton" type="Button" parent="CanvasLayer"]
+offset_left = 15.0
+offset_top = 156.0
+offset_right = 176.0
+offset_bottom = 187.0
+text = "GrapplingHook"
+
+[node name="Button5" type="Button" parent="CanvasLayer"]
+offset_left = 579.0
+offset_top = 9.0
+offset_right = 627.0
+offset_bottom = 40.0
+focus_mode = 0
+text = "reset
+"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 75)
@@ -87,6 +136,7 @@ shape = SubResource("RectangleShape2D_q6r6c")
 texture = ExtResource("2_epypp")
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
+position = Vector2(-87, -422)
 script = ExtResource("1_0e48y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
@@ -99,55 +149,6 @@ texture = ExtResource("2_epypp")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 visible = false
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Button" type="Button" parent="CanvasLayer"]
-offset_left = 12.0
-offset_top = 12.0
-offset_right = 174.0
-offset_bottom = 47.0
-focus_mode = 0
-text = "FISH WITH NIKES"
-
-[node name="Button2" type="Button" parent="CanvasLayer"]
-offset_left = 13.0
-offset_top = 51.0
-offset_right = 174.0
-offset_bottom = 82.0
-focus_mode = 0
-text = "wing"
-
-[node name="Button3" type="Button" parent="CanvasLayer"]
-offset_left = 13.0
-offset_top = 87.0
-offset_right = 174.0
-offset_bottom = 118.0
-focus_mode = 0
-text = "claws"
-
-[node name="Button4" type="Button" parent="CanvasLayer"]
-offset_left = 13.0
-offset_top = 123.0
-offset_right = 174.0
-offset_bottom = 154.0
-text = "wall jump"
-
-[node name="GrapplingHookButton" type="Button" parent="CanvasLayer"]
-offset_left = 15.0
-offset_top = 156.0
-offset_right = 176.0
-offset_bottom = 187.0
-text = "GrapplingHook"
-
-[node name="Button5" type="Button" parent="CanvasLayer"]
-offset_left = 579.0
-offset_top = 9.0
-offset_right = 627.0
-offset_bottom = 40.0
-focus_mode = 0
-text = "reset
-"
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]

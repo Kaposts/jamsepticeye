@@ -1,11 +1,9 @@
-res://player/abilities/claw.tscn
-res://player/ability.gd
-res://player/cat.gd
-res://player/abilities/claw.gd
-res://player/abilities/wall_jump.gd
-res://player/abilities/walk.tscn
-res://player/abilities/jump.tscn
 res://player/abilities/grappling_hook.tscn
 res://player/abilities/grappling_hook.gd
 res://node_2d.tscn
+res://player/abilities/grappling_controller.tscn
+res://player/abilities/grappling_controller.gd
 res://node_2d.gd
+res://player/ability_2d.gd
+res://player/abilities/jump.gd
+res://player/abilities/jump.tscn
