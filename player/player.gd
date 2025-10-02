@@ -36,3 +36,11 @@ func _physics_process(delta):
 		ability.apply(self, delta)
 
 	move_and_slide()
+
+func die():
+	var pm = get_tree().get_first_node_in_group('player_manager')
+	pm.death_counter += 1
+	pm.evolve()
+
+	$Sprite2D.reparent(get_parent())
+	queue_free()

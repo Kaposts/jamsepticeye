@@ -5,3 +5,10 @@ res://player/cat.gd
 res://player/abilities/walk.gd
 res://node_2d.tscn
 res://player/abilities/claw.gd
+res://node_2d.gd
+res://deathbox.gd
+res://core/global.gd
+res://core/player_manager.gd
+res://player/abilities/ability_data.gd
+res://core/enum.gd
+res://player/player.tscn
