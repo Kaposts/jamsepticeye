@@ -1,51 +1,67 @@
+class_name GrappleController
 extends Ability2D
 ## Grappling Hook Ability to simulate tongue (frog-like creature)
 ## Reference: https://www.youtube.com/watch?v=niggxMUm0fk&t=298s
 
+var launched: bool = false
+var target: Vector2
+
+var _player: Player
 var _rest_length: float = 50.0
 var _stiffness: float = 100.0
 var _damping_factor: float = 0.01
-var _launched: bool = false
-var _target: Vector2
 
-@onready var ray: RayCast2D = $RayCast2D
 @onready var rope: Line2D = $Line2D
+@onready var hook_detector: Area2D = $HookDetector
+@onready var hook_detector_collider: CollisionShape2D = $HookDetector/HookDetectorCollider
 
+
+#===================================================================================================
+#region BUILT IN FUNCTIONS
 
 func _ready() -> void:
-	_rest_length = (get_parent() as Player).grapple_rest_length
-	_stiffness = (get_parent() as Player).grapple_stiffness
-	_damping_factor = (get_parent() as Player).grapple_damping_factor
-	ray.target_position.x = (get_parent() as Player).grapple_ray_cast_length
+	_player = get_parent()
+	_player.camera_focus_object.grapple_controller = self
+	
+	_rest_length = _player.grapple_rest_length
+	_stiffness = _player.grapple_stiffness
+	_damping_factor = _player.grapple_damping_factor
+	(hook_detector_collider.shape as CircleShape2D).radius = _player.grapple_detector_length
 
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("grapple"):
+		launch()
+	if event.is_action_released("grapple"):
+		retract()
+
+#endregion
+#===================================================================================================
+#region MANADATORY ABSTRACT FUNCTIONS
 
 func apply(player: Node, delta: float) -> void:
-	ray.look_at(get_global_mouse_position())
-	
-	if Input.is_action_just_pressed("grapple"):
-		launch()
-	if Input.is_action_just_released("grapple"):
-		retract()
-	
-	if _launched:
+	if launched:
 		handle_grapple(player, delta)
 
+#endregion
+#===================================================================================================
+#region PRIVATE FUNCTIONS
 
 func launch() -> void:
-	if ray.is_colliding():
-		_launched = true
-		_target = ray.get_collision_point()
+	if hook_detector.has_overlapping_bodies():
+		launched = true
+		_get_closest_target()
 		rope.show()
 
 
 func retract() -> void:
-	_launched = false
+	launched = false
 	rope.hide()
 
 
 func handle_grapple(player: CharacterBody2D, delta: float) -> void:
-	var target_direction: Vector2 = player.global_position.direction_to(_target)
-	var target_distance: float = player.global_position.distance_to(_target)
+	var target_direction: Vector2 = player.global_position.direction_to(target)
+	var target_distance: float = player.global_position.distance_to(target)
 	
 	var displacement: float = target_distance - _rest_length
 	var force: Vector2 = Vector2.ZERO
@@ -60,7 +76,19 @@ func handle_grapple(player: CharacterBody2D, delta: float) -> void:
 		force = spring_force + damping
 	
 	player.velocity += force * delta
-	update_rope()
+	_update_rope()
 
-func update_rope() -> void:
-	rope.set_point_position(1, to_local(_target))
+
+func _update_rope() -> void:
+	rope.set_point_position(1, to_local(target))
+
+
+func _get_closest_target() -> void:
+	var closest_distance: float = 0.0
+	for body in hook_detector.get_overlapping_bodies():
+		var distance: float = _player.global_position.distance_squared_to(body.global_position)
+		if is_equal_approx(closest_distance, 0.0) or distance < closest_distance:
+			closest_distance = distance
+			target = body.global_position
+
+#endregion
