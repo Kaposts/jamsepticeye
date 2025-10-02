@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 var abilities: Array = []
@@ -22,6 +23,13 @@ var abilities: Array = []
 
 @export_group("claw variables")
 @export var wall_slide_speed: float = 80.0
+
+@export_group("grapple variables")
+@export var grapple_rest_length: float = 50.0
+@export var grapple_stiffness: float = 100.0
+@export var grapple_damping_factor: float = 0.01
+@export var grapple_ray_cast_length: float = 100.0
+
 
 var can_wall_jump: bool = false
 var wall_dir = 0
