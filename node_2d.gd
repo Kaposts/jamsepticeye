@@ -3,6 +3,7 @@ extends Node2D
 @export var run: PackedScene
 @export var jump: PackedScene
 @export var claw: PackedScene
+@export var finger: PackedScene
 
 var p
 
@@ -35,3 +36,6 @@ func _on_button_6_pressed() -> void:
 	add_abbility(jump)
 	add_abbility(claw)
 	p.can_wall_jump = true
+
+func _on_button_7_pressed() -> void:
+	add_abbility(finger)

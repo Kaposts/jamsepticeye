@@ -12,3 +12,4 @@ res://core/player_manager.gd
 res://player/abilities/ability_data.gd
 res://core/enum.gd
 res://player/player.tscn
+res://player/abilities/finger.gd

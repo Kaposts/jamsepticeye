@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://c4d7f3xrnao6t"]
+[gd_scene load_steps=16 format=3 uid="uid://c4d7f3xrnao6t"]
 
 [ext_resource type="Script" uid="uid://cfrfbn0olp7q8" path="res://node_2d.gd" id="1_epypp"]
 [ext_resource type="Texture2D" uid="uid://do08i2uckbad3" path="res://icon.svg" id="2_epypp"]
 [ext_resource type="PackedScene" uid="uid://cubwhapt2w0ek" path="res://player/abilities/scenes/jump.tscn" id="3_q6r6c"]
 [ext_resource type="PackedScene" uid="uid://ckd22726wqe7y" path="res://player/abilities/scenes/walk.tscn" id="4_0hol4"]
 [ext_resource type="PackedScene" uid="uid://vww1wc6puvgb" path="res://player/abilities/scenes/claw.tscn" id="4_kdubu"]
+[ext_resource type="PackedScene" uid="uid://p3ql230p887j" path="res://player/abilities/scenes/finger.tscn" id="5_ir8iy"]
 [ext_resource type="Script" uid="uid://d6uopiqqqwar" path="res://core/player_manager.gd" id="5_rj586"]
 [ext_resource type="PackedScene" uid="uid://c42tatqhkdecw" path="res://player/player.tscn" id="6_rj586"]
 [ext_resource type="Script" uid="uid://bkag1adotndfr" path="res://player/abilities/ability_data.gd" id="7_4d7sh"]
@@ -38,6 +39,7 @@ script = ExtResource("1_epypp")
 run = ExtResource("4_0hol4")
 jump = ExtResource("3_q6r6c")
 claw = ExtResource("4_kdubu")
+finger = ExtResource("5_ir8iy")
 
 [node name="BgParallaxBack" type="Parallax2D" parent="."]
 scroll_scale = Vector2(1.2, 1)
@@ -253,6 +255,7 @@ ability_scenes = Array[ExtResource("7_4d7sh")]([SubResource("Resource_ir8iy"), S
 
 [node name="player" parent="." instance=ExtResource("6_rj586")]
 position = Vector2(-1, 0)
+finger_force = Vector2(1000, -600)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -305,6 +308,13 @@ focus_mode = 0
 text = "get all
 "
 
+[node name="Button7" type="Button" parent="CanvasLayer"]
+offset_left = 16.0
+offset_top = 159.0
+offset_right = 174.0
+offset_bottom = 191.0
+text = "finger"
+
 [node name="temp" type="Node2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="temp"]
@@ -331,7 +341,7 @@ shape = SubResource("RectangleShape2D_q6r6c")
 texture = ExtResource("2_epypp")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="temp"]
-position = Vector2(-85.000015, -231)
+position = Vector2(-85, -215.00002)
 scale = Vector2(0.23999977, 2.6799994)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D4"]
@@ -339,6 +349,39 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D4"]
+texture = ExtResource("2_epypp")
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="temp"]
+position = Vector2(744, -209)
+scale = Vector2(0.23999977, 2.6799994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D11"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Icon" type="Sprite2D" parent="temp/StaticBody2D11"]
+texture = ExtResource("2_epypp")
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="temp"]
+position = Vector2(1293, -212.00002)
+scale = Vector2(0.23999977, 2.6799994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D12"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Icon" type="Sprite2D" parent="temp/StaticBody2D12"]
+texture = ExtResource("2_epypp")
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="temp"]
+position = Vector2(1892, -199.00002)
+scale = Vector2(0.23999977, 2.6799994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D13"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Icon" type="Sprite2D" parent="temp/StaticBody2D13"]
 texture = ExtResource("2_epypp")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="temp"]
@@ -352,16 +395,37 @@ shape = SubResource("RectangleShape2D_q6r6c")
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D5"]
 texture = ExtResource("2_epypp")
 
-[node name="Icon2" type="Sprite2D" parent="temp/StaticBody2D5"]
-position = Vector2(882.8132, -54.104477)
+[node name="StaticBody2D14" type="StaticBody2D" parent="temp"]
+position = Vector2(746, -377)
+scale = Vector2(0.6399995, 0.39999962)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D14"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Icon" type="Sprite2D" parent="temp/StaticBody2D14"]
 texture = ExtResource("2_epypp")
 
-[node name="Icon3" type="Sprite2D" parent="temp/StaticBody2D5"]
-position = Vector2(1737.5013, -60.820896)
+[node name="StaticBody2D15" type="StaticBody2D" parent="temp"]
+position = Vector2(1297, -389)
+scale = Vector2(0.6399995, 0.39999962)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D15"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Icon" type="Sprite2D" parent="temp/StaticBody2D15"]
 texture = ExtResource("2_epypp")
 
-[node name="Icon4" type="Sprite2D" parent="temp/StaticBody2D5"]
-position = Vector2(2673.4395, -57.089554)
+[node name="StaticBody2D16" type="StaticBody2D" parent="temp"]
+position = Vector2(1891, -373)
+scale = Vector2(0.6399995, 0.39999962)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D16"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Icon" type="Sprite2D" parent="temp/StaticBody2D16"]
 texture = ExtResource("2_epypp")
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="temp"]
@@ -484,4 +548,5 @@ texture = ExtResource("2_epypp")
 [connection signal="pressed" from="CanvasLayer/Button4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button5" to="." method="_on_button_5_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button7" to="." method="_on_button_7_pressed"]
 [connection signal="body_entered" from="deathbox" to="deathbox" method="_on_body_entered"]
