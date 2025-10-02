@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://vww1wc6puvgb"]
+
+[ext_resource type="Script" uid="uid://dv5cmacfuyn72" path="res://player/abilities/claw.gd" id="1_gqlem"]
+
+[node name="claw" type="Node"]
+script = ExtResource("1_gqlem")
