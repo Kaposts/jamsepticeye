@@ -1,1 +1,7 @@
 res://player/abilities/jump.tscn
+res://player/player.gd
+res://player/abilities/jump.gd
+res://player/cat.gd
+res://player/abilities/walk.gd
+res://node_2d.tscn
+res://player/abilities/claw.gd

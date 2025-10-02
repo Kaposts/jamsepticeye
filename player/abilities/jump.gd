@@ -1,18 +1,8 @@
 extends Ability
 
-@export var jump_force: float = 400.0
-@export var fall_gravity_multiplier: float = 2.0
-@export var variable_jump_gravity_multiplier: float = 2.5
-
-@export var coyote_time: float = 0.12
-@export var jump_buffer_time: float = 0.12
-
 var coyote_counter: float = 0.0
 var jump_buffer_counter: float = 0.0
 
-@export var wall_jump_force: Vector2 = Vector2(200, -400)
-@export var wall_jump_lock_time: float = 0.18
-@export var wall_coyote_time: float = 0.12
 var wall_coyote_counter: float = 0.0
 var wall_jump_lock_counter: float = 0.0
 
@@ -22,19 +12,18 @@ func apply(player, delta):
 
 	# --- Ground Check ---
 	if player.is_on_floor():
-		coyote_counter = coyote_time
+		coyote_counter = player.coyote_time
 	else:
 		coyote_counter -= delta
 
 	if player.is_on_wall():
-		wall_coyote_counter = wall_coyote_time
+		wall_coyote_counter = player.wall_coyote_time
 	else:
 		wall_coyote_counter -= delta
 
-
 	# --- Jump Buffer ---
 	if jump_pressed:
-		jump_buffer_counter = jump_buffer_time
+		jump_buffer_counter = player.jump_buffer_time
 	else:
 		jump_buffer_counter -= delta
 
@@ -53,17 +42,18 @@ func apply(player, delta):
 	if player.velocity.y < 0: # ascending
 		if not jump_held:
 			# player released jump early → increase gravity to shorten jump
-			player.velocity.y += player.gravity * (variable_jump_gravity_multiplier - 1.0) * delta
+			player.velocity.y += player.gravity * (player.variable_jump_gravity_multiplier - 1.0) * delta
 	elif player.velocity.y > 0: # falling
-		player.velocity.y += player.gravity * (fall_gravity_multiplier - 1.0) * delta
+		player.velocity.y += player.gravity * (player.fall_gravity_multiplier - 1.0) * delta
+
 
 func perform_jump(player):
 	# reset vertical velocity
-	player.velocity.y = -jump_force
+	player.velocity.y = -player.jump_force
 	coyote_counter = 0.0
 
 func perform_wall_jump(player, dir: int):
-	var outward = wall_jump_force.x * dir
+	var outward = player.wall_jump_force.x * dir
 	player.velocity.x = outward + (player.input_dir * 100) # input can help steer
-	player.velocity.y = wall_jump_force.y
+	player.velocity.y = player.wall_jump_force.y
 	wall_jump_lock_counter = 0.0 # optional: no lock

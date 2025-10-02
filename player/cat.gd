@@ -69,6 +69,7 @@ func _physics_process(delta: float) -> void:
 
 	# --- Horizontal Movement ---
 	var target_vel_x = input_direction * move_speed
+	
 	if wall_jump_lock_counter > 0.0:
 		target_vel_x = 0
 		wall_jump_lock_counter -= delta

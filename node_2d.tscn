@@ -86,6 +86,7 @@ texture = ExtResource("2_epypp")
 
 [node name="player" type="CharacterBody2D" parent="." groups=["player"]]
 script = ExtResource("1_0e48y")
+wall_jump_force = Vector2(350, -400)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 shape = SubResource("CircleShape2D_wtcfe")

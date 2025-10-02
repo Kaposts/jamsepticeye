@@ -4,4 +4,3 @@
 
 [node name="jump" type="Node"]
 script = ExtResource("1_bhjhg")
-wall_jump_force = Vector2(300, -400)
