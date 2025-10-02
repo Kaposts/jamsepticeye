@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c4d7f3xrnao6t"]
+[gd_scene load_steps=17 format=3 uid="uid://c4d7f3xrnao6t"]
 
 [ext_resource type="Script" uid="uid://cfrfbn0olp7q8" path="res://node_2d.gd" id="1_epypp"]
 [ext_resource type="Texture2D" uid="uid://do08i2uckbad3" path="res://icon.svg" id="2_epypp"]
@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://ckd22726wqe7y" path="res://player/abilities/scenes/walk.tscn" id="4_0hol4"]
 [ext_resource type="PackedScene" uid="uid://vww1wc6puvgb" path="res://player/abilities/scenes/claw.tscn" id="4_kdubu"]
 [ext_resource type="PackedScene" uid="uid://p3ql230p887j" path="res://player/abilities/scenes/finger.tscn" id="5_ir8iy"]
-[ext_resource type="PackedScene" uid="uid://cniq56pqu6e6o" path="res://player/abilities/scenes/grappling_controller.tscn" id="5_ir8iy"]
 [ext_resource type="Script" uid="uid://d6uopiqqqwar" path="res://core/player_manager.gd" id="5_rj586"]
+[ext_resource type="PackedScene" path="res://player/abilities/scenes/grappling_controller.tscn" id="6_hqns4"]
 [ext_resource type="PackedScene" uid="uid://c42tatqhkdecw" path="res://player/player.tscn" id="6_rj586"]
 [ext_resource type="Script" uid="uid://bkag1adotndfr" path="res://player/abilities/ability_data.gd" id="7_4d7sh"]
 [ext_resource type="Script" uid="uid://f8s22nkom4lc" path="res://deathbox.gd" id="7_d21ai"]
@@ -41,7 +41,7 @@ run = ExtResource("4_0hol4")
 jump = ExtResource("3_q6r6c")
 claw = ExtResource("4_kdubu")
 finger = ExtResource("5_ir8iy")
-grapple = ExtResource("5_ir8iy")
+grapple = ExtResource("6_hqns4")
 
 [node name="BgParallaxBack" type="Parallax2D" parent="."]
 scroll_scale = Vector2(1.2, 1)
@@ -259,9 +259,9 @@ ability_scenes = Array[ExtResource("7_4d7sh")]([SubResource("Resource_ir8iy"), S
 position = Vector2(-1, 0)
 finger_force = Vector2(1000, -600)
 
-[node name="AbilitiesButtons" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="RunButton" type="Button" parent="AbilitiesButtons"]
+[node name="RunButton" type="Button" parent="CanvasLayer"]
 unique_name_in_owner = true
 offset_left = 12.0
 offset_top = 12.0
@@ -270,7 +270,7 @@ offset_bottom = 47.0
 focus_mode = 0
 text = "FISH WITH NIKES"
 
-[node name="JumpButton" type="Button" parent="AbilitiesButtons"]
+[node name="JumpButton" type="Button" parent="CanvasLayer"]
 unique_name_in_owner = true
 offset_left = 13.0
 offset_top = 51.0
@@ -279,7 +279,7 @@ offset_bottom = 82.0
 focus_mode = 0
 text = "wing"
 
-[node name="ClawButton" type="Button" parent="AbilitiesButtons"]
+[node name="ClawButton" type="Button" parent="CanvasLayer"]
 unique_name_in_owner = true
 offset_left = 13.0
 offset_top = 87.0
@@ -288,7 +288,7 @@ offset_bottom = 118.0
 focus_mode = 0
 text = "claws"
 
-[node name="WallJumpButton" type="Button" parent="AbilitiesButtons"]
+[node name="WallJumpButton" type="Button" parent="CanvasLayer"]
 unique_name_in_owner = true
 offset_left = 13.0
 offset_top = 123.0
@@ -296,15 +296,8 @@ offset_right = 174.0
 offset_bottom = 154.0
 text = "wall jump"
 
-[node name="GrappleButton" type="Button" parent="AbilitiesButtons"]
+[node name="ResetButton" type="Button" parent="CanvasLayer"]
 unique_name_in_owner = true
-offset_left = 13.0
-offset_top = 155.0
-offset_right = 174.0
-offset_bottom = 186.0
-text = "grapple"
-
-[node name="Button5" type="Button" parent="AbilitiesButtons"]
 offset_left = 579.0
 offset_top = 9.0
 offset_right = 627.0
@@ -313,7 +306,8 @@ focus_mode = 0
 text = "reset
 "
 
-[node name="Button6" type="Button" parent="AbilitiesButtons"]
+[node name="GetAllButton" type="Button" parent="CanvasLayer"]
+unique_name_in_owner = true
 offset_left = 578.0
 offset_top = 40.0
 offset_right = 633.0
@@ -322,12 +316,22 @@ focus_mode = 0
 text = "get all
 "
 
-[node name="Button7" type="Button" parent="CanvasLayer"]
-offset_left = 16.0
+[node name="FingerButton" type="Button" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 13.0
 offset_top = 159.0
 offset_right = 174.0
 offset_bottom = 191.0
 text = "finger"
+
+[node name="GrappleButton" type="Button" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 13.0
+offset_top = 195.0
+offset_right = 173.0
+offset_bottom = 227.0
+text = "graple
+"
 
 [node name="temp" type="Node2D" parent="."]
 
@@ -556,17 +560,6 @@ rotation = 3.1209621
 scale = Vector2(0.19999786, 0.16000003)
 texture = ExtResource("2_epypp")
 
-[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="CanvasLayer/Button3" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="CanvasLayer/Button4" to="." method="_on_button_4_pressed"]
-[connection signal="pressed" from="CanvasLayer/Button5" to="." method="_on_button_5_pressed"]
-[connection signal="pressed" from="CanvasLayer/Button6" to="." method="_on_button_6_pressed"]
-[connection signal="pressed" from="CanvasLayer/Button7" to="." method="_on_button_7_pressed"]
-[connection signal="pressed" from="AbilitiesButtons/RunButton" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="AbilitiesButtons/JumpButton" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="AbilitiesButtons/ClawButton" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="AbilitiesButtons/WallJumpButton" to="." method="_on_button_4_pressed"]
-[connection signal="pressed" from="AbilitiesButtons/Button5" to="." method="_on_button_5_pressed"]
-[connection signal="pressed" from="AbilitiesButtons/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="CanvasLayer/ResetButton" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="CanvasLayer/GetAllButton" to="." method="_on_button_6_pressed"]
 [connection signal="body_entered" from="deathbox" to="deathbox" method="_on_body_entered"]
