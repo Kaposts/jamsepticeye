@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://p3ql230p887j"]
-
-[ext_resource type="Script" uid="uid://dkfofc4yxy3ju" path="res://player/abilities/finger.gd" id="1_wm6n8"]
-
-[node name="finger" type="Node"]
-script = ExtResource("1_wm6n8")
