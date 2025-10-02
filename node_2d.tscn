@@ -1,6 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://c4d7f3xrnao6t"]
+[gd_scene load_steps=19 format=3 uid="uid://c4d7f3xrnao6t"]
 
-[ext_resource type="Script" uid="uid://cfrfbn0olp7q8" path="res://node_2d.gd" id="1_epypp"]
+[ext_resource type="Script" uid="uid://tmfrvoavrhmk" path="res://node_2d.gd" id="1_epypp"]
 [ext_resource type="Texture2D" uid="uid://do08i2uckbad3" path="res://icon.svg" id="2_epypp"]
 [ext_resource type="PackedScene" uid="uid://cubwhapt2w0ek" path="res://player/abilities/scenes/jump.tscn" id="3_q6r6c"]
 [ext_resource type="PackedScene" uid="uid://ckd22726wqe7y" path="res://player/abilities/scenes/walk.tscn" id="4_0hol4"]
@@ -12,6 +12,8 @@
 [ext_resource type="Script" uid="uid://bkag1adotndfr" path="res://player/abilities/ability_data.gd" id="7_4d7sh"]
 [ext_resource type="Script" uid="uid://f8s22nkom4lc" path="res://deathbox.gd" id="7_d21ai"]
 [ext_resource type="PackedScene" uid="uid://b1ofqb1lsir5q" path="res://player/abilities/scenes/hover.tscn" id="7_x0ka3"]
+[ext_resource type="PackedScene" uid="uid://bwov0qyiqp3cr" path="res://camera/camera_focus_object.tscn" id="11_0h7mo"]
+[ext_resource type="PackedScene" uid="uid://c7edv1edu6rrw" path="res://camera/player_follow_camera.tscn" id="12_nr8wp"]
 
 [sub_resource type="Resource" id="Resource_ir8iy"]
 script = ExtResource("7_4d7sh")
@@ -257,10 +259,15 @@ script = ExtResource("5_rj586")
 player_scene = ExtResource("6_rj586")
 ability_scenes = Array[ExtResource("7_4d7sh")]([SubResource("Resource_ir8iy"), SubResource("Resource_hqns4"), SubResource("Resource_0h7mo")])
 
-[node name="player" parent="." instance=ExtResource("6_rj586")]
+[node name="Player" parent="." instance=ExtResource("6_rj586")]
 position = Vector2(-1, 0)
 finger_force = Vector2(1000, -600)
 hover_gravity_scale = 5.0
+collision_mask = 1
+
+[node name="CameraFocusObject" parent="." instance=ExtResource("11_0h7mo")]
+
+[node name="PlayerFollowCamera" parent="CameraFocusObject" instance=ExtResource("12_nr8wp")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
