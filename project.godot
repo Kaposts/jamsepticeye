@@ -24,10 +24,14 @@ Enum="*res://core/enum.gd"
 
 window/size/viewport_width=640
 window/size/viewport_height=360
+window/size/window_width_override=1280
+window/size/window_height_override=720
 window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
 
 [editor]
 
+movie_writer/movie_file="D:/GodotGameProjects/jamsepticeye/media/movies/output.avi"
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
