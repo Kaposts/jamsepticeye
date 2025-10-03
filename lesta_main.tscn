@@ -1,12 +1,13 @@
-[gd_scene load_steps=19 format=3 uid="uid://pbsj2n1i86hg"]
+[gd_scene load_steps=20 format=3 uid="uid://daig0vu5kkf3b"]
 
-[ext_resource type="Script" uid="uid://tmfrvoavrhmk" path="res://node_2d.gd" id="1_0axom"]
+[ext_resource type="Script" uid="uid://tmfrvoavrhmk" path="res://debug/debug.gd" id="1_0axom"]
 [ext_resource type="PackedScene" uid="uid://ckd22726wqe7y" path="res://player/abilities/scenes/walk.tscn" id="2_ccl3b"]
 [ext_resource type="PackedScene" uid="uid://cubwhapt2w0ek" path="res://player/abilities/scenes/jump.tscn" id="3_k1lbf"]
 [ext_resource type="PackedScene" uid="uid://vww1wc6puvgb" path="res://player/abilities/scenes/claw.tscn" id="4_g5lhh"]
 [ext_resource type="PackedScene" uid="uid://p3ql230p887j" path="res://player/abilities/scenes/finger.tscn" id="5_4bcs3"]
 [ext_resource type="PackedScene" uid="uid://cniq56pqu6e6o" path="res://player/abilities/scenes/grappling_controller.tscn" id="6_c8pa1"]
-[ext_resource type="Texture2D" uid="uid://caf1uhgapo5tx" path="res://icon.svg" id="7_ifsgh"]
+[ext_resource type="PackedScene" uid="uid://b1ofqb1lsir5q" path="res://player/abilities/scenes/hover.tscn" id="7_ccl3b"]
+[ext_resource type="Texture2D" uid="uid://do08i2uckbad3" path="res://icon.svg" id="7_ifsgh"]
 [ext_resource type="Script" uid="uid://d6uopiqqqwar" path="res://core/player_manager.gd" id="8_w6k55"]
 [ext_resource type="PackedScene" uid="uid://c42tatqhkdecw" path="res://player/player.tscn" id="9_4mijx"]
 [ext_resource type="Script" uid="uid://bkag1adotndfr" path="res://player/abilities/ability_data.gd" id="10_gutxc"]
@@ -44,6 +45,7 @@ jump = ExtResource("3_k1lbf")
 claw = ExtResource("4_g5lhh")
 finger = ExtResource("5_4bcs3")
 grapple = ExtResource("6_c8pa1")
+hover = ExtResource("7_ccl3b")
 
 [node name="BgParallaxBack" type="Parallax2D" parent="."]
 scroll_scale = Vector2(1.2, 1)

@@ -34,17 +34,31 @@ var abilities: Array = []
 @export var grapple_damping_factor: float = 0.01
 @export var grapple_detector_length: float = 100.0
 
+@export_group("hover variables")
+@export var hover_gravity_scale: float = 0.3   # how much gravity applies while hovering (0.3 = 30%)
+@export var hover_move_speed: float = 100.0    # reduced horizontal speed while hovering
 
 var can_wall_jump: bool = false
+var can_hover: bool = false
 var wall_dir = 0
 var input_dir: float
 var wall_jump_lock_counter: float
+var is_jumping: bool = false
+var is_hovering: bool = false
 
 
 
 func _physics_process(delta):
 	if not is_on_floor():
-		velocity.y += gravity * delta
+		if can_hover and Input.is_action_just_pressed("ui_accept") and !is_jumping:
+			velocity.x = 0
+
+		if can_hover and Input.is_action_pressed("ui_accept") and !is_jumping:
+			velocity.y = hover_gravity_scale
+			is_hovering = true
+		else:
+			velocity.y += gravity * delta
+			is_hovering = false
 
 	for ability in abilities:
 		ability.apply(self, delta)
