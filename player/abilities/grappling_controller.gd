@@ -21,7 +21,7 @@ var _damping_factor: float = 0.01
 
 func _ready() -> void:
 	_player = get_parent()
-	_player.camera_focus_object.grapple_controller = self
+	_player.camera.grapple_controller = self
 	
 	_rest_length = _player.grapple_rest_length
 	_stiffness = _player.grapple_stiffness

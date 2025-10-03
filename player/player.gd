@@ -4,7 +4,7 @@ extends CharacterBody2D
 var abilities: Array = []
 
 @export var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
-@export var camera_focus_object: CameraFocusObject
+@export var camera: PlayerFollowCamera
 
 @export_group("Walk Variables")
 @export var acceleration: float = 1200.0
@@ -46,6 +46,11 @@ var wall_jump_lock_counter: float
 var is_jumping: bool = false
 var is_hovering: bool = false
 
+
+func _ready() -> void:
+	camera = get_tree().get_first_node_in_group("player_follow_camera")
+
+
 func _physics_process(delta):
 	if not is_on_floor():
 		if can_hover and Input.is_action_just_pressed("ui_accept") and !is_jumping:
@@ -62,6 +67,7 @@ func _physics_process(delta):
 		ability.apply(self, delta)
 
 	move_and_slide()
+
 
 func die():
 	SignalBus.sig_player_died.emit()

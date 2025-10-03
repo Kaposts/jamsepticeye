@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwov0qyiqp3cr"]
-
-[ext_resource type="Script" uid="uid://mei5l2upwky0" path="res://camera/camera_focus_object.gd" id="1_byqt0"]
-
-[node name="CameraFocusObject" type="Node2D"]
-script = ExtResource("1_byqt0")

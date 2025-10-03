@@ -12,24 +12,24 @@ var can_wall_jump: bool = false
 
 func _ready():
 	SignalBus.sig_player_died.connect(_on_player_died)
-
 	
-	get_parent().add_child(fish_scene.instantiate())
+	get_parent().add_child.call_deferred(fish_scene.instantiate())
 
 func _input(event):
 	if event.is_action_pressed("restart"):
 		if get_tree().get_nodes_in_group('player').size() <= 0:
 			get_parent().add_child(player_scene.instantiate())
 			apply_abilities()
+			SignalBus.player_spawned.emit()
 
 func evolve():
 	print("Unlocked ability: ", Enum.ABILITY.find_key(death_counter - 1))
 
 	match death_counter:
-		1,2,3: add_abbility(Enum.ABILITY.get(Enum.ABILITY.find_key(death_counter - 1)))
+		1,2,3: add_ability(Enum.ABILITY.get(Enum.ABILITY.find_key(death_counter - 1)))
 		4: can_wall_jump = true
 
-func add_abbility(ability: Enum.ABILITY):
+func add_ability(ability: Enum.ABILITY):
 	var ability_instance: Node = ability_scenes[ability].scene.instantiate()
 	unlocked_abilities.append(ability_instance)
 
