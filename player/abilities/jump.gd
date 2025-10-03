@@ -6,7 +6,7 @@ var jump_buffer_counter: float = 0.0
 var wall_coyote_counter: float = 0.0
 var wall_jump_lock_counter: float = 0.0
 
-func apply(player, delta):
+func apply(player: Player, delta: float) -> void:
 	var jump_pressed = Input.is_action_just_pressed("ui_accept")
 	var jump_held = Input.is_action_pressed("ui_accept")
 	var jump_released = Input.is_action_just_released("ui_accept")
@@ -46,6 +46,8 @@ func apply(player, delta):
 		if not jump_held:
 			# player released jump early → increase gravity to shorten jump
 			player.velocity.y += player.gravity * (player.variable_jump_gravity_multiplier - 1.0) * delta
+	elif player.velocity.y > 0 and player.jump_from_grappling: # jump from grappling
+		player.velocity.y += player.gravity * (player.grappling_jump_gravity_scale - 1.0) * delta
 	elif player.velocity.y > 0: # falling
 		player.velocity.y += player.gravity * (player.fall_gravity_multiplier - 1.0) * delta
 
