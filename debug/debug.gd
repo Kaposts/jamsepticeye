@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasLayer
 
 
 @export var run: PackedScene
@@ -45,19 +45,15 @@ func add_ability(scene: PackedScene, button: Button):
 func _on_run_button_pressed() -> void:
 	add_ability(run, run_button)
 
-
 func _on_jump_button_pressed() -> void:
 	add_ability(jump, jump_button)
-
 
 func _on_claw_button_pressed() -> void:
 	add_ability(claw, claw_button)
 
-
 func _on_wall_jump_button_pressed() -> void:
 	player.can_wall_jump = true
 	wall_jump_button.disabled = true
-
 
 func _on_grapple_button_pressed() -> void:
 	add_ability(grapple, grapple_button)
@@ -67,10 +63,10 @@ func _on_finger_button_pressed() -> void:
 
 func _on_hover_button_pressed() -> void:
 	player.can_hover = true
+	hover_button.disabled = true
 
 func _on_reset_button_pressed() -> void:
 	player.abilities = []
-
 
 func _on_get_all_button_pressed() -> void:
 	_on_finger_button_pressed()

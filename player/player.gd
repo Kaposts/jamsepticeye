@@ -50,6 +50,9 @@ var is_hovering: bool = false
 
 func _physics_process(delta):
 	if not is_on_floor():
+		if can_hover and Input.is_action_just_pressed("ui_accept") and !is_jumping:
+			velocity.x = 0
+
 		if can_hover and Input.is_action_pressed("ui_accept") and !is_jumping:
 			velocity.y = hover_gravity_scale
 			is_hovering = true

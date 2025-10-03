@@ -1,0 +1,98 @@
+[gd_scene load_steps=8 format=3 uid="uid://dah2f52xwyrbs"]
+
+[ext_resource type="Script" uid="uid://tmfrvoavrhmk" path="res://debug/debug.gd" id="1_su85o"]
+[ext_resource type="PackedScene" uid="uid://ckd22726wqe7y" path="res://player/abilities/scenes/walk.tscn" id="2_lwmka"]
+[ext_resource type="PackedScene" uid="uid://cubwhapt2w0ek" path="res://player/abilities/scenes/jump.tscn" id="3_qrlnp"]
+[ext_resource type="PackedScene" uid="uid://vww1wc6puvgb" path="res://player/abilities/scenes/claw.tscn" id="4_iphln"]
+[ext_resource type="PackedScene" uid="uid://p3ql230p887j" path="res://player/abilities/scenes/finger.tscn" id="5_6p34c"]
+[ext_resource type="PackedScene" uid="uid://cniq56pqu6e6o" path="res://player/abilities/scenes/grappling_controller.tscn" id="6_weovh"]
+[ext_resource type="PackedScene" uid="uid://b1ofqb1lsir5q" path="res://player/abilities/scenes/hover.tscn" id="7_luhnk"]
+
+[node name="DebugWindow" type="CanvasLayer"]
+script = ExtResource("1_su85o")
+run = ExtResource("2_lwmka")
+jump = ExtResource("3_qrlnp")
+claw = ExtResource("4_iphln")
+finger = ExtResource("5_6p34c")
+grapple = ExtResource("6_weovh")
+hover = ExtResource("7_luhnk")
+
+[node name="RunButton" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 174.0
+offset_bottom = 47.0
+focus_mode = 0
+text = "FISH WITH NIKES"
+
+[node name="JumpButton" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 13.0
+offset_top = 51.0
+offset_right = 174.0
+offset_bottom = 82.0
+focus_mode = 0
+text = "wing"
+
+[node name="ClawButton" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 13.0
+offset_top = 87.0
+offset_right = 174.0
+offset_bottom = 118.0
+focus_mode = 0
+text = "claws"
+
+[node name="WallJumpButton" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 13.0
+offset_top = 123.0
+offset_right = 174.0
+offset_bottom = 154.0
+text = "wall jump"
+
+[node name="ResetButton" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 579.0
+offset_top = 9.0
+offset_right = 627.0
+offset_bottom = 40.0
+focus_mode = 0
+text = "reset
+"
+
+[node name="GetAllButton" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 578.0
+offset_top = 40.0
+offset_right = 633.0
+offset_bottom = 71.0
+focus_mode = 0
+text = "get all
+"
+
+[node name="FingerButton" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 13.0
+offset_top = 159.0
+offset_right = 174.0
+offset_bottom = 191.0
+text = "finger"
+
+[node name="GrappleButton" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 13.0
+offset_top = 195.0
+offset_right = 173.0
+offset_bottom = 227.0
+text = "graple
+"
+
+[node name="HoverButton" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 13.0
+offset_top = 232.0
+offset_right = 174.0
+offset_bottom = 266.0
+text = "hover"

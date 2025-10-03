@@ -1,17 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://c4d7f3xrnao6t"]
+[gd_scene load_steps=17 format=3 uid="uid://c4d7f3xrnao6t"]
 
-[ext_resource type="Script" uid="uid://tmfrvoavrhmk" path="res://node_2d.gd" id="1_epypp"]
 [ext_resource type="Texture2D" uid="uid://do08i2uckbad3" path="res://icon.svg" id="2_epypp"]
 [ext_resource type="PackedScene" uid="uid://cubwhapt2w0ek" path="res://player/abilities/scenes/jump.tscn" id="3_q6r6c"]
 [ext_resource type="PackedScene" uid="uid://ckd22726wqe7y" path="res://player/abilities/scenes/walk.tscn" id="4_0hol4"]
 [ext_resource type="PackedScene" uid="uid://vww1wc6puvgb" path="res://player/abilities/scenes/claw.tscn" id="4_kdubu"]
-[ext_resource type="PackedScene" uid="uid://p3ql230p887j" path="res://player/abilities/scenes/finger.tscn" id="5_ir8iy"]
 [ext_resource type="Script" uid="uid://d6uopiqqqwar" path="res://core/player_manager.gd" id="5_rj586"]
-[ext_resource type="PackedScene" uid="uid://cniq56pqu6e6o" path="res://player/abilities/scenes/grappling_controller.tscn" id="6_hqns4"]
 [ext_resource type="PackedScene" uid="uid://c42tatqhkdecw" path="res://player/player.tscn" id="6_rj586"]
 [ext_resource type="Script" uid="uid://bkag1adotndfr" path="res://player/abilities/ability_data.gd" id="7_4d7sh"]
 [ext_resource type="Script" uid="uid://f8s22nkom4lc" path="res://deathbox.gd" id="7_d21ai"]
-[ext_resource type="PackedScene" uid="uid://b1ofqb1lsir5q" path="res://player/abilities/scenes/hover.tscn" id="7_x0ka3"]
+[ext_resource type="PackedScene" uid="uid://dah2f52xwyrbs" path="res://debug/debug_window.tscn" id="10_hqns4"]
 [ext_resource type="PackedScene" uid="uid://bwov0qyiqp3cr" path="res://camera/camera_focus_object.tscn" id="11_0h7mo"]
 [ext_resource type="PackedScene" uid="uid://c7edv1edu6rrw" path="res://camera/player_follow_camera.tscn" id="12_nr8wp"]
 
@@ -39,13 +36,6 @@ size = Vector2(125, 126)
 size = Vector2(128, 128)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_epypp")
-run = ExtResource("4_0hol4")
-jump = ExtResource("3_q6r6c")
-claw = ExtResource("4_kdubu")
-finger = ExtResource("5_ir8iy")
-grapple = ExtResource("6_hqns4")
-hover = ExtResource("7_x0ka3")
 
 [node name="BgParallaxBack" type="Parallax2D" parent="."]
 scroll_scale = Vector2(1.2, 1)
@@ -259,97 +249,18 @@ script = ExtResource("5_rj586")
 player_scene = ExtResource("6_rj586")
 ability_scenes = Array[ExtResource("7_4d7sh")]([SubResource("Resource_ir8iy"), SubResource("Resource_hqns4"), SubResource("Resource_0h7mo")])
 
-[node name="Player" parent="." instance=ExtResource("6_rj586")]
+[node name="Player" parent="." node_paths=PackedStringArray("camera_focus_object") instance=ExtResource("6_rj586")]
 position = Vector2(-1, 0)
+collision_mask = 1
+camera_focus_object = NodePath("../CameraFocusObject")
 finger_force = Vector2(1000, -600)
 hover_gravity_scale = 5.0
-collision_mask = 1
 
 [node name="CameraFocusObject" parent="." instance=ExtResource("11_0h7mo")]
 
 [node name="PlayerFollowCamera" parent="CameraFocusObject" instance=ExtResource("12_nr8wp")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="RunButton" type="Button" parent="CanvasLayer"]
-unique_name_in_owner = true
-offset_left = 12.0
-offset_top = 12.0
-offset_right = 174.0
-offset_bottom = 47.0
-focus_mode = 0
-text = "FISH WITH NIKES"
-
-[node name="JumpButton" type="Button" parent="CanvasLayer"]
-unique_name_in_owner = true
-offset_left = 13.0
-offset_top = 51.0
-offset_right = 174.0
-offset_bottom = 82.0
-focus_mode = 0
-text = "wing"
-
-[node name="ClawButton" type="Button" parent="CanvasLayer"]
-unique_name_in_owner = true
-offset_left = 13.0
-offset_top = 87.0
-offset_right = 174.0
-offset_bottom = 118.0
-focus_mode = 0
-text = "claws"
-
-[node name="WallJumpButton" type="Button" parent="CanvasLayer"]
-unique_name_in_owner = true
-offset_left = 13.0
-offset_top = 123.0
-offset_right = 174.0
-offset_bottom = 154.0
-text = "wall jump"
-
-[node name="ResetButton" type="Button" parent="CanvasLayer"]
-unique_name_in_owner = true
-offset_left = 579.0
-offset_top = 9.0
-offset_right = 627.0
-offset_bottom = 40.0
-focus_mode = 0
-text = "reset
-"
-
-[node name="GetAllButton" type="Button" parent="CanvasLayer"]
-unique_name_in_owner = true
-offset_left = 578.0
-offset_top = 40.0
-offset_right = 633.0
-offset_bottom = 71.0
-focus_mode = 0
-text = "get all
-"
-
-[node name="FingerButton" type="Button" parent="CanvasLayer"]
-unique_name_in_owner = true
-offset_left = 13.0
-offset_top = 159.0
-offset_right = 174.0
-offset_bottom = 191.0
-text = "finger"
-
-[node name="GrappleButton" type="Button" parent="CanvasLayer"]
-unique_name_in_owner = true
-offset_left = 13.0
-offset_top = 195.0
-offset_right = 173.0
-offset_bottom = 227.0
-text = "graple
-"
-
-[node name="HoverButton" type="Button" parent="CanvasLayer"]
-unique_name_in_owner = true
-offset_left = 13.0
-offset_top = 232.0
-offset_right = 174.0
-offset_bottom = 266.0
-text = "hover"
+[node name="DebugWindow" parent="." instance=ExtResource("10_hqns4")]
 
 [node name="temp" type="Node2D" parent="."]
 
