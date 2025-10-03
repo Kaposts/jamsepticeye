@@ -13,6 +13,7 @@ func _physics_process(delta) -> void:
 		facing_dir *= -1
 		apply_force(Vector2(flop_force.x * facing_dir, flop_force.y), Vector2(position.x -2, position.y ))
 
+
 func _on_timer_timeout() -> void:
 	SignalBus.sig_player_died.emit()
 	queue_free()

@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://p3ql230p887j" path="res://player/abilities/scenes/finger.tscn" id="8_hqns4"]
 [ext_resource type="PackedScene" uid="uid://cniq56pqu6e6o" path="res://player/abilities/scenes/grappling_controller.tscn" id="9_x0ka3"]
 [ext_resource type="PackedScene" uid="uid://dah2f52xwyrbs" path="res://debug/debug_window.tscn" id="10_hqns4"]
-[ext_resource type="PackedScene" uid="uid://801a5vbsnn1" path="res://player/fish.tscn" id="10_ir8iy"]
+[ext_resource type="PackedScene" path="res://player/fish.tscn" id="10_ir8iy"]
 
 [sub_resource type="Resource" id="Resource_ir8iy"]
 script = ExtResource("7_4d7sh")
