@@ -9,6 +9,7 @@
 collision_mask = 2
 script = ExtResource("1_rkbax")
 wall_jump_force = Vector2(350, -400)
+finger_force = Vector2(750, -750)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_wtcfe")
