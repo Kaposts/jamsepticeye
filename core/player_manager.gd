@@ -11,16 +11,21 @@ var death_counter: int = 0
 var can_wall_jump: bool = false
 var can_hover: bool = false
 
+var camera
+
 func _ready():
 	SignalBus.sig_player_died.connect(_on_player_died)
 	
 	get_parent().add_child.call_deferred(fish_scene.instantiate())
+	camera = get_tree().get_first_node_in_group("player_follow_camera")
 
 func _input(event):
 	if event.is_action_pressed("restart"):
 		if get_tree().get_nodes_in_group('player').size() <= 0:
-			get_parent().add_child(player_scene.instantiate())
-			apply_abilities()
+			var player = player_scene.instantiate()
+			player.camera = camera
+			apply_abilities(player)
+			get_parent().add_child(player)
 			SignalBus.player_spawned.emit()
 
 func evolve():
@@ -50,11 +55,10 @@ func add_ability(ability: Enum.ABILITY):
 	var ability_instance: Node = scene.instantiate()
 	unlocked_abilities.append(ability_instance)
 
-func apply_abilities():
-	var p: Player = get_tree().get_first_node_in_group('player')
-	p.abilities = unlocked_abilities
-	p.can_wall_jump = can_wall_jump
-	p.can_hover = can_hover
+func apply_abilities(player):
+	player.abilities = unlocked_abilities
+	player.can_wall_jump = can_wall_jump
+	player.can_hover = can_hover
 
 
 func _on_player_died():
