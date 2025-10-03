@@ -19,8 +19,11 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("restart"):
 		if get_tree().get_nodes_in_group('player').size() <= 0:
-			get_parent().add_child(player_scene.instantiate())
-			apply_abilities()
+			var player = player_scene.instantiate()
+
+			apply_abilities(player)
+
+			get_parent().add_child(player)
 
 func evolve():
 	# print("Unlocked ability: ", Enum.ABILITY.find_key(death_counter - 1))
@@ -49,11 +52,10 @@ func add_abbility(ability: Enum.ABILITY):
 	var ability_instance: Node = scene.instantiate()
 	unlocked_abilities.append(ability_instance)
 
-func apply_abilities():
-	var p: Player = get_tree().get_first_node_in_group('player')
-	p.abilities = unlocked_abilities
-	p.can_wall_jump = can_wall_jump
-	p.can_hover = can_hover
+func apply_abilities(player):
+	player.abilities = unlocked_abilities
+	player.can_wall_jump = can_wall_jump
+	player.can_hover = can_hover
 
 
 func _on_player_died():
