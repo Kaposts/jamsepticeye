@@ -1,8 +1,7 @@
 extends Node
 
+@export var fish_scene: PackedScene
 @export var player_scene: PackedScene
-@export var abilities: Array[PackedScene] = []
-
 
 @export var unlocked_abilities := []
 @export var ability_scenes: Array[AbilityData] = []
@@ -10,6 +9,12 @@ extends Node
 var death_counter: int = 0
 
 var can_wall_jump: bool = false
+
+func _ready():
+	SignalBus.sig_player_died.connect(_on_player_died)
+
+	
+	get_parent().add_child(fish_scene.instantiate())
 
 func _input(event):
 	if event.is_action_pressed("restart"):
@@ -19,10 +24,6 @@ func _input(event):
 
 func evolve():
 	print("Unlocked ability: ", Enum.ABILITY.find_key(death_counter - 1))
-
-	# if ability_scenes.size() < death_counter: return
-
-	# add_abbility(Enum.ABILITY.get(Enum.ABILITY.find_key(death_counter - 1)))
 
 	match death_counter:
 		1,2,3: add_abbility(Enum.ABILITY.get(Enum.ABILITY.find_key(death_counter - 1)))
@@ -36,3 +37,8 @@ func apply_abilities():
 	var p = get_tree().get_first_node_in_group('player')
 	p.abilities = unlocked_abilities
 	p.can_wall_jump = can_wall_jump
+
+
+func _on_player_died():
+	death_counter += 1
+	evolve()

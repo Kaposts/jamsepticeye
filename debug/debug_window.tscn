@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dah2f52xwyrbs"]
+[gd_scene load_steps=7 format=3 uid="uid://dah2f52xwyrbs"]
 
 [ext_resource type="Script" uid="uid://tmfrvoavrhmk" path="res://debug/debug.gd" id="1_su85o"]
 [ext_resource type="PackedScene" uid="uid://ckd22726wqe7y" path="res://player/abilities/scenes/walk.tscn" id="2_lwmka"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://vww1wc6puvgb" path="res://player/abilities/scenes/claw.tscn" id="4_iphln"]
 [ext_resource type="PackedScene" uid="uid://p3ql230p887j" path="res://player/abilities/scenes/finger.tscn" id="5_6p34c"]
 [ext_resource type="PackedScene" uid="uid://cniq56pqu6e6o" path="res://player/abilities/scenes/grappling_controller.tscn" id="6_weovh"]
-[ext_resource type="PackedScene" uid="uid://b1ofqb1lsir5q" path="res://player/abilities/scenes/hover.tscn" id="7_luhnk"]
 
 [node name="DebugWindow" type="CanvasLayer"]
 script = ExtResource("1_su85o")
@@ -15,7 +14,6 @@ jump = ExtResource("3_qrlnp")
 claw = ExtResource("4_iphln")
 finger = ExtResource("5_6p34c")
 grapple = ExtResource("6_weovh")
-hover = ExtResource("7_luhnk")
 
 [node name="RunButton" type="Button" parent="."]
 unique_name_in_owner = true

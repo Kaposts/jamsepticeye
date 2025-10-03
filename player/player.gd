@@ -46,8 +46,6 @@ var wall_jump_lock_counter: float
 var is_jumping: bool = false
 var is_hovering: bool = false
 
-
-
 func _physics_process(delta):
 	if not is_on_floor():
 		if can_hover and Input.is_action_just_pressed("ui_accept") and !is_jumping:
@@ -65,11 +63,7 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-
 func die():
-	var pm = get_tree().get_first_node_in_group('player_manager')
-	pm.death_counter += 1
-	pm.evolve()
-
+	SignalBus.sig_player_died.emit()
 	$Sprite2D.reparent(get_parent())
 	queue_free()
