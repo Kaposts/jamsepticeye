@@ -46,6 +46,8 @@ var wall_jump_lock_counter: float
 var is_jumping: bool = false
 var is_hovering: bool = false
 
+var grapple_controller: GrappleController = null
+
 
 func _ready() -> void:
 	camera = get_tree().get_first_node_in_group("player_follow_camera")
@@ -55,14 +57,16 @@ func _physics_process(delta):
 	if not is_on_floor():
 		if can_hover and Input.is_action_just_pressed("ui_accept") and !is_jumping:
 			velocity.x = 0
-
+		
 		if can_hover and Input.is_action_pressed("ui_accept") and !is_jumping:
 			velocity.y = hover_gravity_scale
 			is_hovering = true
 		else:
 			velocity.y += gravity * delta
 			is_hovering = false
-
+	else:
+		is_hovering = false
+	
 	for ability in abilities:
 		ability.apply(self, delta)
 

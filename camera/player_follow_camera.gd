@@ -7,10 +7,17 @@ extends Camera2D
 @export var lookahead_x_distance: float = 50.0
 @export var lookahead_y_distance: float = 30.0
 
-var grapple_controller: GrappleController = null
 
-var _in_air: bool = false
-var _current_position: Vector2
+#var _in_air: bool = false
+var _player: Player
+
+@onready var state_machine: StateMachine = $StateMachine
+
+
+func _ready() -> void:
+	_player = get_tree().get_first_node_in_group("player")
+	SignalBus.player_spawned.connect(_on_player_spawned)
+	SignalBus.sig_player_died.connect(_on_player_died)
 
 
 func _process(_delta: float) -> void:
@@ -18,4 +25,30 @@ func _process(_delta: float) -> void:
 
 
 func set_state() -> void:
-	pass
+	if not _player:
+		return
+	
+	if _player.grapple_controller and _player.grapple_controller.launched:
+		state_machine.transition_to_next_state(CameraState.GRAPPLING)
+	elif _player.is_hovering:
+		state_machine.transition_to_next_state(CameraState.HOVERING)
+	elif _player.velocity.y < 0.0:
+		state_machine.transition_to_next_state(CameraState.JUMPING)
+	
+	
+	
+	else:
+		state_machine.transition_to_next_state(CameraState.DEFAULT)
+	 
+
+#===================================================================================================
+#region EVENT HANDLERS
+
+func _on_player_spawned() -> void:
+	_player = get_tree().get_first_node_in_group("player")
+
+
+func _on_player_died() -> void:
+	_player = null
+
+#endregion

@@ -1,13 +1,26 @@
-class_name CameraState
+@abstract class_name CameraState
 extends State
 ## Base State class for the Player Follow Camera
 
 # State names
 const DEFAULT: StringName = "Default"
+const HOVERING: StringName = "Hovering"
+const JUMPING: StringName = "Jumping"
+const GRAPPLING: StringName = "Grappling"
 
 var _player: Player
 var _camera: PlayerFollowCamera
+var _current_position: Vector2
 
+#===================================================================================================
+#region REQUIRED ABSTRACT FUNCTIONS
+
+## Defines the behavior of the camera mode
+@abstract func apply_focus() -> void
+
+#endregion
+#===================================================================================================
+#region BUILT IN FUNCTIONS
 
 func _ready() -> void:
 	_player = get_tree().get_first_node_in_group("player")
@@ -19,11 +32,19 @@ func _ready() -> void:
 	SignalBus.sig_player_died.connect(_on_player_died)
 
 
+func update(_delta: float) -> void:
+	if not _player:
+		return
+	
+	apply_focus()
+	_camera.global_position = _current_position           
+
+#endregion
+#===================================================================================================
 #region EVENT HANDLERS
 
 func _on_player_spawned() -> void:
 	_player = get_tree().get_first_node_in_group("player")
-	pass
 
 
 func _on_player_died() -> void:
