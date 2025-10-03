@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://801a5vbsnn1"]
 
 [ext_resource type="Script" uid="uid://gwb2r5y7w4c6" path="res://player/fish.gd" id="1_o703u"]
-[ext_resource type="Texture2D" uid="uid://do08i2uckbad3" path="res://icon.svg" id="2_42s0h"]
+[ext_resource type="Texture2D" uid="uid://kdpwgr2d2wrt" path="res://icon.svg" id="2_42s0h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ir8iy"]
 radius = 5.3720913

@@ -1,352 +1,244 @@
-[gd_scene load_steps=20 format=3 uid="uid://daig0vu5kkf3b"]
+[gd_scene load_steps=10 format=3 uid="uid://cgndakmo3rk7i"]
 
-[ext_resource type="Script" uid="uid://tmfrvoavrhmk" path="res://debug/debug.gd" id="1_0axom"]
-[ext_resource type="PackedScene" uid="uid://ckd22726wqe7y" path="res://player/abilities/scenes/walk.tscn" id="2_ccl3b"]
-[ext_resource type="PackedScene" uid="uid://cubwhapt2w0ek" path="res://player/abilities/scenes/jump.tscn" id="3_k1lbf"]
-[ext_resource type="PackedScene" uid="uid://vww1wc6puvgb" path="res://player/abilities/scenes/claw.tscn" id="4_g5lhh"]
-[ext_resource type="PackedScene" uid="uid://p3ql230p887j" path="res://player/abilities/scenes/finger.tscn" id="5_4bcs3"]
-[ext_resource type="PackedScene" uid="uid://cniq56pqu6e6o" path="res://player/abilities/scenes/grappling_controller.tscn" id="6_c8pa1"]
-[ext_resource type="PackedScene" uid="uid://b1ofqb1lsir5q" path="res://player/abilities/scenes/hover.tscn" id="7_ccl3b"]
-[ext_resource type="Texture2D" uid="uid://do08i2uckbad3" path="res://icon.svg" id="7_ifsgh"]
-[ext_resource type="Script" uid="uid://d6uopiqqqwar" path="res://core/player_manager.gd" id="8_w6k55"]
-[ext_resource type="PackedScene" uid="uid://c42tatqhkdecw" path="res://player/player.tscn" id="9_4mijx"]
-[ext_resource type="Script" uid="uid://bkag1adotndfr" path="res://player/abilities/ability_data.gd" id="10_gutxc"]
-[ext_resource type="PackedScene" uid="uid://bwov0qyiqp3cr" path="res://camera/camera_focus_object.tscn" id="11_etk82"]
-[ext_resource type="PackedScene" uid="uid://c7edv1edu6rrw" path="res://camera/player_follow_camera.tscn" id="12_jfrmb"]
-[ext_resource type="Script" uid="uid://f8s22nkom4lc" path="res://deathbox.gd" id="13_61c8c"]
-
-[sub_resource type="Resource" id="Resource_ir8iy"]
-script = ExtResource("10_gutxc")
-scene = ExtResource("2_ccl3b")
-metadata/_custom_type_script = "uid://bkag1adotndfr"
-
-[sub_resource type="Resource" id="Resource_hqns4"]
-script = ExtResource("10_gutxc")
-ability = 1
-scene = ExtResource("3_k1lbf")
-metadata/_custom_type_script = "uid://bkag1adotndfr"
-
-[sub_resource type="Resource" id="Resource_0h7mo"]
-script = ExtResource("10_gutxc")
-ability = 3
-scene = ExtResource("4_g5lhh")
-metadata/_custom_type_script = "uid://bkag1adotndfr"
+[ext_resource type="Texture2D" uid="uid://kdpwgr2d2wrt" path="res://icon.svg" id="1_3xgj1"]
+[ext_resource type="PackedScene" uid="uid://baftkdlepc3ff" path="res://core/player_manager.tscn" id="2_1humc"]
+[ext_resource type="PackedScene" uid="uid://801a5vbsnn1" path="res://player/fish.tscn" id="3_ob2rw"]
+[ext_resource type="PackedScene" uid="uid://dah2f52xwyrbs" path="res://debug/debug_window.tscn" id="4_hxnkp"]
+[ext_resource type="Script" uid="uid://f8s22nkom4lc" path="res://deathbox.gd" id="5_kxsip"]
+[ext_resource type="PackedScene" uid="uid://c7edv1edu6rrw" path="res://camera/player_follow_camera.tscn" id="6_1humc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
 size = Vector2(125, 126)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1humc"]
+size = Vector2(41, 23)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdubu"]
 size = Vector2(128, 128)
 
-[node name="Node2D" type="Node2D"]
-script = ExtResource("1_0axom")
-run = ExtResource("2_ccl3b")
-jump = ExtResource("3_k1lbf")
-claw = ExtResource("4_g5lhh")
-finger = ExtResource("5_4bcs3")
-grapple = ExtResource("6_c8pa1")
-hover = ExtResource("7_ccl3b")
+[node name="Main" type="Node2D"]
 
-[node name="BgParallaxBack" type="Parallax2D" parent="."]
+[node name="BackgroundParallax" type="Node2D" parent="."]
+
+[node name="BgParallaxBack" type="Parallax2D" parent="BackgroundParallax"]
 scroll_scale = Vector2(1.2, 1)
 repeat_size = Vector2(5500, 0)
 repeat_times = 5
 
-[node name="temp" type="Node2D" parent="BgParallaxBack"]
+[node name="temp" type="Node2D" parent="BackgroundParallax/BgParallaxBack"]
 modulate = Color(0.12955856, 0.12955844, 0.12955841, 1)
 position = Vector2(147, -69)
 scale = Vector2(1.4518855, 3.794351)
 
-[node name="Sprite2D" type="Sprite2D" parent="BgParallaxBack/temp"]
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(-115.73892, -105.5)
 scale = Vector2(2.8084207, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D2" type="Sprite2D" parent="BgParallaxBack/temp"]
+[node name="Sprite2D2" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(258.9736, -18)
 scale = Vector2(4.186366, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D3" type="Sprite2D" parent="BgParallaxBack/temp"]
+[node name="Sprite2D3" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(558.1709, -129)
 scale = Vector2(1.6745448, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D4" type="Sprite2D" parent="BgParallaxBack/temp"]
+[node name="Sprite2D4" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(746.2069, -28)
 scale = Vector2(1.715517, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D5" type="Sprite2D" parent="BgParallaxBack/temp"]
+[node name="Sprite2D5" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(983.70245, -120)
 scale = Vector2(2.8327742, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D6" type="Sprite2D" parent="BgParallaxBack/temp"]
+[node name="Sprite2D6" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(1360.6445, -3)
 scale = Vector2(3.5460367, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D7" type="Sprite2D" parent="BgParallaxBack/temp"]
+[node name="Sprite2D7" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(1741.5286, -194.75)
 scale = Vector2(4.2993665, 4.0273438)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D8" type="Sprite2D" parent="BgParallaxBack/temp"]
+[node name="Sprite2D8" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(-1892.2175, -238)
 scale = Vector2(2.887227, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D9" type="Sprite2D" parent="BgParallaxBack/temp"]
+[node name="Sprite2D9" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(-1691.2219, -150.5)
 scale = Vector2(2.3402815, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D10" type="Sprite2D" parent="BgParallaxBack/temp"]
+[node name="Sprite2D10" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(-1382.9758, -261.5)
 scale = Vector2(2.7972517, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D11" type="Sprite2D" parent="BgParallaxBack/temp"]
+[node name="Sprite2D11" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(-1213.9387, -160.5)
 scale = Vector2(4.1487, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D12" type="Sprite2D" parent="BgParallaxBack/temp"]
+[node name="Sprite2D12" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(-814.47205, -252.5)
 scale = Vector2(2.5238743, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D13" type="Sprite2D" parent="BgParallaxBack/temp"]
+[node name="Sprite2D13" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(-666.60596, -135.5)
 scale = Vector2(1.5407176, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D14" type="Sprite2D" parent="BgParallaxBack/temp"]
+[node name="Sprite2D14" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(-420.0672, -327.25)
 scale = Vector2(2.5947998, 4.0273438)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="BgParallaxMiddle" type="Parallax2D" parent="."]
+[node name="BgParallaxMiddle" type="Parallax2D" parent="BackgroundParallax"]
 scroll_scale = Vector2(1.4, 1.2)
 repeat_size = Vector2(4000, 0)
 repeat_times = 5
 
-[node name="temp" type="Node2D" parent="BgParallaxMiddle"]
+[node name="temp" type="Node2D" parent="BackgroundParallax/BgParallaxMiddle"]
 modulate = Color(0.3403393, 0.34033933, 0.3403393, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="BgParallaxMiddle/temp"]
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(0, -105.5)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D2" type="Sprite2D" parent="BgParallaxMiddle/temp"]
-position = Vector2(236, -18)
+[node name="Sprite2D2" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
+position = Vector2(405, -86)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D3" type="Sprite2D" parent="BgParallaxMiddle/temp"]
+[node name="Sprite2D3" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(515, -129)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D4" type="Sprite2D" parent="BgParallaxMiddle/temp"]
+[node name="Sprite2D4" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(792, -28)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D5" type="Sprite2D" parent="BgParallaxMiddle/temp"]
+[node name="Sprite2D5" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(1101, -120)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D6" type="Sprite2D" parent="BgParallaxMiddle/temp"]
+[node name="Sprite2D6" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(1381, -3)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D7" type="Sprite2D" parent="BgParallaxMiddle/temp"]
+[node name="Sprite2D7" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(1695, -194.75)
 scale = Vector2(1, 4.0273438)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D8" type="Sprite2D" parent="BgParallaxMiddle/temp"]
+[node name="Sprite2D8" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(-2013, -238)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D9" type="Sprite2D" parent="BgParallaxMiddle/temp"]
+[node name="Sprite2D9" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(-1777, -150.5)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D10" type="Sprite2D" parent="BgParallaxMiddle/temp"]
+[node name="Sprite2D10" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(-1498, -261.5)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D11" type="Sprite2D" parent="BgParallaxMiddle/temp"]
+[node name="Sprite2D11" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(-1221, -160.5)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D12" type="Sprite2D" parent="BgParallaxMiddle/temp"]
+[node name="Sprite2D12" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(-912, -252.5)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D13" type="Sprite2D" parent="BgParallaxMiddle/temp"]
+[node name="Sprite2D13" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(-632, -135.5)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D14" type="Sprite2D" parent="BgParallaxMiddle/temp"]
+[node name="Sprite2D14" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(-318, -327.25)
 scale = Vector2(1, 4.0273438)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="BgParallaxFront" type="Parallax2D" parent="."]
+[node name="BgParallaxFront" type="Parallax2D" parent="BackgroundParallax"]
 repeat_size = Vector2(1000, 0)
 repeat_times = 25
 
-[node name="temp" type="Node2D" parent="BgParallaxFront"]
+[node name="temp" type="Node2D" parent="BackgroundParallax/BgParallaxFront"]
 modulate = Color(3.85046e-07, 0.6294134, 0.75611085, 1)
 position = Vector2(0, 122)
 
-[node name="Sprite2D" type="Sprite2D" parent="BgParallaxFront/temp"]
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundParallax/BgParallaxFront/temp"]
 position = Vector2(0, -105.5)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D2" type="Sprite2D" parent="BgParallaxFront/temp"]
+[node name="Sprite2D2" type="Sprite2D" parent="BackgroundParallax/BgParallaxFront/temp"]
 position = Vector2(124, -32)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D3" type="Sprite2D" parent="BgParallaxFront/temp"]
+[node name="Sprite2D3" type="Sprite2D" parent="BackgroundParallax/BgParallaxFront/temp"]
 position = Vector2(251, -69)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D4" type="Sprite2D" parent="BgParallaxFront/temp"]
+[node name="Sprite2D4" type="Sprite2D" parent="BackgroundParallax/BgParallaxFront/temp"]
 position = Vector2(373, -41)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D5" type="Sprite2D" parent="BgParallaxFront/temp"]
+[node name="Sprite2D5" type="Sprite2D" parent="BackgroundParallax/BgParallaxFront/temp"]
 position = Vector2(500, -98)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D6" type="Sprite2D" parent="BgParallaxFront/temp"]
+[node name="Sprite2D6" type="Sprite2D" parent="BackgroundParallax/BgParallaxFront/temp"]
 position = Vector2(624, -53)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D7" type="Sprite2D" parent="BgParallaxFront/temp"]
+[node name="Sprite2D7" type="Sprite2D" parent="BackgroundParallax/BgParallaxFront/temp"]
 position = Vector2(748, -128)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D8" type="Sprite2D" parent="BgParallaxFront/temp"]
+[node name="Sprite2D8" type="Sprite2D" parent="BackgroundParallax/BgParallaxFront/temp"]
 position = Vector2(878, -87)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="PlayerManager" type="Node2D" parent="." groups=["player_manager"]]
+[node name="PlayerManager" parent="." instance=ExtResource("2_1humc")]
 position = Vector2(5, -4)
-script = ExtResource("8_w6k55")
-player_scene = ExtResource("9_4mijx")
-ability_scenes = Array[ExtResource("10_gutxc")]([SubResource("Resource_ir8iy"), SubResource("Resource_hqns4"), SubResource("Resource_0h7mo")])
+fish_scene = ExtResource("3_ob2rw")
 
-[node name="Player" parent="." node_paths=PackedStringArray("camera_focus_object") instance=ExtResource("9_4mijx")]
-position = Vector2(-1, 0)
-collision_mask = 1
-camera_focus_object = NodePath("../CameraFocusObject")
-
-[node name="CameraFocusObject" parent="." instance=ExtResource("11_etk82")]
-
-[node name="PlayerFollowCamera" parent="CameraFocusObject" instance=ExtResource("12_jfrmb")]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="RunButton" type="Button" parent="CanvasLayer"]
-unique_name_in_owner = true
-offset_left = 12.0
-offset_top = 12.0
-offset_right = 174.0
-offset_bottom = 47.0
-focus_mode = 0
-text = "FISH WITH NIKES"
-
-[node name="JumpButton" type="Button" parent="CanvasLayer"]
-unique_name_in_owner = true
-offset_left = 13.0
-offset_top = 51.0
-offset_right = 174.0
-offset_bottom = 82.0
-focus_mode = 0
-text = "wing"
-
-[node name="ClawButton" type="Button" parent="CanvasLayer"]
-unique_name_in_owner = true
-offset_left = 13.0
-offset_top = 87.0
-offset_right = 174.0
-offset_bottom = 118.0
-focus_mode = 0
-text = "claws"
-
-[node name="WallJumpButton" type="Button" parent="CanvasLayer"]
-unique_name_in_owner = true
-offset_left = 13.0
-offset_top = 123.0
-offset_right = 174.0
-offset_bottom = 154.0
-text = "wall jump"
-
-[node name="ResetButton" type="Button" parent="CanvasLayer"]
-unique_name_in_owner = true
-offset_left = 579.0
-offset_top = 9.0
-offset_right = 627.0
-offset_bottom = 40.0
-focus_mode = 0
-text = "reset
-"
-
-[node name="GetAllButton" type="Button" parent="CanvasLayer"]
-unique_name_in_owner = true
-offset_left = 578.0
-offset_top = 40.0
-offset_right = 633.0
-offset_bottom = 71.0
-focus_mode = 0
-text = "get all
-"
-
-[node name="FingerButton" type="Button" parent="CanvasLayer"]
-unique_name_in_owner = true
-offset_left = 13.0
-offset_top = 159.0
-offset_right = 174.0
-offset_bottom = 191.0
-text = "finger"
-
-[node name="GrappleButton" type="Button" parent="CanvasLayer"]
-unique_name_in_owner = true
-offset_left = 13.0
-offset_top = 195.0
-offset_right = 173.0
-offset_bottom = 227.0
-text = "graple
-"
+[node name="DebugWindow" parent="." instance=ExtResource("4_hxnkp")]
 
 [node name="temp" type="Node2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="temp"]
 position = Vector2(0, 75)
 scale = Vector2(60.600006, 1)
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D"]
 position = Vector2(-0.5, 0)
@@ -354,221 +246,320 @@ shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D"]
 modulate = Color(0, 0, 0, 1)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="temp"]
 position = Vector2(-206.00002, -148)
 scale = Vector2(0.23999977, 2.6799994)
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D2"]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D2"]
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="temp"]
 position = Vector2(-85, -215.00002)
 scale = Vector2(0.23999977, 2.6799994)
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D4"]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D4"]
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
+
+[node name="StaticBody2D17" type="StaticBody2D" parent="temp"]
+position = Vector2(-85, -734)
+scale = Vector2(0.23999977, 2.6799994)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D17"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Icon" type="Sprite2D" parent="temp/StaticBody2D17"]
+texture = ExtResource("1_3xgj1")
+
+[node name="StaticBody2D19" type="StaticBody2D" parent="temp"]
+position = Vector2(-85, -1345)
+scale = Vector2(0.23999977, 2.6799994)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D19"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Icon" type="Sprite2D" parent="temp/StaticBody2D19"]
+texture = ExtResource("1_3xgj1")
 
 [node name="StaticBody2D11" type="StaticBody2D" parent="temp"]
 position = Vector2(744, -209)
 scale = Vector2(0.23999977, 2.6799994)
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D11"]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D11"]
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
 [node name="StaticBody2D12" type="StaticBody2D" parent="temp"]
 position = Vector2(1293, -212.00002)
 scale = Vector2(0.23999977, 2.6799994)
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D12"]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D12"]
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
 [node name="StaticBody2D13" type="StaticBody2D" parent="temp"]
 position = Vector2(1892, -199.00002)
 scale = Vector2(0.23999977, 2.6799994)
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D13"]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D13"]
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="temp"]
 position = Vector2(178, -292.00003)
 scale = Vector2(0.6399995, 2.6799994)
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D5"]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D5"]
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
 [node name="StaticBody2D14" type="StaticBody2D" parent="temp"]
 position = Vector2(746, -377)
 scale = Vector2(0.6399995, 0.39999962)
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D14"]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D14"]
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
 [node name="StaticBody2D15" type="StaticBody2D" parent="temp"]
 position = Vector2(1297, -389)
 scale = Vector2(0.6399995, 0.39999962)
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D15"]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D15"]
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
 [node name="StaticBody2D16" type="StaticBody2D" parent="temp"]
 position = Vector2(1891, -373)
 scale = Vector2(0.6399995, 0.39999962)
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D16"]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D16"]
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="temp"]
 position = Vector2(434.00003, -163)
 scale = Vector2(2.8399982, 0.4399991)
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D7"]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D7"]
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="temp"]
 position = Vector2(1042, -157.00002)
 scale = Vector2(2.8399982, 0.4399991)
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D8"]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D8"]
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="temp"]
 position = Vector2(1566, -161.00002)
 scale = Vector2(2.8399982, 0.4399991)
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D9"]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D9"]
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
 [node name="StaticBody2D10" type="StaticBody2D" parent="temp"]
 position = Vector2(2142, -151)
 scale = Vector2(2.8399982, 0.4399991)
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D10"]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D10"]
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="temp"]
 position = Vector2(15.000008, -436.00003)
 scale = Vector2(0.23999977, 2.6799994)
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D6"]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D6"]
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
+
+[node name="StaticBody2D18" type="StaticBody2D" parent="temp"]
+position = Vector2(15.000008, -1040)
+scale = Vector2(0.23999977, 2.6799994)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D18"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Icon" type="Sprite2D" parent="temp/StaticBody2D18"]
+texture = ExtResource("1_3xgj1")
+
+[node name="StaticBody2D20" type="StaticBody2D" parent="temp"]
+position = Vector2(15.000008, -1649)
+scale = Vector2(0.23999977, 2.6799994)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="temp/StaticBody2D20"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Icon" type="Sprite2D" parent="temp/StaticBody2D20"]
+texture = ExtResource("1_3xgj1")
+
+[node name="HookableBlock" type="StaticBody2D" parent="temp"]
+modulate = Color(0.19336182, 0.7531271, 0.48800278, 1)
+position = Vector2(432, -119)
+collision_layer = 6
+collision_mask = 0
+
+[node name="Icon2" type="Sprite2D" parent="temp/HookableBlock"]
+position = Vector2(0.66000783, -12.370013)
+scale = Vector2(0.3334375, 0.1817186)
+texture = ExtResource("1_3xgj1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="temp/HookableBlock"]
+position = Vector2(1, -12)
+shape = SubResource("RectangleShape2D_1humc")
+debug_color = Color(0.26097557, 0.7113768, 0.58653104, 0.41960785)
 
 [node name="deathbox" type="Area2D" parent="."]
 position = Vector2(-207, -51)
-script = ExtResource("13_61c8c")
+script = ExtResource("5_kxsip")
 
 [node name="Icon" type="Sprite2D" parent="deathbox"]
 modulate = Color(1, 0, 0, 1)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="deathbox"]
 shape = SubResource("RectangleShape2D_kdubu")
 
-[node name="FgParallax" type="Parallax2D" parent="."]
+[node name="ForegroundParallax" type="Node2D" parent="."]
+
+[node name="FgParallax" type="Parallax2D" parent="ForegroundParallax"]
 repeat_size = Vector2(100, 0)
 repeat_times = 35
 
-[node name="Node2D" type="Node2D" parent="FgParallax"]
+[node name="Node2D" type="Node2D" parent="ForegroundParallax/FgParallax"]
 
-[node name="Sprite2D" type="Sprite2D" parent="FgParallax/Node2D"]
+[node name="Sprite2D" type="Sprite2D" parent="ForegroundParallax/FgParallax/Node2D"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(-18, 18)
 rotation = -0.2641464
 scale = Vector2(0.19999786, 0.16000003)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D2" type="Sprite2D" parent="FgParallax/Node2D"]
+[node name="Sprite2D2" type="Sprite2D" parent="ForegroundParallax/FgParallax/Node2D"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(2, 18.000002)
 rotation = -0.0026269145
 scale = Vector2(0.19999786, 0.16000003)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D3" type="Sprite2D" parent="FgParallax/Node2D"]
+[node name="Sprite2D3" type="Sprite2D" parent="ForegroundParallax/FgParallax/Node2D"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(23, 15)
 rotation = -0.0026269145
 scale = Vector2(0.19999786, 0.16000003)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D4" type="Sprite2D" parent="FgParallax/Node2D"]
+[node name="Sprite2D4" type="Sprite2D" parent="ForegroundParallax/FgParallax/Node2D"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(41.000004, 20)
 rotation = 4.3811474
 scale = Vector2(0.19999786, 0.16000003)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D5" type="Sprite2D" parent="FgParallax/Node2D"]
+[node name="Sprite2D5" type="Sprite2D" parent="ForegroundParallax/FgParallax/Node2D"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(56.000004, 20.999998)
 rotation = 3.582822
 scale = Vector2(0.19999786, 0.16000003)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[node name="Sprite2D6" type="Sprite2D" parent="FgParallax/Node2D"]
+[node name="Sprite2D6" type="Sprite2D" parent="ForegroundParallax/FgParallax/Node2D"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(65, 20)
 rotation = 3.1209621
 scale = Vector2(0.19999786, 0.16000003)
-texture = ExtResource("7_ifsgh")
+texture = ExtResource("1_3xgj1")
 
-[connection signal="pressed" from="CanvasLayer/ResetButton" to="." method="_on_button_5_pressed"]
-[connection signal="pressed" from="CanvasLayer/GetAllButton" to="." method="_on_button_6_pressed"]
+[node name="PlayerFollowCamera" parent="." instance=ExtResource("6_1humc")]
+position = Vector2(216, -66)
+
 [connection signal="body_entered" from="deathbox" to="deathbox" method="_on_body_entered"]

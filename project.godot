@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="JamSepticEye"
-run/main_scene="uid://c4d7f3xrnao6t"
+run/main_scene="uid://cgndakmo3rk7i"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -104,3 +104,9 @@ grapple={
 
 textures/canvas_textures/default_texture_filter=0
 environment/defaults/default_clear_color=Color(0.060593635, 0.14607912, 0.1485269, 1)
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="wall"
+2d_physics/layer_3="hookable_object"

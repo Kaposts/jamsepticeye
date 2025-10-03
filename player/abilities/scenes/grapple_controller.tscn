@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cniq56pqu6e6o"]
+
+[ext_resource type="Script" uid="uid://d3pxxlqpx8md3" path="res://player/abilities/grapple_controller.gd" id="1_iavxg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5jjua"]
+radius = 100.0
+
+[node name="GrappleController" type="Node2D" groups=["grapple_controller"]]
+script = ExtResource("1_iavxg")
+
+[node name="HookDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="HookDetectorCollider" type="CollisionShape2D" parent="HookDetector"]
+shape = SubResource("CircleShape2D_5jjua")
+debug_color = Color(0.34160507, 0.7278268, 0.46436077, 0.41960785)

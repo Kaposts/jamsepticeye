@@ -1,5 +1,4 @@
-class_name Ability
+@abstract class_name Ability
 extends Node
 
-func apply(player: Node, delta: float) -> void:
-    pass
+@abstract func apply(player: Player, delta: float) -> void
