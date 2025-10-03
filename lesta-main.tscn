@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4d7f3xrnao6t"]
+[gd_scene load_steps=8 format=3 uid="uid://dk3y73lot0pxr"]
 
-[ext_resource type="Texture2D" uid="uid://kdpwgr2d2wrt" path="res://icon.svg" id="2_epypp"]
-[ext_resource type="PackedScene" path="res://core/player_manager.tscn" id="2_q6r6c"]
-[ext_resource type="Script" uid="uid://f8s22nkom4lc" path="res://deathbox.gd" id="7_d21ai"]
-[ext_resource type="PackedScene" uid="uid://dah2f52xwyrbs" path="res://debug/debug_window.tscn" id="10_hqns4"]
-[ext_resource type="PackedScene" path="res://player/fish.tscn" id="10_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://kdpwgr2d2wrt" path="res://icon.svg" id="1_7ak18"]
+[ext_resource type="PackedScene" path="res://core/player_manager.tscn" id="2_5rasw"]
+[ext_resource type="PackedScene" path="res://player/fish.tscn" id="3_3w8df"]
+[ext_resource type="PackedScene" uid="uid://dah2f52xwyrbs" path="res://debug/debug_window.tscn" id="4_xtqt5"]
+[ext_resource type="Script" uid="uid://f8s22nkom4lc" path="res://deathbox.gd" id="5_24a1e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
 size = Vector2(125, 126)
@@ -29,72 +29,72 @@ scale = Vector2(1.4518855, 3.794351)
 [node name="Sprite2D" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(-115.73892, -105.5)
 scale = Vector2(2.8084207, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D2" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(258.9736, -18)
 scale = Vector2(4.186366, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D3" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(558.1709, -129)
 scale = Vector2(1.6745448, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D4" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(746.2069, -28)
 scale = Vector2(1.715517, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D5" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(983.70245, -120)
 scale = Vector2(2.8327742, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D6" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(1360.6445, -3)
 scale = Vector2(3.5460367, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D7" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(1741.5286, -194.75)
 scale = Vector2(4.2993665, 4.0273438)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D8" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(-1892.2175, -238)
 scale = Vector2(2.887227, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D9" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(-1691.2219, -150.5)
 scale = Vector2(2.3402815, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D10" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(-1382.9758, -261.5)
 scale = Vector2(2.7972517, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D11" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(-1213.9387, -160.5)
 scale = Vector2(4.1487, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D12" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(-814.47205, -252.5)
 scale = Vector2(2.5238743, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D13" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(-666.60596, -135.5)
 scale = Vector2(1.5407176, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D14" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack/temp"]
 position = Vector2(-420.0672, -327.25)
 scale = Vector2(2.5947998, 4.0273438)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="BgParallaxMiddle" type="Parallax2D" parent="BackgroundParallax"]
 scroll_scale = Vector2(1.4, 1.2)
@@ -107,72 +107,72 @@ modulate = Color(0.3403393, 0.34033933, 0.3403393, 1)
 [node name="Sprite2D" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(0, -105.5)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D2" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(236, -18)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D3" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(515, -129)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D4" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(792, -28)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D5" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(1101, -120)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D6" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(1381, -3)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D7" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(1695, -194.75)
 scale = Vector2(1, 4.0273438)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D8" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(-2013, -238)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D9" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(-1777, -150.5)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D10" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(-1498, -261.5)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D11" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(-1221, -160.5)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D12" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(-912, -252.5)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D13" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(-632, -135.5)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D14" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle/temp"]
 position = Vector2(-318, -327.25)
 scale = Vector2(1, 4.0273438)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="BgParallaxFront" type="Parallax2D" parent="BackgroundParallax"]
 repeat_size = Vector2(1000, 0)
@@ -185,48 +185,48 @@ position = Vector2(0, 122)
 [node name="Sprite2D" type="Sprite2D" parent="BackgroundParallax/BgParallaxFront/temp"]
 position = Vector2(0, -105.5)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D2" type="Sprite2D" parent="BackgroundParallax/BgParallaxFront/temp"]
 position = Vector2(124, -32)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D3" type="Sprite2D" parent="BackgroundParallax/BgParallaxFront/temp"]
 position = Vector2(251, -69)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D4" type="Sprite2D" parent="BackgroundParallax/BgParallaxFront/temp"]
 position = Vector2(373, -41)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D5" type="Sprite2D" parent="BackgroundParallax/BgParallaxFront/temp"]
 position = Vector2(500, -98)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D6" type="Sprite2D" parent="BackgroundParallax/BgParallaxFront/temp"]
 position = Vector2(624, -53)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D7" type="Sprite2D" parent="BackgroundParallax/BgParallaxFront/temp"]
 position = Vector2(748, -128)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D8" type="Sprite2D" parent="BackgroundParallax/BgParallaxFront/temp"]
 position = Vector2(878, -87)
 scale = Vector2(1, 2.6484375)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
-[node name="PlayerManager" parent="." instance=ExtResource("2_q6r6c")]
+[node name="PlayerManager" parent="." instance=ExtResource("2_5rasw")]
 position = Vector2(5, -4)
-fish_scene = ExtResource("10_ir8iy")
+fish_scene = ExtResource("3_3w8df")
 
-[node name="DebugWindow" parent="." instance=ExtResource("10_hqns4")]
+[node name="DebugWindow" parent="." instance=ExtResource("4_xtqt5")]
 
 [node name="temp" type="Node2D" parent="."]
 
@@ -240,7 +240,7 @@ shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D"]
 modulate = Color(0, 0, 0, 1)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="temp"]
 position = Vector2(-206.00002, -148)
@@ -251,7 +251,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D2"]
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="temp"]
 position = Vector2(-85, -215.00002)
@@ -262,7 +262,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D4"]
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="StaticBody2D17" type="StaticBody2D" parent="temp"]
 position = Vector2(-85, -734)
@@ -273,7 +273,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D17"]
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="StaticBody2D19" type="StaticBody2D" parent="temp"]
 position = Vector2(-85, -1345)
@@ -284,7 +284,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D19"]
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="StaticBody2D11" type="StaticBody2D" parent="temp"]
 position = Vector2(744, -209)
@@ -295,7 +295,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D11"]
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="StaticBody2D12" type="StaticBody2D" parent="temp"]
 position = Vector2(1293, -212.00002)
@@ -306,7 +306,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D12"]
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="StaticBody2D13" type="StaticBody2D" parent="temp"]
 position = Vector2(1892, -199.00002)
@@ -317,7 +317,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D13"]
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="temp"]
 position = Vector2(178, -292.00003)
@@ -328,7 +328,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D5"]
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="StaticBody2D14" type="StaticBody2D" parent="temp"]
 position = Vector2(746, -377)
@@ -339,7 +339,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D14"]
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="StaticBody2D15" type="StaticBody2D" parent="temp"]
 position = Vector2(1297, -389)
@@ -350,7 +350,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D15"]
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="StaticBody2D16" type="StaticBody2D" parent="temp"]
 position = Vector2(1891, -373)
@@ -361,7 +361,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D16"]
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="temp"]
 position = Vector2(434.00003, -163)
@@ -372,7 +372,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D7"]
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="temp"]
 position = Vector2(1042, -157.00002)
@@ -383,7 +383,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D8"]
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="temp"]
 position = Vector2(1566, -161.00002)
@@ -394,7 +394,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D9"]
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="StaticBody2D10" type="StaticBody2D" parent="temp"]
 position = Vector2(2142, -151)
@@ -405,7 +405,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D10"]
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="temp"]
 position = Vector2(15.000008, -436.00003)
@@ -416,7 +416,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D6"]
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="StaticBody2D18" type="StaticBody2D" parent="temp"]
 position = Vector2(15.000008, -1040)
@@ -427,7 +427,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D18"]
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="StaticBody2D20" type="StaticBody2D" parent="temp"]
 position = Vector2(15.000008, -1649)
@@ -438,15 +438,15 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Icon" type="Sprite2D" parent="temp/StaticBody2D20"]
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="deathbox" type="Area2D" parent="."]
 position = Vector2(-207, -51)
-script = ExtResource("7_d21ai")
+script = ExtResource("5_24a1e")
 
 [node name="Icon" type="Sprite2D" parent="deathbox"]
 modulate = Color(1, 0, 0, 1)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="deathbox"]
 shape = SubResource("RectangleShape2D_kdubu")
@@ -464,44 +464,44 @@ modulate = Color(0, 0, 0, 1)
 position = Vector2(-18, 18)
 rotation = -0.2641464
 scale = Vector2(0.19999786, 0.16000003)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D2" type="Sprite2D" parent="ForegroundParallax/FgParallax/Node2D"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(2, 18.000002)
 rotation = -0.0026269145
 scale = Vector2(0.19999786, 0.16000003)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D3" type="Sprite2D" parent="ForegroundParallax/FgParallax/Node2D"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(23, 15)
 rotation = -0.0026269145
 scale = Vector2(0.19999786, 0.16000003)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D4" type="Sprite2D" parent="ForegroundParallax/FgParallax/Node2D"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(41.000004, 20)
 rotation = 4.3811474
 scale = Vector2(0.19999786, 0.16000003)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D5" type="Sprite2D" parent="ForegroundParallax/FgParallax/Node2D"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(56.000004, 20.999998)
 rotation = 3.582822
 scale = Vector2(0.19999786, 0.16000003)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
 [node name="Sprite2D6" type="Sprite2D" parent="ForegroundParallax/FgParallax/Node2D"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(65, 20)
 rotation = 3.1209621
 scale = Vector2(0.19999786, 0.16000003)
-texture = ExtResource("2_epypp")
+texture = ExtResource("1_7ak18")
 
-[node name="fish" parent="." instance=ExtResource("10_ir8iy")]
+[node name="fish" parent="." instance=ExtResource("3_3w8df")]
 position = Vector2(75, -52.999996)
 
 [node name="Camera2D" type="Camera2D" parent="."]
