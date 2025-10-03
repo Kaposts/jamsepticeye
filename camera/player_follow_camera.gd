@@ -29,8 +29,11 @@ func set_state() -> void:
 		return
 	
 	
-	if _player.grapple_controller and _player.grapple_controller.launched:
-		state_machine.transition_to_next_state(CameraState.GRAPPLING)
+	if _player.is_grappling:
+		var grapple_controller: GrappleController = get_tree().get_first_node_in_group("grapple_controller")
+		state_machine.transition_to_next_state(
+			CameraState.GRAPPLING,
+			{CameraState.DataType.GRAPPLE_ANCHOR_POSITION : grapple_controller.target})
 	elif _player.is_on_wall_only():
 		_previous_position = _player.global_position
 		_from_wall_jump = true

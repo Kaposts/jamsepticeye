@@ -38,7 +38,7 @@ func apply_focus() -> void:
 	if _fall_duration < LONG_FALL_DURATION_THRESHOLD:
 		_current_position.y = _y_position + (Vector2.UP.y * _camera.lookahead_y_distance)
 	else:
-		_camera.global_position.y = lerp(_current_position.y, _player.global_position.y + _player.velocity.y, .1)
+		_camera.global_position.y = lerp(_current_position.y, _player.global_position.y + _player.velocity.y, .05)
 		_current_position.y = _player.global_position.y + (_player.velocity.y * long_fall_lookahead_factor)
 	
 	# Horizontal movement

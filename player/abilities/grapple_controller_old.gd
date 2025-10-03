@@ -1,4 +1,4 @@
-class_name GrappleController
+#class_name GrappleController
 extends Ability2D
 ## Grappling Hook Ability to simulate tongue (frog-like creature)
 ## Reference: https://www.youtube.com/watch?v=niggxMUm0fk&t=298s
