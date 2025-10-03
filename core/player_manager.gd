@@ -11,16 +11,19 @@ var death_counter: int = 0
 var can_wall_jump: bool = false
 var can_hover: bool = false
 
+var camera
+
 func _ready():
 	SignalBus.sig_player_died.connect(_on_player_died)
 	
 	get_parent().add_child.call_deferred(fish_scene.instantiate())
+	camera = get_tree().get_first_node_in_group("player_follow_camera")
 
 func _input(event):
 	if event.is_action_pressed("restart"):
 		if get_tree().get_nodes_in_group('player').size() <= 0:
 			var player = player_scene.instantiate()
-
+			player.camera = camera
 			apply_abilities(player)
 			get_parent().add_child(player)
 			SignalBus.player_spawned.emit()

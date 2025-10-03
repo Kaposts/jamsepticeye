@@ -1,6 +1,6 @@
-[gd_scene load_steps=56 format=4 uid="uid://c4d7f3xrnao6t"]
+[gd_scene load_steps=57 format=4 uid="uid://c4d7f3xrnao6t"]
 
-[ext_resource type="Texture2D" uid="uid://do08i2uckbad3" path="res://icon.svg" id="2_epypp"]
+[ext_resource type="Texture2D" uid="uid://kdpwgr2d2wrt" path="res://icon.svg" id="2_epypp"]
 [ext_resource type="Texture2D" uid="uid://cvsr0ew5klrxo" path="res://assets/art/free-swamp-game-tileset-pixel-art/2 Background/Layers/2.png" id="2_flf07"]
 [ext_resource type="PackedScene" uid="uid://baftkdlepc3ff" path="res://core/player_manager.tscn" id="2_q6r6c"]
 [ext_resource type="Texture2D" uid="uid://c8r85isnewky1" path="res://assets/art/free-swamp-game-tileset-pixel-art/2 Background/Layers/3.png" id="3_k73cj"]
@@ -10,21 +10,22 @@
 [ext_resource type="Script" uid="uid://bkag1adotndfr" path="res://player/abilities/ability_data.gd" id="7_4d7sh"]
 [ext_resource type="Script" uid="uid://f8s22nkom4lc" path="res://deathbox.gd" id="7_d21ai"]
 [ext_resource type="PackedScene" uid="uid://p3ql230p887j" path="res://player/abilities/scenes/finger.tscn" id="8_hqns4"]
-[ext_resource type="PackedScene" uid="uid://cniq56pqu6e6o" path="res://player/abilities/scenes/grappling_controller.tscn" id="9_x0ka3"]
+[ext_resource type="PackedScene" uid="uid://cniq56pqu6e6o" path="res://player/abilities/scenes/grapple_controller.tscn" id="9_x0ka3"]
 [ext_resource type="PackedScene" uid="uid://dah2f52xwyrbs" path="res://debug/debug_window.tscn" id="10_hqns4"]
 [ext_resource type="PackedScene" uid="uid://801a5vbsnn1" path="res://player/fish.tscn" id="10_ir8iy"]
-[ext_resource type="Shader" uid="uid://t0bw3n8dln3p" path="res://foliage_wind.gdshader" id="13_bjha6"]
+[ext_resource type="Shader" uid="uid://t0bw3n8dln3p" path="res://shaders/foliage_wind.gdshader" id="13_bjha6"]
 [ext_resource type="Texture2D" uid="uid://7vlvquau8ywd" path="res://assets/art/free-swamp-game-tileset-pixel-art/3 Objects/Willows/3.png" id="14_gt76g"]
-[ext_resource type="Shader" uid="uid://cm18xpsyb65n6" path="res://water.gdshader" id="14_nr8wp"]
+[ext_resource type="Shader" uid="uid://cm18xpsyb65n6" path="res://shaders/water.gdshader" id="14_nr8wp"]
 [ext_resource type="Texture2D" uid="uid://8hgjinghny8f" path="res://assets/art/free-swamp-game-tileset-pixel-art/3 Objects/Willows/2.png" id="15_1fr6y"]
-[ext_resource type="Shader" uid="uid://cs0nu8w547cet" path="res://fog.gdshader" id="15_d2bti"]
+[ext_resource type="Shader" uid="uid://cs0nu8w547cet" path="res://shaders/fog.gdshader" id="15_d2bti"]
 [ext_resource type="Texture2D" uid="uid://bdw2dvauxlueb" path="res://assets/art/free-swamp-game-tileset-pixel-art/1 Tiles/Tileset.png" id="16_ta5nu"]
 [ext_resource type="Texture2D" uid="uid://bmnvr6vdfjalp" path="res://assets/art/free-swamp-game-tileset-pixel-art/3 Objects/Bushes/5.png" id="18_7vxoj"]
-[ext_resource type="Shader" uid="uid://bl5uc6al1uuod" path="res://vignette.gdshader" id="18_ei405"]
+[ext_resource type="Shader" uid="uid://bl5uc6al1uuod" path="res://shaders/vignette.gdshader" id="18_ei405"]
 [ext_resource type="Texture2D" uid="uid://cvu0uyyy3iyk1" path="res://assets/art/free-swamp-game-tileset-pixel-art/3 Objects/Bushes/6.png" id="19_ei405"]
 [ext_resource type="Texture2D" uid="uid://bfdestwo6gush" path="res://assets/art/free-swamp-game-tileset-pixel-art/2 Background/Layers/5.png" id="19_rjqkl"]
 [ext_resource type="Texture2D" uid="uid://h3tobxjdl1f8" path="res://assets/art/free-swamp-game-tileset-pixel-art/3 Objects/Bushes/8.png" id="20_e8dv2"]
 [ext_resource type="Texture2D" uid="uid://bktbg78ktmped" path="res://assets/art/free-swamp-game-tileset-pixel-art/3 Objects/Bushes/9.png" id="21_2nhjh"]
+[ext_resource type="PackedScene" uid="uid://c7edv1edu6rrw" path="res://camera/player_follow_camera.tscn" id="26_gt76g"]
 
 [sub_resource type="Environment" id="Environment_7vxoj"]
 background_mode = 3
@@ -1276,7 +1277,7 @@ shader_parameter/noise2 = SubResource("NoiseTexture2D_7vxoj")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e8dv2"]
 shader = ExtResource("18_ei405")
-shader_parameter/outerRadius = 1.7740000842649999
+shader_parameter/outerRadius = 1.774000084265
 shader_parameter/MainAlpha = 1.0
 shader_parameter/vignette_color = Color(0.07102456, 0.16973957, 0, 1)
 
@@ -1344,9 +1345,6 @@ modulate = Color(0, 0, 0, 1)
 position = Vector2(32.676567, 0)
 scale = Vector2(0.4894286, 1)
 texture = ExtResource("2_epypp")
-
-[node name="fish" parent="." instance=ExtResource("10_ir8iy")]
-position = Vector2(148.99998, -50)
 
 [node name="trees" type="Node2D" parent="."]
 position = Vector2(52, -87)
@@ -1509,6 +1507,8 @@ offset_top = -82.0
 offset_right = 938.0
 offset_bottom = -59.0
 text = "PUZZLE AREA ->"
+
+[node name="PlayerFollowCamera" parent="." instance=ExtResource("26_gt76g")]
 
 [connection signal="body_entered" from="deathboxes/deathbox" to="deathboxes/deathbox" method="_on_body_entered"]
 [connection signal="body_entered" from="deathboxes/deathbox2" to="deathboxes/deathbox2" method="_on_body_entered"]
