@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dk3y73lot0pxr"]
+[gd_scene load_steps=10 format=3 uid="uid://cgndakmo3rk7i"]
 
 [ext_resource type="Texture2D" uid="uid://kdpwgr2d2wrt" path="res://icon.svg" id="1_3xgj1"]
-[ext_resource type="PackedScene" uid="uid://bbt6rl0il0g7a" path="res://core/player_manager.tscn" id="2_1humc"]
+[ext_resource type="PackedScene" uid="uid://baftkdlepc3ff" path="res://core/player_manager.tscn" id="2_1humc"]
 [ext_resource type="PackedScene" uid="uid://801a5vbsnn1" path="res://player/fish.tscn" id="3_ob2rw"]
 [ext_resource type="PackedScene" uid="uid://dah2f52xwyrbs" path="res://debug/debug_window.tscn" id="4_hxnkp"]
 [ext_resource type="Script" uid="uid://f8s22nkom4lc" path="res://deathbox.gd" id="5_kxsip"]
@@ -483,6 +483,7 @@ shape = SubResource("RectangleShape2D_q6r6c")
 texture = ExtResource("1_3xgj1")
 
 [node name="HookableBlock" type="StaticBody2D" parent="temp"]
+modulate = Color(0.19336182, 0.7531271, 0.48800278, 1)
 position = Vector2(432, -119)
 collision_layer = 6
 collision_mask = 0

@@ -2,11 +2,11 @@ extends CameraState
 ## Falling Camera State
 ## The falling camera is set when the player is falling in from the air
 
-const LONG_FALL_DURATION_THRESHOLD: float = 0.3
+const LONG_FALL_DURATION_THRESHOLD: float = 0.4
 
 ## Based on the player velocity when falling down, camera will slam downwards.
 ## Larger number makes the camera slam down further
-@export_range(0.0, 0.3, 0.001) var long_fall_lookahead_factor: float = 0.125
+@export_range(0.0, 0.2, 0.001) var long_fall_lookahead_factor: float = 0.09
 
 var _previous_position: Vector2
 var _y_position: float

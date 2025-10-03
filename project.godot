@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="JamSepticEye"
-run/main_scene="uid://dk3y73lot0pxr"
+run/main_scene="uid://cgndakmo3rk7i"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
