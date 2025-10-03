@@ -6,7 +6,7 @@ extends RigidBody2D
 var facing_dir: int = 1
 
 func _physics_process(delta) -> void:
-	print(get_contact_count())
+	#print(get_contact_count())
 	if Input.is_action_just_pressed("ui_accept") and get_contact_count() > 0:
 		facing_dir *= -1
 		apply_force(Vector2(flop_force.x * facing_dir, flop_force.y), Vector2(position.x -2, position.y ))

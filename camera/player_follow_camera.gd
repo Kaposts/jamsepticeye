@@ -7,9 +7,9 @@ extends Camera2D
 @export var lookahead_x_distance: float = 50.0
 @export var lookahead_y_distance: float = 30.0
 
-
-#var _in_air: bool = false
 var _player: Player
+var _previous_position: Vector2 = Vector2.ZERO
+var _from_wall_jump: bool = false
 
 @onready var state_machine: StateMachine = $StateMachine
 
@@ -28,16 +28,30 @@ func set_state() -> void:
 	if not _player:
 		return
 	
+	
 	if _player.grapple_controller and _player.grapple_controller.launched:
 		state_machine.transition_to_next_state(CameraState.GRAPPLING)
+	elif _player.is_on_wall_only():
+		_previous_position = _player.global_position
+		_from_wall_jump = true
+		state_machine.transition_to_next_state(CameraState.WALL_HANGING)
 	elif _player.is_hovering:
+		_previous_position = _player.global_position
 		state_machine.transition_to_next_state(CameraState.HOVERING)
 	elif _player.velocity.y < 0.0:
-		state_machine.transition_to_next_state(CameraState.JUMPING)
-	
-	
+		state_machine.transition_to_next_state(
+			CameraState.JUMPING,
+			{CameraState.DataType.CURRENT_POSITION : _previous_position,
+			 CameraState.DataType.FROM_WALL_JUMP : _from_wall_jump})
+	elif _player.velocity.y > 0.0:
+		state_machine.transition_to_next_state(
+			CameraState.FALLING,
+			{CameraState.DataType.CURRENT_POSITION : _previous_position,
+			 CameraState.DataType.FROM_WALL_JUMP : _from_wall_jump})
 	
 	else:
+		_previous_position = _player.global_position
+		_from_wall_jump = false
 		state_machine.transition_to_next_state(CameraState.DEFAULT)
 	 
 

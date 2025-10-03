@@ -6,7 +6,18 @@ extends State
 const DEFAULT: StringName = "Default"
 const HOVERING: StringName = "Hovering"
 const JUMPING: StringName = "Jumping"
+const FALLING: StringName = "Falling"
 const GRAPPLING: StringName = "Grappling"
+const WALL_HANGING: StringName = "WallHanging"
+
+
+# Data StringNames
+enum DataType{
+	CURRENT_POSITION,
+	FROM_WALL_JUMP,
+	FROM_GROUND,
+}
+
 
 var _player: Player
 var _camera: PlayerFollowCamera
@@ -37,7 +48,7 @@ func update(_delta: float) -> void:
 		return
 	
 	apply_focus()
-	_camera.global_position = _current_position           
+	_camera.global_position = lerp(_camera.global_position, _current_position, 0.1)
 
 #endregion
 #===================================================================================================

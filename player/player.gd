@@ -69,7 +69,7 @@ func _physics_process(delta):
 	
 	for ability in abilities:
 		ability.apply(self, delta)
-
+	
 	move_and_slide()
 
 

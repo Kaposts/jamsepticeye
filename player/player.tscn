@@ -8,24 +8,7 @@
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 2
 script = ExtResource("1_rkbax")
-acceleration = null
-speed = null
-jump_force = null
-fall_gravity_multiplier = null
-variable_jump_gravity_multiplier = null
-coyote_time = null
-jump_buffer_time = null
 wall_jump_force = Vector2(350, -400)
-wall_jump_lock_time = null
-wall_coyote_time = null
-wall_slide_speed = null
-finger_force = null
-grapple_rest_length = null
-grapple_stiffness = null
-grapple_damping_factor = null
-grapple_detector_length = null
-hover_gravity_scale = null
-hover_move_speed = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_wtcfe")
