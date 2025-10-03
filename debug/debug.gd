@@ -6,7 +6,6 @@ extends CanvasLayer
 @export var claw: PackedScene
 @export var finger: PackedScene
 @export var grapple: PackedScene
-@export var hover: PackedScene
 
 var player: CharacterBody2D
 

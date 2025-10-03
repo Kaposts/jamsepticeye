@@ -1,0 +1,30 @@
+[gd_scene load_steps=10 format=3 uid="uid://baftkdlepc3ff"]
+
+[ext_resource type="Script" uid="uid://d6uopiqqqwar" path="res://core/player_manager.gd" id="1_prjhi"]
+[ext_resource type="PackedScene" uid="uid://c42tatqhkdecw" path="res://player/player.tscn" id="2_gbkt6"]
+[ext_resource type="Script" uid="uid://bkag1adotndfr" path="res://player/abilities/ability_data.gd" id="3_5d8k2"]
+[ext_resource type="PackedScene" uid="uid://ckd22726wqe7y" path="res://player/abilities/scenes/walk.tscn" id="4_xp71g"]
+[ext_resource type="PackedScene" uid="uid://cubwhapt2w0ek" path="res://player/abilities/scenes/jump.tscn" id="5_vrhm7"]
+[ext_resource type="PackedScene" uid="uid://vww1wc6puvgb" path="res://player/abilities/scenes/claw.tscn" id="6_o5qum"]
+
+[sub_resource type="Resource" id="Resource_ir8iy"]
+script = ExtResource("3_5d8k2")
+scene = ExtResource("4_xp71g")
+metadata/_custom_type_script = "uid://bkag1adotndfr"
+
+[sub_resource type="Resource" id="Resource_hqns4"]
+script = ExtResource("3_5d8k2")
+ability = 1
+scene = ExtResource("5_vrhm7")
+metadata/_custom_type_script = "uid://bkag1adotndfr"
+
+[sub_resource type="Resource" id="Resource_0h7mo"]
+script = ExtResource("3_5d8k2")
+ability = 3
+scene = ExtResource("6_o5qum")
+metadata/_custom_type_script = "uid://bkag1adotndfr"
+
+[node name="PlayerManager" type="Node2D" groups=["player_manager"]]
+script = ExtResource("1_prjhi")
+player_scene = ExtResource("2_gbkt6")
+ability_scenes = Array[ExtResource("3_5d8k2")]([SubResource("Resource_ir8iy"), SubResource("Resource_hqns4"), SubResource("Resource_0h7mo")])
