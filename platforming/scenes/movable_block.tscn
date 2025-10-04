@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://iuwfevs5mml6"]
+
+[ext_resource type="Texture2D" uid="uid://kdpwgr2d2wrt" path="res://icon.svg" id="2_7ul5b"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2u7jv"]
+friction = 1.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebxd8"]
+size = Vector2(128, 128)
+
+[node name="MovableBlock" type="RigidBody2D"]
+collision_layer = 10
+collision_mask = 11
+physics_material_override = SubResource("PhysicsMaterial_2u7jv")
+contact_monitor = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_7ul5b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ebxd8")

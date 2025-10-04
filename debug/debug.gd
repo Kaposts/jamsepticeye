@@ -49,6 +49,7 @@ func _on_jump_button_pressed() -> void:
 
 func _on_claw_button_pressed() -> void:
 	add_ability(claw, claw_button)
+	player.can_push = true
 
 func _on_wall_jump_button_pressed() -> void:
 	player.can_wall_jump = true

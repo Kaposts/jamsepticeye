@@ -10,6 +10,7 @@ var death_counter: int = 0
 
 var can_wall_jump: bool = false
 var can_hover: bool = false
+var can_push: bool = false
 
 var camera
 
@@ -34,7 +35,9 @@ func evolve():
 	match death_counter:
 		1: add_ability(Enum.ABILITY.WALK)
 		2: add_ability(Enum.ABILITY.JUMP)
-		3: add_ability(Enum.ABILITY.CLAW)
+		3: 
+			add_ability(Enum.ABILITY.CLAW)
+			can_push = true
 		4: can_wall_jump = true
 		5: add_ability(Enum.ABILITY.FINGER)
 		6: pass
