@@ -8,7 +8,6 @@ extends CharacterBody2D
 @export var front_sneaker_texture: Texture2D
 @export var back_sneaker_texture: Texture2D
 
-
 #===================================================================================================
 #region MOVEMENT SETTINGS
 
@@ -63,7 +62,8 @@ var need_animation_reset: bool = false
 #endregion
 #===================================================================================================
 #region NODE VARIABLES
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animation_tree: AnimationTree = $AnimationTree
+@onready var animation_state_machine: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
 @onready var visuals: Node2D = $Visuals
 @onready var body: Node2D = $Visuals/Body
 
@@ -106,20 +106,17 @@ func _sync_animation() -> void:
 	elif velocity.x < 0.0:
 		visuals.scale.x = 1.0
 	
-	if need_animation_reset and is_equal_approx(velocity.y, 0.0):
-		animation_player.play("RESET")
-		need_animation_reset = false
-	
+	if is_hovering:
+		animation_state_machine.travel("hover")
 	elif velocity.y < 0.0:
-		animation_player.play("jump")
-		need_animation_reset = true
+		animation_state_machine.travel("jump")
 	elif velocity.y > 0.0:
-		animation_player.play("fall")
-		need_animation_reset = true
+		animation_state_machine.travel("fall")
 	elif velocity.is_equal_approx(Vector2.ZERO):
-		animation_player.play("idle")
+		animation_state_machine.travel("idle")
 	else:
-		animation_player.play("walk")
+		animation_state_machine.travel("walk")
+
 
 
 
