@@ -1,19 +1,18 @@
 #class_name GrappleController
 extends Ability2D
 ## Grappling Hook Ability to simulate tongue (frog-like creature)
-## Reference: https://www.youtube.com/watch?v=niggxMUm0fk&t=298s
+## Reference: https://gameidea.org/2024/08/24/make-grappling-hook-in-godot/
 
-var launched: bool = false
+@export var grappling_jump_modifier: float = 1.5
+
 var target: Vector2
+var grapple_system: GrappleSystem = null
 
 var _player: Player
-var _rest_length: float = 50.0
-var _stiffness: float = 100.0
-var _damping_factor: float = 0.01
 
-@onready var rope: Line2D = $Line2D
 @onready var hook_detector: Area2D = $HookDetector
 @onready var hook_detector_collider: CollisionShape2D = $HookDetector/HookDetectorCollider
+
 
 
 #===================================================================================================
@@ -21,66 +20,58 @@ var _damping_factor: float = 0.01
 
 func _ready() -> void:
 	_player = get_parent()
-	_player.grapple_controller = self
-	
-	_rest_length = _player.grapple_rest_length
-	_stiffness = _player.grapple_stiffness
-	_damping_factor = _player.grapple_damping_factor
 	(hook_detector_collider.shape as CircleShape2D).radius = _player.grapple_detector_length
 
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("grapple"):
-		launch()
-	if event.is_action_released("grapple"):
-		retract()
+		attach_player()
+	if event.is_action_released("grapple") or event.is_action_pressed("jump"):
+		detach_player()
+
 
 #endregion
 #===================================================================================================
 #region MANADATORY ABSTRACT FUNCTIONS
 
-func apply(player: Node, delta: float) -> void:
-	if launched:
-		handle_grapple(player, delta)
+func apply(player: Player, _delta: float) -> void:
+	if player.is_grappling:
+		player.global_position = grapple_system.player_anchor.global_position
 
 #endregion
 #===================================================================================================
-#region PRIVATE FUNCTIONS
+#region PUBLIC FUNCTIONS
 
-func launch() -> void:
-	if hook_detector.has_overlapping_bodies():
-		launched = true
-		_get_closest_target()
-		rope.show()
-
-
-func retract() -> void:
-	launched = false
-	rope.hide()
-
-
-func handle_grapple(player: CharacterBody2D, delta: float) -> void:
-	var target_direction: Vector2 = player.global_position.direction_to(target)
-	var target_distance: float = player.global_position.distance_to(target)
+# Function to make the _player a child of player_anchor and make
+# all the things visible and working.
+func attach_player() -> void:
+	if not hook_detector.has_overlapping_bodies():
+		return
 	
-	var displacement: float = target_distance - _rest_length
-	var force: Vector2 = Vector2.ZERO
+	_player.is_grappling = true
+	_get_closest_target()
 	
-	if displacement > 0:
-		var spring_force_magnitude: float = _stiffness * displacement
-		var spring_force: Vector2 = target_direction * spring_force_magnitude
-		
-		var vel_dot: float = player.velocity.dot(target_direction)
-		var damping: Vector2 = -_damping_factor * vel_dot * target_direction
-		
-		force = spring_force + damping
-	
-	player.velocity += force * delta
-	_update_rope()
+	grapple_system = GrappleSystemFactory.new_grapple(_player.get_parent(), target, _player.global_position)
 
 
-func _update_rope() -> void:
-	rope.set_point_position(1, to_local(target))
+# Function to make the _player no longer a child of player_anchor
+# and make all the things invisible and not working.
+func detach_player() -> void:
+	if not grapple_system:
+		return
+	
+	_transfer_angular_velocity()
+	_player.is_grappling = false
+	_player.jump_from_grappling = true
+	grapple_system.queue_free()
+	grapple_system = null
+
+
+func _transfer_angular_velocity() -> void:
+	_player.velocity.y = grapple_system.player_anchor.linear_velocity.y * grappling_jump_modifier
+	_player.velocity.x = signf(grapple_system.player_anchor.linear_velocity.x) *\
+						 grapple_system.player_anchor.linear_velocity.length() *\
+						 grappling_jump_modifier
 
 
 func _get_closest_target() -> void:

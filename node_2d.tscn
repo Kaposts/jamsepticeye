@@ -1165,7 +1165,21 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="DebugWindow" parent="." instance=ExtResource("10_hqns4")]
+[node name="5" type="TextureRect" parent="CanvasLayer"]
+visible = false
+modulate = Color(0.2159017, 0.21590173, 0.2159017, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_right = 576.0
+offset_bottom = 321.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_rjqkl")
+
+[node name="DebugWindow" parent="." node_paths=PackedStringArray("player_manager") instance=ExtResource("10_hqns4")]
+player_manager = NodePath("../PlayerManager")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 1460.0

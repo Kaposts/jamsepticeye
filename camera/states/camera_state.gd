@@ -9,14 +9,15 @@ const JUMPING: StringName = "Jumping"
 const FALLING: StringName = "Falling"
 const GRAPPLING: StringName = "Grappling"
 const WALL_HANGING: StringName = "WallHanging"
+const INTEREST_POINT: StringName = "InterestPoint"
 
 
 # Data StringNames
 enum DataType{
-	CURRENT_POSITION,
+	CURRENT_PLAYER_POSITION,
 	FROM_WALL_JUMP,
 	FROM_GROUND,
-	GRAPPLE_ANCHOR_POSITION,
+	MANUAL_POSITION,
 }
 
 

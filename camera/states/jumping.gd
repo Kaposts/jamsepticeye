@@ -8,8 +8,8 @@ var _from_wall_jump: bool
 
 
 func enter(_previous_state_path: String, data := {}) -> void:
-	_previous_position = data[DataType.CURRENT_POSITION]
-	_y_position = data[DataType.CURRENT_POSITION].y
+	_previous_position = data[DataType.CURRENT_PLAYER_POSITION]
+	_y_position = data[DataType.CURRENT_PLAYER_POSITION].y
 	_from_wall_jump = data[DataType.FROM_WALL_JUMP]
 
 

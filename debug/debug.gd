@@ -1,5 +1,7 @@
+class_name DebugWindow
 extends CanvasLayer
 
+@export var player_manager: PlayerManager
 
 @export var run: PackedScene
 @export var jump: PackedScene
@@ -21,6 +23,8 @@ var player: CharacterBody2D
 
 
 func _ready() -> void:
+	player = get_tree().get_first_node_in_group('player')
+	
 	run_button.pressed.connect(_on_run_button_pressed)
 	jump_button.pressed.connect(_on_jump_button_pressed)
 	claw_button.pressed.connect(_on_claw_button_pressed)
@@ -66,13 +70,25 @@ func _on_hover_button_pressed() -> void:
 	hover_button.disabled = true
 
 func _on_reset_button_pressed() -> void:
+	player = get_tree().get_first_node_in_group('player')
 	player.abilities = []
+	_reset_buttons()
 
 func _on_get_all_button_pressed() -> void:
-	_on_finger_button_pressed()
-	_on_run_button_pressed()
+	_on_run_button_pressed() 
 	_on_jump_button_pressed()
-	_on_claw_button_pressed()
+	_on_claw_button_pressed() 
 	_on_wall_jump_button_pressed()
 	_on_grapple_button_pressed()
-	_on_hover_button_pressed()           
+	_on_finger_button_pressed()
+	_on_hover_button_pressed()
+
+
+func _reset_buttons() -> void:
+	run_button.disabled = false
+	jump_button.disabled = false
+	claw_button.disabled = false
+	wall_jump_button.disabled = false
+	grapple_button.disabled = false
+	finger_button.disabled = false
+	hover_button.disabled = false
