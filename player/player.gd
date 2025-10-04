@@ -1,10 +1,15 @@
 class_name Player
 extends CharacterBody2D
+# Player to define movement behaviors
 
-var abilities: Array = []
 
 @export var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var camera: PlayerFollowCamera
+@export var front_sneaker_texture: Texture2D
+@export var back_sneaker_texture: Texture2D
+
+#===================================================================================================
+#region MOVEMENT SETTINGS
 
 @export_group("Walk Variables")
 @export var acceleration: float = 1200.0
@@ -39,6 +44,12 @@ var abilities: Array = []
 @export var hover_gravity_scale: float = 0.3   # how much gravity applies while hovering (0.3 = 30%)
 @export var hover_move_speed: float = 100.0    # reduced horizontal speed while hovering
 
+#endregion
+#===================================================================================================
+#region STATE VARIBALES
+
+var abilities: Array = []
+
 var can_wall_jump: bool = false
 var can_hover: bool = false
 var can_push: bool = false
@@ -49,6 +60,17 @@ var is_jumping: bool = false
 var is_hovering: bool = false
 var is_grappling: bool = false
 var jump_from_grappling: bool = false
+var need_animation_reset: bool = false
+
+
+#endregion
+#===================================================================================================
+#region NODE VARIABLES
+@onready var animation_tree: AnimationTree = $AnimationTree
+@onready var animation_state_machine: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
+@onready var visuals: Node2D = $Visuals
+@onready var body: Node2D = $Visuals/Body
+
 
 
 func _ready() -> void:
@@ -79,6 +101,27 @@ func _physics_process(delta):
 		ability.apply(self, delta)
 	
 	move_and_slide()
+	_sync_animation()
+
+
+func _sync_animation() -> void:
+	if velocity.x > 0.0:
+		visuals.scale.x = -1.0
+	elif velocity.x < 0.0:
+		visuals.scale.x = 1.0
+	
+	if is_hovering:
+		animation_state_machine.travel("hover")
+	elif velocity.y < 0.0:
+		animation_state_machine.travel("jump")
+	elif velocity.y > 0.0:
+		animation_state_machine.travel("fall")
+	elif velocity.is_equal_approx(Vector2.ZERO):
+		animation_state_machine.travel("idle")
+	else:
+		animation_state_machine.travel("walk")
+
+
 
 	if can_push:
 		for i in get_slide_collision_count():
@@ -89,5 +132,10 @@ func _physics_process(delta):
 
 func die():
 	SignalBus.sig_player_died.emit()
-	$Sprite2D.reparent(get_parent())
+	_leave_corpse()
 	queue_free()
+
+
+## Leave a sprite of the body in the scene
+func _leave_corpse() -> void:
+	visuals.reparent(get_parent())

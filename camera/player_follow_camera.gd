@@ -34,14 +34,14 @@ func set_state() -> void:
 		state_machine.transition_to_next_state(
 			CameraState.GRAPPLING,
 			{CameraState.DataType.GRAPPLE_ANCHOR_POSITION : grapple_controller.target})
-	elif _player.is_on_wall_only():
+	elif _player.is_on_wall_only() and not _player.is_on_ceiling():
 		_previous_position = _player.global_position
 		_from_wall_jump = true
 		state_machine.transition_to_next_state(CameraState.WALL_HANGING)
 	elif _player.is_hovering:
 		_previous_position = _player.global_position
 		state_machine.transition_to_next_state(CameraState.HOVERING)
-	elif _player.velocity.y < 0.0:
+	elif _player.velocity.y < 0.0 or _player.is_on_ceiling_only():
 		state_machine.transition_to_next_state(
 			CameraState.JUMPING,
 			{CameraState.DataType.CURRENT_POSITION : _previous_position,

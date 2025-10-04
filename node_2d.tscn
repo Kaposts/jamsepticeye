@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://kdpwgr2d2wrt" path="res://icon.svg" id="2_epypp"]
 [ext_resource type="Texture2D" uid="uid://cvsr0ew5klrxo" path="res://assets/art/free-swamp-game-tileset-pixel-art/2 Background/Layers/2.png" id="2_flf07"]
-[ext_resource type="PackedScene" uid="uid://baftkdlepc3ff" path="res://core/player_manager.tscn" id="2_q6r6c"]
+[ext_resource type="PackedScene" uid="uid://bbt6rl0il0g7a" path="res://core/player_manager.tscn" id="2_q6r6c"]
 [ext_resource type="Texture2D" uid="uid://c8r85isnewky1" path="res://assets/art/free-swamp-game-tileset-pixel-art/2 Background/Layers/3.png" id="3_k73cj"]
 [ext_resource type="PackedScene" uid="uid://cubwhapt2w0ek" path="res://player/abilities/scenes/jump.tscn" id="3_q6r6c"]
 [ext_resource type="PackedScene" uid="uid://ckd22726wqe7y" path="res://player/abilities/scenes/walk.tscn" id="4_0hol4"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://p3ql230p887j" path="res://player/abilities/scenes/finger.tscn" id="8_hqns4"]
 [ext_resource type="PackedScene" uid="uid://cniq56pqu6e6o" path="res://player/abilities/scenes/grapple_controller.tscn" id="9_x0ka3"]
 [ext_resource type="PackedScene" uid="uid://dah2f52xwyrbs" path="res://debug/debug_window.tscn" id="10_hqns4"]
-[ext_resource type="PackedScene" uid="uid://801a5vbsnn1" path="res://player/fish.tscn" id="10_ir8iy"]
 [ext_resource type="Shader" uid="uid://t0bw3n8dln3p" path="res://shaders/foliage_wind.gdshader" id="13_bjha6"]
 [ext_resource type="Texture2D" uid="uid://7vlvquau8ywd" path="res://assets/art/free-swamp-game-tileset-pixel-art/3 Objects/Willows/3.png" id="14_gt76g"]
 [ext_resource type="Shader" uid="uid://cm18xpsyb65n6" path="res://shaders/water.gdshader" id="14_nr8wp"]
@@ -52,41 +51,6 @@ shader_parameter/time_scale = 0.04
 shader_parameter/noise_scale = 0.001
 shader_parameter/rotation_strength = 1.0
 shader_parameter/rotation_pivot = Vector2(0.5, 1)
-
-[sub_resource type="Resource" id="Resource_ir8iy"]
-script = ExtResource("7_4d7sh")
-scene = ExtResource("4_0hol4")
-metadata/_custom_type_script = "uid://bkag1adotndfr"
-
-[sub_resource type="Resource" id="Resource_hqns4"]
-script = ExtResource("7_4d7sh")
-ability = 1
-scene = ExtResource("3_q6r6c")
-metadata/_custom_type_script = "uid://bkag1adotndfr"
-
-[sub_resource type="Resource" id="Resource_0h7mo"]
-script = ExtResource("7_4d7sh")
-ability = 3
-scene = ExtResource("4_kdubu")
-metadata/_custom_type_script = "uid://bkag1adotndfr"
-
-[sub_resource type="Resource" id="Resource_4d7sh"]
-script = ExtResource("7_4d7sh")
-ability = 4
-scene = ExtResource("8_hqns4")
-metadata/_custom_type_script = "uid://bkag1adotndfr"
-
-[sub_resource type="Resource" id="Resource_nr8wp"]
-script = ExtResource("7_4d7sh")
-ability = 5
-scene = ExtResource("9_x0ka3")
-metadata/_custom_type_script = "uid://bkag1adotndfr"
-
-[sub_resource type="Resource" id="Resource_x0ka3"]
-script = ExtResource("7_4d7sh")
-ability = 2
-scene = ExtResource("4_kdubu")
-metadata/_custom_type_script = "uid://bkag1adotndfr"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
 size = Vector2(29.375956, 126)
@@ -1164,8 +1128,6 @@ repeat_times = 25
 
 [node name="PlayerManager" parent="." instance=ExtResource("2_q6r6c")]
 position = Vector2(5, -4)
-fish_scene = ExtResource("10_ir8iy")
-ability_scenes = Array[ExtResource("7_4d7sh")]([SubResource("Resource_ir8iy"), SubResource("Resource_hqns4"), SubResource("Resource_0h7mo"), SubResource("Resource_4d7sh"), SubResource("Resource_nr8wp"), SubResource("Resource_x0ka3")])
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 visible = false
@@ -1327,7 +1289,21 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="DebugWindow" parent="." instance=ExtResource("10_hqns4")]
+[node name="5" type="TextureRect" parent="CanvasLayer"]
+visible = false
+modulate = Color(0.2159017, 0.21590173, 0.2159017, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_right = 576.0
+offset_bottom = 321.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_rjqkl")
+
+[node name="DebugWindow" parent="." node_paths=PackedStringArray("player_manager") instance=ExtResource("10_hqns4")]
+player_manager = NodePath("../PlayerManager")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 817.0
