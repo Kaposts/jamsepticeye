@@ -106,6 +106,7 @@ grapple={
 2d_physics/layer_2="wall"
 2d_physics/layer_3="hookable_object"
 2d_physics/layer_4="movable"
+2d_physics/layer_5="camera_interest_point"
 
 [rendering]
 
