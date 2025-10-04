@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://c4d7f3xrnao6t"]
+[gd_scene load_steps=44 format=4 uid="uid://c4d7f3xrnao6t"]
 
 [ext_resource type="Texture2D" uid="uid://kdpwgr2d2wrt" path="res://icon.svg" id="2_epypp"]
 [ext_resource type="Texture2D" uid="uid://cvsr0ew5klrxo" path="res://assets/art/free-swamp-game-tileset-pixel-art/2 Background/Layers/2.png" id="2_flf07"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://c8r85isnewky1" path="res://assets/art/free-swamp-game-tileset-pixel-art/2 Background/Layers/3.png" id="3_k73cj"]
 [ext_resource type="Script" uid="uid://f8s22nkom4lc" path="res://deathbox.gd" id="7_d21ai"]
 [ext_resource type="PackedScene" uid="uid://dah2f52xwyrbs" path="res://debug/debug_window.tscn" id="10_hqns4"]
-[ext_resource type="PackedScene" uid="uid://801a5vbsnn1" path="res://player/fish.tscn" id="10_ir8iy"]
 [ext_resource type="Shader" uid="uid://t0bw3n8dln3p" path="res://shaders/foliage_wind.gdshader" id="13_bjha6"]
 [ext_resource type="Texture2D" uid="uid://7vlvquau8ywd" path="res://assets/art/free-swamp-game-tileset-pixel-art/3 Objects/Willows/3.png" id="14_gt76g"]
 [ext_resource type="Shader" uid="uid://cm18xpsyb65n6" path="res://shaders/water.gdshader" id="14_nr8wp"]
@@ -1272,7 +1271,6 @@ repeat_times = 25
 
 [node name="PlayerManager" parent="." instance=ExtResource("2_q6r6c")]
 position = Vector2(5, -4)
-fish_scene = ExtResource("10_ir8iy")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-126, 70)
