@@ -1,3 +1,4 @@
+class_name PlayerManager
 extends Node
 
 @export var fish_scene: PackedScene
@@ -37,7 +38,7 @@ func evolve():
 		3: add_ability(Enum.ABILITY.CLAW)
 		4: can_wall_jump = true
 		5: add_ability(Enum.ABILITY.FINGER)
-		6: pass
+		6: add_ability(Enum.ABILITY.GRAPPLE)
 		7: can_hover = true
 
 func add_ability(ability: Enum.ABILITY):
@@ -55,8 +56,9 @@ func add_ability(ability: Enum.ABILITY):
 	var ability_instance: Node = scene.instantiate()
 	unlocked_abilities.append(ability_instance)
 
+
 func apply_abilities(player):
-	player.abilities = unlocked_abilities
+	player.abilities = unlocked_abilities.duplicate()
 	player.can_wall_jump = can_wall_jump
 	player.can_hover = can_hover
 
