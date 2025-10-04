@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://crmrc6nkin4t3"]
+
+[ext_resource type="Texture2D" uid="uid://dg5g5pbc184kb" path="res://assets/art/100px_red_circle.png" id="1_6s1o6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hxjc"]
+
+[node name="grapple point" type="StaticBody2D"]
+collision_layer = 4
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(0, 1, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2hxjc")
+
+[node name="100PxRedCircle" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_6s1o6")

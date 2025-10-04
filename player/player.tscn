@@ -9,6 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://bj2kx7ghhftvj" path="res://assets/art/player_character/body_legs_front.png" id="3_g1dw6"]
 [ext_resource type="Texture2D" uid="uid://dt5g84uuh086k" path="res://assets/art/player_character/body_wings_front.png" id="6_rgyib"]
 [ext_resource type="Texture2D" uid="uid://b3qa00fqw463i" path="res://assets/art/player_character/body_tongue.png" id="7_hg6s5"]
+[ext_resource type="Shader" uid="uid://btni4tq2l0ko5" path="res://shaders/glow.gdshader" id="2_yw30f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qjkh3"]
+shader = ExtResource("2_yw30f")
+shader_parameter/outerRadius = 0.9410000446975
+shader_parameter/MainAlpha = 0.2850000135375
+shader_parameter/glow_color = Color(1, 1, 1, 1)
 
 [sub_resource type="Animation" id="Animation_hg6s5"]
 resource_name = "idle"
@@ -897,6 +904,14 @@ front_sneaker_texture = ExtResource("2_hg6s5")
 back_sneaker_texture = ExtResource("3_8t03j")
 wall_jump_force = Vector2(350, -400)
 finger_force = Vector2(750, -750)
+detach_speed_multiplier = 1.1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_qjkh3")
+offset_left = -154.0
+offset_top = -106.0
+offset_right = 155.0
+offset_bottom = 94.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

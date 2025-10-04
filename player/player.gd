@@ -37,6 +37,9 @@ extends CharacterBody2D
 @export var grapple_detector_length: float = 100.0
 @export var grappling_jump_gravity_scale: float = 1.1
 
+@export_group("Grapple_v2 variables")
+@export var detach_speed_multiplier: float = 1.0
+
 @export_group("hover variables")
 @export var hover_gravity_scale: float = 0.3   # how much gravity applies while hovering (0.3 = 30%)
 @export var hover_move_speed: float = 100.0    # reduced horizontal speed while hovering
@@ -49,6 +52,7 @@ var abilities: Array = []
 
 var can_wall_jump: bool = false
 var can_hover: bool = false
+var can_push: bool = false
 var wall_dir = 0
 var input_dir: float
 var wall_jump_lock_counter: float
@@ -118,6 +122,12 @@ func _sync_animation() -> void:
 		animation_state_machine.travel("walk")
 
 
+
+	if can_push:
+		for i in get_slide_collision_count():
+			var c = get_slide_collision(i)
+			if c.get_collider() is RigidBody2D:
+				c.get_collider().apply_central_impulse(-c.get_normal() * 30)
 
 
 func die():

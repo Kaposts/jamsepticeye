@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://brbdeee265kj7" path="res://player/abilities/walk.gd" id="1_e0mv5"]
 
-[node name="walk" type="Node"]
+[node name="walk" type="Node2D"]
 script = ExtResource("1_e0mv5")

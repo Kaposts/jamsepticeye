@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://baftkdlepc3ff" path="res://core/player_manager.tscn" id="2_1humc"]
 [ext_resource type="PackedScene" uid="uid://801a5vbsnn1" path="res://player/fish.tscn" id="3_ob2rw"]
 [ext_resource type="PackedScene" uid="uid://dah2f52xwyrbs" path="res://debug/debug_window.tscn" id="4_hxnkp"]
-[ext_resource type="Script" uid="uid://f8s22nkom4lc" path="res://deathbox.gd" id="5_kxsip"]
+[ext_resource type="Script" uid="uid://f8s22nkom4lc" path="res://platforming/deathbox.gd" id="5_kxsip"]
 [ext_resource type="PackedScene" uid="uid://c7edv1edu6rrw" path="res://camera/player_follow_camera.tscn" id="6_1humc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
