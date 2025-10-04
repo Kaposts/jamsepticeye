@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://crmrc6nkin4t3"]
+[gd_scene load_steps=4 format=3 uid="uid://crmrc6nkin4t3"]
 
 [ext_resource type="Texture2D" uid="uid://dg5g5pbc184kb" path="res://assets/art/100px_red_circle.png" id="1_6s1o6"]
+[ext_resource type="PackedScene" uid="uid://bj5lvs322wcil" path="res://platforming/scenes/camera_interest_point.tscn" id="2_kq1lt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hxjc"]
 
@@ -20,3 +21,5 @@ shape = SubResource("RectangleShape2D_2hxjc")
 [node name="100PxRedCircle" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
 texture = ExtResource("1_6s1o6")
+
+[node name="CameraInterestPoint" parent="." instance=ExtResource("2_kq1lt")]

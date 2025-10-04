@@ -73,8 +73,6 @@ func detach(player: Player) -> void:
 func apply(player: Player, delta: float) -> void:
 	var grapple_pressed = Input.is_action_just_pressed("grapple")
 	var grapple_released = Input.is_action_just_released("grapple")
-
-	print(get_closest_grapple_target(player))
 	var closest_point = get_closest_grapple_target(player)
 
 	if grapple_pressed and closest_point: attach(player, closest_point.global_position)

@@ -1,6 +1,6 @@
 extends CameraState
-## Hovering Camera State
-## The hovering camera is set when the player uses the hover ability
+## Player Centered Camera State
+## The camera is set to centered on the player
 
 
 func apply_focus() -> void:

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj5lvs322wcil"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v4f68"]
+
+[node name="CameraInterestPoint" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_v4f68")
+debug_color = Color(0.45844805, 0.5903348, 0.19468427, 0.41960785)
