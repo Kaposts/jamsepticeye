@@ -40,9 +40,9 @@ func evolve():
 			add_ability(Enum.ABILITY.CLAW)
 			can_push = true
 		4: can_wall_jump = true
-		5: add_ability(Enum.ABILITY.FINGER)
+		5: can_hover = true
 		6: add_ability(Enum.ABILITY.GRAPPLE)
-		7: can_hover = true
+		7: add_ability(Enum.ABILITY.FINGER)
 
 func add_ability(ability: Enum.ABILITY):
 	var scene
