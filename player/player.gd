@@ -1,7 +1,9 @@
 class_name Player
 extends CharacterBody2D
+# Player to define movement behaviors
 
-var abilities: Array = []
+#===================================================================================================
+#region MOVEMENT SETTINGS
 
 @export var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var camera: PlayerFollowCamera
@@ -36,6 +38,12 @@ var abilities: Array = []
 @export var hover_gravity_scale: float = 0.3   # how much gravity applies while hovering (0.3 = 30%)
 @export var hover_move_speed: float = 100.0    # reduced horizontal speed while hovering
 
+#endregion
+#===================================================================================================
+#region STATE VARIBALES
+
+var abilities: Array = []
+
 var can_wall_jump: bool = false
 var can_hover: bool = false
 var wall_dir = 0
@@ -45,6 +53,14 @@ var is_jumping: bool = false
 var is_hovering: bool = false
 var is_grappling: bool = false
 var jump_from_grappling: bool = false
+
+
+#endregion
+#===================================================================================================
+#region NODE VARIABLES
+@onready var visuals: Node2D = $Visuals
+@onready var body: Node2D = $Visuals/Body
+
 
 
 func _ready() -> void:
@@ -79,5 +95,10 @@ func _physics_process(delta):
 
 func die():
 	SignalBus.sig_player_died.emit()
-	$Sprite2D.reparent(get_parent())
+	_leave_corpse()
 	queue_free()
+
+
+## Leave a sprite of the body in the scene
+func _leave_corpse() -> void:
+	visuals.reparent(get_parent())

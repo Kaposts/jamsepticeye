@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://801a5vbsnn1"]
+[gd_scene load_steps=6 format=3 uid="uid://801a5vbsnn1"]
 
 [ext_resource type="Script" uid="uid://gwb2r5y7w4c6" path="res://player/fish.gd" id="1_o703u"]
 [ext_resource type="Material" uid="uid://dhcgqc68f1p1v" path="res://shaders/external_border_shader/external_border_material.tres" id="2_42s0h"]
+[ext_resource type="Texture2D" uid="uid://c83kr17f34g5x" path="res://assets/art/player_character/base_fish_dead.png" id="2_n041c"]
 [ext_resource type="Texture2D" uid="uid://8eiw3s1pgdtq" path="res://assets/art/player_character/base_fish_alive.png" id="2_o703u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ir8iy"]
@@ -16,6 +17,7 @@ max_contacts_reported = 3
 script = ExtResource("1_o703u")
 flop_force = Vector2(400, -3000)
 rotation_speed = 180.0
+dead_fish_texture = ExtResource("2_n041c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("2_42s0h")

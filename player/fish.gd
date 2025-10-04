@@ -2,8 +2,9 @@ extends RigidBody2D
 
 @export var flop_force: Vector2 = Vector2(200, -400)
 @export var rotation_speed: float = 5.0
-
 @export var flop_count_to_death: int = 5
+
+@export var dead_fish_texture: Texture2D
 
 var flopping: bool = false
 var dying: bool = false
@@ -13,7 +14,8 @@ var current_flop_count: int = 0:
 		current_flop_count = value
 		check_death()
 
-@onready var sprite_material: ShaderMaterial = $Sprite2D.material
+@onready var sprite: Sprite2D = $Sprite2D
+@onready var sprite_material: ShaderMaterial = sprite.material
 
 
 func _ready() -> void:
@@ -46,4 +48,11 @@ func check_death() -> void:
 func _on_sleeping_state_changed() -> void:
 	if sleeping and dying:
 		SignalBus.sig_player_died.emit()
+		_leave_corpse()
 		queue_free()
+
+
+## Leave a sprite of the body in the scene
+func _leave_corpse() -> void:
+	sprite.texture = dead_fish_texture
+	sprite.reparent(get_parent())

@@ -14,11 +14,11 @@ finger_force = Vector2(750, -750)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_wtcfe")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Body" type="Node2D" parent="Visuals"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Visuals/Body"]
 position = Vector2(-9.536743e-07, 4.7683716e-07)
 scale = Vector2(0.15624999, 0.15625)
 texture = ExtResource("2_g1dw6")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -72)
-position_smoothing_enabled = true
