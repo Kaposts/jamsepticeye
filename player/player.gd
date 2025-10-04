@@ -74,6 +74,8 @@ var jump_from_grappling: bool = false
 @onready var animation_state_machine: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
 @onready var visuals: Node2D = $Visuals
 @onready var body: Node2D = $Visuals/Body
+@onready var tongue: Node2D = $Visuals/Tongue
+
 
 
 #===================================================================================================
@@ -169,8 +171,15 @@ func _sync_animation() -> void:
 	elif velocity.x < 0.0:
 		visuals.scale.x = 1.0
 	
-	if is_hovering:
+	if is_grappling:
+		tongue.hide()
+	else:
+		tongue.show()
+	
+	if is_hovering or is_grappling:
 		animation_state_machine.travel("hover")
+	elif is_on_wall_only():
+		animation_state_machine.travel("wall_hang")
 	elif velocity.y < 0.0:
 		animation_state_machine.travel("jump")
 	elif velocity.y > 0.0:

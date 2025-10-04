@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cniq56pqu6e6o"]
+[gd_scene load_steps=5 format=3 uid="uid://cniq56pqu6e6o"]
 
 [ext_resource type="Script" uid="uid://wrhijwtd6x1f" path="res://player/abilities/grapple_controller.gd" id="1_iavxg"]
+[ext_resource type="Texture2D" uid="uid://8rlxlxk2r7vn" path="res://assets/art/player_character/tongue_tiling.png" id="2_yvots"]
+[ext_resource type="Texture2D" uid="uid://so1x6qjuyr0x" path="res://assets/art/player_character/tongue_tip.png" id="3_e4r4a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5jjua"]
 radius = 100.0
@@ -15,6 +17,21 @@ collision_mask = 4
 [node name="HookDetectorCollider" type="CollisionShape2D" parent="HookDetector"]
 shape = SubResource("CircleShape2D_5jjua")
 debug_color = Color(0.34160507, 0.7278268, 0.46436077, 0.41960785)
+
+[node name="TongueVisuals" type="Node2D" parent="."]
+
+[node name="TongueLine" type="Line2D" parent="TongueVisuals"]
+unique_name_in_owner = true
+texture_repeat = 2
+points = PackedVector2Array(0, 0, 0, 0)
+width = 5.0
+texture = ExtResource("2_yvots")
+texture_mode = 1
+
+[node name="TongueTipSprite" type="Sprite2D" parent="TongueVisuals"]
+unique_name_in_owner = true
+texture = ExtResource("3_e4r4a")
+offset = Vector2(2, 0)
 
 [connection signal="body_entered" from="HookDetector" to="." method="_on_hook_detector_body_entered"]
 [connection signal="body_exited" from="HookDetector" to="." method="_on_hook_detector_body_exited"]
