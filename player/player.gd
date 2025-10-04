@@ -32,6 +32,9 @@ var abilities: Array = []
 @export var grapple_detector_length: float = 100.0
 @export var grappling_jump_gravity_scale: float = 1.1
 
+@export_group("Grapple_v2 variables")
+@export var detach_speed_multiplier: float = 1.0
+
 @export_group("hover variables")
 @export var hover_gravity_scale: float = 0.3   # how much gravity applies while hovering (0.3 = 30%)
 @export var hover_move_speed: float = 100.0    # reduced horizontal speed while hovering

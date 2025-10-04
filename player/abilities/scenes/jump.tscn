@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://d1hf6pdpfsj50" path="res://player/abilities/jump.gd" id="1_bhjhg"]
 
-[node name="jump" type="Node"]
+[node name="jump" type="Node2D"]
 script = ExtResource("1_bhjhg")
