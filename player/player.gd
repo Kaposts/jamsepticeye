@@ -171,6 +171,8 @@ func _sync_animation() -> void:
 	
 	if is_hovering:
 		animation_state_machine.travel("hover")
+	elif is_on_wall_only():
+		animation_state_machine.travel("wall_hang")
 	elif velocity.y < 0.0:
 		animation_state_machine.travel("jump")
 	elif velocity.y > 0.0:
