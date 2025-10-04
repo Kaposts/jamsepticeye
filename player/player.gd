@@ -2,11 +2,15 @@ class_name Player
 extends CharacterBody2D
 # Player to define movement behaviors
 
-#===================================================================================================
-#region MOVEMENT SETTINGS
 
 @export var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var camera: PlayerFollowCamera
+@export var front_sneaker_texture: Texture2D
+@export var back_sneaker_texture: Texture2D
+
+
+#===================================================================================================
+#region MOVEMENT SETTINGS
 
 @export_group("Walk Variables")
 @export var acceleration: float = 1200.0
@@ -53,11 +57,13 @@ var is_jumping: bool = false
 var is_hovering: bool = false
 var is_grappling: bool = false
 var jump_from_grappling: bool = false
+var need_animation_reset: bool = false
 
 
 #endregion
 #===================================================================================================
 #region NODE VARIABLES
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var visuals: Node2D = $Visuals
 @onready var body: Node2D = $Visuals/Body
 
@@ -91,6 +97,30 @@ func _physics_process(delta):
 		ability.apply(self, delta)
 	
 	move_and_slide()
+	_sync_animation()
+
+
+func _sync_animation() -> void:
+	if velocity.x > 0.0:
+		visuals.scale.x = -1.0
+	elif velocity.x < 0.0:
+		visuals.scale.x = 1.0
+	
+	if need_animation_reset and is_equal_approx(velocity.y, 0.0):
+		animation_player.play("RESET")
+		need_animation_reset = false
+	
+	elif velocity.y < 0.0:
+		animation_player.play("jump")
+		need_animation_reset = true
+	elif velocity.y > 0.0:
+		animation_player.play("fall")
+		need_animation_reset = true
+	elif velocity.is_equal_approx(Vector2.ZERO):
+		animation_player.play("idle")
+	else:
+		animation_player.play("walk")
+
 
 
 func die():
