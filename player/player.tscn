@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://blm6nncupiinf" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://b0uv88pfk7aed" path="res://assets/art/player_character/body_sneakers_front.png" id="2_hg6s5"]
 [ext_resource type="Texture2D" uid="uid://cnejcnran3hii" path="res://assets/art/player_character/base_fishroggy_alive_notongue.png" id="2_rkbax"]
-[ext_resource type="Shader" path="res://shaders/glow.gdshader" id="2_yw30f"]
+[ext_resource type="Shader" uid="uid://btni4tq2l0ko5" path="res://shaders/glow.gdshader" id="2_yw30f"]
 [ext_resource type="Texture2D" uid="uid://cc3xuoscdwdqy" path="res://assets/art/player_character/body_sneakers_back.png" id="3_8t03j"]
 [ext_resource type="Texture2D" uid="uid://yobcjfowvp6v" path="res://assets/art/player_character/body_wings_back.png" id="3_boad6"]
 [ext_resource type="Texture2D" uid="uid://bj2kx7ghhftvj" path="res://assets/art/player_character/body_legs_front.png" id="3_g1dw6"]
@@ -904,9 +904,10 @@ collision_mask = 2
 script = ExtResource("1_rkbax")
 front_sneaker_texture = ExtResource("2_hg6s5")
 back_sneaker_texture = ExtResource("3_8t03j")
-wall_jump_force = Vector2(350, -400)
-finger_force = Vector2(750, -750)
+wall_jump_force = Vector2(250, -400)
+finger_force = Vector2(1000, -750)
 detach_speed_multiplier = 1.1
+hover_gravity_scale = 50.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_qjkh3")

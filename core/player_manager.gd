@@ -40,9 +40,9 @@ func evolve():
 			add_ability(Enum.ABILITY.CLAW)
 			can_push = true
 		4: can_wall_jump = true
-		5: add_ability(Enum.ABILITY.FINGER)
+		5: can_hover = true
 		6: add_ability(Enum.ABILITY.GRAPPLE)
-		7: can_hover = true
+		7: add_ability(Enum.ABILITY.FINGER)
 
 func add_ability(ability: Enum.ABILITY):
 	var scene
@@ -64,6 +64,7 @@ func apply_abilities(player):
 	player.abilities = unlocked_abilities.duplicate()
 	player.can_wall_jump = can_wall_jump
 	player.can_hover = can_hover
+	player.can_push = can_push
 
 
 func _on_player_died():
