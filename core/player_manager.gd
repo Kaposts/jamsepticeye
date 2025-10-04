@@ -62,6 +62,7 @@ func apply_abilities(player):
 	player.abilities = unlocked_abilities
 	player.can_wall_jump = can_wall_jump
 	player.can_hover = can_hover
+	player.can_push = can_push
 
 
 func _on_player_died():
