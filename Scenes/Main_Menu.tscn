@@ -1,0 +1,132 @@
+[gd_scene load_steps=8 format=3 uid="uid://cxrn7l2wlwqut"]
+
+[ext_resource type="Script" uid="uid://dtallk0xtca5a" path="res://Scenes/main_menu.gd" id="1_1edw4"]
+[ext_resource type="Texture2D" uid="uid://cpo7mcmhr44gb" path="res://assets/art/UI/Post.png" id="1_rmbjf"]
+[ext_resource type="Texture2D" uid="uid://hrkhkl8cudun" path="res://assets/art/UI/Sign_Normal.png" id="2_anlgx"]
+[ext_resource type="Texture2D" uid="uid://eeqvr3l1a5gf" path="res://assets/art/UI/Logo_Base.png" id="2_b7rmo"]
+[ext_resource type="Texture2D" uid="uid://ctn2o6tfkqu50" path="res://assets/art/UI/Sign_Pressed.png" id="3_xvotp"]
+[ext_resource type="Texture2D" uid="uid://dpoki38mc1ax" path="res://assets/art/UI/Sign_Hover.png" id="4_1edw4"]
+[ext_resource type="PackedScene" uid="uid://d4h3brjh8eoak" path="res://Scenes/options.tscn" id="6_xvotp"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1edw4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.01972604, 0.019717343, 0.09739449, 0.3647059)
+
+[node name="Post" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -219.0
+offset_top = -349.0
+offset_right = 37.0
+offset_bottom = 2.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("1_rmbjf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Post"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -169.23
+offset_right = 124.000046
+offset_bottom = 232.76999
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.0837758
+scale = Vector2(0.72, 0.72)
+pivot_offset = Vector2(126.295, 209.9)
+theme_override_constants/separation = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Play_Button" type="TextureButton" parent="Post/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_anlgx")
+texture_pressed = ExtResource("3_xvotp")
+texture_hover = ExtResource("4_1edw4")
+
+[node name="Options_Button" type="TextureButton" parent="Post/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_anlgx")
+texture_pressed = ExtResource("3_xvotp")
+texture_hover = ExtResource("4_1edw4")
+
+[node name="Credits_Button" type="TextureButton" parent="Post/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_anlgx")
+texture_pressed = ExtResource("3_xvotp")
+texture_hover = ExtResource("4_1edw4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -195.5
+offset_right = 195.5
+offset_bottom = 149.0
+grow_horizontal = 2
+texture = ExtResource("2_b7rmo")
+
+[node name="Options" parent="." instance=ExtResource("6_xvotp")]
+visible = false
+layout_mode = 1
+
+[node name="Post2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -24.000008
+offset_top = -130.99998
+offset_right = 232.0
+offset_bottom = 220.0
+grow_vertical = 0
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("1_rmbjf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Post2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.03
+offset_top = -149.79001
+offset_right = 153.97018
+offset_bottom = -17.790009
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.13962634
+scale = Vector2(0.72, 0.72)
+pivot_offset = Vector2(126.295, 209.9)
+theme_override_constants/separation = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit_Button" type="TextureButton" parent="Post2/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_anlgx")
+texture_pressed = ExtResource("3_xvotp")
+texture_hover = ExtResource("4_1edw4")
