@@ -22,6 +22,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	set_state()
+	print("current_state: " + state_machine.state.name)
 
 
 func set_state() -> void:
@@ -41,7 +42,7 @@ func set_state() -> void:
 	elif _player.is_hovering:
 		_previous_position = _player.global_position
 		state_machine.transition_to_next_state(CameraState.HOVERING)
-	elif _player.velocity.y < 0.0:
+	elif _player.velocity.y < 0.0 or _player.is_on_ceiling_only():
 		state_machine.transition_to_next_state(
 			CameraState.JUMPING,
 			{CameraState.DataType.CURRENT_POSITION : _previous_position,
