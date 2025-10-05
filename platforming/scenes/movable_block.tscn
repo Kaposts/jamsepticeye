@@ -12,7 +12,6 @@ size = Vector2(120, 120)
 collision_layer = 10
 collision_mask = 11
 physics_material_override = SubResource("PhysicsMaterial_2u7jv")
-lock_rotation = true
 contact_monitor = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

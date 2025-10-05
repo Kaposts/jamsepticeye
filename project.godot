@@ -17,10 +17,12 @@ config/icon="uid://qu86yxhajnaf"
 
 [autoload]
 
+Shaker="*res://addons/shaker/src/Shaker.gd"
 Enum="*res://core/enum.gd"
 SignalBus="*res://core/signal_bus.gd"
 MusicPlayer="*res://core/music_player.tscn"
-Shaker="*res://addons/shaker/src/Shaker.gd"
+EnvParser="*res://addons/env_parser/EnvParser.gd"
+Leaderboard="*res://leaderboard/leaderboard.gd"
 
 [display]
 
@@ -62,6 +64,7 @@ import/laigter/laigter_path="C:/Program Files/Laigter-windows/laigter.exe"
 
 player="fish with nikes"
 player_manager=""
+level=""
 
 [input]
 
