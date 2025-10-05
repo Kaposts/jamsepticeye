@@ -76,7 +76,7 @@ offset_left = 13.0
 offset_top = 159.0
 offset_right = 174.0
 offset_bottom = 191.0
-text = "finger"
+text = "finger - J key"
 
 [node name="GrappleButton" type="Button" parent="."]
 unique_name_in_owner = true
@@ -84,7 +84,7 @@ offset_left = 13.0
 offset_top = 195.0
 offset_right = 173.0
 offset_bottom = 227.0
-text = "graple
+text = "graple - H key
 "
 
 [node name="HoverButton" type="Button" parent="."]
@@ -94,3 +94,11 @@ offset_top = 232.0
 offset_right = 174.0
 offset_bottom = 266.0
 text = "hover"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 3.0
+offset_top = 311.0
+offset_right = 616.0
+offset_bottom = 360.0
+text = "Tutorial: Press Space 5 times to kill the fish. Wait for it to fully die.
+ Press R to respawn fish. Press 'get all' to get all the abilities to try them out"

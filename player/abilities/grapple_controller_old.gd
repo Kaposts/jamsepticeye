@@ -62,7 +62,6 @@ func detach_player() -> void:
 	
 	_transfer_angular_velocity()
 	_player.is_grappling = false
-	_player.jump_from_grappling = true
 	grapple_system.queue_free()
 	grapple_system = null
 

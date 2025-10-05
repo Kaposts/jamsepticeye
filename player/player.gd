@@ -65,11 +65,35 @@ var can_push: bool = false
 var wall_dir = 0
 var input_dir: float
 var wall_jump_lock_counter: float
-var is_jumping: bool = false
-var is_hovering: bool = false
-var is_grappling: bool = false
-var is_finger: bool = false
-var jump_from_grappling: bool = false
+
+var is_jumping: bool = false:
+	set(flag):
+		is_jumping = flag
+		if is_jumping:
+			is_big_jumping = false
+			is_hovering = false
+			is_grappling = false
+var is_big_jumping: bool = false:
+	set(flag):
+		is_big_jumping = flag
+		if is_big_jumping:
+			is_jumping = false
+			is_hovering = false
+			is_grappling = false
+var is_hovering: bool = false:
+	set(flag):
+		is_hovering = flag
+		if is_hovering:
+			is_jumping = false
+			is_big_jumping = false
+			is_grappling = false
+var is_grappling: bool = false:
+	set(flag):
+		is_grappling = flag
+		if is_grappling:
+			is_jumping = false
+			is_big_jumping = false
+			is_hovering = false
 
 
 #endregion
@@ -96,9 +120,12 @@ func _ready() -> void:
 
 
 func _physics_process(delta):
+	if velocity.y > 0.0:
+		is_big_jumping = false
+		is_jumping = false
+	
 	if is_grappling:
 		velocity = Vector2.ZERO
-		is_hovering = false
 	elif not is_on_floor():
 		if can_hover and Input.is_action_just_pressed("ui_accept") and !is_jumping:
 			velocity.x = 0
@@ -110,10 +137,8 @@ func _physics_process(delta):
 			velocity.y += gravity * delta
 			is_hovering = false
 	else:
-		is_hovering = false
+		_set_grounded_state()
 	
-	if is_on_floor() or is_on_wall():
-		jump_from_grappling = false
 	
 	for ability in abilities:
 		ability.apply(self, delta)
@@ -202,6 +227,13 @@ func _sync_animation() -> void:
 			var c = get_slide_collision(i)
 			if c.get_collider() is RigidBody2D:
 				c.get_collider().apply_central_impulse(-c.get_normal() * 30)
+
+
+func _set_grounded_state() -> void:
+	is_jumping = false
+	is_big_jumping = false
+	is_hovering = false
+	is_grappling = false
 
 
 ## Leave a sprite of the body in the scene

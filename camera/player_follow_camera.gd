@@ -28,6 +28,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	set_state()
+	print(state_machine.state.name)
 
 
 func set_state() -> void:
@@ -47,6 +48,8 @@ func set_state() -> void:
 		state_machine.transition_to_next_state(
 			CameraState.INTEREST_POINT,
 			{CameraState.DataType.MANUAL_POSITION :_player.get_farthest_interest_point()})
+	elif _player.is_big_jumping:
+		state_machine.transition_to_next_state(CameraState.BIG_JUMPING)
 	elif _player.is_on_wall_only() and not _player.is_on_ceiling():
 		_previous_position = _player.global_position
 		_from_wall_jump = true

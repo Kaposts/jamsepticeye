@@ -13,9 +13,9 @@ func apply(player, delta):
 	else:
 		wall_coyote_counter -= delta
 
-	if timer > 0 and player.is_finger:
+	if timer > 0 and player.is_big_jumping:
 		timer -= delta
-	else: player.is_finger = false
+	else: player.is_big_jumping = false
 
 	if Input.is_action_just_pressed("finger"):
 		finger_buffer_counter = player.jump_buffer_time
@@ -27,7 +27,7 @@ func apply(player, delta):
 			finger(player, player.wall_dir)
 
 func finger(player, dir):
-	player.is_finger = true
+	player.is_big_jumping = true
 	timer = player.finger_time
 
 	var outward = player.finger_force.x * dir
