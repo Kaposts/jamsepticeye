@@ -21,6 +21,8 @@ func _ready():
 	
 	get_parent().add_child.call_deferred(fish_scene.instantiate())
 	camera = get_tree().get_first_node_in_group("player_follow_camera")
+	
+	MusicPlayer.switch_song(Enum.SongNames.GAME_LOOP, true, true)
 
 
 func _input(event):
@@ -33,6 +35,7 @@ func _input(event):
 			SignalBus.player_spawned.emit()
 	if event.is_action_pressed("die"):
 		get_tree().get_first_node_in_group("player").die()
+
 
 func evolve():
 	match death_counter:
