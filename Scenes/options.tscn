@@ -1,273 +1,22 @@
-[gd_scene load_steps=19 format=3 uid="uid://d4h3brjh8eoak"]
+[gd_scene load_steps=22 format=3 uid="uid://d4h3brjh8eoak"]
 
 [ext_resource type="Script" uid="uid://dxvvaeuefb73w" path="res://scripts/UI/options_menu.gd" id="1_5a0sy"]
 [ext_resource type="PackedScene" uid="uid://cuneiert8cmjs" path="res://Scenes/scroll.tscn" id="1_prnvy"]
 [ext_resource type="Texture2D" uid="uid://dieof4n4h87ev" path="res://assets/art/UI/Grabber_Off.png" id="2_kftxf"]
 [ext_resource type="Texture2D" uid="uid://cubjnn6x33qqa" path="res://assets/art/UI/Grabber_On.png" id="3_663nc"]
+[ext_resource type="FontFile" uid="uid://bfxfq1opn3tuy" path="res://assets/art/UI/Font/monogram.ttf" id="3_aag3x"]
 [ext_resource type="Texture2D" uid="uid://nebwcmnc3koc" path="res://assets/art/UI/Slider_Full.png" id="4_hvj8k"]
 [ext_resource type="Texture2D" uid="uid://q2jp88iy3yj0" path="res://assets/art/UI/Slider_Empty.png" id="5_38txh"]
 [ext_resource type="Texture2D" uid="uid://c1pcsoyb2dm88" path="res://assets/art/UI/CloseButton_Normal.png" id="6_38txh"]
 [ext_resource type="Texture2D" uid="uid://b1qdycp22iqor" path="res://assets/art/UI/CloseButton_Pressed.png" id="7_5a0sy"]
 [ext_resource type="Texture2D" uid="uid://bu5g0nvpes6mh" path="res://assets/art/UI/CloseButton_Hover.png" id="8_g5vgl"]
-
-[sub_resource type="FontFile" id="FontFile_prnvy"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/41/0/ascent = 0.0
-cache/0/41/0/descent = 0.0
-cache/0/41/0/underline_position = 0.0
-cache/0/41/0/underline_thickness = 0.0
-cache/0/41/0/scale = 1.0
-cache/0/51/0/ascent = 0.0
-cache/0/51/0/descent = 0.0
-cache/0/51/0/underline_position = 0.0
-cache/0/51/0/underline_thickness = 0.0
-cache/0/51/0/scale = 1.0
-cache/0/56/0/ascent = 0.0
-cache/0/56/0/descent = 0.0
-cache/0/56/0/underline_position = 0.0
-cache/0/56/0/underline_thickness = 0.0
-cache/0/56/0/scale = 1.0
-cache/0/61/0/ascent = 0.0
-cache/0/61/0/descent = 0.0
-cache/0/61/0/underline_position = 0.0
-cache/0/61/0/underline_thickness = 0.0
-cache/0/61/0/scale = 1.0
-cache/0/76/0/ascent = 0.0
-cache/0/76/0/descent = 0.0
-cache/0/76/0/underline_position = 0.0
-cache/0/76/0/underline_thickness = 0.0
-cache/0/76/0/scale = 1.0
-cache/0/81/0/ascent = 0.0
-cache/0/81/0/descent = 0.0
-cache/0/81/0/underline_position = 0.0
-cache/0/81/0/underline_thickness = 0.0
-cache/0/81/0/scale = 1.0
-cache/0/91/0/ascent = 0.0
-cache/0/91/0/descent = 0.0
-cache/0/91/0/underline_position = 0.0
-cache/0/91/0/underline_thickness = 0.0
-cache/0/91/0/scale = 1.0
-cache/0/101/0/ascent = 0.0
-cache/0/101/0/descent = 0.0
-cache/0/101/0/underline_position = 0.0
-cache/0/101/0/underline_thickness = 0.0
-cache/0/101/0/scale = 1.0
-cache/0/136/0/ascent = 0.0
-cache/0/136/0/descent = 0.0
-cache/0/136/0/underline_position = 0.0
-cache/0/136/0/underline_thickness = 0.0
-cache/0/136/0/scale = 1.0
-cache/0/156/0/ascent = 0.0
-cache/0/156/0/descent = 0.0
-cache/0/156/0/underline_position = 0.0
-cache/0/156/0/underline_thickness = 0.0
-cache/0/156/0/scale = 1.0
-cache/0/166/0/ascent = 0.0
-cache/0/166/0/descent = 0.0
-cache/0/166/0/underline_position = 0.0
-cache/0/166/0/underline_thickness = 0.0
-cache/0/166/0/scale = 1.0
-cache/0/171/0/ascent = 0.0
-cache/0/171/0/descent = 0.0
-cache/0/171/0/underline_position = 0.0
-cache/0/171/0/underline_thickness = 0.0
-cache/0/171/0/scale = 1.0
-cache/0/151/0/ascent = 0.0
-cache/0/151/0/descent = 0.0
-cache/0/151/0/underline_position = 0.0
-cache/0/151/0/underline_thickness = 0.0
-cache/0/151/0/scale = 1.0
-cache/0/146/0/ascent = 0.0
-cache/0/146/0/descent = 0.0
-cache/0/146/0/underline_position = 0.0
-cache/0/146/0/underline_thickness = 0.0
-cache/0/146/0/scale = 1.0
-cache/0/141/0/ascent = 0.0
-cache/0/141/0/descent = 0.0
-cache/0/141/0/underline_position = 0.0
-cache/0/141/0/underline_thickness = 0.0
-cache/0/141/0/scale = 1.0
-cache/0/131/0/ascent = 0.0
-cache/0/131/0/descent = 0.0
-cache/0/131/0/underline_position = 0.0
-cache/0/131/0/underline_thickness = 0.0
-cache/0/131/0/scale = 1.0
-cache/0/126/0/ascent = 0.0
-cache/0/126/0/descent = 0.0
-cache/0/126/0/underline_position = 0.0
-cache/0/126/0/underline_thickness = 0.0
-cache/0/126/0/scale = 1.0
-cache/0/116/0/ascent = 0.0
-cache/0/116/0/descent = 0.0
-cache/0/116/0/underline_position = 0.0
-cache/0/116/0/underline_thickness = 0.0
-cache/0/116/0/scale = 1.0
-cache/0/111/0/ascent = 0.0
-cache/0/111/0/descent = 0.0
-cache/0/111/0/underline_position = 0.0
-cache/0/111/0/underline_thickness = 0.0
-cache/0/111/0/scale = 1.0
-cache/0/31/0/ascent = 0.0
-cache/0/31/0/descent = 0.0
-cache/0/31/0/underline_position = 0.0
-cache/0/31/0/underline_thickness = 0.0
-cache/0/31/0/scale = 1.0
-cache/0/11/0/ascent = 0.0
-cache/0/11/0/descent = 0.0
-cache/0/11/0/underline_position = 0.0
-cache/0/11/0/underline_thickness = 0.0
-cache/0/11/0/scale = 1.0
-cache/0/6/0/ascent = 0.0
-cache/0/6/0/descent = 0.0
-cache/0/6/0/underline_position = 0.0
-cache/0/6/0/underline_thickness = 0.0
-cache/0/6/0/scale = 1.0
-cache/0/1/0/ascent = 0.0
-cache/0/1/0/descent = 0.0
-cache/0/1/0/underline_position = 0.0
-cache/0/1/0/underline_thickness = 0.0
-cache/0/1/0/scale = 1.0
-cache/0/21/0/ascent = 0.0
-cache/0/21/0/descent = 0.0
-cache/0/21/0/underline_position = 0.0
-cache/0/21/0/underline_thickness = 0.0
-cache/0/21/0/scale = 1.0
-cache/0/26/0/ascent = 0.0
-cache/0/26/0/descent = 0.0
-cache/0/26/0/underline_position = 0.0
-cache/0/26/0/underline_thickness = 0.0
-cache/0/26/0/scale = 1.0
-cache/0/36/0/ascent = 0.0
-cache/0/36/0/descent = 0.0
-cache/0/36/0/underline_position = 0.0
-cache/0/36/0/underline_thickness = 0.0
-cache/0/36/0/scale = 1.0
-cache/0/46/0/ascent = 0.0
-cache/0/46/0/descent = 0.0
-cache/0/46/0/underline_position = 0.0
-cache/0/46/0/underline_thickness = 0.0
-cache/0/46/0/scale = 1.0
-cache/0/66/0/ascent = 0.0
-cache/0/66/0/descent = 0.0
-cache/0/66/0/underline_position = 0.0
-cache/0/66/0/underline_thickness = 0.0
-cache/0/66/0/scale = 1.0
-cache/0/96/0/ascent = 0.0
-cache/0/96/0/descent = 0.0
-cache/0/96/0/underline_position = 0.0
-cache/0/96/0/underline_thickness = 0.0
-cache/0/96/0/scale = 1.0
-cache/0/106/0/ascent = 0.0
-cache/0/106/0/descent = 0.0
-cache/0/106/0/underline_position = 0.0
-cache/0/106/0/underline_thickness = 0.0
-cache/0/106/0/scale = 1.0
-cache/0/121/0/ascent = 0.0
-cache/0/121/0/descent = 0.0
-cache/0/121/0/underline_position = 0.0
-cache/0/121/0/underline_thickness = 0.0
-cache/0/121/0/scale = 1.0
-cache/0/86/0/ascent = 0.0
-cache/0/86/0/descent = 0.0
-cache/0/86/0/underline_position = 0.0
-cache/0/86/0/underline_thickness = 0.0
-cache/0/86/0/scale = 1.0
-cache/0/71/0/ascent = 0.0
-cache/0/71/0/descent = 0.0
-cache/0/71/0/underline_position = 0.0
-cache/0/71/0/underline_thickness = 0.0
-cache/0/71/0/scale = 1.0
-cache/0/35/0/ascent = 0.0
-cache/0/35/0/descent = 0.0
-cache/0/35/0/underline_position = 0.0
-cache/0/35/0/underline_thickness = 0.0
-cache/0/35/0/scale = 1.0
-cache/0/10/0/ascent = 0.0
-cache/0/10/0/descent = 0.0
-cache/0/10/0/underline_position = 0.0
-cache/0/10/0/underline_thickness = 0.0
-cache/0/10/0/scale = 1.0
-cache/0/5/0/ascent = 0.0
-cache/0/5/0/descent = 0.0
-cache/0/5/0/underline_position = 0.0
-cache/0/5/0/underline_thickness = 0.0
-cache/0/5/0/scale = 1.0
-cache/0/15/0/ascent = 0.0
-cache/0/15/0/descent = 0.0
-cache/0/15/0/underline_position = 0.0
-cache/0/15/0/underline_thickness = 0.0
-cache/0/15/0/scale = 1.0
-cache/0/20/0/ascent = 0.0
-cache/0/20/0/descent = 0.0
-cache/0/20/0/underline_position = 0.0
-cache/0/20/0/underline_thickness = 0.0
-cache/0/20/0/scale = 1.0
-cache/0/25/0/ascent = 0.0
-cache/0/25/0/descent = 0.0
-cache/0/25/0/underline_position = 0.0
-cache/0/25/0/underline_thickness = 0.0
-cache/0/25/0/scale = 1.0
-cache/0/30/0/ascent = 0.0
-cache/0/30/0/descent = 0.0
-cache/0/30/0/underline_position = 0.0
-cache/0/30/0/underline_thickness = 0.0
-cache/0/30/0/scale = 1.0
-cache/0/22/0/ascent = 0.0
-cache/0/22/0/descent = 0.0
-cache/0/22/0/underline_position = 0.0
-cache/0/22/0/underline_thickness = 0.0
-cache/0/22/0/scale = 1.0
-cache/0/23/0/ascent = 0.0
-cache/0/23/0/descent = 0.0
-cache/0/23/0/underline_position = 0.0
-cache/0/23/0/underline_thickness = 0.0
-cache/0/23/0/scale = 1.0
-cache/0/24/0/ascent = 0.0
-cache/0/24/0/descent = 0.0
-cache/0/24/0/underline_position = 0.0
-cache/0/24/0/underline_thickness = 0.0
-cache/0/24/0/scale = 1.0
-cache/0/27/0/ascent = 0.0
-cache/0/27/0/descent = 0.0
-cache/0/27/0/underline_position = 0.0
-cache/0/27/0/underline_thickness = 0.0
-cache/0/27/0/scale = 1.0
-cache/0/28/0/ascent = 0.0
-cache/0/28/0/descent = 0.0
-cache/0/28/0/underline_position = 0.0
-cache/0/28/0/underline_thickness = 0.0
-cache/0/28/0/scale = 1.0
-cache/0/29/0/ascent = 0.0
-cache/0/29/0/descent = 0.0
-cache/0/29/0/underline_position = 0.0
-cache/0/29/0/underline_thickness = 0.0
-cache/0/29/0/scale = 1.0
-cache/0/12/0/ascent = 0.0
-cache/0/12/0/descent = 0.0
-cache/0/12/0/underline_position = 0.0
-cache/0/12/0/underline_thickness = 0.0
-cache/0/12/0/scale = 1.0
-cache/0/13/0/ascent = 0.0
-cache/0/13/0/descent = 0.0
-cache/0/13/0/underline_position = 0.0
-cache/0/13/0/underline_thickness = 0.0
-cache/0/13/0/scale = 1.0
-cache/0/14/0/ascent = 0.0
-cache/0/14/0/descent = 0.0
-cache/0/14/0/underline_position = 0.0
-cache/0/14/0/underline_thickness = 0.0
-cache/0/14/0/scale = 1.0
+[ext_resource type="Texture2D" uid="uid://drlas0kkvw64a" path="res://assets/art/UI/Menu_Buttons/KeyBindings1.png" id="11_033dp"]
+[ext_resource type="Texture2D" uid="uid://bo6wtjg5a8twh" path="res://assets/art/UI/Menu_Buttons/KeyBindings3.png" id="12_fpdr8"]
+[ext_resource type="Texture2D" uid="uid://dqvubuyvvqwrc" path="res://assets/art/UI/Menu_Buttons/KeyBindings2.png" id="13_r103k"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4tmxy"]
-font = SubResource("FontFile_prnvy")
-font_size = 15
+font = ExtResource("3_aag3x")
+font_size = 32
 font_color = Color(0.31628537, 0.20356166, 0.14438409, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5a0sy"]
@@ -366,13 +115,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -183.0
-offset_top = -83.0
-offset_right = 21.481781
-offset_bottom = 22.0
+offset_left = -140.0
+offset_top = -90.0
+offset_right = 79.00006
+offset_bottom = 35.000183
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.785, 1.785)
+scale = Vector2(1.2, 1.2)
 theme_override_constants/h_separation = 35
 theme_override_constants/v_separation = 9
 columns = 2
@@ -381,6 +130,7 @@ columns = 2
 layout_mode = 2
 text = "Master"
 label_settings = SubResource("LabelSettings_4tmxy")
+horizontal_alignment = 1
 
 [node name="MasterSlider" type="HSlider" parent="Options/GridContainer"]
 custom_minimum_size = Vector2(100, 0)
@@ -395,6 +145,7 @@ step = 3.0
 layout_mode = 2
 text = "Music"
 label_settings = SubResource("LabelSettings_4tmxy")
+horizontal_alignment = 1
 
 [node name="MasterSlider2" type="HSlider" parent="Options/GridContainer"]
 custom_minimum_size = Vector2(100, 0)
@@ -408,9 +159,9 @@ value = -9.0
 
 [node name="SFX" type="Label" parent="Options/GridContainer"]
 layout_mode = 2
-text = "Sound
-Effects"
+text = "Sound Effects"
 label_settings = SubResource("LabelSettings_4tmxy")
+horizontal_alignment = 1
 
 [node name="MasterSlider3" type="HSlider" parent="Options/GridContainer"]
 custom_minimum_size = Vector2(100, 0)
@@ -424,13 +175,31 @@ value = -9.0
 
 [node name="Back_Button" type="TextureButton" parent="Options"]
 layout_mode = 0
-offset_left = 441.0
-offset_top = 251.0
-offset_right = 537.0
-offset_bottom = 331.0
+offset_left = 436.0
+offset_top = 265.0
+offset_right = 532.0
+offset_bottom = 345.0
 texture_normal = ExtResource("6_38txh")
 texture_pressed = ExtResource("7_5a0sy")
 texture_hover = ExtResource("8_g5vgl")
+
+[node name="KeyBindings" type="TextureButton" parent="Options"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = 37.0
+offset_right = 76.0
+offset_bottom = 169.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("11_033dp")
+texture_pressed = ExtResource("12_fpdr8")
+texture_hover = ExtResource("13_r103k")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
