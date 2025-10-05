@@ -1257,5 +1257,5 @@ position = Vector2(1434, -1435)
 position = Vector2(558, -599)
 camera = NodePath("../PlayerFollowCamera")
 wall_jump_lock_time = 0.0
-finger_force = Vector2(500, -750)
+finger_force = Vector2(700, -550)
 finger_time = 0.3
