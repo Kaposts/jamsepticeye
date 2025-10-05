@@ -31,9 +31,9 @@ func _physics_process(delta: float) -> void:
 		velocity.y += gravity * delta
 
 	# --- Input ---
-	input_direction = Input.get_axis("ui_left", "ui_right")
-	var jump_pressed = Input.is_action_just_pressed("ui_accept")
-	var jump_held = Input.is_action_pressed("ui_accept")
+	input_direction = Input.get_axis("move_left", "move_right")
+	var jump_pressed = Input.is_action_just_pressed("jump")
+	var jump_held = Input.is_action_pressed("jump")
 
 	# --- Ground Check ---
 	if is_on_floor():

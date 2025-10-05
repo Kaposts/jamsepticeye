@@ -18,11 +18,11 @@ func _process(_delta: float) -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_right"):
+	if event.is_action_pressed("move_right"):
 		# if already moving fast, don't move faster
 		if player_anchor.linear_velocity.length() < SWING_SPEED_LIMIT:
 			player_anchor.apply_central_impulse(player_anchor.global_transform.x * push_force)
-	elif event.is_action_pressed("ui_left"):
+	elif event.is_action_pressed("move_left"):
 		if player_anchor.linear_velocity.length() < SWING_SPEED_LIMIT:
 			player_anchor.apply_central_impulse(player_anchor.global_transform.x * -push_force)
 
