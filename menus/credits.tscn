@@ -1,0 +1,213 @@
+[gd_scene load_steps=12 format=3 uid="uid://rowd5l4byabr"]
+
+[ext_resource type="Script" uid="uid://d0y8j6hxg8iq" path="res://menus/credits.gd" id="1_rlyo5"]
+[ext_resource type="PackedScene" uid="uid://cuneiert8cmjs" path="res://menus/scroll.tscn" id="2_0oi4c"]
+[ext_resource type="LabelSettings" uid="uid://b650eiaqfr53c" path="res://assets/font/creadit_headig_label.tres" id="3_7emq5"]
+[ext_resource type="LabelSettings" uid="uid://b0rpv6lccgued" path="res://assets/font/name_label.tres" id="4_803yc"]
+[ext_resource type="Texture2D" uid="uid://c1pcsoyb2dm88" path="res://assets/art/UI/CloseButton_Normal.png" id="8_asoyt"]
+[ext_resource type="Texture2D" uid="uid://b1qdycp22iqor" path="res://assets/art/UI/CloseButton_Pressed.png" id="9_utbgc"]
+[ext_resource type="Texture2D" uid="uid://bu5g0nvpes6mh" path="res://assets/art/UI/CloseButton_Hover.png" id="10_6k1fu"]
+
+[sub_resource type="Animation" id="Animation_srb65"]
+resource_name = "Menu_Close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Credits:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333336, 0.2666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kftxf"]
+resource_name = "Menu_Load"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Credits:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.73333335, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_663nc"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hvj8k"]
+_data = {
+&"Menu_Close": SubResource("Animation_srb65"),
+&"Menu_Load": SubResource("Animation_kftxf"),
+&"RESET": SubResource("Animation_663nc")
+}
+
+[node name="CreditsScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rlyo5")
+
+[node name="Scroll" parent="." instance=ExtResource("2_0oi4c")]
+layout_mode = 1
+
+[node name="Credits" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Credits"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.5
+offset_top = -101.5
+offset_right = 176.5
+offset_bottom = 101.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="ProgrammerContainer" type="VBoxContainer" parent="Credits/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Label" type="Label" parent="Credits/HBoxContainer/VBoxContainer/ProgrammerContainer"]
+layout_mode = 2
+text = "PROGRAMMERS:"
+label_settings = ExtResource("3_7emq5")
+
+[node name="Label2" type="Label" parent="Credits/HBoxContainer/VBoxContainer/ProgrammerContainer"]
+layout_mode = 2
+text = "LESTAVOL"
+label_settings = ExtResource("4_803yc")
+
+[node name="Label3" type="Label" parent="Credits/HBoxContainer/VBoxContainer/ProgrammerContainer"]
+layout_mode = 2
+text = "CABAGE"
+label_settings = ExtResource("4_803yc")
+
+[node name="OSTContainer" type="VBoxContainer" parent="Credits/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Label" type="Label" parent="Credits/HBoxContainer/VBoxContainer/OSTContainer"]
+layout_mode = 2
+text = "GAME OST, SCRIPT,
+VOICE ACTING:"
+label_settings = ExtResource("3_7emq5")
+
+[node name="Label2" type="Label" parent="Credits/HBoxContainer/VBoxContainer/OSTContainer"]
+layout_mode = 2
+text = "TP39"
+label_settings = ExtResource("4_803yc")
+
+[node name="SFXContainer" type="VBoxContainer" parent="Credits/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Label3" type="Label" parent="Credits/HBoxContainer/VBoxContainer/SFXContainer"]
+layout_mode = 2
+text = "SFX, TITLE THEME:"
+label_settings = ExtResource("3_7emq5")
+
+[node name="Label4" type="Label" parent="Credits/HBoxContainer/VBoxContainer/SFXContainer"]
+layout_mode = 2
+text = "MO MEMO"
+label_settings = ExtResource("4_803yc")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Credits/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="ArtistContainer" type="VBoxContainer" parent="Credits/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Label" type="Label" parent="Credits/HBoxContainer/VBoxContainer2/ArtistContainer"]
+layout_mode = 2
+text = "ARTISTS:"
+label_settings = ExtResource("3_7emq5")
+
+[node name="Label2" type="Label" parent="Credits/HBoxContainer/VBoxContainer2/ArtistContainer"]
+layout_mode = 2
+text = "KING_KAI"
+label_settings = ExtResource("4_803yc")
+
+[node name="Label3" type="Label" parent="Credits/HBoxContainer/VBoxContainer2/ArtistContainer"]
+layout_mode = 2
+text = "SOMETHING"
+label_settings = ExtResource("4_803yc")
+
+[node name="Label4" type="Label" parent="Credits/HBoxContainer/VBoxContainer2/ArtistContainer"]
+layout_mode = 2
+text = "SOUL"
+label_settings = ExtResource("4_803yc")
+
+[node name="ProducerContainer" type="VBoxContainer" parent="Credits/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Label" type="Label" parent="Credits/HBoxContainer/VBoxContainer2/ProducerContainer"]
+layout_mode = 2
+text = "PRODUCER:"
+label_settings = ExtResource("3_7emq5")
+
+[node name="Label2" type="Label" parent="Credits/HBoxContainer/VBoxContainer2/ProducerContainer"]
+layout_mode = 2
+text = "GNOMIK_DIMBUCHO"
+label_settings = ExtResource("4_803yc")
+
+[node name="GridContainer" type="GridContainer" parent="Credits"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.64
+offset_top = -94.38
+offset_right = 62.77368
+offset_bottom = 44.619995
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+theme_override_constants/h_separation = 28
+theme_override_constants/v_separation = 11
+columns = 2
+
+[node name="Back_Button" type="TextureButton" parent="Credits"]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 265.0
+offset_right = 532.0
+offset_bottom = 345.0
+texture_normal = ExtResource("8_asoyt")
+texture_pressed = ExtResource("9_utbgc")
+texture_hover = ExtResource("10_6k1fu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_hvj8k")
+}
+
+[connection signal="pressed" from="Credits/Back_Button" to="Credits/Back_Button" method="_on_pressed"]
