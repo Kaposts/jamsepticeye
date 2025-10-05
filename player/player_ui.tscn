@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://r42ul1rnbojo"]
+[gd_scene load_steps=15 format=3 uid="uid://r42ul1rnbojo"]
 
+[ext_resource type="Script" path="res://player/player_ui.gd" id="1_0aiwo"]
 [ext_resource type="Shader" uid="uid://cs0nu8w547cet" path="res://shaders/fog.gdshader" id="1_x0k1s"]
 [ext_resource type="Shader" uid="uid://bl5uc6al1uuod" path="res://shaders/vignette.gdshader" id="2_0aiwo"]
 [ext_resource type="Script" uid="uid://lpje8g418wbk" path="res://timer.gd" id="3_im4b0"]
@@ -45,6 +46,7 @@ shader_parameter/MainAlpha = 0.80400003819
 shader_parameter/vignette_color = Color(0.08114017, 0.19977546, 4.813075e-08, 1)
 
 [node name="PlayerUI" type="CanvasLayer"]
+script = ExtResource("1_0aiwo")
 
 [node name="fog" type="ColorRect" parent="."]
 modulate = Color(0.005322846, 0.32502773, 1.92523e-07, 1)
@@ -92,3 +94,4 @@ unique_name_in_owner = true
 visible = false
 
 [node name="Pause_Menu" parent="." instance=ExtResource("5_2gxjn")]
+visible = false
