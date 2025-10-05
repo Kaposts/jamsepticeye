@@ -34,6 +34,7 @@ signal interest_point_detected(entered: bool)
 
 @export_group("finger variables")
 @export var finger_force: Vector2 = Vector2(2000, -400)
+@export var finger_time: float = 0.12
 
 @export_group("Grapple Variables")
 @export var grapple_detector_length: float = 100.0
@@ -41,6 +42,12 @@ signal interest_point_detected(entered: bool)
 
 @export_group("Grapple_v2 variables")
 @export var detach_speed_multiplier: float = 1.0
+@export var graple_gravity: float = 1200.0
+@export var damping: float = 0.03              # angular damping
+@export var max_angular_speed: float = 20.0
+@export var swing_boost: float = 1.4           # boost while swinging downward
+@export var swing_loss: float = 1.0            # loss while swinging upward
+@export var min_length: float = 8.0
 
 @export_group("hover variables")
 @export var hover_gravity_scale: float = 0.3   # how much gravity applies while hovering (0.3 = 30%)

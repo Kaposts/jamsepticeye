@@ -5,14 +5,6 @@ signal attached_changed(attached: bool)
 
 const LAUNCHED_MAX_DURATION: float = 0.2
 
-@export var gravity: float = 1400.0
-@export var damping: float = 0.03              # angular damping
-@export var max_angular_speed: float = 25.0
-@export var swing_boost: float = 1.4           # boost while swinging downward
-@export var swing_loss: float = 1.0            # loss while swinging upward
-@export var min_length: float = 8.0
-
-
 var attached: bool = false:
 	set(flag):
 		attached = flag
@@ -43,7 +35,7 @@ func attach(player: Player, anchor_pos: Vector2) -> void:
 	anchor = anchor_pos
 
 	var to_player = player.global_position - anchor
-	length = max(min_length, to_player.length())
+	length = max(player.min_length, to_player.length())
 
 	# angle measured from vertical
 	angle = atan2(to_player.x, to_player.y)
@@ -93,16 +85,16 @@ func apply(player: Player, delta: float) -> void:
 	if player.is_on_floor() or player.is_on_wall(): detach(player)
 
 	# pendulum physics
-	var angular_acc := -(gravity / length) * sin(angle) - damping * angular_velocity
+	var angular_acc := -(player.gravity / length) * sin(angle) - player.damping * angular_velocity
 	angular_velocity += angular_acc * delta
 
 	# Boost momentum when swinging down, lose when up
 	if angle * angular_velocity < 0.0:
-		angular_velocity *= 1.0 + (swing_boost * delta)
+		angular_velocity *= 1.0 + (player.swing_boost * delta)
 	else:
-		angular_velocity *= max(0.0, 1.0 - (swing_loss * delta))
+		angular_velocity *= max(0.0, 1.0 - (player.swing_loss * delta))
 
-	angular_velocity = clamp(angular_velocity, -max_angular_speed, max_angular_speed)
+	angular_velocity = clamp(angular_velocity, -player.max_angular_speed, player.max_angular_speed)
 	angle += angular_velocity * delta
 
 	# Update player position

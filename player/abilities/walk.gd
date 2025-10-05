@@ -12,4 +12,8 @@ func apply(player, delta):
 		target_vel_x = 0
 		player.wall_jump_lock_counter -= delta
 
-	player.velocity.x = move_toward(player.velocity.x, target_vel_x, player.acceleration * delta)
+
+	if (!player.is_on_floor() or !player.is_on_wall()) and player.is_finger == false:
+		print('xd')
+		player.velocity.x = move_toward(player.velocity.x, target_vel_x, speed * delta * 100)
+	else: player.velocity.x = move_toward(player.velocity.x, target_vel_x, player.acceleration * delta)
