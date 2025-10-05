@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://c4d7f3xrnao6t"]
+[gd_scene load_steps=55 format=4 uid="uid://c4d7f3xrnao6t"]
 
 [ext_resource type="Script" uid="uid://pl7q14263x68" path="res://core/level_manager.gd" id="1_2nhjh"]
 [ext_resource type="PackedScene" uid="uid://baftkdlepc3ff" path="res://core/player_manager.tscn" id="1_ei405"]
@@ -65,6 +65,43 @@ shader = ExtResource("18_ei405")
 shader_parameter/outerRadius = 1.59600007581
 shader_parameter/MainAlpha = 0.80400003819
 shader_parameter/vignette_color = Color(0.08114017, 0.19977546, 4.813075e-08, 1)
+
+[sub_resource type="Animation" id="Animation_2hxjc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerFollowCamera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -25)]
+}
+
+[sub_resource type="Animation" id="Animation_1fr6y"]
+resource_name = "game_start"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerFollowCamera:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1.8660662, 1),
+"update": 0,
+"values": [Vector2(0, -25), Vector2(0, -60)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2hxjc"]
+_data = {
+&"RESET": SubResource("Animation_2hxjc"),
+&"game_start": SubResource("Animation_1fr6y")
+}
 
 [sub_resource type="Environment" id="Environment_7vxoj"]
 background_mode = 3
@@ -1003,28 +1040,39 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="GameTimer" type="Label" parent="PlayerUI"]
+[node name="MarginContainer" type="MarginContainer" parent="PlayerUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 10
+
+[node name="GameTimer" type="Label" parent="PlayerUI/MarginContainer"]
 unique_name_in_owner = true
-visible = false
-offset_left = 296.0
-offset_top = 13.0
-offset_right = 337.0
-offset_bottom = 36.0
-text = "00:00"
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "00:00.00"
+horizontal_alignment = 1
 script = ExtResource("21_bjha6")
 
 [node name="SubmitScoreScreen" parent="PlayerUI" instance=ExtResource("22_gt76g")]
 unique_name_in_owner = true
 visible = false
 
-[node name="MainMenu" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("27_1fr6y")]
-camera = NodePath("../PlayerFollowCamera")
+[node name="MainMenu" parent="." instance=ExtResource("27_1fr6y")]
 
 [node name="DebugWindow" parent="." instance=ExtResource("10_hqns4")]
 visible = false
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2hxjc")
+}
+
 [node name="PlayerFollowCamera" parent="." instance=ExtResource("26_gt76g")]
-position = Vector2(0, -50)
+position = Vector2(0, -25)
 lookahead_x_distance = 40.0
 lookahead_y_distance = 50.0
 
@@ -1256,5 +1304,5 @@ script = ExtResource("23_2nhjh")
 position = Vector2(-3, -15.5)
 shape = SubResource("RectangleShape2D_bjha6")
 
-[connection signal="time_updated" from="." to="PlayerUI/GameTimer" method="_on_node_2d_time_updated"]
+[connection signal="time_updated" from="." to="PlayerUI/MarginContainer/GameTimer" method="_on_node_2d_time_updated"]
 [connection signal="body_entered" from="finish" to="finish" method="_on_body_entered"]

@@ -7,6 +7,7 @@ var level_time: float = 0.0
 var is_running: bool = false
 
 @onready var game_timer: Label = %GameTimer
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 func _ready():
@@ -18,9 +19,10 @@ func _ready():
 
 
 func start_timer():
-	game_timer.show()
 	level_time = 0.0
+	game_timer.show()
 	is_running = true
+
 
 func stop_timer():
 	is_running = false
@@ -35,9 +37,13 @@ func _process(delta: float) -> void:
 		level_time += delta
 		emit_signal("time_updated", level_time)
 
+
 func _on_sig_level_finished():
 	stop_timer()
 
 
 func _on_game_started() -> void:
+	animation_player.play("game_start")
+	await animation_player.animation_finished
+	
 	start_timer()
