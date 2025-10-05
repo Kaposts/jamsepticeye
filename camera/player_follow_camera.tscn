@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://c7edv1edu6rrw"]
+[gd_scene load_steps=9 format=3 uid="uid://c7edv1edu6rrw"]
 
 [ext_resource type="Script" uid="uid://by17gfsmjaf7o" path="res://camera/player_follow_camera.gd" id="1_k5iwj"]
 [ext_resource type="Script" uid="uid://f8vbkubpvapx" path="res://scripts/state_machine/state_machine.gd" id="2_kyg8x"]
 [ext_resource type="Script" uid="uid://vxvfn4usk6b4" path="res://camera/states/default.gd" id="3_a8qbo"]
 [ext_resource type="Script" uid="uid://bot5oxf0cq1qv" path="res://camera/states/jumping.gd" id="5_l8gmh"]
+[ext_resource type="Script" uid="uid://bjf5eassbova4" path="res://camera/states/big_jump.gd" id="8_6lqh4"]
 [ext_resource type="Script" uid="uid://bqju137gqrwaj" path="res://camera/states/falling.gd" id="8_l2jjn"]
-[ext_resource type="Script" path="res://camera/states/player_centered_state.gd" id="8_y1g1t"]
-[ext_resource type="Script" path="res://camera/states/manual_focus_state.gd" id="9_y1g1t"]
+[ext_resource type="Script" uid="uid://b2yib00ha2cjn" path="res://camera/states/player_centered_state.gd" id="8_y1g1t"]
+[ext_resource type="Script" uid="uid://dlfvn2gd8v5br" path="res://camera/states/manual_focus_state.gd" id="9_y1g1t"]
 
 [node name="PlayerFollowCamera" type="Camera2D" groups=["player_follow_camera"]]
 position_smoothing_enabled = true
@@ -39,6 +40,10 @@ script = ExtResource("9_y1g1t")
 
 [node name="WallHanging" type="Node" parent="StateMachine"]
 script = ExtResource("8_y1g1t")
+
+[node name="BigJump" type="Node" parent="StateMachine"]
+script = ExtResource("8_6lqh4")
+panning_lerp_weight = 0.4
 
 [node name="InterestPoint" type="Node" parent="StateMachine"]
 script = ExtResource("9_y1g1t")

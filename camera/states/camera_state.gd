@@ -2,6 +2,8 @@
 extends State
 ## Base State class for the Player Follow Camera
 
+@export_range(0.1, 1.0, .01) var panning_lerp_weight: float = 0.1
+
 # State names
 const DEFAULT: StringName = "Default"
 const HOVERING: StringName = "Hovering"
@@ -9,6 +11,7 @@ const JUMPING: StringName = "Jumping"
 const FALLING: StringName = "Falling"
 const GRAPPLING: StringName = "Grappling"
 const WALL_HANGING: StringName = "WallHanging"
+const BIG_JUMPING: StringName = "BigJump"
 const INTEREST_POINT: StringName = "InterestPoint"
 
 
@@ -50,7 +53,7 @@ func update(_delta: float) -> void:
 		return
 	
 	apply_focus()
-	_camera.global_position = lerp(_camera.global_position, _current_position, 0.1)
+	_camera.global_position = lerp(_camera.global_position, _current_position, panning_lerp_weight)
 
 #endregion
 #===================================================================================================

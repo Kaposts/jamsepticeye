@@ -46,8 +46,6 @@ func apply(player: Player, delta: float) -> void:
 		if not jump_held:
 			# player released jump early → increase gravity to shorten jump
 			player.velocity.y += player.gravity * (player.variable_jump_gravity_multiplier - 1.0) * delta
-	elif player.velocity.y > 0 and player.jump_from_grappling: # jump from grappling
-		player.velocity.y += player.gravity * (player.grappling_jump_gravity_scale - 1.0) * delta
 	elif player.velocity.y > 0: # falling
 		player.velocity.y += player.gravity * (player.fall_gravity_multiplier - 1.0) * delta
 
