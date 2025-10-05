@@ -2173,7 +2173,6 @@ offset_right = 3711.0
 offset_bottom = 313.0
 
 [node name="ForegroundParallax" type="Node2D" parent="."]
-visible = false
 z_index = 1
 
 [node name="FgParallax" type="Parallax2D" parent="ForegroundParallax"]
@@ -2210,7 +2209,6 @@ position = Vector2(334, -73)
 texture = ExtResource("19_rjqkl")
 
 [node name="PlayerUI" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="fog" type="ColorRect" parent="PlayerUI"]
 modulate = Color(0.005322846, 0.32502773, 1.92523e-07, 1)
@@ -2311,7 +2309,6 @@ offset_bottom = 232.0
 text = "menu"
 
 [node name="DebugWindow" parent="." instance=ExtResource("10_hqns4")]
-visible = false
 
 [node name="Label" type="Label" parent="."]
 offset_left = 1466.0
@@ -2328,7 +2325,6 @@ offset_bottom = -2394.0
 text = "YOU WIN"
 
 [node name="grapple_points" type="Node2D" parent="."]
-visible = false
 
 [node name="grapple point" parent="grapple_points" instance=ExtResource("23_e8dv2")]
 position = Vector2(17, -696)
