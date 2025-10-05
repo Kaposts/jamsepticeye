@@ -1254,9 +1254,8 @@ position = Vector2(1446, -1192)
 position = Vector2(1434, -1435)
 
 [node name="Player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("22_ei405")]
-position = Vector2(-1168, -1074)
+position = Vector2(-1172, -1065)
 camera = NodePath("../PlayerFollowCamera")
-wall_jump_force = Vector2(500, -550)
 wall_jump_lock_time = 0.0
 finger_force = Vector2(550, -550)
 finger_time = 0.3
