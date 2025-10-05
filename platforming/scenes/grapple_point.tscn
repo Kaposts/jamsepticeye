@@ -1,25 +1,172 @@
-[gd_scene load_steps=4 format=3 uid="uid://crmrc6nkin4t3"]
+[gd_scene load_steps=20 format=3 uid="uid://crmrc6nkin4t3"]
 
-[ext_resource type="Texture2D" uid="uid://dg5g5pbc184kb" path="res://assets/art/100px_red_circle.png" id="1_6s1o6"]
+[ext_resource type="Texture2D" uid="uid://cw81u5qto0clc" path="res://assets/art/grapple_fly/fly_tongued_spritesheet.png" id="1_32h1i"]
+[ext_resource type="Script" uid="uid://bmg43ufebiptr" path="res://platforming/grapple_point.gd" id="1_rngfb"]
+[ext_resource type="Shader" uid="uid://btni4tq2l0ko5" path="res://shaders/glow.gdshader" id="2_7u2kq"]
 [ext_resource type="PackedScene" uid="uid://bj5lvs322wcil" path="res://platforming/scenes/camera_interest_point.tscn" id="2_kq1lt"]
+[ext_resource type="Texture2D" uid="uid://clc3ybo4rrhlw" path="res://assets/art/grapple_fly/fly_normal_spritesheet.png" id="2_rngfb"]
+[ext_resource type="Texture2D" uid="uid://c83ayqh7ev8oa" path="res://assets/art/grapple_fly/fly_outlinedl_spritesheet.png" id="3_7u2kq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fp7xa"]
+shader = ExtResource("2_7u2kq")
+shader_parameter/outerRadius = 1.0
+shader_parameter/MainAlpha = 0.90000004275
+shader_parameter/glow_color = Color(0.9104637, 0.47624117, 0.7595687, 1)
+
+[sub_resource type="Animation" id="Animation_32h1i"]
+resource_name = "default"
+length = 0.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(0, 4), Vector2(0, 0), Vector2(0, -4), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rngfb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7u2kq"]
+resource_name = "attached"
+length = 0.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(4, 4), Vector2(0, 0), Vector2(-4, -4), Vector2(0, 0), Vector2(-4, 4), Vector2(0, 0), Vector2(4, -4), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rngfb"]
+_data = {
+&"RESET": SubResource("Animation_rngfb"),
+&"attached": SubResource("Animation_7u2kq"),
+&"default": SubResource("Animation_32h1i")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fp7xa"]
+atlas = ExtResource("1_32h1i")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cn0n8"]
+atlas = ExtResource("1_32h1i")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6e86"]
+atlas = ExtResource("2_rngfb")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8k0d"]
+atlas = ExtResource("2_rngfb")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ekwc"]
+atlas = ExtResource("3_7u2kq")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dbif"]
+atlas = ExtResource("3_7u2kq")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y0fr2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fp7xa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cn0n8")
+}],
+"loop": true,
+"name": &"attached",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6e86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8k0d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ekwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dbif")
+}],
+"loop": true,
+"name": &"in_range",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hxjc"]
 
-[node name="grapple point" type="StaticBody2D"]
+[node name="GrapplePoint" type="StaticBody2D"]
 collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_rngfb")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 10.0
-offset_bottom = 10.0
-color = Color(0, 1, 0, 1)
+material = SubResource("ShaderMaterial_fp7xa")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="100PxRedCircle" type="Sprite2D" parent="."]
+position = Vector2(0, 13)
+scale = Vector2(1, 190)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rngfb")
+}
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_y0fr2")
+autoplay = "default"
+offset = Vector2(0, -13)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_2hxjc")
-
-[node name="100PxRedCircle" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
-texture = ExtResource("1_6s1o6")
 
 [node name="CameraInterestPoint" parent="." instance=ExtResource("2_kq1lt")]

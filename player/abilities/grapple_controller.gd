@@ -13,6 +13,7 @@ var anchor: Vector2 = Vector2.ZERO
 var length: float = 120.0
 var angle: float = 0.0
 var angular_velocity: float = 0.0
+var attached_grapple_point: GrapplePoint
 
 var _tongue_tip_position: Vector2 = Vector2.ZERO
 var _launch_duration: float = 0.0
@@ -26,7 +27,12 @@ var _launch_duration: float = 0.0
 func _ready() -> void:
 	set_physics_process(true)
 	tongue_visuals.hide()
+	
+	detector.body_entered.connect(_on_grapple_point_entered)
+	detector.body_exited.connect(_on_grapple_point_exited)
 
+#===================================================================================================
+#region GRAPPLE FUNCTIONS
 
 func attach(player: Player, anchor_pos: Vector2) -> void:
 	if player == null:
@@ -76,11 +82,16 @@ func detach(player: Player) -> void:
 func apply(player: Player, delta: float) -> void:
 	var grapple_pressed = Input.is_action_just_pressed("grapple")
 	var grapple_released = Input.is_action_just_released("grapple")
-	var closest_point = get_closest_grapple_target(player)
+	var closest_point: GrapplePoint = _get_closest_grapple_target(player)
 
-	if grapple_pressed and closest_point: attach(player, closest_point.global_position)
+	if grapple_pressed and closest_point:
+		attach(player, closest_point.global_position)
+		attached_grapple_point = closest_point
+		attached_grapple_point.attached = true
 
-	if grapple_released and attached: detach(player)
+	if grapple_released and attached:
+		detach(player)
+		attached_grapple_point.attached = false
 
 	if not attached or player == null:
 		return
@@ -110,6 +121,13 @@ func apply(player: Player, delta: float) -> void:
 	_update_tongue_visuals(player, delta)
 
 
+func is_attached() -> bool:
+	return attached
+
+#endregion
+#===================================================================================================
+#region HELPER FUNCTIONS
+
 func _calc_tangential_velocity() -> Vector2:
 	return Vector2(angular_velocity * length * cos(angle), -angular_velocity * length * sin(angle))
 
@@ -135,22 +153,28 @@ func _launch_tongue_visuals(player: Player) -> void:
 	_tongue_tip_position = to_local(player.tongue.global_position)
 
 
-func is_attached() -> bool:
-	return attached
-
-func get_closest_grapple_target(player: Node2D) -> Node2D:
-	if !detector: detector = %HookDetector
-
-	var closest: Node2D = null
+func _get_closest_grapple_target(player: Player) -> GrapplePoint:
+	var closest: GrapplePoint = null
 	var closest_distance := INF
-
+	
 	for body in detector.get_overlapping_bodies():
-		if not body is Node2D:
+		if not body is GrapplePoint:
 			continue
 		
 		var dist := player.global_position.distance_squared_to(body.global_position)
 		if dist < closest_distance:
 			closest_distance = dist
 			closest = body
-	print(detector.global_position)
 	return closest
+
+
+func _on_grapple_point_entered(body: Node2D) -> void:
+	if body is GrapplePoint:
+		body.in_range = true
+
+
+func _on_grapple_point_exited(body: Node2D) -> void:
+	if body is GrapplePoint:
+		body.in_range = false
+
+#endregion
