@@ -1,0 +1,126 @@
+[gd_scene load_steps=19 format=3 uid="uid://b0bg77uyqmjdp"]
+
+[ext_resource type="Script" uid="uid://cxvkq1q6pkda8" path="res://Scenes/pause_menu.gd" id="1_taale"]
+[ext_resource type="PackedScene" uid="uid://cuneiert8cmjs" path="res://Scenes/scroll.tscn" id="2_u8tnp"]
+[ext_resource type="Texture2D" uid="uid://c1pcsoyb2dm88" path="res://assets/art/UI/CloseButton_Normal.png" id="5_524vl"]
+[ext_resource type="Texture2D" uid="uid://b1qdycp22iqor" path="res://assets/art/UI/CloseButton_Pressed.png" id="6_0fi7f"]
+[ext_resource type="Texture2D" uid="uid://btiwtiljsnxq2" path="res://assets/art/UI/Menu_Buttons/Quit_Button1.png" id="6_q7fiq"]
+[ext_resource type="Texture2D" uid="uid://diypjletpqjj" path="res://assets/art/UI/Menu_Buttons/Quit_Button3.png" id="7_6wqnn"]
+[ext_resource type="Texture2D" uid="uid://bu5g0nvpes6mh" path="res://assets/art/UI/CloseButton_Hover.png" id="7_uscpe"]
+[ext_resource type="Texture2D" uid="uid://cywy3ynqrr0o4" path="res://assets/art/UI/Menu_Buttons/Quit_Button2.png" id="8_1ymcx"]
+[ext_resource type="Texture2D" uid="uid://t5y3o0rn2dhp" path="res://assets/art/UI/Menu_Buttons/Options1.png" id="9_h7ojb"]
+[ext_resource type="Texture2D" uid="uid://hr13wo427e1y" path="res://assets/art/UI/Menu_Buttons/Options3.png" id="10_wqpeb"]
+[ext_resource type="Texture2D" uid="uid://rjppdir64yhi" path="res://assets/art/UI/Menu_Buttons/Options2.png" id="11_tekra"]
+[ext_resource type="Texture2D" uid="uid://dxn558tk5k2su" path="res://assets/art/UI/Menu_Buttons/Main_Menu_Button1.png" id="12_8flw2"]
+[ext_resource type="Texture2D" uid="uid://b5t6ipnomgjwp" path="res://assets/art/UI/Menu_Buttons/Main_Menu_Button3.png" id="13_c8xnj"]
+[ext_resource type="Texture2D" uid="uid://bvnk7ccapyija" path="res://assets/art/UI/Menu_Buttons/Main_Menu_Button2.png" id="14_m5ant"]
+
+[sub_resource type="Animation" id="Animation_srb65"]
+resource_name = "Menu_Close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pause_Options:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333336, 0.2666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kftxf"]
+resource_name = "Menu_Load"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pause_Options:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.73333335, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_663nc"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hvj8k"]
+_data = {
+&"Menu_Close": SubResource("Animation_srb65"),
+&"Menu_Load": SubResource("Animation_kftxf"),
+&"RESET": SubResource("Animation_663nc")
+}
+
+[node name="Pause_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_taale")
+
+[node name="Scroll" parent="." instance=ExtResource("2_u8tnp")]
+layout_mode = 1
+
+[node name="Pause_Options" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Back_Button" type="TextureButton" parent="Pause_Options"]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 265.0
+offset_right = 532.0
+offset_bottom = 345.0
+texture_normal = ExtResource("5_524vl")
+texture_pressed = ExtResource("6_0fi7f")
+texture_hover = ExtResource("7_uscpe")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause_Options"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.07001
+offset_top = -113.84
+offset_right = 166.93005
+offset_bottom = 290.16
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+
+[node name="Main_Menu" type="TextureButton" parent="Pause_Options/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_q7fiq")
+texture_pressed = ExtResource("7_6wqnn")
+texture_hover = ExtResource("8_1ymcx")
+
+[node name="Options" type="TextureButton" parent="Pause_Options/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("9_h7ojb")
+texture_pressed = ExtResource("10_wqpeb")
+texture_hover = ExtResource("11_tekra")
+
+[node name="Quit" type="TextureButton" parent="Pause_Options/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("12_8flw2")
+texture_pressed = ExtResource("13_c8xnj")
+texture_hover = ExtResource("14_m5ant")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_hvj8k")
+}
+
+[connection signal="pressed" from="Pause_Options/Back_Button" to="Pause_Options/Back_Button" method="_on_pressed"]
