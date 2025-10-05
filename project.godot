@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="JamSepticEye"
-run/main_scene="uid://c4d7f3xrnao6t"
+config/name="UnnaturalSelection"
+run/main_scene="uid://bkfskcwynls85"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://qu86yxhajnaf"
 

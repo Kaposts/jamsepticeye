@@ -50,3 +50,5 @@ script = ExtResource("1_prjhi")
 fish_scene = ExtResource("2_xp71g")
 player_scene = ExtResource("2_gbkt6")
 ability_scenes = Array[ExtResource("3_5d8k2")]([SubResource("Resource_ir8iy"), SubResource("Resource_hqns4"), SubResource("Resource_0h7mo"), SubResource("Resource_vrhm7"), SubResource("Resource_o5qum"), SubResource("Resource_c88ch")])
+
+[node name="UnlockedAbilitiesRoot" type="Node2D" parent="."]
