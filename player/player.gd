@@ -136,10 +136,10 @@ func _physics_process(delta):
 	if is_grappling:
 		velocity = Vector2.ZERO
 	elif not is_on_floor():
-		if can_hover and Input.is_action_just_pressed("ui_accept") and !is_jumping:
+		if can_hover and Input.is_action_just_pressed("jump") and !is_jumping:
 			velocity.x = 0
 		
-		if can_hover and Input.is_action_pressed("ui_accept") and !is_jumping:
+		if can_hover and Input.is_action_pressed("jump") and !is_jumping:
 			velocity.y = hover_gravity_scale
 			is_hovering = true
 		else:

@@ -25,7 +25,7 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept") and not flopping and not dying:
+	if event.is_action_pressed("jump") and not flopping and not dying:
 		facing_dir *= -1
 		apply_impulse(Vector2(flop_force.x * facing_dir, flop_force.y), Vector2(position.x -2, position.y ))
 
