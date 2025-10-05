@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2642ade67426a86534814f74a0f362c73c68245c7b8dcaefc805fa43617a3c0e
-size 505
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bdvgvxvy83j3r"
+path="res://.godot/imported/tounge_out_3.wav-8521d80a1b51cd438f44a6030dc0273e.sample"
+
+[deps]
+
+source_file="res://assets/sfx/tounge_out_3.wav"
+dest_files=["res://.godot/imported/tounge_out_3.wav-8521d80a1b51cd438f44a6030dc0273e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
