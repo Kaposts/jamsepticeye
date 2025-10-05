@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://c4d7f3xrnao6t"]
+[gd_scene load_steps=53 format=4 uid="uid://c4d7f3xrnao6t"]
 
 [ext_resource type="Script" uid="uid://pl7q14263x68" path="res://core/level_manager.gd" id="1_2nhjh"]
 [ext_resource type="PackedScene" uid="uid://baftkdlepc3ff" path="res://core/player_manager.tscn" id="1_ei405"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://dpxx5cdx4sxyg" path="res://leaderboard/leader_board.tscn" id="23_2hxjc"]
 [ext_resource type="Script" uid="uid://bulq5sk6pbgu6" path="res://platforming/finish.gd" id="23_2nhjh"]
 [ext_resource type="PackedScene" uid="uid://crmrc6nkin4t3" path="res://platforming/scenes/grapple_point.tscn" id="23_e8dv2"]
+[ext_resource type="PackedScene" uid="uid://b0bg77uyqmjdp" path="res://Scenes/pause_menu.tscn" id="24_2hxjc"]
 [ext_resource type="PackedScene" uid="uid://c7edv1edu6rrw" path="res://camera/player_follow_camera.tscn" id="26_gt76g"]
 [ext_resource type="PackedScene" uid="uid://iuwfevs5mml6" path="res://platforming/scenes/movable_block.tscn" id="30_2u7jv"]
 
@@ -1149,6 +1150,7 @@ text = "00:00"
 script = ExtResource("21_bjha6")
 
 [node name="submit_score" type="Control" parent="PlayerUI"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1214,6 +1216,9 @@ offset_right = 84.0
 offset_bottom = 232.0
 text = "menu"
 
+[node name="Pause_Menu" parent="PlayerUI" instance=ExtResource("24_2hxjc")]
+scale = Vector2(0.9968654, 1)
+
 [node name="DebugWindow" parent="." instance=ExtResource("10_hqns4")]
 visible = false
 
@@ -1235,60 +1240,98 @@ text = "YOU WIN"
 
 [node name="grapple point" parent="grapple_points" instance=ExtResource("23_e8dv2")]
 position = Vector2(17, -696)
+collision_mask = 1
+script = null
 
 [node name="grapple point2" parent="grapple_points" instance=ExtResource("23_e8dv2")]
 position = Vector2(-234, -648)
+collision_mask = 1
+script = null
 
 [node name="grapple point3" parent="grapple_points" instance=ExtResource("23_e8dv2")]
 position = Vector2(-482, -629)
+collision_mask = 1
+script = null
 
 [node name="grapple point13" parent="grapple_points" instance=ExtResource("23_e8dv2")]
 position = Vector2(-150, -1847)
+collision_mask = 1
+script = null
 
 [node name="grapple point12" parent="grapple_points" instance=ExtResource("23_e8dv2")]
 position = Vector2(-308, -1521)
+collision_mask = 1
+script = null
 
 [node name="grapple point7" parent="grapple_points" instance=ExtResource("23_e8dv2")]
 position = Vector2(586, -1187)
+collision_mask = 1
+script = null
 
 [node name="grapple point19" parent="grapple_points" instance=ExtResource("23_e8dv2")]
 position = Vector2(346, -1187)
+collision_mask = 1
+script = null
 
 [node name="grapple point20" parent="grapple_points" instance=ExtResource("23_e8dv2")]
 position = Vector2(100, -1187)
+collision_mask = 1
+script = null
 
 [node name="grapple point21" parent="grapple_points" instance=ExtResource("23_e8dv2")]
 position = Vector2(-144, -1187)
+collision_mask = 1
+script = null
 
 [node name="grapple point14" parent="grapple_points" instance=ExtResource("23_e8dv2")]
 position = Vector2(393, -2019)
+collision_mask = 1
+script = null
 
 [node name="grapple point15" parent="grapple_points" instance=ExtResource("23_e8dv2")]
 position = Vector2(652, -2025)
+collision_mask = 1
+script = null
 
 [node name="grapple point16" parent="grapple_points" instance=ExtResource("23_e8dv2")]
 position = Vector2(900, -2030)
+collision_mask = 1
+script = null
 
 [node name="grapple point17" parent="grapple_points" instance=ExtResource("23_e8dv2")]
 position = Vector2(1142, -2036)
+collision_mask = 1
+script = null
 
 [node name="grapple point18" parent="grapple_points" instance=ExtResource("23_e8dv2")]
 position = Vector2(1015, -2365)
+collision_mask = 1
+script = null
 
 [node name="grapple point22" parent="grapple_points" instance=ExtResource("23_e8dv2")]
 position = Vector2(805, -2365)
+collision_mask = 1
+script = null
 
 [node name="grapple point8" parent="grapple_points" instance=ExtResource("23_e8dv2")]
 position = Vector2(977, -1192)
+collision_mask = 1
+script = null
 
 [node name="grapple point9" parent="grapple_points" instance=ExtResource("23_e8dv2")]
 position = Vector2(1210, -1192)
+collision_mask = 1
+script = null
 
 [node name="grapple point11" parent="grapple_points" instance=ExtResource("23_e8dv2")]
 position = Vector2(1446, -1192)
+collision_mask = 1
+script = null
 
 [node name="grapple point10" parent="grapple_points" instance=ExtResource("23_e8dv2")]
 position = Vector2(1434, -1435)
+collision_mask = 1
+script = null
 
 [node name="movables" type="Node2D" parent="."]
 
