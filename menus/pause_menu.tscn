@@ -1,7 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://b0bg77uyqmjdp"]
+[gd_scene load_steps=21 format=3 uid="uid://b0bg77uyqmjdp"]
 
-[ext_resource type="Script" uid="uid://cxvkq1q6pkda8" path="res://Scenes/pause_menu.gd" id="1_taale"]
-[ext_resource type="PackedScene" uid="uid://cuneiert8cmjs" path="res://Scenes/scroll.tscn" id="2_u8tnp"]
+[ext_resource type="Script" uid="uid://cxvkq1q6pkda8" path="res://menus/pause_menu.gd" id="1_taale"]
+[ext_resource type="PackedScene" uid="uid://cxrn7l2wlwqut" path="res://menus/main_menu.tscn" id="2_0dmhi"]
+[ext_resource type="PackedScene" uid="uid://bm3x501r3my1h" path="res://menus/web_quit_screen.tscn" id="2_h5qef"]
+[ext_resource type="PackedScene" uid="uid://cuneiert8cmjs" path="res://menus/scroll.tscn" id="2_u8tnp"]
 [ext_resource type="Texture2D" uid="uid://c1pcsoyb2dm88" path="res://assets/art/UI/CloseButton_Normal.png" id="5_524vl"]
 [ext_resource type="Texture2D" uid="uid://b1qdycp22iqor" path="res://assets/art/UI/CloseButton_Pressed.png" id="6_0fi7f"]
 [ext_resource type="Texture2D" uid="uid://btiwtiljsnxq2" path="res://assets/art/UI/Menu_Buttons/Quit_Button1.png" id="6_q7fiq"]
@@ -63,6 +65,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_taale")
+main_menu_scene = ExtResource("2_0dmhi")
+web_quit_screen = ExtResource("2_h5qef")
 
 [node name="Scroll" parent="." instance=ExtResource("2_u8tnp")]
 layout_mode = 1
@@ -100,11 +104,11 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6, 0.6)
 
-[node name="Restart" type="TextureButton" parent="Pause_Options/VBoxContainer"]
+[node name="MainMenu" type="TextureButton" parent="Pause_Options/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("6_q7fiq")
-texture_pressed = ExtResource("7_6wqnn")
-texture_hover = ExtResource("8_1ymcx")
+texture_normal = ExtResource("12_8flw2")
+texture_pressed = ExtResource("13_c8xnj")
+texture_hover = ExtResource("14_m5ant")
 
 [node name="Options" type="TextureButton" parent="Pause_Options/VBoxContainer"]
 layout_mode = 2
@@ -114,9 +118,9 @@ texture_hover = ExtResource("11_tekra")
 
 [node name="MainMenu" type="TextureButton" parent="Pause_Options/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("12_8flw2")
-texture_pressed = ExtResource("13_c8xnj")
-texture_hover = ExtResource("14_m5ant")
+texture_normal = ExtResource("6_q7fiq")
+texture_pressed = ExtResource("7_6wqnn")
+texture_hover = ExtResource("8_1ymcx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
