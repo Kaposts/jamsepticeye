@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://dpxx5cdx4sxyg" path="res://leaderboard/leader_board.tscn" id="23_2hxjc"]
 [ext_resource type="Script" uid="uid://bulq5sk6pbgu6" path="res://platforming/finish.gd" id="23_2nhjh"]
 [ext_resource type="PackedScene" uid="uid://crmrc6nkin4t3" path="res://platforming/scenes/grapple_point.tscn" id="23_e8dv2"]
-[ext_resource type="PackedScene" uid="uid://b0bg77uyqmjdp" path="res://Scenes/pause_menu.tscn" id="24_2hxjc"]
+[ext_resource type="PackedScene" uid="uid://b0bg77uyqmjdp" path="res://menus/pause_menu.tscn" id="24_2hxjc"]
 [ext_resource type="PackedScene" uid="uid://c7edv1edu6rrw" path="res://camera/player_follow_camera.tscn" id="26_gt76g"]
 [ext_resource type="PackedScene" uid="uid://iuwfevs5mml6" path="res://platforming/scenes/movable_block.tscn" id="30_2u7jv"]
 
@@ -1217,7 +1217,7 @@ offset_bottom = 232.0
 text = "menu"
 
 [node name="Pause_Menu" parent="PlayerUI" instance=ExtResource("24_2hxjc")]
-scale = Vector2(0.9968654, 1)
+visible = false
 
 [node name="DebugWindow" parent="." instance=ExtResource("10_hqns4")]
 visible = false

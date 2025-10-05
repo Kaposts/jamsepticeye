@@ -58,6 +58,7 @@ _data = {
 }
 
 [node name="Pause_Menu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -116,7 +117,7 @@ texture_normal = ExtResource("9_h7ojb")
 texture_pressed = ExtResource("10_wqpeb")
 texture_hover = ExtResource("11_tekra")
 
-[node name="MainMenu" type="TextureButton" parent="Pause_Options/VBoxContainer"]
+[node name="Quit" type="TextureButton" parent="Pause_Options/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("6_q7fiq")
 texture_pressed = ExtResource("7_6wqnn")
@@ -128,4 +129,3 @@ libraries = {
 }
 
 [connection signal="pressed" from="Pause_Options/Back_Button" to="Pause_Options/Back_Button" method="_on_pressed"]
-[connection signal="pressed" from="Pause_Options/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
