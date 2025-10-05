@@ -1,3 +1,9 @@
 extends Node
 
 enum ABILITY { WALK, JUMP, CLAW, WALL_JUMP, FINGER, GRAPPLE, HOVER }
+
+enum SongNames {
+	TITLE_THEME,
+	GAME_LOOP,
+	GAME_LOOP_2,
+}
