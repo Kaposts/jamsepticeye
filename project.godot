@@ -17,9 +17,10 @@ config/icon="uid://qu86yxhajnaf"
 
 [autoload]
 
-Shaker="*res://addons/shaker/src/Shaker.gd"
 Enum="*res://core/enum.gd"
 SignalBus="*res://core/signal_bus.gd"
+MusicPlayer="*res://core/music_player.tscn"
+Shaker="*res://addons/shaker/src/Shaker.gd"
 
 [display]
 
