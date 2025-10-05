@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://b0bg77uyqmjdp"]
 
-[ext_resource type="Script" uid="uid://cxvkq1q6pkda8" path="res://Scenes/pause_menu.gd" id="1_taale"]
-[ext_resource type="PackedScene" uid="uid://cuneiert8cmjs" path="res://Scenes/scroll.tscn" id="2_u8tnp"]
+[ext_resource type="Script" uid="uid://cxvkq1q6pkda8" path="res://menus/pause_menu.gd" id="1_taale"]
+[ext_resource type="PackedScene" uid="uid://cuneiert8cmjs" path="res://menus/scroll.tscn" id="2_u8tnp"]
 [ext_resource type="Texture2D" uid="uid://c1pcsoyb2dm88" path="res://assets/art/UI/CloseButton_Normal.png" id="5_524vl"]
 [ext_resource type="Texture2D" uid="uid://b1qdycp22iqor" path="res://assets/art/UI/CloseButton_Pressed.png" id="6_0fi7f"]
 [ext_resource type="Texture2D" uid="uid://btiwtiljsnxq2" path="res://assets/art/UI/Menu_Buttons/Quit_Button1.png" id="6_q7fiq"]
@@ -100,11 +100,11 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6, 0.6)
 
-[node name="Main_Menu" type="TextureButton" parent="Pause_Options/VBoxContainer"]
+[node name="MainMenu" type="TextureButton" parent="Pause_Options/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("6_q7fiq")
-texture_pressed = ExtResource("7_6wqnn")
-texture_hover = ExtResource("8_1ymcx")
+texture_normal = ExtResource("12_8flw2")
+texture_pressed = ExtResource("13_c8xnj")
+texture_hover = ExtResource("14_m5ant")
 
 [node name="Options" type="TextureButton" parent="Pause_Options/VBoxContainer"]
 layout_mode = 2
@@ -114,9 +114,9 @@ texture_hover = ExtResource("11_tekra")
 
 [node name="Quit" type="TextureButton" parent="Pause_Options/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("12_8flw2")
-texture_pressed = ExtResource("13_c8xnj")
-texture_hover = ExtResource("14_m5ant")
+texture_normal = ExtResource("6_q7fiq")
+texture_pressed = ExtResource("7_6wqnn")
+texture_hover = ExtResource("8_1ymcx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
