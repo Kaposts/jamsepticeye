@@ -1,5 +1,6 @@
 [gd_scene load_steps=46 format=4 uid="uid://c4d7f3xrnao6t"]
 
+[ext_resource type="PackedScene" uid="uid://baftkdlepc3ff" path="res://core/player_manager.tscn" id="1_ei405"]
 [ext_resource type="Texture2D" uid="uid://cvsr0ew5klrxo" path="res://assets/art/free-swamp-game-tileset-pixel-art/2 Background/Layers/2.png" id="2_flf07"]
 [ext_resource type="Texture2D" uid="uid://c8r85isnewky1" path="res://assets/art/free-swamp-game-tileset-pixel-art/2 Background/Layers/3.png" id="3_k73cj"]
 [ext_resource type="PackedScene" uid="uid://byp43elml65d5" path="res://platforming/scenes/deathbox.tscn" id="8_ei405"]
@@ -18,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://bfdestwo6gush" path="res://assets/art/free-swamp-game-tileset-pixel-art/2 Background/Layers/5.png" id="19_rjqkl"]
 [ext_resource type="Texture2D" uid="uid://h3tobxjdl1f8" path="res://assets/art/free-swamp-game-tileset-pixel-art/3 Objects/Bushes/8.png" id="20_e8dv2"]
 [ext_resource type="Texture2D" uid="uid://bktbg78ktmped" path="res://assets/art/free-swamp-game-tileset-pixel-art/3 Objects/Bushes/9.png" id="21_2nhjh"]
-[ext_resource type="PackedScene" uid="uid://c42tatqhkdecw" path="res://player/player.tscn" id="22_ei405"]
 [ext_resource type="PackedScene" uid="uid://crmrc6nkin4t3" path="res://platforming/scenes/grapple_point.tscn" id="23_e8dv2"]
 [ext_resource type="PackedScene" uid="uid://c7edv1edu6rrw" path="res://camera/player_follow_camera.tscn" id="26_gt76g"]
 [ext_resource type="PackedScene" uid="uid://iuwfevs5mml6" path="res://platforming/scenes/movable_block.tscn" id="30_2u7jv"]
@@ -1005,6 +1005,8 @@ shader_parameter/vignette_color = Color(0.08114017, 0.19977546, 4.813075e-08, 1)
 
 [node name="Node2D" type="Node2D"]
 
+[node name="PlayerManager" parent="." instance=ExtResource("1_ei405")]
+
 [node name="PlayerFollowCamera" parent="." instance=ExtResource("26_gt76g")]
 lookahead_x_distance = 40.0
 lookahead_y_distance = 50.0
@@ -1252,10 +1254,3 @@ position = Vector2(1446, -1192)
 
 [node name="grapple point10" parent="grapple_points" instance=ExtResource("23_e8dv2")]
 position = Vector2(1434, -1435)
-
-[node name="Player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("22_ei405")]
-position = Vector2(-1172, -1065)
-camera = NodePath("../PlayerFollowCamera")
-wall_jump_lock_time = 0.0
-finger_force = Vector2(550, -550)
-finger_time = 0.3

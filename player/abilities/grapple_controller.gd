@@ -17,7 +17,7 @@ var angular_velocity: float = 0.0
 var _tongue_tip_position: Vector2 = Vector2.ZERO
 var _launch_duration: float = 0.0
 
-@onready var detector:Area2D = $HookDetector
+@onready var detector:Area2D = %HookDetector
 @onready var tongue_line: Line2D = %TongueLine
 @onready var tongue_tip_sprite: Sprite2D = %TongueTipSprite
 @onready var tongue_visuals: Node2D = $TongueVisuals
@@ -138,11 +138,12 @@ func _launch_tongue_visuals(player: Player) -> void:
 func is_attached() -> bool:
 	return attached
 
-
 func get_closest_grapple_target(player: Node2D) -> Node2D:
+	if !detector: detector = %HookDetector
+
 	var closest: Node2D = null
 	var closest_distance := INF
-	
+
 	for body in detector.get_overlapping_bodies():
 		if not body is Node2D:
 			continue
@@ -151,5 +152,5 @@ func get_closest_grapple_target(player: Node2D) -> Node2D:
 		if dist < closest_distance:
 			closest_distance = dist
 			closest = body
-	
+	print(detector.global_position)
 	return closest

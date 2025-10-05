@@ -31,10 +31,10 @@ func _input(event):
 			player.camera = camera
 			apply_abilities(player)
 			SignalBus.player_spawned.emit()
+	if event.is_action_pressed("die"):
+		get_tree().get_first_node_in_group("player").die()
 
 func evolve():
-	# print("Unlocked ability: ", Enum.ABILITY.find_key(death_counter - 1))
-
 	match death_counter:
 		1: add_ability(Enum.ABILITY.WALK)
 		2: add_ability(Enum.ABILITY.JUMP)
@@ -54,7 +54,7 @@ func add_ability(ability: Enum.ABILITY):
 			scene = data.scene
 			break
 	
-	if !scene: 
+	if !scene:
 		push_warning("ability ",ability, " not founr")
 		return
 
