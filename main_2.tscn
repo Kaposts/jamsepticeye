@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c7edv1edu6rrw" path="res://camera/player_follow_camera.tscn" id="1_k1oo3"]
 [ext_resource type="Texture2D" uid="uid://cvsr0ew5klrxo" path="res://assets/art/free-swamp-game-tileset-pixel-art/2 Background/Layers/2.png" id="2_47lid"]
+[ext_resource type="PackedScene" uid="uid://baftkdlepc3ff" path="res://core/player_manager.tscn" id="2_k1oo3"]
 [ext_resource type="Shader" uid="uid://t0bw3n8dln3p" path="res://shaders/foliage_wind.gdshader" id="3_70jeb"]
 [ext_resource type="Texture2D" uid="uid://c8r85isnewky1" path="res://assets/art/free-swamp-game-tileset-pixel-art/2 Background/Layers/3.png" id="4_gk131"]
 [ext_resource type="Texture2D" uid="uid://7vlvquau8ywd" path="res://assets/art/free-swamp-game-tileset-pixel-art/3 Objects/Willows/3.png" id="5_v17e8"]
@@ -21,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://dah2f52xwyrbs" path="res://debug/debug_window.tscn" id="19_5e6c4"]
 [ext_resource type="PackedScene" uid="uid://iuwfevs5mml6" path="res://platforming/scenes/movable_block.tscn" id="20_x1rc7"]
 [ext_resource type="PackedScene" uid="uid://crmrc6nkin4t3" path="res://platforming/scenes/grapple_point.tscn" id="21_w4oey"]
-[ext_resource type="PackedScene" uid="uid://c42tatqhkdecw" path="res://player/player.tscn" id="22_cxn84"]
 
 [sub_resource type="Environment" id="Environment_7vxoj"]
 background_mode = 3
@@ -1012,6 +1012,8 @@ lookahead_y_distance = 50.0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7vxoj")
 
+[node name="PlayerManager" parent="." instance=ExtResource("2_k1oo3")]
+
 [node name="BackgroundParallax" type="Node2D" parent="."]
 
 [node name="BgParallaxBack" type="Parallax2D" parent="BackgroundParallax"]
@@ -1252,10 +1254,3 @@ position = Vector2(1446, -1192)
 
 [node name="grapple point10" parent="grapple_points" instance=ExtResource("21_w4oey")]
 position = Vector2(1434, -1435)
-
-[node name="Player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("22_cxn84")]
-position = Vector2(-1172, -1065)
-camera = NodePath("../PlayerFollowCamera")
-wall_jump_lock_time = 0.0
-finger_force = Vector2(550, -550)
-finger_time = 0.3

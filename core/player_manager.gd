@@ -6,6 +6,7 @@ extends Node
 
 @export var unlocked_abilities := []
 @export var ability_scenes: Array[AbilityData] = []
+@onready var unlocked_abilities_root: Node2D = $UnlockedAbilitiesRoot
 
 var death_counter: int = 0
 
@@ -21,13 +22,14 @@ func _ready():
 	get_parent().add_child.call_deferred(fish_scene.instantiate())
 	camera = get_tree().get_first_node_in_group("player_follow_camera")
 
+
 func _input(event):
 	if event.is_action_pressed("restart"):
 		if get_tree().get_nodes_in_group('player').size() <= 0:
 			var player = player_scene.instantiate()
+			get_parent().add_child(player)
 			player.camera = camera
 			apply_abilities(player)
-			get_parent().add_child(player)
 			SignalBus.player_spawned.emit()
 
 func evolve():
@@ -56,15 +58,26 @@ func add_ability(ability: Enum.ABILITY):
 		push_warning("ability ",ability, " not founr")
 		return
 
-	var ability_instance: Node = scene.instantiate()
+	var ability_instance: Ability = scene.instantiate()
 	unlocked_abilities.append(ability_instance)
 
 
-func apply_abilities(player):
-	player.abilities = unlocked_abilities.duplicate()
+func apply_abilities(player: Player):
+	for unlocked in unlocked_abilities:
+		var ability: Ability = (unlocked as Ability).duplicate()
+		player.abilities_root.add_child(ability)
+		player.abilities.append(ability)
+	
 	player.can_wall_jump = can_wall_jump
 	player.can_hover = can_hover
 	player.can_push = can_push
+	
+	if death_counter >= 3:
+		player.show_wings()
+	if death_counter >= 6:
+		player.tongue.show()
+	if death_counter >= 7:
+		player.wear_shoes()
 
 
 func _on_player_died():

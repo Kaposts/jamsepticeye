@@ -1472,3 +1472,5 @@ collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InterestPointDetector"]
 shape = SubResource("CircleShape2D_hg6s5")
+
+[node name="AbilitiesRoot" type="Node2D" parent="."]

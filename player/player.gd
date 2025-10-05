@@ -101,12 +101,17 @@ var is_grappling: bool = false:
 #region NODE VARIABLES
 
 @onready var interest_point_detector: Area2D = $InterestPointDetector
+@onready var abilities_root: Node2D = $AbilitiesRoot
 
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var animation_state_machine: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
 @onready var visuals: Node2D = $Visuals
 @onready var body: Node2D = $Visuals/Body
 @onready var tongue: Node2D = $Visuals/Tongue
+@onready var back_leg_sprite: Sprite2D = $Visuals/BackLeg/BackLegSprite
+@onready var front_leg_sprite: Sprite2D = $Visuals/FrontLeg/FrontLegSprite
+@onready var back_wing: Node2D = $Visuals/BackWing
+@onready var front_wing: Node2D = $Visuals/FrontWing
 
 
 
@@ -117,6 +122,10 @@ func _ready() -> void:
 	camera = get_tree().get_first_node_in_group("player_follow_camera")
 	interest_point_detector.body_entered.connect(_on_interest_point_detected)
 	interest_point_detector.body_exited.connect(_on_interest_point_exited)
+	
+	back_wing.hide()
+	front_wing.hide()
+	tongue.hide()
 
 
 func _physics_process(delta):
@@ -194,6 +203,16 @@ func get_farthest_interest_point() -> Vector2:
 	return farthest_point_position
 
 
+func show_wings() -> void:
+	back_wing.show()
+	front_wing.show()
+
+
+func wear_shoes() -> void:
+	back_leg_sprite.texture = back_sneaker_texture
+	front_leg_sprite.texture = front_sneaker_texture
+
+
 #endregion
 #===================================================================================================
 #region PRIVATE FUNCTIONS
@@ -204,10 +223,6 @@ func _sync_animation() -> void:
 	elif velocity.x < 0.0:
 		visuals.scale.x = 1.0
 	
-	if is_grappling:
-		tongue.hide()
-	else:
-		tongue.show()
 	
 	if is_hovering or is_grappling:
 		animation_state_machine.travel("hover")

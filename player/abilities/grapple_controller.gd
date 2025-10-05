@@ -48,7 +48,9 @@ func attach(player: Player, anchor_pos: Vector2) -> void:
 	player.is_grappling = true
 	attached_changed.emit(true)
 	
+	player.tongue.hide()
 	_launch_tongue_visuals(player)
+
 
 func detach(player: Player) -> void:
 	if not attached:
@@ -67,6 +69,7 @@ func detach(player: Player) -> void:
 
 	attached = false
 	player.is_grappling = false
+	player.tongue.show()
 	attached_changed.emit(false)
 
 

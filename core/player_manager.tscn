@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://baftkdlepc3ff"]
+[gd_scene load_steps=16 format=3 uid="uid://baftkdlepc3ff"]
 
 [ext_resource type="Script" uid="uid://d6uopiqqqwar" path="res://core/player_manager.gd" id="1_prjhi"]
 [ext_resource type="PackedScene" uid="uid://c42tatqhkdecw" path="res://player/player.tscn" id="2_gbkt6"]
+[ext_resource type="PackedScene" uid="uid://801a5vbsnn1" path="res://player/fish.tscn" id="2_xp71g"]
 [ext_resource type="Script" uid="uid://bkag1adotndfr" path="res://player/abilities/ability_data.gd" id="3_5d8k2"]
 [ext_resource type="PackedScene" uid="uid://ckd22726wqe7y" path="res://player/abilities/scenes/walk.tscn" id="4_xp71g"]
 [ext_resource type="PackedScene" uid="uid://cubwhapt2w0ek" path="res://player/abilities/scenes/jump.tscn" id="5_vrhm7"]
@@ -46,5 +47,8 @@ metadata/_custom_type_script = "uid://bkag1adotndfr"
 
 [node name="PlayerManager" type="Node2D" groups=["player_manager"]]
 script = ExtResource("1_prjhi")
+fish_scene = ExtResource("2_xp71g")
 player_scene = ExtResource("2_gbkt6")
 ability_scenes = Array[ExtResource("3_5d8k2")]([SubResource("Resource_ir8iy"), SubResource("Resource_hqns4"), SubResource("Resource_0h7mo"), SubResource("Resource_vrhm7"), SubResource("Resource_o5qum"), SubResource("Resource_c88ch")])
+
+[node name="UnlockedAbilitiesRoot" type="Node2D" parent="."]

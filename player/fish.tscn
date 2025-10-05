@@ -9,7 +9,7 @@
 radius = 7.0
 height = 38.0
 
-[node name="Fish" type="RigidBody2D"]
+[node name="Fish" type="RigidBody2D" groups=["player"]]
 collision_mask = 2
 mass = 0.3
 contact_monitor = true
