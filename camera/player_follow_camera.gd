@@ -28,7 +28,6 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	set_state()
-	print(state_machine.state.name)
 
 
 func set_state() -> void:
