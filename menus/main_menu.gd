@@ -1,3 +1,4 @@
+class_name MainMenu
 extends CanvasLayer
 ## Main Menu Script
 
@@ -16,6 +17,8 @@ extends CanvasLayer
 @onready var credits_scroll_anim: AnimationPlayer = $ControlRoot/Credits/Scroll/AnimationPlayer
 
 func _ready() -> void:
+	get_tree().paused = true
+	
 	play_button.pressed.connect(_on_play_button_pressed)
 	options_button.pressed.connect(_on_options_button_pressed)
 	credits_button.pressed.connect(_on_credits_button_pressed)
@@ -23,7 +26,10 @@ func _ready() -> void:
 
 
 func _on_play_button_pressed() -> void:
-	pass
+	MusicPlayer.switch_song(Enum.SongNames.GAME_LOOP, true, true)
+	hide()
+	get_tree().paused = false
+	SignalBus.sig_game_started.emit()
 
 
 func _on_options_button_pressed() -> void:

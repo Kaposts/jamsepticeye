@@ -21,8 +21,6 @@ func _ready():
 	
 	get_parent().add_child.call_deferred(fish_scene.instantiate())
 	camera = get_tree().get_first_node_in_group("player_follow_camera")
-	
-	MusicPlayer.switch_song(Enum.SongNames.GAME_LOOP, true, true)
 
 
 func _input(event):
