@@ -29,10 +29,10 @@ func _input(event):
 			apply_abilities(player)
 			get_parent().add_child(player)
 			SignalBus.player_spawned.emit()
+	if event.is_action_pressed("die"):
+		get_tree().get_first_node_in_group("player").die()
 
 func evolve():
-	# print("Unlocked ability: ", Enum.ABILITY.find_key(death_counter - 1))
-
 	match death_counter:
 		1: add_ability(Enum.ABILITY.WALK)
 		2: add_ability(Enum.ABILITY.JUMP)
@@ -52,16 +52,21 @@ func add_ability(ability: Enum.ABILITY):
 			scene = data.scene
 			break
 	
-	if !scene: 
+	if !scene:
 		push_warning("ability ",ability, " not founr")
 		return
 
-	var ability_instance: Node = scene.instantiate()
-	unlocked_abilities.append(ability_instance)
+	# var ability_instance: Node = scene.instantiate()
+	unlocked_abilities.append(scene)
 
 
 func apply_abilities(player):
-	player.abilities = unlocked_abilities.duplicate()
+	for ability in unlocked_abilities:
+		var scene = ability.instantiate()
+		player.abilities.append(scene)
+		player.add_child(scene)
+	
+	
 	player.can_wall_jump = can_wall_jump
 	player.can_hover = can_hover
 	player.can_push = can_push

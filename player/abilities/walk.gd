@@ -7,12 +7,17 @@ func apply(player, delta):
 	var speed = player.hover_move_speed if player.is_hovering else player.speed
 
 	var target_vel_x = input_direction * speed
-	
-	if player.wall_jump_lock_counter > 0.0:
+	print(player.is_big_jumping)
+	if player.is_big_jumping:
 		target_vel_x = 0
-		player.wall_jump_lock_counter -= delta
 
 
-	if (!player.is_on_floor() or !player.is_on_wall()) and player.is_big_jumping == false:
+	# print("floor:",player.is_on_floor())
+	# print("wall:",player.is_on_wall())
+	# print("is_big_jumping:",player.is_big_jumping)
+
+	if !player.is_on_floor() and !player.is_big_jumping:
 		player.velocity.x = move_toward(player.velocity.x, target_vel_x, speed * delta * 100)
+	# elif player.is_big_jumping:
+	# 	player.velocity.x = move_toward(player.velocity.x, target_vel_x, player.acceleration * delta)
 	else: player.velocity.x = move_toward(player.velocity.x, target_vel_x, player.acceleration * delta)

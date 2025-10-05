@@ -9,11 +9,14 @@ func apply(player, delta):
 	# 	finger(player, player.wall_dir)
 
 	if player.is_on_wall():
+		player.is_big_jumping = false
 		wall_coyote_counter = player.wall_coyote_time
+	elif player.is_on_floor():
+		player.is_big_jumping = false
 	else:
 		wall_coyote_counter -= delta
 
-	if timer > 0 and player.is_big_jumping:
+	if timer > 0:
 		timer -= delta
 	else: player.is_big_jumping = false
 
@@ -31,5 +34,5 @@ func finger(player, dir):
 	timer = player.finger_time
 
 	var outward = player.finger_force.x * dir
-	player.velocity.x = outward + (player.input_dir * 100) # input can help steer
+	player.velocity.x = outward + (player.input_dir * 150) # input can help steer
 	player.velocity.y = player.finger_force.y
