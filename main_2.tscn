@@ -1210,6 +1210,9 @@ position = Vector2(-242, -713)
 [node name="grapple point3" parent="grapple_points" instance=ExtResource("21_w4oey")]
 position = Vector2(-493, -653)
 
+[node name="grapple point19" parent="grapple_points" instance=ExtResource("21_w4oey")]
+position = Vector2(72, -174)
+
 [node name="grapple point4" parent="grapple_points" instance=ExtResource("21_w4oey")]
 position = Vector2(-163, -1023)
 
