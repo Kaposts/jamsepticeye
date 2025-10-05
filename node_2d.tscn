@@ -21,12 +21,50 @@
 [ext_resource type="Texture2D" uid="uid://h3tobxjdl1f8" path="res://assets/art/free-swamp-game-tileset-pixel-art/3 Objects/Bushes/8.png" id="20_e8dv2"]
 [ext_resource type="Texture2D" uid="uid://bktbg78ktmped" path="res://assets/art/free-swamp-game-tileset-pixel-art/3 Objects/Bushes/9.png" id="21_2nhjh"]
 [ext_resource type="Script" uid="uid://lpje8g418wbk" path="res://timer.gd" id="21_bjha6"]
-[ext_resource type="Script" uid="uid://bwf4fs1vxtyxa" path="res://level_finished_window.gd" id="22_1fr6y"]
-[ext_resource type="PackedScene" uid="uid://dpxx5cdx4sxyg" path="res://leaderboard/leader_board.tscn" id="23_2hxjc"]
+[ext_resource type="PackedScene" uid="uid://cbv2e8v2yjmtk" path="res://menus/submit_score_screen.tscn" id="22_gt76g"]
 [ext_resource type="Script" uid="uid://bulq5sk6pbgu6" path="res://platforming/finish.gd" id="23_2nhjh"]
 [ext_resource type="PackedScene" uid="uid://crmrc6nkin4t3" path="res://platforming/scenes/grapple_point.tscn" id="23_e8dv2"]
 [ext_resource type="PackedScene" uid="uid://c7edv1edu6rrw" path="res://camera/player_follow_camera.tscn" id="26_gt76g"]
+[ext_resource type="PackedScene" uid="uid://cxrn7l2wlwqut" path="res://menus/main_menu.tscn" id="27_1fr6y"]
 [ext_resource type="PackedScene" uid="uid://iuwfevs5mml6" path="res://platforming/scenes/movable_block.tscn" id="30_2u7jv"]
+
+[sub_resource type="Gradient" id="Gradient_ei405"]
+offsets = PackedFloat32Array(0, 0.15714286)
+colors = PackedColorArray(0, 0.8784314, 0.3019608, 1, 1, 1, 1, 0)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_e8dv2"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2nhjh"]
+noise = SubResource("FastNoiseLite_e8dv2")
+color_ramp = SubResource("Gradient_ei405")
+seamless = true
+
+[sub_resource type="Gradient" id="Gradient_bjha6"]
+offsets = PackedFloat32Array(0, 0.5107143)
+colors = PackedColorArray(0, 0.3529412, 0, 0.84313726, 0, 0.78039217, 0, 0)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fs4d3"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7vxoj"]
+noise = SubResource("FastNoiseLite_fs4d3")
+color_ramp = SubResource("Gradient_bjha6")
+seamless = true
+invert = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ta5nu"]
+shader = ExtResource("15_d2bti")
+shader_parameter/pos = Vector2(0, 0)
+shader_parameter/textureResolution = 512.0
+shader_parameter/moveDir = Vector2(-1, -0.4)
+shader_parameter/noise = SubResource("NoiseTexture2D_2nhjh")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_7vxoj")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e8dv2"]
+shader = ExtResource("18_ei405")
+shader_parameter/outerRadius = 1.59600007581
+shader_parameter/MainAlpha = 0.80400003819
+shader_parameter/vignette_color = Color(0.08114017, 0.19977546, 4.813075e-08, 1)
 
 [sub_resource type="Environment" id="Environment_7vxoj"]
 background_mode = 3
@@ -933,51 +971,60 @@ shader_parameter/offSetSpeed = Vector2(0.01, 0.05)
 shader_parameter/backGroundDirX = 0.01
 shader_parameter/backGroundDirY = 0.01
 
-[sub_resource type="Gradient" id="Gradient_ei405"]
-offsets = PackedFloat32Array(0, 0.15714286)
-colors = PackedColorArray(0, 0.8784314, 0.3019608, 1, 1, 1, 1, 0)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_e8dv2"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2nhjh"]
-noise = SubResource("FastNoiseLite_e8dv2")
-color_ramp = SubResource("Gradient_ei405")
-seamless = true
-
-[sub_resource type="Gradient" id="Gradient_bjha6"]
-offsets = PackedFloat32Array(0, 0.5107143)
-colors = PackedColorArray(0, 0.3529412, 0, 0.84313726, 0, 0.78039217, 0, 0)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_fs4d3"]
-noise_type = 2
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7vxoj"]
-noise = SubResource("FastNoiseLite_fs4d3")
-color_ramp = SubResource("Gradient_bjha6")
-seamless = true
-invert = true
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ta5nu"]
-shader = ExtResource("15_d2bti")
-shader_parameter/pos = Vector2(0, 0)
-shader_parameter/textureResolution = 512.0
-shader_parameter/moveDir = Vector2(-1, -0.4)
-shader_parameter/noise = SubResource("NoiseTexture2D_2nhjh")
-shader_parameter/noise2 = SubResource("NoiseTexture2D_7vxoj")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_e8dv2"]
-shader = ExtResource("18_ei405")
-shader_parameter/outerRadius = 1.59600007581
-shader_parameter/MainAlpha = 0.80400003819
-shader_parameter/vignette_color = Color(0.08114017, 0.19977546, 4.813075e-08, 1)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bjha6"]
 size = Vector2(116, 105)
 
 [node name="Node2D" type="Node2D" groups=["level"]]
 script = ExtResource("1_2nhjh")
 
+[node name="PlayerUI" type="CanvasLayer" parent="."]
+
+[node name="fog" type="ColorRect" parent="PlayerUI"]
+modulate = Color(0.005322846, 0.32502773, 1.92523e-07, 1)
+show_behind_parent = true
+z_index = 2
+material = SubResource("ShaderMaterial_ta5nu")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -384.0
+offset_top = -79.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="PlayerUI"]
+material = SubResource("ShaderMaterial_e8dv2")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="GameTimer" type="Label" parent="PlayerUI"]
+unique_name_in_owner = true
+visible = false
+offset_left = 296.0
+offset_top = 13.0
+offset_right = 337.0
+offset_bottom = 36.0
+text = "00:00"
+script = ExtResource("21_bjha6")
+
+[node name="SubmitScoreScreen" parent="PlayerUI" instance=ExtResource("22_gt76g")]
+unique_name_in_owner = true
+visible = false
+
+[node name="MainMenu" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("27_1fr6y")]
+camera = NodePath("../PlayerFollowCamera")
+
+[node name="DebugWindow" parent="." instance=ExtResource("10_hqns4")]
+visible = false
+
 [node name="PlayerFollowCamera" parent="." instance=ExtResource("26_gt76g")]
+position = Vector2(0, -50)
 lookahead_x_distance = 40.0
 lookahead_y_distance = 50.0
 
@@ -1114,109 +1161,6 @@ repeat_times = 35
 position = Vector2(334, -73)
 texture = ExtResource("19_rjqkl")
 
-[node name="PlayerUI" type="CanvasLayer" parent="."]
-
-[node name="fog" type="ColorRect" parent="PlayerUI"]
-modulate = Color(0.005322846, 0.32502773, 1.92523e-07, 1)
-show_behind_parent = true
-z_index = 2
-material = SubResource("ShaderMaterial_ta5nu")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -384.0
-offset_top = -79.0
-offset_bottom = 128.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="ColorRect" type="ColorRect" parent="PlayerUI"]
-material = SubResource("ShaderMaterial_e8dv2")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="timer" type="Label" parent="PlayerUI"]
-offset_left = 296.0
-offset_top = 13.0
-offset_right = 337.0
-offset_bottom = 36.0
-text = "00:00"
-script = ExtResource("21_bjha6")
-
-[node name="submit_score" type="Control" parent="PlayerUI"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("22_1fr6y")
-
-[node name="Label" type="Label" parent="PlayerUI/submit_score"]
-layout_mode = 0
-offset_left = 47.0
-offset_top = 80.0
-offset_right = 288.0
-offset_bottom = 103.0
-text = "You have completed the level"
-
-[node name="time" type="Label" parent="PlayerUI/submit_score"]
-layout_mode = 0
-offset_left = 44.0
-offset_top = 112.0
-offset_right = 285.0
-offset_bottom = 135.0
-text = "Time: 00:00"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LineEdit" type="LineEdit" parent="PlayerUI/submit_score"]
-layout_mode = 0
-offset_left = 22.0
-offset_top = 158.0
-offset_right = 237.0
-offset_bottom = 189.0
-placeholder_text = "Enter your name"
-
-[node name="submit" type="Button" parent="PlayerUI/submit_score"]
-layout_mode = 0
-offset_left = 245.0
-offset_top = 158.0
-offset_right = 307.0
-offset_bottom = 189.0
-text = "submit"
-
-[node name="LeaderBoard" parent="PlayerUI/submit_score" instance=ExtResource("23_2hxjc")]
-layout_mode = 0
-offset_left = 469.0
-offset_top = 167.0
-offset_right = 469.0
-offset_bottom = 167.0
-
-[node name="close" type="Button" parent="PlayerUI/submit_score"]
-layout_mode = 0
-offset_left = 31.0
-offset_top = 242.0
-offset_right = 79.0
-offset_bottom = 273.0
-text = "close"
-
-[node name="menu" type="Button" parent="PlayerUI/submit_score"]
-layout_mode = 0
-offset_left = 31.0
-offset_top = 201.0
-offset_right = 84.0
-offset_bottom = 232.0
-text = "menu"
-
-[node name="DebugWindow" parent="." instance=ExtResource("10_hqns4")]
-visible = false
-
 [node name="Label" type="Label" parent="."]
 offset_left = 1466.0
 offset_top = -651.0
@@ -1312,8 +1256,5 @@ script = ExtResource("23_2nhjh")
 position = Vector2(-3, -15.5)
 shape = SubResource("RectangleShape2D_bjha6")
 
-[connection signal="time_updated" from="." to="PlayerUI/timer" method="_on_node_2d_time_updated"]
-[connection signal="pressed" from="PlayerUI/submit_score/submit" to="PlayerUI/submit_score" method="_on_submit_pressed"]
-[connection signal="pressed" from="PlayerUI/submit_score/close" to="PlayerUI/submit_score" method="_on_close_pressed"]
-[connection signal="pressed" from="PlayerUI/submit_score/menu" to="PlayerUI/submit_score" method="_on_menu_pressed"]
+[connection signal="time_updated" from="." to="PlayerUI/GameTimer" method="_on_node_2d_time_updated"]
 [connection signal="body_entered" from="finish" to="finish" method="_on_body_entered"]

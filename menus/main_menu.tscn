@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://rowd5l4byabr" path="res://menus/credits.tscn" id="17_ysyx0"]
 
 [node name="MainMenu" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_1edw4")
 web_quit_screen = ExtResource("2_ysfef")
 
