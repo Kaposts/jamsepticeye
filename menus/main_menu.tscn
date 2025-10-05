@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cxrn7l2wlwqut"]
+[gd_scene load_steps=22 format=3 uid="uid://cxrn7l2wlwqut"]
 
 [ext_resource type="Script" uid="uid://dtallk0xtca5a" path="res://menus/main_menu.gd" id="1_1edw4"]
 [ext_resource type="Texture2D" uid="uid://cpo7mcmhr44gb" path="res://assets/art/UI/Post.png" id="1_rmbjf"]
@@ -19,10 +19,53 @@
 [ext_resource type="Texture2D" uid="uid://cywy3ynqrr0o4" path="res://assets/art/UI/Menu_Buttons/Quit_Button2.png" id="16_tvv58"]
 [ext_resource type="PackedScene" uid="uid://rowd5l4byabr" path="res://menus/credits.tscn" id="17_ysyx0"]
 
+[sub_resource type="Animation" id="Animation_kqtkm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ControlRoot:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ysfef"]
+resource_name = "game_start"
+length = 2.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ControlRoot:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kqtkm"]
+_data = {
+&"RESET": SubResource("Animation_kqtkm"),
+&"game_start": SubResource("Animation_ysfef")
+}
+
 [node name="MainMenu" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_1edw4")
 web_quit_screen = ExtResource("2_ysfef")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kqtkm")
+}
 
 [node name="ControlRoot" type="Control" parent="."]
 layout_mode = 3
