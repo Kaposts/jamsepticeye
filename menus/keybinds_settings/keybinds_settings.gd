@@ -4,6 +4,7 @@ extends Control
 @export var input_button: PackedScene
 @onready var action_list: VBoxContainer = %ActionList
 @onready var reset_button: Button = %ResetButton
+@onready var back_button: Button = %BackButton
 
 
 var is_remapping: bool = false
@@ -24,6 +25,7 @@ func _ready() -> void:
 	_create_action_list()
 	
 	reset_button.pressed.connect(_on_reset_button_pressed)
+	back_button.pressed.connect(_on_back_button_pressed)
 
 
 func _input(event: InputEvent) -> void:
@@ -80,3 +82,7 @@ func _on_input_button_pressed(button: Button, action: StringName) -> void:
 
 func _on_reset_button_pressed() -> void:
 	_create_action_list()
+
+
+func _on_back_button_pressed() -> void:
+	hide()

@@ -13,6 +13,21 @@ grow_vertical = 2
 script = ExtResource("1_61xkn")
 input_button = ExtResource("1_mewpe")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -170.0
+offset_right = 240.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.27401456, 0.34140164, 0.10115052, 0.92156863)
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -50,8 +65,19 @@ size_flags_horizontal = 3
 [node name="InputButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_mewpe")]
 layout_mode = 2
 
-[node name="ResetButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="ResetButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 focus_mode = 0
 text = "Reset to Default"
+
+[node name="BackButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Back"

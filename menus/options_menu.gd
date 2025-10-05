@@ -10,6 +10,7 @@ extends Control
 @onready var sfx_slider: HSlider = $Options/GridContainer/SFXSlider
 @onready var voice_slider: HSlider = $Options/GridContainer/VoiceSlider
 
+@onready var keybinds_settings: Control = $Options/KeybindsSettings
 
 
 func _ready() -> void:
@@ -22,6 +23,7 @@ func _ready() -> void:
 	voice_slider.value_changed.connect(on_audio_slider_changed.bind("Voice"))
 	
 	update_display()
+	keybinds_settings.hide()
 
 
 
@@ -52,7 +54,7 @@ func _on_close_button_pressed() -> void:
 
 
 func _on_keybinding_button_pressed() -> void:
-	pass
+	keybinds_settings.show()
 
 
 func on_audio_slider_changed(value: float, bus_name: String) -> void:
