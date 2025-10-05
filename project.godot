@@ -66,6 +66,11 @@ player="fish with nikes"
 player_manager=""
 level=""
 
+[gui]
+
+theme/default_font_antialiasing=0
+theme/default_font_hinting=0
+
 [input]
 
 ui_left={
@@ -120,4 +125,4 @@ die={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-environment/defaults/default_clear_color=Color(0.060593635, 0.14607912, 0.1485269, 1)
+environment/defaults/default_clear_color=Color(0.05882353, 0.14509805, 0.14901961, 1)

@@ -15,7 +15,7 @@ mass = 0.3
 contact_monitor = true
 max_contacts_reported = 3
 script = ExtResource("1_o703u")
-flop_force = Vector2(400, -3000)
+flop_force = Vector2(30, -30)
 rotation_speed = 180.0
 dead_fish_texture = ExtResource("2_n041c")
 

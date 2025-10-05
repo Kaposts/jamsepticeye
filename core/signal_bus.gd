@@ -6,3 +6,5 @@ signal player_spawned
 
 signal sig_level_finished
 signal sig_score_submitted
+
+signal sig_game_started
