@@ -3,7 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://kdpwgr2d2wrt" path="res://icon.svg" id="2_7ul5b"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2u7jv"]
-friction = 1.5
+friction = 0.5
+bounce = 0.01
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebxd8"]
 size = Vector2(120, 120)
@@ -12,6 +13,7 @@ size = Vector2(120, 120)
 collision_layer = 10
 collision_mask = 11
 physics_material_override = SubResource("PhysicsMaterial_2u7jv")
+lock_rotation = true
 contact_monitor = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

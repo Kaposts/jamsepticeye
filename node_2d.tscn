@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://c4d7f3xrnao6t"]
+[gd_scene load_steps=56 format=4 uid="uid://c4d7f3xrnao6t"]
 
 [ext_resource type="Script" uid="uid://pl7q14263x68" path="res://core/level_manager.gd" id="1_2nhjh"]
 [ext_resource type="PackedScene" uid="uid://baftkdlepc3ff" path="res://core/player_manager.tscn" id="1_ei405"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://cbv2e8v2yjmtk" path="res://menus/submit_score_screen.tscn" id="22_gt76g"]
 [ext_resource type="Script" uid="uid://bulq5sk6pbgu6" path="res://platforming/finish.gd" id="23_2nhjh"]
 [ext_resource type="PackedScene" uid="uid://crmrc6nkin4t3" path="res://platforming/scenes/grapple_point.tscn" id="23_e8dv2"]
+[ext_resource type="PackedScene" uid="uid://b0bg77uyqmjdp" path="res://menus/pause_menu.tscn" id="24_2hxjc"]
 [ext_resource type="PackedScene" uid="uid://c7edv1edu6rrw" path="res://camera/player_follow_camera.tscn" id="26_gt76g"]
 [ext_resource type="PackedScene" uid="uid://cxrn7l2wlwqut" path="res://menus/main_menu.tscn" id="27_1fr6y"]
 [ext_resource type="PackedScene" uid="uid://iuwfevs5mml6" path="res://platforming/scenes/movable_block.tscn" id="30_2u7jv"]
@@ -1060,6 +1061,8 @@ script = ExtResource("21_bjha6")
 [node name="SubmitScoreScreen" parent="PlayerUI" instance=ExtResource("22_gt76g")]
 unique_name_in_owner = true
 visible = false
+
+[node name="Pause_Menu" parent="PlayerUI" instance=ExtResource("24_2hxjc")]
 
 [node name="MainMenu" parent="." instance=ExtResource("27_1fr6y")]
 
