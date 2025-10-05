@@ -6,21 +6,16 @@ signal level_finished(final_time: float)
 var level_time: float = 0.0
 var is_running: bool = false
 
-@onready var game_timer: Label = %GameTimer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 func _ready():
-	%SubmitScoreScreen.hide()
-	game_timer.hide()
-	
 	SignalBus.sig_game_started.connect(_on_game_started)
 	SignalBus.sig_level_finished.connect(_on_sig_level_finished)
 
 
 func start_timer():
 	level_time = 0.0
-	game_timer.show()
 	is_running = true
 
 
