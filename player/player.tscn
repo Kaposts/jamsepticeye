@@ -904,9 +904,12 @@ collision_mask = 2
 script = ExtResource("1_rkbax")
 front_sneaker_texture = ExtResource("2_hg6s5")
 back_sneaker_texture = ExtResource("3_8t03j")
-wall_jump_force = Vector2(250, -400)
-finger_force = Vector2(1000, -750)
-detach_speed_multiplier = 1.1
+wall_jump_force = Vector2(700, -400)
+finger_force = Vector2(500, -750)
+detach_speed_multiplier = 1.2
+graple_gravity = 100.0
+max_angular_speed = 7.5
+swing_boost = 1.5
 hover_gravity_scale = 50.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
