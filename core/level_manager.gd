@@ -1,16 +1,24 @@
 extends Node2D
 
-var level_time: float = 0.0
-var is_running: bool = false
-
 signal time_updated(time: float)
 signal level_finished(final_time: float)
 
+var level_time: float = 0.0
+var is_running: bool = false
+
+@onready var game_timer: Label = %GameTimer
+
+
 func _ready():
-	start_timer()
+	%SubmitScoreScreen.hide()
+	game_timer.hide()
+	
+	SignalBus.sig_game_started.connect(_on_game_started)
 	SignalBus.sig_level_finished.connect(_on_sig_level_finished)
 
+
 func start_timer():
+	game_timer.show()
 	level_time = 0.0
 	is_running = true
 
@@ -29,3 +37,7 @@ func _process(delta: float) -> void:
 
 func _on_sig_level_finished():
 	stop_timer()
+
+
+func _on_game_started() -> void:
+	start_timer()

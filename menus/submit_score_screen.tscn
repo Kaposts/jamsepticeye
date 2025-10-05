@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbv2e8v2yjmtk"]
+
+[ext_resource type="Script" uid="uid://bwf4fs1vxtyxa" path="res://level_finished_window.gd" id="1_nodxu"]
+[ext_resource type="PackedScene" uid="uid://dpxx5cdx4sxyg" path="res://leaderboard/leader_board.tscn" id="2_svpd8"]
+
+[node name="SubmitScoreScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nodxu")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 80.0
+offset_right = 288.0
+offset_bottom = 103.0
+text = "You have completed the level"
+
+[node name="time" type="Label" parent="."]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 112.0
+offset_right = 285.0
+offset_bottom = 135.0
+text = "Time: 00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 158.0
+offset_right = 237.0
+offset_bottom = 189.0
+placeholder_text = "Enter your name"
+
+[node name="submit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 245.0
+offset_top = 158.0
+offset_right = 307.0
+offset_bottom = 189.0
+text = "submit"
+
+[node name="LeaderBoard" parent="." instance=ExtResource("2_svpd8")]
+layout_mode = 0
+offset_left = 469.0
+offset_top = 167.0
+offset_right = 469.0
+offset_bottom = 167.0
+
+[node name="close" type="Button" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 242.0
+offset_right = 79.0
+offset_bottom = 273.0
+text = "close"
+
+[node name="menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 201.0
+offset_right = 84.0
+offset_bottom = 232.0
+text = "menu"
+
+[connection signal="pressed" from="submit" to="." method="_on_submit_pressed"]
+[connection signal="pressed" from="close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]
