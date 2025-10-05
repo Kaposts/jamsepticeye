@@ -1,5 +1,6 @@
-[gd_scene load_steps=46 format=4 uid="uid://c4d7f3xrnao6t"]
+[gd_scene load_steps=52 format=4 uid="uid://c4d7f3xrnao6t"]
 
+[ext_resource type="Script" uid="uid://pl7q14263x68" path="res://core/level_manager.gd" id="1_2nhjh"]
 [ext_resource type="PackedScene" uid="uid://baftkdlepc3ff" path="res://core/player_manager.tscn" id="1_ei405"]
 [ext_resource type="Texture2D" uid="uid://cvsr0ew5klrxo" path="res://assets/art/free-swamp-game-tileset-pixel-art/2 Background/Layers/2.png" id="2_flf07"]
 [ext_resource type="Texture2D" uid="uid://c8r85isnewky1" path="res://assets/art/free-swamp-game-tileset-pixel-art/2 Background/Layers/3.png" id="3_k73cj"]
@@ -19,6 +20,10 @@
 [ext_resource type="Texture2D" uid="uid://bfdestwo6gush" path="res://assets/art/free-swamp-game-tileset-pixel-art/2 Background/Layers/5.png" id="19_rjqkl"]
 [ext_resource type="Texture2D" uid="uid://h3tobxjdl1f8" path="res://assets/art/free-swamp-game-tileset-pixel-art/3 Objects/Bushes/8.png" id="20_e8dv2"]
 [ext_resource type="Texture2D" uid="uid://bktbg78ktmped" path="res://assets/art/free-swamp-game-tileset-pixel-art/3 Objects/Bushes/9.png" id="21_2nhjh"]
+[ext_resource type="Script" uid="uid://lpje8g418wbk" path="res://timer.gd" id="21_bjha6"]
+[ext_resource type="Script" uid="uid://bwf4fs1vxtyxa" path="res://level_finished_window.gd" id="22_1fr6y"]
+[ext_resource type="PackedScene" uid="uid://dpxx5cdx4sxyg" path="res://leaderboard/leader_board.tscn" id="23_2hxjc"]
+[ext_resource type="Script" uid="uid://bulq5sk6pbgu6" path="res://platforming/finish.gd" id="23_2nhjh"]
 [ext_resource type="PackedScene" uid="uid://crmrc6nkin4t3" path="res://platforming/scenes/grapple_point.tscn" id="23_e8dv2"]
 [ext_resource type="PackedScene" uid="uid://c7edv1edu6rrw" path="res://camera/player_follow_camera.tscn" id="26_gt76g"]
 [ext_resource type="PackedScene" uid="uid://iuwfevs5mml6" path="res://platforming/scenes/movable_block.tscn" id="30_2u7jv"]
@@ -966,7 +971,11 @@ shader_parameter/outerRadius = 1.59600007581
 shader_parameter/MainAlpha = 0.80400003819
 shader_parameter/vignette_color = Color(0.08114017, 0.19977546, 4.813075e-08, 1)
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjha6"]
+size = Vector2(116, 105)
+
+[node name="Node2D" type="Node2D" groups=["level"]]
+script = ExtResource("1_2nhjh")
 
 [node name="PlayerFollowCamera" parent="." instance=ExtResource("26_gt76g")]
 lookahead_x_distance = 40.0
@@ -1105,9 +1114,9 @@ repeat_times = 35
 position = Vector2(334, -73)
 texture = ExtResource("19_rjqkl")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="PlayerUI" type="CanvasLayer" parent="."]
 
-[node name="fog" type="ColorRect" parent="CanvasLayer"]
+[node name="fog" type="ColorRect" parent="PlayerUI"]
 modulate = Color(0.005322846, 0.32502773, 1.92523e-07, 1)
 show_behind_parent = true
 z_index = 2
@@ -1122,7 +1131,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="PlayerUI"]
 material = SubResource("ShaderMaterial_e8dv2")
 anchors_preset = 15
 anchor_right = 1.0
@@ -1131,20 +1140,82 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="5" type="TextureRect" parent="CanvasLayer"]
-visible = false
-modulate = Color(0.2159017, 0.21590173, 0.2159017, 1)
+[node name="timer" type="Label" parent="PlayerUI"]
+offset_left = 296.0
+offset_top = 13.0
+offset_right = 337.0
+offset_bottom = 36.0
+text = "00:00"
+script = ExtResource("21_bjha6")
+
+[node name="submit_score" type="Control" parent="PlayerUI"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -3.0
-offset_right = 576.0
-offset_bottom = 321.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("19_rjqkl")
+script = ExtResource("22_1fr6y")
+
+[node name="Label" type="Label" parent="PlayerUI/submit_score"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 80.0
+offset_right = 288.0
+offset_bottom = 103.0
+text = "You have completed the level"
+
+[node name="time" type="Label" parent="PlayerUI/submit_score"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 112.0
+offset_right = 285.0
+offset_bottom = 135.0
+text = "Time: 00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="PlayerUI/submit_score"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 158.0
+offset_right = 237.0
+offset_bottom = 189.0
+placeholder_text = "Enter your name"
+
+[node name="submit" type="Button" parent="PlayerUI/submit_score"]
+layout_mode = 0
+offset_left = 245.0
+offset_top = 158.0
+offset_right = 307.0
+offset_bottom = 189.0
+text = "submit"
+
+[node name="LeaderBoard" parent="PlayerUI/submit_score" instance=ExtResource("23_2hxjc")]
+layout_mode = 0
+offset_left = 469.0
+offset_top = 167.0
+offset_right = 469.0
+offset_bottom = 167.0
+
+[node name="close" type="Button" parent="PlayerUI/submit_score"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 242.0
+offset_right = 79.0
+offset_bottom = 273.0
+text = "close"
+
+[node name="menu" type="Button" parent="PlayerUI/submit_score"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 201.0
+offset_right = 84.0
+offset_bottom = 232.0
+text = "menu"
 
 [node name="DebugWindow" parent="." instance=ExtResource("10_hqns4")]
+visible = false
 
 [node name="Label" type="Label" parent="."]
 offset_left = 1466.0
@@ -1232,3 +1303,17 @@ position = Vector2(1339, -159)
 
 [node name="MovableBlock4" parent="movables" instance=ExtResource("30_2u7jv")]
 position = Vector2(1485, -401)
+
+[node name="finish" type="Area2D" parent="."]
+position = Vector2(365, -2402)
+script = ExtResource("23_2nhjh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="finish"]
+position = Vector2(-3, -15.5)
+shape = SubResource("RectangleShape2D_bjha6")
+
+[connection signal="time_updated" from="." to="PlayerUI/timer" method="_on_node_2d_time_updated"]
+[connection signal="pressed" from="PlayerUI/submit_score/submit" to="PlayerUI/submit_score" method="_on_submit_pressed"]
+[connection signal="pressed" from="PlayerUI/submit_score/close" to="PlayerUI/submit_score" method="_on_close_pressed"]
+[connection signal="pressed" from="PlayerUI/submit_score/menu" to="PlayerUI/submit_score" method="_on_menu_pressed"]
+[connection signal="body_entered" from="finish" to="finish" method="_on_body_entered"]

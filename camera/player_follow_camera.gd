@@ -96,3 +96,7 @@ func _on_signal_point_detected(entered: bool) -> void:
 
 
 #endregion
+
+
+func _on_finish_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
