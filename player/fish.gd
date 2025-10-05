@@ -6,6 +6,7 @@ extends RigidBody2D
 
 @export var dead_fish_texture: Texture2D
 
+var can_die: bool = false
 var flopping: bool = false
 var dying: bool = false
 var facing_dir: int = 1
@@ -20,12 +21,13 @@ var current_flop_count: int = 0:
 
 func _ready() -> void:
 	sleeping_state_changed.connect(_on_sleeping_state_changed)
+	SignalBus.sig_game_started.connect(_on_game_started)
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept") and not flopping and not dying:
 		facing_dir *= -1
-		apply_force(Vector2(flop_force.x * facing_dir, flop_force.y), Vector2(position.x -2, position.y ))
+		apply_impulse(Vector2(flop_force.x * facing_dir, flop_force.y), Vector2(position.x -2, position.y ))
 
 
 func _physics_process(_delta: float) -> void:
@@ -33,8 +35,9 @@ func _physics_process(_delta: float) -> void:
 		flopping = true
 	
 	elif flopping and get_contact_count() > 0:
-			current_flop_count += 1
 			flopping = false
+			if can_die:
+				current_flop_count += 1
 
 
 func check_death() -> void:
@@ -54,3 +57,7 @@ func _leave_corpse() -> void:
 	sprite.texture = dead_fish_texture
 	sprite_material.set_shader_parameter("died", true)
 	sprite.reparent(get_parent())
+
+
+func _on_game_started() -> void:
+	can_die = true

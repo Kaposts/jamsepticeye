@@ -16,9 +16,10 @@ extends CanvasLayer
 @onready var credits_anim: AnimationPlayer =$ControlRoot/Credits/AnimationPlayer
 @onready var credits_scroll_anim: AnimationPlayer = $ControlRoot/Credits/Scroll/AnimationPlayer
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+
 func _ready() -> void:
-	get_tree().paused = true
-	
 	play_button.pressed.connect(_on_play_button_pressed)
 	options_button.pressed.connect(_on_options_button_pressed)
 	credits_button.pressed.connect(_on_credits_button_pressed)
@@ -27,9 +28,28 @@ func _ready() -> void:
 
 func _on_play_button_pressed() -> void:
 	MusicPlayer.switch_song(Enum.SongNames.GAME_LOOP, true, true)
-	hide()
-	get_tree().paused = false
 	SignalBus.sig_game_started.emit()
+	
+	_disable_all_buttons()
+	
+	animation_player.play("game_start")
+	await animation_player.animation_finished
+	
+	hide()
+
+
+func _enable_all_buttons() -> void:
+	play_button.disabled = false
+	options_button.disabled = false
+	credits_button.disabled = false
+	quit_button.disabled = false
+
+
+func _disable_all_buttons() -> void:
+	play_button.disabled = true
+	options_button.disabled = true
+	credits_button.disabled = true
+	quit_button.disabled = true
 
 
 func _on_options_button_pressed() -> void:
