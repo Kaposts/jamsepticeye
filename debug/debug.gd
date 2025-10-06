@@ -82,6 +82,7 @@ func _on_get_all_button_pressed() -> void:
 	_on_grapple_button_pressed()
 	_on_finger_button_pressed()
 	_on_hover_button_pressed()
+	hide()
 
 
 func _reset_buttons() -> void:

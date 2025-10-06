@@ -60,6 +60,7 @@ _data = {
 
 [node name="MainMenu" type="CanvasLayer"]
 process_mode = 3
+layer = 5
 script = ExtResource("1_1edw4")
 web_quit_screen = ExtResource("2_ysfef")
 
@@ -204,7 +205,7 @@ offset_left = 10.0
 offset_top = 7.0
 offset_right = 113.0
 offset_bottom = 38.0
-text = "leaderboard"
+text = "Leaderboard"
 
 [node name="LeaderBoardWindow" parent="." instance=ExtResource("19_kqtkm")]
 visible = false

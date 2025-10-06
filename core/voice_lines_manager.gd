@@ -23,6 +23,7 @@ func _ready() -> void:
 	
 	SignalBus.sig_game_started.connect(_on_game_started)
 	SignalBus.player_spawned.connect(_on_player_spawned)
+	SignalBus.sig_game_restarted.connect(_on_game_restarted)
 	
 	after_unlock_narration_timer.timeout.connect(_on_timer_timeout)
 	between_narration_timer.timeout.connect(_on_timer_timeout)
@@ -94,3 +95,14 @@ func _on_timer_timeout() -> void:
 
 func _on_dialogue_timer_timeout() -> void:
 	dialogue_layer.hide()
+
+
+func _on_game_restarted() -> void:
+	dialogue_layer.hide()
+	audio.stop()
+	
+	after_unlock_narration_timer.stop()
+	between_narration_timer.stop()
+	dialogue_visible_timer.stop()
+	
+	_background_narration_index = 0

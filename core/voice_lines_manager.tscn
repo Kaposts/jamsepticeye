@@ -24,6 +24,7 @@ background_narration = Array[AudioStream]([ExtResource("9_6duqb"), ExtResource("
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = 14.0
+bus = &"Voice"
 
 [node name="AfterUnlockNarrationTimer" type="Timer" parent="."]
 wait_time = 10.0

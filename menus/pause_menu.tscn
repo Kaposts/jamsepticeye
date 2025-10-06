@@ -1,8 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://b0bg77uyqmjdp"]
+[gd_scene load_steps=20 format=3 uid="uid://b0bg77uyqmjdp"]
 
 [ext_resource type="Script" uid="uid://cxvkq1q6pkda8" path="res://menus/pause_menu.gd" id="1_taale"]
-[ext_resource type="PackedScene" uid="uid://cxrn7l2wlwqut" path="res://menus/main_menu.tscn" id="2_0dmhi"]
-[ext_resource type="PackedScene" uid="uid://bm3x501r3my1h" path="res://menus/web_quit_screen.tscn" id="2_h5qef"]
 [ext_resource type="PackedScene" uid="uid://cuneiert8cmjs" path="res://menus/scroll.tscn" id="2_u8tnp"]
 [ext_resource type="Texture2D" uid="uid://c1pcsoyb2dm88" path="res://assets/art/UI/CloseButton_Normal.png" id="5_524vl"]
 [ext_resource type="Texture2D" uid="uid://b1qdycp22iqor" path="res://assets/art/UI/CloseButton_Pressed.png" id="6_0fi7f"]
@@ -23,7 +21,7 @@ resource_name = "Menu_Close"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Pause_Options:modulate")
+tracks/0/path = NodePath("PauseOptions:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -38,7 +36,7 @@ resource_name = "Menu_Load"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Pause_Options:modulate")
+tracks/0/path = NodePath("PauseOptions:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -58,7 +56,10 @@ _data = {
 &"RESET": SubResource("Animation_663nc")
 }
 
-[node name="Pause_Menu" type="Control"]
+[node name="PauseMenu" type="CanvasLayer"]
+layer = 4
+
+[node name="Root" type="Control" parent="."]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -67,13 +68,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_taale")
-main_menu_scene = ExtResource("2_0dmhi")
-web_quit_screen = ExtResource("2_h5qef")
 
-[node name="Scroll" parent="." instance=ExtResource("2_u8tnp")]
+[node name="Scroll" parent="Root" instance=ExtResource("2_u8tnp")]
 layout_mode = 1
 
-[node name="Pause_Options" type="Control" parent="."]
+[node name="PauseOptions" type="Control" parent="Root"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -81,7 +80,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Back_Button" type="TextureButton" parent="Pause_Options"]
+[node name="BackButton" type="TextureButton" parent="Root/PauseOptions"]
 layout_mode = 0
 offset_left = 436.0
 offset_top = 265.0
@@ -91,7 +90,7 @@ texture_normal = ExtResource("5_524vl")
 texture_pressed = ExtResource("6_0fi7f")
 texture_hover = ExtResource("7_uscpe")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Pause_Options"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Root/PauseOptions"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -106,31 +105,31 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6, 0.6)
 
-[node name="Restart" type="TextureButton" parent="Pause_Options/VBoxContainer"]
+[node name="Restart" type="TextureButton" parent="Root/PauseOptions/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("8_lfukh")
 texture_pressed = ExtResource("9_dxesn")
 texture_hover = ExtResource("10_7apfi")
 
-[node name="Options" type="TextureButton" parent="Pause_Options/VBoxContainer"]
+[node name="Options" type="TextureButton" parent="Root/PauseOptions/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("9_h7ojb")
 texture_pressed = ExtResource("10_wqpeb")
 texture_hover = ExtResource("11_tekra")
 
-[node name="Quit" type="TextureButton" parent="Pause_Options/VBoxContainer"]
+[node name="Quit" type="TextureButton" parent="Root/PauseOptions/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("6_q7fiq")
 texture_pressed = ExtResource("7_6wqnn")
 texture_hover = ExtResource("8_1ymcx")
 
-[node name="Options" parent="." instance=ExtResource("17_lfukh")]
+[node name="Options" parent="Root" instance=ExtResource("17_lfukh")]
 visible = false
 layout_mode = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Root"]
 libraries = {
 &"": SubResource("AnimationLibrary_hvj8k")
 }
 
-[connection signal="pressed" from="Pause_Options/Back_Button" to="Pause_Options/Back_Button" method="_on_pressed"]
+[connection signal="pressed" from="Root/PauseOptions/BackButton" to="Root/PauseOptions/BackButton" method="_on_pressed"]
