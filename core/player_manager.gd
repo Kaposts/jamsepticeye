@@ -24,7 +24,6 @@ func _ready():
 	get_parent().add_child.call_deferred(fish_scene.instantiate())
 	camera = get_tree().get_first_node_in_group("player_follow_camera")
 
-
 #func _input(event):
 	#if event.is_action_pressed("die"):
 		#get_tree().get_first_node_in_group("player").die()
@@ -57,7 +56,6 @@ func add_ability(ability: Enum.ABILITY):
 	var ability_instance: Ability = scene.instantiate()
 	unlocked_abilities.append(ability_instance)
 
-
 func apply_abilities(player: Player):
 	for unlocked in unlocked_abilities:
 		var ability: Ability = (unlocked as Ability).duplicate()
@@ -81,7 +79,6 @@ func _on_player_died():
 	evolve()
 	await get_tree().create_timer(player_respawn_timer, false).timeout
 	revive_player()
-
 
 func revive_player():
 	if get_tree().get_nodes_in_group('player').size() <= 0:

@@ -40,6 +40,6 @@ func _on_request_completed(result, response_code, headers, body):
 			var entry = leaderboard_data[i]
 			print("%d. %s - %.2f s" % [i + 1, entry.name, entry.time])
 			var entry_instance = entry_scene.instantiate()
-			entry_instance.entry_name = entry.name
+			entry_instance.entry_name = str(i+1) + ". "+entry.name
 			entry_instance.score = entry.time
 			$Panel/ScrollContainer/VBoxContainer.add_child(entry_instance)
