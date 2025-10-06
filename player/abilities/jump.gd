@@ -7,9 +7,9 @@ var wall_coyote_counter: float = 0.0
 var wall_jump_lock_counter: float = 0.0
 
 func apply(player: Player, delta: float) -> void:
-	var jump_pressed = Input.is_action_just_pressed("ui_accept")
-	var jump_held = Input.is_action_pressed("ui_accept")
-	var jump_released = Input.is_action_just_released("ui_accept")
+	var jump_pressed = Input.is_action_just_pressed("jump")
+	var jump_held = Input.is_action_pressed("jump")
+	var jump_released = Input.is_action_just_released("jump")
 
 	# --- Ground Check ---
 	if player.is_on_floor():

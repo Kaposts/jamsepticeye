@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d4h3brjh8eoak"]
+[gd_scene load_steps=23 format=3 uid="uid://d4h3brjh8eoak"]
 
 [ext_resource type="Script" uid="uid://dxvvaeuefb73w" path="res://menus/options_menu.gd" id="1_5a0sy"]
 [ext_resource type="PackedScene" uid="uid://cuneiert8cmjs" path="res://menus/scroll.tscn" id="1_prnvy"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://drlas0kkvw64a" path="res://assets/art/UI/Menu_Buttons/KeyBindings1.png" id="11_033dp"]
 [ext_resource type="Texture2D" uid="uid://bo6wtjg5a8twh" path="res://assets/art/UI/Menu_Buttons/KeyBindings3.png" id="12_fpdr8"]
 [ext_resource type="Texture2D" uid="uid://dqvubuyvvqwrc" path="res://assets/art/UI/Menu_Buttons/KeyBindings2.png" id="13_r103k"]
+[ext_resource type="PackedScene" uid="uid://ccr1wrc6qi70g" path="res://menus/keybinds_settings/keybinds_settings.tscn" id="15_q1sgk"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5a0sy"]
 texture = ExtResource("4_hvj8k")
@@ -214,6 +215,9 @@ scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("11_033dp")
 texture_pressed = ExtResource("12_fpdr8")
 texture_hover = ExtResource("13_r103k")
+
+[node name="KeybindsSettings" parent="Options" instance=ExtResource("15_q1sgk")]
+layout_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

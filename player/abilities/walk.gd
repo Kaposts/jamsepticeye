@@ -1,7 +1,7 @@
 extends Ability
 
 func apply(player, delta):
-	var input_direction = Input.get_axis("ui_left", "ui_right")
+	var input_direction = Input.get_axis("move_left", "move_right")
 	player.input_dir = input_direction
 
 	var speed = player.hover_move_speed if player.is_hovering else player.speed
