@@ -1,6 +1,8 @@
 class_name PlayerManager
 extends Node
 
+@export_range(1.0, 5.0, 0.1) var player_respawn_timer: float = 3.0
+
 @export var fish_scene: PackedScene
 @export var player_scene: PackedScene
 
@@ -23,9 +25,9 @@ func _ready():
 	camera = get_tree().get_first_node_in_group("player_follow_camera")
 
 
-func _input(event):
-	if event.is_action_pressed("die"):
-		get_tree().get_first_node_in_group("player").die()
+#func _input(event):
+	#if event.is_action_pressed("die"):
+		#get_tree().get_first_node_in_group("player").die()
 
 
 func evolve():
@@ -77,8 +79,9 @@ func apply_abilities(player: Player):
 func _on_player_died():
 	death_counter += 1
 	evolve()
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(player_respawn_timer, false).timeout
 	revive_player()
+
 
 func revive_player():
 	if get_tree().get_nodes_in_group('player').size() <= 0:

@@ -10,3 +10,4 @@ signal sig_game_paused
 signal sig_game_unpaused
 
 signal sig_game_started
+signal sig_game_restarted

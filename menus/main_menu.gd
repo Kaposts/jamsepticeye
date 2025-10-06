@@ -24,6 +24,8 @@ func _ready() -> void:
 	options_button.pressed.connect(_on_options_button_pressed)
 	credits_button.pressed.connect(_on_credits_button_pressed)
 	quit_button.pressed.connect(_on_quit_button_pressed)
+	
+	SignalBus.sig_game_restarted.emit()
 
 
 func _on_play_button_pressed() -> void:
@@ -56,6 +58,11 @@ func _on_options_button_pressed() -> void:
 	options_scroll_anim.play("Scroll_Open")
 	options_anim.play("Menu_Load")
 	options_menu.show()
+	options_menu.is_animating = true
+	
+	await options_anim.animation_finished
+	options_menu.enable_ui()
+	options_menu.is_animating = false
 
 
 func _on_quit_button_pressed() -> void:

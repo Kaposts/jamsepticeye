@@ -25,4 +25,4 @@ func _on_close_pressed() -> void:
 
 
 func _on_menu_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().reload_current_scene()
