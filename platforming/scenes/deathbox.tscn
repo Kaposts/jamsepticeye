@@ -1,21 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://byp43elml65d5"]
+[gd_scene load_steps=3 format=3 uid="uid://byp43elml65d5"]
 
 [ext_resource type="Script" uid="uid://f8s22nkom4lc" path="res://platforming/deathbox.gd" id="1_gr72m"]
 [ext_resource type="Texture2D" uid="uid://kdpwgr2d2wrt" path="res://icon.svg" id="2_1dcug"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdubu"]
-size = Vector2(128, 128)
-
 [node name="deathbox" type="Area2D"]
+z_index = -1
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_gr72m")
 
 [node name="Icon" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(1, 0, 0, 0.79607844)
 texture = ExtResource("2_1dcug")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_kdubu")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
