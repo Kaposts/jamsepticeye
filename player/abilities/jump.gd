@@ -53,10 +53,12 @@ func apply(player: Player, delta: float) -> void:
 
 func perform_jump(player):
 	# reset vertical velocity
+	player.spawn_particle(player.position,player.jump_particle)
 	player.velocity.y = -player.jump_force
 	coyote_counter = 0.0
 
 func perform_wall_jump(player, dir: int):
+	player.spawn_particle(player.position,player.jump_particle, 45 * dir)
 	var outward = player.wall_jump_force.x * dir
 	player.velocity.x = outward + (player.input_dir * 100) # input can help steer
 	player.velocity.y = player.wall_jump_force.y

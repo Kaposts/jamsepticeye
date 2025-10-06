@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://c42tatqhkdecw"]
+[gd_scene load_steps=76 format=3 uid="uid://c42tatqhkdecw"]
 
 [ext_resource type="Script" uid="uid://blm6nncupiinf" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://b0uv88pfk7aed" path="res://assets/art/player_character/body_sneakers_front.png" id="2_hg6s5"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cc3xuoscdwdqy" path="res://assets/art/player_character/body_sneakers_back.png" id="3_8t03j"]
 [ext_resource type="Texture2D" uid="uid://yobcjfowvp6v" path="res://assets/art/player_character/body_wings_back.png" id="3_boad6"]
 [ext_resource type="Texture2D" uid="uid://bj2kx7ghhftvj" path="res://assets/art/player_character/body_legs_front.png" id="3_g1dw6"]
+[ext_resource type="PackedScene" uid="uid://8uc0urewo8n8" path="res://player/particles/jump_particle.tscn" id="4_g4c7l"]
+[ext_resource type="PackedScene" uid="uid://cv6blbc1losd1" path="res://player/particles/super_jump_particle.tscn" id="5_7pqkx"]
 [ext_resource type="Texture2D" uid="uid://5ndfuc8h6sgl" path="res://assets/art/player_character/body_legs_back.png" id="5_8t03j"]
 [ext_resource type="Texture2D" uid="uid://dt5g84uuh086k" path="res://assets/art/player_character/body_wings_front.png" id="6_rgyib"]
 [ext_resource type="Texture2D" uid="uid://b3qa00fqw463i" path="res://assets/art/player_character/body_tongue.png" id="7_hg6s5"]
@@ -22,6 +24,7 @@
 [ext_resource type="AudioStream" uid="uid://dk55axr08uaou" path="res://assets/sfx/wings_flap_2.wav" id="19_x7c3f"]
 [ext_resource type="AudioStream" uid="uid://cpg65resm02u" path="res://assets/sfx/wings_flap_3.wav" id="20_bjvpn"]
 [ext_resource type="AudioStream" uid="uid://dga7blsewixp" path="res://assets/sfx/grab_sfx.wav" id="24_uw77l"]
+[ext_resource type="PackedScene" uid="uid://cl4wjyurmexwq" path="res://player/particles/walk_particle.tscn" id="25_7pqkx"]
 [ext_resource type="AudioStream" uid="uid://iy8yjexf8kmf" path="res://assets/sfx/respawn.wav" id="25_knn7v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qjkh3"]
@@ -1479,6 +1482,8 @@ collision_mask = 2
 script = ExtResource("1_rkbax")
 front_sneaker_texture = ExtResource("2_hg6s5")
 back_sneaker_texture = ExtResource("3_8t03j")
+jump_particle = ExtResource("4_g4c7l")
+super_jump_particle = ExtResource("5_7pqkx")
 wall_jump_force = Vector2(750, -350)
 finger_force = Vector2(750, -550)
 finger_time = 0.1
@@ -1545,6 +1550,11 @@ position = Vector2(-8, 1)
 [node name="TongueSprite" type="Sprite2D" parent="Visuals/Tongue"]
 texture = ExtResource("7_hg6s5")
 offset = Vector2(0, 3)
+
+[node name="walk_particle" parent="Visuals" instance=ExtResource("25_7pqkx")]
+position = Vector2(-13, 6)
+emitting = false
+amount = 2
 
 [node name="SFX" type="Node2D" parent="."]
 

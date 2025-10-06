@@ -9,3 +9,5 @@ func apply(player, delta):
 	if is_touching_wall and not player.is_on_floor() and player.velocity.y > 0:
 		if player.velocity.y > player.wall_slide_speed:
 			player.velocity.y = player.wall_slide_speed
+			player.wall_slide_particle.emitting = true
+	else: player.wall_slide_particle.emitting = false

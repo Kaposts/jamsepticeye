@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv6blbc1losd1"]
+
+[ext_resource type="Texture2D" uid="uid://88j0lw150ng2" path="res://assets/art/player_character/dust_particle.png" id="1_tnm0l"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ebxd8"]
+lifetime_randomness = 0.06
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(12.65, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 98, 0)
+
+[node name="jump_particle" type="GPUParticles2D"]
+position = Vector2(2, 0)
+emitting = false
+amount = 16
+texture = ExtResource("1_tnm0l")
+lifetime = 0.51
+one_shot = true
+speed_scale = 1.71
+explosiveness = 0.42
+randomness = 0.26
+process_material = SubResource("ParticleProcessMaterial_ebxd8")
