@@ -30,6 +30,7 @@ func apply(player, delta):
 			finger(player, player.wall_dir)
 
 func finger(player, dir):
+	player.spawn_particle(player.position,player.super_jump_particle, 45 * dir)
 	player.is_big_jumping = true
 	timer = player.finger_time
 

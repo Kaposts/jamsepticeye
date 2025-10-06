@@ -13,6 +13,11 @@ signal interest_point_detected(entered: bool)
 #===================================================================================================
 #region MOVEMENT SETTINGS
 
+@export_group("Particles")
+@export var jump_particle: PackedScene
+@export var super_jump_particle: PackedScene
+@onready var wall_slide_particle = $Visuals/walk_particle
+
 @export_group("Walk Variables")
 @export var acceleration: float = 1200.0
 @export var speed := 150
@@ -52,6 +57,8 @@ signal interest_point_detected(entered: bool)
 @export_group("hover variables")
 @export var hover_gravity_scale: float = 0.3   # how much gravity applies while hovering (0.3 = 30%)
 @export var hover_move_speed: float = 100.0    # reduced horizontal speed while hovering
+
+
 
 #endregion
 #===================================================================================================
@@ -152,6 +159,10 @@ func _physics_process(delta):
 	else:
 		_set_grounded_state()
 	
+	# if input_dir != 0:
+	# 	walk_particle.emitting = true
+	# else:
+	# 	walk_particle.emitting = false
 	
 	for ability in abilities:
 		ability.apply(self, delta)
@@ -165,11 +176,15 @@ func _physics_process(delta):
 
 func die():
 	SignalBus.sig_player_died.emit()
-	_leave_corpse()
+	global_position.y += 10
+	$death_particle.emitting = true
+	# _leave_corpse()
+	$ColorRect.queue_free()
+	$AnimationPlayer.queue_free()
+	remove_from_group("player")
 	die_sfx_player.play_random()
+	set_script(null)
 	
-	await die_sfx_player.finished
-	queue_free()
 
 
 func get_closest_interest_point() -> Vector2:
@@ -274,3 +289,15 @@ func _on_interest_point_exited(_body: Node2D) -> void:
 	interest_point_detected.emit(false)
 
 #endregion
+func spawn_particle(position: Vector2, particle: PackedScene, rotation: float = 0):
+	var particle_instance = particle.instantiate()
+	particle_instance.global_position = position
+	particle_instance.rotation = rotation
+	get_tree().current_scene.add_child(particle_instance)
+	
+	# Start emitting
+	particle_instance.emitting = true
+	
+	# Wait for its lifetime, then remove it
+	await get_tree().create_timer(particle_instance.lifetime).timeout
+	particle_instance.queue_free()

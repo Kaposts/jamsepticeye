@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl4wjyurmexwq"]
+
+[ext_resource type="Texture2D" uid="uid://b16v3st864rtm" path="res://assets/art/player_character/dust_particle_small.png" id="1_7nia7"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ebxd8"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(-1.83, 3.685, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, -79.9, 0)
+
+[node name="walk_particle" type="GPUParticles2D"]
+amount = 6
+texture = ExtResource("1_7nia7")
+lifetime = 0.09999999999999999
+interp_to_end = 0.022
+speed_scale = 0.63
+process_material = SubResource("ParticleProcessMaterial_ebxd8")
