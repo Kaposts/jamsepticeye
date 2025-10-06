@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cxrn7l2wlwqut"]
+[gd_scene load_steps=23 format=3 uid="uid://cxrn7l2wlwqut"]
 
 [ext_resource type="Script" uid="uid://dtallk0xtca5a" path="res://menus/main_menu.gd" id="1_1edw4"]
 [ext_resource type="Texture2D" uid="uid://cpo7mcmhr44gb" path="res://assets/art/UI/Post.png" id="1_rmbjf"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://diypjletpqjj" path="res://assets/art/UI/Menu_Buttons/Quit_Button3.png" id="15_u6qb4"]
 [ext_resource type="Texture2D" uid="uid://cywy3ynqrr0o4" path="res://assets/art/UI/Menu_Buttons/Quit_Button2.png" id="16_tvv58"]
 [ext_resource type="PackedScene" uid="uid://rowd5l4byabr" path="res://menus/credits.tscn" id="17_ysyx0"]
+[ext_resource type="PackedScene" uid="uid://dpxx5cdx4sxyg" path="res://leaderboard/leader_board.tscn" id="19_kqtkm"]
 
 [sub_resource type="Animation" id="Animation_kqtkm"]
 length = 0.001
@@ -196,3 +197,20 @@ layout_mode = 1
 [node name="Credits" parent="ControlRoot" instance=ExtResource("17_ysyx0")]
 visible = false
 layout_mode = 1
+
+[node name="LeaderBoard" type="Button" parent="ControlRoot"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 7.0
+offset_right = 113.0
+offset_bottom = 38.0
+text = "leaderboard"
+
+[node name="LeaderBoardWindow" parent="." instance=ExtResource("19_kqtkm")]
+visible = false
+offset_left = 294.0
+offset_top = 194.0
+offset_right = 294.0
+offset_bottom = 194.0
+
+[connection signal="pressed" from="ControlRoot/LeaderBoard" to="." method="_on_leader_board_pressed"]
