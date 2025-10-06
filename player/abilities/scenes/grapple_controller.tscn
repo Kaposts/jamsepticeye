@@ -1,8 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cniq56pqu6e6o"]
+[gd_scene load_steps=9 format=3 uid="uid://cniq56pqu6e6o"]
 
 [ext_resource type="Script" uid="uid://wrhijwtd6x1f" path="res://player/abilities/grapple_controller.gd" id="1_iavxg"]
 [ext_resource type="Texture2D" uid="uid://8rlxlxk2r7vn" path="res://assets/art/player_character/tongue_tiling.png" id="2_yvots"]
 [ext_resource type="Texture2D" uid="uid://so1x6qjuyr0x" path="res://assets/art/player_character/tongue_tip.png" id="3_e4r4a"]
+[ext_resource type="PackedScene" uid="uid://cs2msqcudcidd" path="res://components/random_audio_player/random_audio_player_2d_component.tscn" id="4_6fyml"]
+[ext_resource type="AudioStream" uid="uid://s2ubnpbk4q8a" path="res://assets/sfx/tongue_out_1.wav" id="5_3g82c"]
+[ext_resource type="AudioStream" uid="uid://4sweh5nxjwel" path="res://assets/sfx/tongue_out_2.wav" id="6_v7wnq"]
+[ext_resource type="AudioStream" uid="uid://bdvgvxvy83j3r" path="res://assets/sfx/tongue_out_3.wav" id="7_rklim"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5jjua"]
 radius = 100.0
@@ -33,6 +37,12 @@ texture_mode = 1
 unique_name_in_owner = true
 texture = ExtResource("3_e4r4a")
 offset = Vector2(2, 0)
+
+[node name="SFX" type="Node2D" parent="."]
+
+[node name="TongueOutSFXPlayer" parent="SFX" instance=ExtResource("4_6fyml")]
+volume_db = 10.0
+streams = Array[AudioStream]([ExtResource("5_3g82c"), ExtResource("6_v7wnq"), ExtResource("7_rklim")])
 
 [connection signal="body_entered" from="HookDetector" to="." method="_on_hook_detector_body_entered"]
 [connection signal="body_exited" from="HookDetector" to="." method="_on_hook_detector_body_exited"]
