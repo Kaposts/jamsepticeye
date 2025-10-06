@@ -79,7 +79,7 @@ func _has_interest_point_in_range() -> bool:
 #===================================================================================================
 #region EVENT HANDLERS
 
-func _on_player_spawned() -> void:
+func _on_player_spawned(_level: int) -> void:
 	_player = get_tree().get_first_node_in_group("player")
 	_player.interest_point_detected.connect(_on_signal_point_detected)
 

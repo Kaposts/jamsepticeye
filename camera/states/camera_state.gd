@@ -59,7 +59,7 @@ func update(_delta: float) -> void:
 #===================================================================================================
 #region EVENT HANDLERS
 
-func _on_player_spawned() -> void:
+func _on_player_spawned(_level: int) -> void:
 	_player = get_tree().get_first_node_in_group("player")
 
 
