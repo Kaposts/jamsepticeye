@@ -1,17 +1,17 @@
+class_name PauseMenu
 extends Control
 
-@export var main_menu_scene: PackedScene
 @export var web_quit_screen: PackedScene
 
-@onready var close_button: TextureButton = $Pause_Options/Back_Button
+@onready var back_button: TextureButton = $PauseOptions/BackButton
 @onready var scroll_anim: AnimationPlayer = $Scroll/AnimationPlayer
 @onready var menu_anim: AnimationPlayer = $AnimationPlayer
 @onready var options_scroll_anim: AnimationPlayer = $Options/Scroll/AnimationPlayer
 @onready var options_anim: AnimationPlayer = $Options/AnimationPlayer
 
-@onready var restart_button: TextureButton = $Pause_Options/VBoxContainer/Restart
-@onready var options_button: TextureButton = $Pause_Options/VBoxContainer/Options
-@onready var quit_button: TextureButton = $Pause_Options/VBoxContainer/Quit
+@onready var restart_button: TextureButton = $PauseOptions/VBoxContainer/Restart
+@onready var options_button: TextureButton = $PauseOptions/VBoxContainer/Options
+@onready var quit_button: TextureButton = $PauseOptions/VBoxContainer/Quit
 
 @onready var options_menu: Control = $Options
 @onready var keybinds_settings: Control = $Options/Options/KeybindsSettings
@@ -21,7 +21,9 @@ var is_animating: bool = false
 
 
 func _ready() -> void:
-	close_button.pressed.connect(_on_close_button_pressed)
+	hide()
+	
+	back_button.pressed.connect(_on_back_button_pressed)
 	restart_button.pressed.connect(_on_restart_button_pressed)
 	options_button.pressed.connect(_on_options_button_pressed)
 	quit_button.pressed.connect(_on_quit_button_pressed)
@@ -48,7 +50,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			open()
 	
 
-func _on_close_button_pressed() -> void:
+func _on_back_button_pressed() -> void:
 	close()
 	await get_tree().create_timer(1.0).timeout
 	hide()

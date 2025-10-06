@@ -16,4 +16,3 @@ func _on_node_2d_time_updated(time: float) -> void:
 
 func _on_game_started() -> void:
 	game_timer.show()
-	#pass
