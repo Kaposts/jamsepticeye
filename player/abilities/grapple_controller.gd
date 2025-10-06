@@ -22,6 +22,7 @@ var _launch_duration: float = 0.0
 @onready var tongue_line: Line2D = %TongueLine
 @onready var tongue_tip_sprite: Sprite2D = %TongueTipSprite
 @onready var tongue_visuals: Node2D = $TongueVisuals
+@onready var tongue_out_sfx_player: RandomAudioPlayer2D = $SFX/TongueOutSFXPlayer
 
 
 func _ready() -> void:
@@ -55,7 +56,7 @@ func attach(player: Player, anchor_pos: Vector2) -> void:
 	attached_changed.emit(true)
 	
 	player.tongue.hide()
-	_launch_tongue_visuals(player)
+	_launch_tongue(player)
 
 
 func detach(player: Player) -> void:
@@ -148,9 +149,10 @@ func _update_tongue_visuals(player: Player, delta: float) -> void:
 	tongue_tip_sprite.rotation = player.tongue.global_position.angle_to_point(anchor)
 
 
-func _launch_tongue_visuals(player: Player) -> void:
+func _launch_tongue(player: Player) -> void:
 	_launch_duration = 0.0
 	_tongue_tip_position = to_local(player.tongue.global_position)
+	tongue_out_sfx_player.play_random()
 
 
 func _get_closest_grapple_target(player: Player) -> GrapplePoint:

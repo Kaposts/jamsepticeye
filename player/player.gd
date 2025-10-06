@@ -115,6 +115,8 @@ var is_grappling: bool = false:
 @onready var back_wing: Node2D = $Visuals/BackWing
 @onready var front_wing: Node2D = $Visuals/FrontWing
 
+@onready var die_sfx_player: RandomAudioPlayer2D = $SFX/DieSFXPlayer
+@onready var spawn_sfx_player: RandomAudioPlayer2D = $SFX/SpawnSFXPlayer
 
 
 #===================================================================================================
@@ -128,6 +130,8 @@ func _ready() -> void:
 	back_wing.hide()
 	front_wing.hide()
 	tongue.hide()
+	
+	spawn_sfx_player.play_random()
 
 
 func _physics_process(delta):
@@ -165,11 +169,13 @@ func die():
 	SignalBus.sig_player_died.emit()
 	global_position.y += 10
 	$death_particle.emitting = true
-	_leave_corpse()
+	# _leave_corpse()
 	remove_from_group("player")
 	$AnimationPlayer.stop()
 	$blood.show()
+	die_sfx_player.play_random()
 	set_script(null)
+	
 
 
 func get_closest_interest_point() -> Vector2:

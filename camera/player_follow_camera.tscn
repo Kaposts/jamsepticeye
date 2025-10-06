@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://c7edv1edu6rrw"]
 
 [ext_resource type="Script" uid="uid://by17gfsmjaf7o" path="res://camera/player_follow_camera.gd" id="1_k5iwj"]
-[ext_resource type="Script" uid="uid://f8vbkubpvapx" path="res://scripts/state_machine/state_machine.gd" id="2_kyg8x"]
+[ext_resource type="Script" uid="uid://f8vbkubpvapx" path="res://components/state_machine/state_machine.gd" id="2_kyg8x"]
 [ext_resource type="Script" uid="uid://vxvfn4usk6b4" path="res://camera/states/default.gd" id="3_a8qbo"]
 [ext_resource type="Script" uid="uid://bot5oxf0cq1qv" path="res://camera/states/jumping.gd" id="5_l8gmh"]
 [ext_resource type="Script" uid="uid://bjf5eassbova4" path="res://camera/states/big_jump.gd" id="8_6lqh4"]
