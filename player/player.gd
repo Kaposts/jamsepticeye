@@ -53,6 +53,8 @@ signal interest_point_detected(entered: bool)
 @export var hover_gravity_scale: float = 0.3   # how much gravity applies while hovering (0.3 = 30%)
 @export var hover_move_speed: float = 100.0    # reduced horizontal speed while hovering
 
+
+
 #endregion
 #===================================================================================================
 #region STATE VARIBALES
