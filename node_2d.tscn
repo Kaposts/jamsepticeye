@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://c4d7f3xrnao6t"]
+[gd_scene load_steps=50 format=4 uid="uid://c4d7f3xrnao6t"]
 
 [ext_resource type="Script" uid="uid://pl7q14263x68" path="res://core/level_manager.gd" id="1_2nhjh"]
 [ext_resource type="PackedScene" uid="uid://baftkdlepc3ff" path="res://core/player_manager.tscn" id="1_ei405"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://byp43elml65d5" path="res://platforming/scenes/deathbox.tscn" id="8_ei405"]
 [ext_resource type="PackedScene" uid="uid://dah2f52xwyrbs" path="res://debug/debug_window.tscn" id="10_hqns4"]
 [ext_resource type="Shader" uid="uid://t0bw3n8dln3p" path="res://shaders/foliage_wind.gdshader" id="13_bjha6"]
+[ext_resource type="Texture2D" uid="uid://b4pcf257t006y" path="res://assets/art/death_big_spritesheet.png" id="13_ebxd8"]
 [ext_resource type="Shader" uid="uid://cm18xpsyb65n6" path="res://shaders/water.gdshader" id="14_nr8wp"]
 [ext_resource type="Texture2D" uid="uid://cupk16oae5yda" path="res://assets/art/image2.png" id="15_1fr6y"]
 [ext_resource type="Texture2D" uid="uid://jv2dmdyqulua" path="res://assets/art/Danger_Sprites.png" id="15_bjha6"]
@@ -20,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://b3kelcjxva1sl" path="res://assets/art/tileset_world/tileset_grass_yellow.png" id="18_ebxd8"]
 [ext_resource type="Texture2D" uid="uid://cvu0uyyy3iyk1" path="res://assets/art/free-swamp-game-tileset-pixel-art/3 Objects/Bushes/6.png" id="19_ei405"]
 [ext_resource type="Texture2D" uid="uid://bfdestwo6gush" path="res://assets/art/free-swamp-game-tileset-pixel-art/2 Background/Layers/5.png" id="19_rjqkl"]
+[ext_resource type="Texture2D" uid="uid://c5yfslfk8f82f" path="res://assets/art/sign_atlas.png" id="20_2u7jv"]
 [ext_resource type="Texture2D" uid="uid://h3tobxjdl1f8" path="res://assets/art/free-swamp-game-tileset-pixel-art/3 Objects/Bushes/8.png" id="20_e8dv2"]
 [ext_resource type="Texture2D" uid="uid://bktbg78ktmped" path="res://assets/art/free-swamp-game-tileset-pixel-art/3 Objects/Bushes/9.png" id="21_2nhjh"]
 [ext_resource type="Script" uid="uid://bulq5sk6pbgu6" path="res://platforming/finish.gd" id="23_2nhjh"]
@@ -885,6 +887,26 @@ texture = ExtResource("18_ebxd8")
 15:10/0 = 0
 15:10/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mryly"]
+texture = ExtResource("20_2u7jv")
+texture_region_size = Vector2i(32, 32)
+1:2/0 = 0
+0:2/0 = 0
+1:3/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+3:2/0 = 0
+3:1/0 = 0
+3:0/0 = 0
+2:0/0 = 0
+2:1/0 = 0
+1:0/0 = 0
+1:1/0 = 0
+0:0/0 = 0
+0:1/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gt76g"]
 texture = ExtResource("16_bjha6")
 0:0/0 = 0
@@ -962,6 +984,7 @@ sources/0 = SubResource("TileSetAtlasSource_2hxjc")
 sources/2 = SubResource("TileSetAtlasSource_2u7jv")
 sources/3 = SubResource("TileSetAtlasSource_24dk6")
 sources/5 = SubResource("TileSetAtlasSource_gt76g")
+sources/4 = SubResource("TileSetAtlasSource_mryly")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_nr8wp"]
 noise_type = 0
@@ -999,6 +1022,30 @@ shader_parameter/backGroundDirY = 0.01
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bjha6"]
 size = Vector2(116, 105)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kq1c5"]
+texture = ExtResource("20_2u7jv")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+1:1/0 = 0
+1:0/0 = 0
+1:3/0 = 0
+0:3/0 = 0
+2:2/0 = 0
+2:1/0 = 0
+2:0/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+3:2/0 = 0
+3:1/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ornx7"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_kq1c5")
 
 [node name="Node2D" type="Node2D" groups=["level"]]
 script = ExtResource("1_2nhjh")
@@ -1410,15 +1457,21 @@ position = Vector2(243, -497)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="deathboxes/deathbox"]
 polygon = PackedVector2Array(60, 53, 55, 23, 22, 10, -8, 7, -27, 36, 26, 37, 41, 53)
 
-[node name="DangerSprites2" type="Sprite2D" parent="deathboxes"]
-position = Vector2(242, -476)
+[node name="DeathBigSpritesheet4" type="Sprite2D" parent="deathboxes/deathbox"]
+position = Vector2(43, 6)
+scale = Vector2(0.9999999, 0.99999994)
+texture = ExtResource("13_ebxd8")
+hframes = 2
+
+[node name="DangerSprites2" type="Sprite2D" parent="deathboxes/deathbox"]
+position = Vector2(-1, 21)
 scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("15_bjha6")
 region_enabled = true
 region_rect = Rect2(98.14017, 83.00007, 58.532486, 32.69123)
 
-[node name="DangerSprites3" type="Sprite2D" parent="deathboxes"]
-position = Vector2(293, -459)
+[node name="DangerSprites3" type="Sprite2D" parent="deathboxes/deathbox"]
+position = Vector2(50, 38)
 scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("15_bjha6")
 region_enabled = true
@@ -1481,6 +1534,12 @@ region_rect = Rect2(4.890785, 1.9591341, 24.426594, 14.330749)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="deathboxes/deathbox2"]
 polygon = PackedVector2Array(-68, 53, -56, 36, -17, 37, -6, 25, 10, 20, 20, 6, 38, 2, 47, -6, 64, -5, 64, 5, 32, 40, -23, 55)
 
+[node name="DeathBigSpritesheet5" type="Sprite2D" parent="deathboxes/deathbox2"]
+position = Vector2(-28, -6.000061)
+scale = Vector2(0.9999999, 0.99999994)
+texture = ExtResource("13_ebxd8")
+hframes = 2
+
 [node name="deathbox6" parent="deathboxes" instance=ExtResource("8_ei405")]
 position = Vector2(2153, -619)
 scale = Vector2(0.6162061, 1)
@@ -1506,6 +1565,12 @@ region_rect = Rect2(45.076866, 30.927488, 105.54893, 25.136187)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="deathboxes/deathbox6"]
 polygon = PackedVector2Array(-92.501465, 32, -66.53613, 15, 173.64307, 17, 176.88892, 32)
+
+[node name="DeathBigSpritesheet3" type="Sprite2D" parent="deathboxes/deathbox6"]
+position = Vector2(-50.30786, -14)
+scale = Vector2(1.6228334, 0.99999994)
+texture = ExtResource("13_ebxd8")
+hframes = 2
 
 [node name="deathbox4" parent="deathboxes" instance=ExtResource("8_ei405")]
 position = Vector2(1188, -1658)
@@ -1550,6 +1615,12 @@ region_rect = Rect2(2.4102135, 31.791298, 26.768417, 35.25596)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="deathboxes/deathbox4"]
 polygon = PackedVector2Array(-28, -44, -16, -25, 2, -11, 26, -10, 33, 17, 63, 18, 65, 65, 17, 64, -30, 15, -59, 16, -72, -23, -50, -40)
 
+[node name="DeathBigSpritesheet6" type="Sprite2D" parent="deathboxes/deathbox4"]
+position = Vector2(33, -36)
+scale = Vector2(0.9999999, 0.99999994)
+texture = ExtResource("13_ebxd8")
+hframes = 2
+
 [node name="deathbox5" parent="deathboxes" instance=ExtResource("8_ei405")]
 position = Vector2(2159, -52.999996)
 scale = Vector2(0.8399805, 0.71999997)
@@ -1572,6 +1643,12 @@ region_rect = Rect2(160.29028, 23.953304, 48.856216, 59.301327)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="deathboxes/deathbox5"]
 polygon = PackedVector2Array(-64.28711, 56.944443, -63.09668, 8.333328, 3.5715332, -25.000008, 21.4292, -65.277794, 60.71582, -50.000008, 64.28711, 12.499992)
 
+[node name="DeathBigSpritesheet2" type="Sprite2D" parent="deathboxes/deathbox5"]
+position = Vector2(-26.191162, -61.111122)
+scale = Vector2(1.1905037, 1.3888888)
+texture = ExtResource("13_ebxd8")
+hframes = 2
+
 [node name="deathbox3" parent="deathboxes" instance=ExtResource("8_ei405")]
 position = Vector2(988, -1.1920929e-07)
 scale = Vector2(0.87999994, 0.15999955)
@@ -1585,6 +1662,12 @@ region_rect = Rect2(47.8444, 0, 96.94187, 20.518751)
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="deathboxes/deathbox3"]
 polygon = PackedVector2Array(-62.49994, 31.25011, -27.272705, -81.2502, 28.40918, -81.2502, 46.590942, 31.25011)
+
+[node name="DeathBigSpritesheet" type="Sprite2D" parent="deathboxes/deathbox3"]
+position = Vector2(-2.2728271, -237.50067)
+scale = Vector2(1.1363636, 6.250017)
+texture = ExtResource("13_ebxd8")
+hframes = 2
 
 [node name="Ground_Deco" type="Node2D" parent="."]
 
@@ -2388,6 +2471,7 @@ offset_right = 3711.0
 offset_bottom = 313.0
 
 [node name="ForegroundParallax" type="Node2D" parent="."]
+visible = false
 z_index = 1
 
 [node name="FgParallax" type="Parallax2D" parent="ForegroundParallax"]
@@ -2510,6 +2594,10 @@ script = ExtResource("23_2nhjh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="finish"]
 position = Vector2(-3, -15.5)
 shape = SubResource("RectangleShape2D_bjha6")
+
+[node name="signs" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAADAP//AAABAAIAAAD3//3/AAAAAAMAAADp/+3/AAAAAAMAAADr/+f/AAABAAIAAADd/+D/AAAAAAMAAAAKAMf/AAAAAAMAAAAHAMH/AAAAAAIAAAArALn/AAABAAIAAAA=")
+tile_set = SubResource("TileSet_ornx7")
 
 [connection signal="time_updated" from="." to="PlayerUI" method="_on_node_2d_time_updated"]
 [connection signal="body_entered" from="finish" to="finish" method="_on_body_entered"]
