@@ -172,7 +172,6 @@ func die():
 	# _leave_corpse()
 	remove_from_group("player")
 	$AnimationPlayer.stop()
-	$blood.show()
 	die_sfx_player.play_random()
 	set_script(null)
 	
