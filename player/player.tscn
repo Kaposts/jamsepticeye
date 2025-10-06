@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://c42tatqhkdecw"]
+[gd_scene load_steps=61 format=3 uid="uid://c42tatqhkdecw"]
 
 [ext_resource type="Script" uid="uid://blm6nncupiinf" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://b0uv88pfk7aed" path="res://assets/art/player_character/body_sneakers_front.png" id="2_hg6s5"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://5ndfuc8h6sgl" path="res://assets/art/player_character/body_legs_back.png" id="5_8t03j"]
 [ext_resource type="Texture2D" uid="uid://dt5g84uuh086k" path="res://assets/art/player_character/body_wings_front.png" id="6_rgyib"]
 [ext_resource type="Texture2D" uid="uid://b3qa00fqw463i" path="res://assets/art/player_character/body_tongue.png" id="7_hg6s5"]
+[ext_resource type="Texture2D" uid="uid://cgwe0p5csmlej" path="res://assets/art/player_character/blood_particle.png" id="11_2ieo8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qjkh3"]
 shader = ExtResource("2_yw30f")
@@ -1389,6 +1390,19 @@ radius = 12.0415945
 [sub_resource type="CircleShape2D" id="CircleShape2D_hg6s5"]
 radius = 180.0
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ebec5"]
+lifetime_randomness = 0.24
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+spread = 180.0
+initial_velocity_max = 391.56
+gravity = Vector3(0, 98, 0)
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 2
 script = ExtResource("1_rkbax")
@@ -1475,3 +1489,11 @@ collision_mask = 16
 shape = SubResource("CircleShape2D_hg6s5")
 
 [node name="AbilitiesRoot" type="Node2D" parent="."]
+
+[node name="death_particle" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 138
+texture = ExtResource("11_2ieo8")
+lifetime = 0.51
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_ebec5")

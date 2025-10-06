@@ -9,7 +9,7 @@ extends Control
 @onready var options_scroll_anim: AnimationPlayer = $Options/Scroll/AnimationPlayer
 @onready var options_anim: AnimationPlayer = $Options/AnimationPlayer
 
-@onready var main_menu_button: TextureButton = $Pause_Options/VBoxContainer/MainMenu
+# @onready var main_menu_button: TextureButton = $Pause_Options/VBoxContainer/MainMenu
 @onready var options_button: TextureButton = $Pause_Options/VBoxContainer/Options
 @onready var quit_button: TextureButton = $Pause_Options/VBoxContainer/Quit
 
@@ -22,7 +22,7 @@ var is_animating: bool = false
 
 func _ready() -> void:
 	close_button.pressed.connect(_on_close_button_pressed)
-	main_menu_button.pressed.connect(_on_main_menu_button_pressed)
+	# main_menu_button.pressed.connect(_on_main_menu_button_pressed)
 	options_button.pressed.connect(_on_options_button_pressed)
 	quit_button.pressed.connect(_on_quit_button_pressed)
 	scroll_anim.animation_finished.connect(close_finished)

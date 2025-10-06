@@ -161,8 +161,13 @@ func _physics_process(delta):
 
 func die():
 	SignalBus.sig_player_died.emit()
+	global_position.y += 10
+	$death_particle.emitting = true
 	_leave_corpse()
-	queue_free()
+	remove_from_group("player")
+	$AnimationPlayer.stop()
+	$blood.show()
+	set_script(null)
 
 
 func get_closest_interest_point() -> Vector2:
