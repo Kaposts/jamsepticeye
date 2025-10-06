@@ -1050,6 +1050,8 @@ sources/0 = SubResource("TileSetAtlasSource_kq1c5")
 [node name="Node2D" type="Node2D" groups=["level"]]
 script = ExtResource("1_2nhjh")
 
+[node name="PlayerManager" parent="." instance=ExtResource("1_ei405")]
+
 [node name="PlayerUI" parent="." instance=ExtResource("2_2nhjh")]
 
 [node name="MainMenu" parent="." instance=ExtResource("27_1fr6y")]
@@ -1063,8 +1065,6 @@ visible = false
 position = Vector2(0, -25)
 lookahead_x_distance = 40.0
 lookahead_y_distance = 50.0
-
-[node name="PlayerManager" parent="." instance=ExtResource("1_ei405")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7vxoj")
@@ -2471,7 +2471,6 @@ offset_right = 3711.0
 offset_bottom = 313.0
 
 [node name="ForegroundParallax" type="Node2D" parent="."]
-visible = false
 z_index = 1
 
 [node name="FgParallax" type="Parallax2D" parent="ForegroundParallax"]

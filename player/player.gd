@@ -184,6 +184,11 @@ func die():
 	$AnimationTree.queue_free()
 	remove_from_group("player")
 	die_sfx_player.play_random()
+
+	for ab in abilities:
+		ab.queue_free()
+	abilities = []
+
 	set_script(null)
 	
 
