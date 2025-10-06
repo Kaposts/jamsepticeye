@@ -1,6 +1,7 @@
-[gd_scene load_steps=46 format=4 uid="uid://c4d7f3xrnao6t"]
+[gd_scene load_steps=45 format=4 uid="uid://c4d7f3xrnao6t"]
 
 [ext_resource type="Script" uid="uid://pl7q14263x68" path="res://core/level_manager.gd" id="1_2nhjh"]
+[ext_resource type="PackedScene" uid="uid://baftkdlepc3ff" path="res://core/player_manager.tscn" id="1_ei405"]
 [ext_resource type="PackedScene" uid="uid://r42ul1rnbojo" path="res://player/player_ui.tscn" id="2_2nhjh"]
 [ext_resource type="Texture2D" uid="uid://cvsr0ew5klrxo" path="res://assets/art/free-swamp-game-tileset-pixel-art/2 Background/Layers/2.png" id="2_flf07"]
 [ext_resource type="Texture2D" uid="uid://c8r85isnewky1" path="res://assets/art/free-swamp-game-tileset-pixel-art/2 Background/Layers/3.png" id="3_k73cj"]
@@ -25,8 +26,6 @@
 [ext_resource type="PackedScene" uid="uid://crmrc6nkin4t3" path="res://platforming/scenes/grapple_point.tscn" id="23_e8dv2"]
 [ext_resource type="PackedScene" uid="uid://c7edv1edu6rrw" path="res://camera/player_follow_camera.tscn" id="26_gt76g"]
 [ext_resource type="PackedScene" uid="uid://cxrn7l2wlwqut" path="res://menus/main_menu.tscn" id="27_1fr6y"]
-[ext_resource type="PackedScene" uid="uid://c42tatqhkdecw" path="res://player/player.tscn" id="27_2hxjc"]
-[ext_resource type="PackedScene" uid="uid://cl4wjyurmexwq" path="res://player/particles/walk_particle.tscn" id="28_2hxjc"]
 [ext_resource type="PackedScene" uid="uid://iuwfevs5mml6" path="res://platforming/scenes/movable_block.tscn" id="30_2u7jv"]
 
 [sub_resource type="Environment" id="Environment_7vxoj"]
@@ -1009,6 +1008,7 @@ script = ExtResource("1_2nhjh")
 [node name="MainMenu" parent="." instance=ExtResource("27_1fr6y")]
 
 [node name="DebugWindow" parent="." instance=ExtResource("10_hqns4")]
+visible = false
 
 [node name="AnimationPlayer" parent="." instance=ExtResource("5_bjha6")]
 
@@ -1016,6 +1016,8 @@ script = ExtResource("1_2nhjh")
 position = Vector2(0, -25)
 lookahead_x_distance = 40.0
 lookahead_y_distance = 50.0
+
+[node name="PlayerManager" parent="." instance=ExtResource("1_ei405")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7vxoj")
@@ -2508,10 +2510,6 @@ script = ExtResource("23_2nhjh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="finish"]
 position = Vector2(-3, -15.5)
 shape = SubResource("RectangleShape2D_bjha6")
-
-[node name="Player" parent="." instance=ExtResource("27_2hxjc")]
-position = Vector2(815, -34)
-walk_particle = ExtResource("28_2hxjc")
 
 [connection signal="time_updated" from="." to="PlayerUI" method="_on_node_2d_time_updated"]
 [connection signal="body_entered" from="finish" to="finish" method="_on_body_entered"]

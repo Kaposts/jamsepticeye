@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dbe25r5mgvr2l"]
+[gd_scene load_steps=15 format=3 uid="uid://r42ul1rnbojo"]
 
 [ext_resource type="Script" uid="uid://v0kcqljto8n0" path="res://player/player_ui.gd" id="1_0aiwo"]
 [ext_resource type="Shader" uid="uid://cs0nu8w547cet" path="res://shaders/fog.gdshader" id="1_x0k1s"]

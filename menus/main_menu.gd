@@ -33,6 +33,7 @@ func _on_play_button_pressed() -> void:
 	SignalBus.sig_game_started.emit()
 	
 	_disable_all_buttons()
+	$LeaderBoardWindow.hide()
 	
 	animation_player.play("game_start")
 	await animation_player.animation_finished
@@ -52,6 +53,7 @@ func _disable_all_buttons() -> void:
 	options_button.disabled = true
 	credits_button.disabled = true
 	quit_button.disabled = true
+	$ControlRoot/LeaderBoard.disabled = true
 
 
 func _on_options_button_pressed() -> void:
@@ -63,7 +65,7 @@ func _on_options_button_pressed() -> void:
 	await options_anim.animation_finished
 	options_menu.enable_ui()
 	options_menu.is_animating = false
-
+	$LeaderBoardWindow.hide()
 
 func _on_quit_button_pressed() -> void:
 	var platform_name: StringName = OS.get_name()
@@ -79,3 +81,10 @@ func _on_credits_button_pressed() -> void:
 	credits_scroll_anim.play("Scroll_Open")
 	credits_anim.play("Menu_Load")
 	credits_menu.show()
+	$LeaderBoardWindow.hide()
+
+func _on_leader_board_pressed() -> void:
+	if $LeaderBoardWindow.visible:$LeaderBoardWindow.hide()
+	else: 
+		$LeaderBoardWindow.show()
+		$LeaderBoardWindow.load_leaderboard()
