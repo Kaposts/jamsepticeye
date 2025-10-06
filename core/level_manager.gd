@@ -12,6 +12,8 @@ var is_running: bool = false
 func _ready():
 	SignalBus.sig_game_started.connect(_on_game_started)
 	SignalBus.sig_level_finished.connect(_on_sig_level_finished)
+	
+	MusicPlayer.switch_song(Enum.SongNames.TITLE_THEME, true, true)
 
 
 func start_timer():

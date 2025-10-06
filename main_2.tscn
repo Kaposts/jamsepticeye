@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://bkfskcwynls85"]
+[gd_scene load_steps=46 format=4 uid="uid://cc8vx30st351m"]
 
 [ext_resource type="PackedScene" uid="uid://c7edv1edu6rrw" path="res://camera/player_follow_camera.tscn" id="1_k1oo3"]
 [ext_resource type="Texture2D" uid="uid://cvsr0ew5klrxo" path="res://assets/art/free-swamp-game-tileset-pixel-art/2 Background/Layers/2.png" id="2_47lid"]
