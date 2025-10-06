@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://c42tatqhkdecw"]
+[gd_scene load_steps=71 format=3 uid="uid://c42tatqhkdecw"]
 
 [ext_resource type="Script" uid="uid://blm6nncupiinf" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://b0uv88pfk7aed" path="res://assets/art/player_character/body_sneakers_front.png" id="2_hg6s5"]
@@ -20,9 +20,6 @@
 [ext_resource type="AudioStream" uid="uid://cd4t4vm6l8ppi" path="res://assets/sfx/wings_flap_1.wav" id="18_65viv"]
 [ext_resource type="AudioStream" uid="uid://dk55axr08uaou" path="res://assets/sfx/wings_flap_2.wav" id="19_x7c3f"]
 [ext_resource type="AudioStream" uid="uid://cpg65resm02u" path="res://assets/sfx/wings_flap_3.wav" id="20_bjvpn"]
-[ext_resource type="AudioStream" uid="uid://s2ubnpbk4q8a" path="res://assets/sfx/tongue_out_1.wav" id="21_g4c7l"]
-[ext_resource type="AudioStream" uid="uid://4sweh5nxjwel" path="res://assets/sfx/tongue_out_2.wav" id="22_knn7v"]
-[ext_resource type="AudioStream" uid="uid://bdvgvxvy83j3r" path="res://assets/sfx/tongue_out_3.wav" id="23_7pqkx"]
 [ext_resource type="AudioStream" uid="uid://dga7blsewixp" path="res://assets/sfx/grab_sfx.wav" id="24_uw77l"]
 [ext_resource type="AudioStream" uid="uid://iy8yjexf8kmf" path="res://assets/sfx/respawn.wav" id="25_knn7v"]
 
@@ -1275,7 +1272,7 @@ tracks/13/keys = {
 tracks/14/type = "method"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("SFX/TongueAttachedSFXPlayer")
+tracks/14/path = NodePath("SFX/WallHangSFXPlayer")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -1547,10 +1544,7 @@ streams = Array[AudioStream]([ExtResource("15_x7c3f"), ExtResource("16_bjvpn"), 
 volume_db = 8.0
 streams = Array[AudioStream]([ExtResource("18_65viv"), ExtResource("19_x7c3f"), ExtResource("20_bjvpn")])
 
-[node name="TongueOutSFXPlayer" parent="SFX" instance=ExtResource("11_tqiix")]
-streams = Array[AudioStream]([ExtResource("21_g4c7l"), ExtResource("22_knn7v"), ExtResource("23_7pqkx")])
-
-[node name="TongueAttachedSFXPlayer" parent="SFX" instance=ExtResource("11_tqiix")]
+[node name="WallHangSFXPlayer" parent="SFX" instance=ExtResource("11_tqiix")]
 streams = Array[AudioStream]([ExtResource("24_uw77l")])
 
 [node name="SpawnSFXPlayer" parent="SFX" instance=ExtResource("11_tqiix")]

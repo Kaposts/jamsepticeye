@@ -117,8 +117,6 @@ var is_grappling: bool = false:
 @onready var spawn_sfx_player: RandomAudioPlayer2D = $SFX/SpawnSFXPlayer
 
 
-
-
 #===================================================================================================
 #region BUILT IN FUNCTIONS
 

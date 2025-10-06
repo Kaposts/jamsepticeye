@@ -1,29 +1,32 @@
-[gd_scene load_steps=41 format=4 uid="uid://bgy7a3gewypwj"]
+[gd_scene load_steps=45 format=4 uid="uid://bs5uh8ob3aeq3"]
 
-[ext_resource type="Script" uid="uid://pl7q14263x68" path="res://core/level_manager.gd" id="1_0mimw"]
-[ext_resource type="PackedScene" path="res://player/player_ui.tscn" id="2_on7tm"]
-[ext_resource type="PackedScene" uid="uid://cxrn7l2wlwqut" path="res://menus/main_menu.tscn" id="3_623xc"]
-[ext_resource type="PackedScene" uid="uid://dah2f52xwyrbs" path="res://debug/debug_window.tscn" id="4_yfvt8"]
-[ext_resource type="PackedScene" path="res://player/animation_player.tscn" id="5_rn8an"]
-[ext_resource type="PackedScene" uid="uid://c7edv1edu6rrw" path="res://camera/player_follow_camera.tscn" id="6_snheb"]
-[ext_resource type="PackedScene" uid="uid://baftkdlepc3ff" path="res://core/player_manager.tscn" id="7_frmt5"]
-[ext_resource type="Texture2D" uid="uid://cvsr0ew5klrxo" path="res://assets/art/free-swamp-game-tileset-pixel-art/2 Background/Layers/2.png" id="8_pvxtd"]
-[ext_resource type="Shader" uid="uid://t0bw3n8dln3p" path="res://shaders/foliage_wind.gdshader" id="9_5ydra"]
-[ext_resource type="Texture2D" uid="uid://c8r85isnewky1" path="res://assets/art/free-swamp-game-tileset-pixel-art/2 Background/Layers/3.png" id="10_vydoe"]
-[ext_resource type="Texture2D" uid="uid://cfkjyl2h0sj1m" path="res://assets/art/props_trees.png" id="11_cwqyj"]
-[ext_resource type="PackedScene" uid="uid://byp43elml65d5" path="res://platforming/scenes/deathbox.tscn" id="12_qocqu"]
-[ext_resource type="Texture2D" uid="uid://d1yc13y44xbft" path="res://assets/art/tileset_world/props_small_atlas.png" id="13_qmbm0"]
-[ext_resource type="Texture2D" uid="uid://7mbpvpifbn55" path="res://assets/art/tileset_world/tileset_grass_green.png" id="14_1oowe"]
-[ext_resource type="Texture2D" uid="uid://b3kelcjxva1sl" path="res://assets/art/tileset_world/tileset_grass_yellow.png" id="15_8j4hh"]
-[ext_resource type="Texture2D" uid="uid://bmnvr6vdfjalp" path="res://assets/art/free-swamp-game-tileset-pixel-art/3 Objects/Bushes/5.png" id="16_4m3ih"]
-[ext_resource type="Texture2D" uid="uid://cvu0uyyy3iyk1" path="res://assets/art/free-swamp-game-tileset-pixel-art/3 Objects/Bushes/6.png" id="17_lnhya"]
-[ext_resource type="Texture2D" uid="uid://h3tobxjdl1f8" path="res://assets/art/free-swamp-game-tileset-pixel-art/3 Objects/Bushes/8.png" id="18_ldr3g"]
-[ext_resource type="Texture2D" uid="uid://bktbg78ktmped" path="res://assets/art/free-swamp-game-tileset-pixel-art/3 Objects/Bushes/9.png" id="19_0wrmg"]
-[ext_resource type="Shader" uid="uid://cm18xpsyb65n6" path="res://shaders/water.gdshader" id="20_m1e2v"]
-[ext_resource type="Texture2D" uid="uid://bfdestwo6gush" path="res://assets/art/free-swamp-game-tileset-pixel-art/2 Background/Layers/5.png" id="21_y0vku"]
-[ext_resource type="PackedScene" uid="uid://crmrc6nkin4t3" path="res://platforming/scenes/grapple_point.tscn" id="22_86uf3"]
-[ext_resource type="PackedScene" uid="uid://iuwfevs5mml6" path="res://platforming/scenes/movable_block.tscn" id="23_w4e1e"]
-[ext_resource type="Script" uid="uid://bulq5sk6pbgu6" path="res://platforming/finish.gd" id="24_6ibx8"]
+[ext_resource type="Script" uid="uid://pl7q14263x68" path="res://core/level_manager.gd" id="1_cdpqp"]
+[ext_resource type="PackedScene" uid="uid://dbe25r5mgvr2l" path="res://player/player_ui.tscn" id="2_mosti"]
+[ext_resource type="PackedScene" uid="uid://cxrn7l2wlwqut" path="res://menus/main_menu.tscn" id="3_pyk08"]
+[ext_resource type="PackedScene" uid="uid://dah2f52xwyrbs" path="res://debug/debug_window.tscn" id="4_yagm1"]
+[ext_resource type="PackedScene" path="res://player/animation_player.tscn" id="5_1260u"]
+[ext_resource type="PackedScene" uid="uid://c7edv1edu6rrw" path="res://camera/player_follow_camera.tscn" id="6_bgdig"]
+[ext_resource type="PackedScene" uid="uid://baftkdlepc3ff" path="res://core/player_manager.tscn" id="7_rsgto"]
+[ext_resource type="Texture2D" uid="uid://cvsr0ew5klrxo" path="res://assets/art/free-swamp-game-tileset-pixel-art/2 Background/Layers/2.png" id="8_55wyc"]
+[ext_resource type="Shader" uid="uid://t0bw3n8dln3p" path="res://shaders/foliage_wind.gdshader" id="9_nqeac"]
+[ext_resource type="Texture2D" uid="uid://c8r85isnewky1" path="res://assets/art/free-swamp-game-tileset-pixel-art/2 Background/Layers/3.png" id="10_yvqwu"]
+[ext_resource type="Texture2D" uid="uid://cfkjyl2h0sj1m" path="res://assets/art/props_trees.png" id="11_kjrse"]
+[ext_resource type="PackedScene" uid="uid://byp43elml65d5" path="res://platforming/scenes/deathbox.tscn" id="12_p3fyh"]
+[ext_resource type="Texture2D" uid="uid://jv2dmdyqulua" path="res://assets/art/Danger_Sprites.png" id="13_neu6k"]
+[ext_resource type="Texture2D" uid="uid://utn7xou7pda0" path="res://assets/art/image.png" id="14_fuelx"]
+[ext_resource type="Texture2D" uid="uid://cupk16oae5yda" path="res://assets/art/image2.png" id="15_ib86h"]
+[ext_resource type="Texture2D" uid="uid://d1yc13y44xbft" path="res://assets/art/tileset_world/props_small_atlas.png" id="16_gsxqv"]
+[ext_resource type="Texture2D" uid="uid://7mbpvpifbn55" path="res://assets/art/tileset_world/tileset_grass_green.png" id="17_jkcmj"]
+[ext_resource type="Texture2D" uid="uid://b3kelcjxva1sl" path="res://assets/art/tileset_world/tileset_grass_yellow.png" id="18_dlmot"]
+[ext_resource type="Texture2D" uid="uid://bmnvr6vdfjalp" path="res://assets/art/free-swamp-game-tileset-pixel-art/3 Objects/Bushes/5.png" id="19_hhdp1"]
+[ext_resource type="Texture2D" uid="uid://cvu0uyyy3iyk1" path="res://assets/art/free-swamp-game-tileset-pixel-art/3 Objects/Bushes/6.png" id="20_kb5np"]
+[ext_resource type="Texture2D" uid="uid://h3tobxjdl1f8" path="res://assets/art/free-swamp-game-tileset-pixel-art/3 Objects/Bushes/8.png" id="21_y1ums"]
+[ext_resource type="Texture2D" uid="uid://bktbg78ktmped" path="res://assets/art/free-swamp-game-tileset-pixel-art/3 Objects/Bushes/9.png" id="22_dycbu"]
+[ext_resource type="Shader" uid="uid://cm18xpsyb65n6" path="res://shaders/water.gdshader" id="23_oypa3"]
+[ext_resource type="Texture2D" uid="uid://bfdestwo6gush" path="res://assets/art/free-swamp-game-tileset-pixel-art/2 Background/Layers/5.png" id="24_fkvqy"]
+[ext_resource type="PackedScene" uid="uid://crmrc6nkin4t3" path="res://platforming/scenes/grapple_point.tscn" id="25_l28j8"]
+[ext_resource type="PackedScene" uid="uid://iuwfevs5mml6" path="res://platforming/scenes/movable_block.tscn" id="26_dmy51"]
+[ext_resource type="Script" uid="uid://bulq5sk6pbgu6" path="res://platforming/finish.gd" id="27_inp5q"]
 
 [sub_resource type="Environment" id="Environment_7vxoj"]
 background_mode = 3
@@ -38,7 +41,7 @@ noise = SubResource("FastNoiseLite_bjha6")
 seamless = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1fr6y"]
-shader = ExtResource("9_5ydra")
+shader = ExtResource("9_nqeac")
 shader_parameter/render_noise = false
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_gt76g")
 shader_parameter/amplitude = 0.01999999955296
@@ -50,7 +53,7 @@ shader_parameter/rotation_pivot = Vector2(0.5, 1)
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2hxjc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ebxd8"]
-shader = ExtResource("9_5ydra")
+shader = ExtResource("9_nqeac")
 shader_parameter/render_noise = false
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_2hxjc")
 shader_parameter/amplitude = 0.2
@@ -60,7 +63,7 @@ shader_parameter/rotation_strength = 1.0
 shader_parameter/rotation_pivot = Vector2(0.5, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2hxjc"]
-texture = ExtResource("14_1oowe")
+texture = ExtResource("17_jkcmj")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -614,7 +617,7 @@ texture = ExtResource("14_1oowe")
 15:10/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2u7jv"]
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 1:0/0 = 0
 5:0/0 = 0
 9:0/0 = 0
@@ -650,7 +653,7 @@ texture = ExtResource("13_qmbm0")
 15:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_24dk6"]
-texture = ExtResource("15_8j4hh")
+texture = ExtResource("18_dlmot")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -882,6 +885,69 @@ texture = ExtResource("15_8j4hh")
 15:10/0 = 0
 15:10/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gt76g"]
+texture = ExtResource("14_fuelx")
+0:0/0 = 0
+1:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_d2bti"]
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 0
@@ -895,6 +961,7 @@ terrain_set_0/terrain_1/color = Color(0.17745137, 0.53070456, 0, 1)
 sources/0 = SubResource("TileSetAtlasSource_2hxjc")
 sources/2 = SubResource("TileSetAtlasSource_2u7jv")
 sources/3 = SubResource("TileSetAtlasSource_24dk6")
+sources/5 = SubResource("TileSetAtlasSource_gt76g")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_nr8wp"]
 noise_type = 0
@@ -913,7 +980,7 @@ noise = SubResource("FastNoiseLite_ta5nu")
 seamless = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d2bti"]
-shader = ExtResource("20_m1e2v")
+shader = ExtResource("23_oypa3")
 shader_parameter/offSet = 0.0
 shader_parameter/YDistortion = 1.0
 shader_parameter/waterNoise = SubResource("NoiseTexture2D_flf07")
@@ -934,18 +1001,17 @@ shader_parameter/backGroundDirY = 0.01
 size = Vector2(116, 105)
 
 [node name="Node2D" type="Node2D" groups=["level"]]
-script = ExtResource("1_0mimw")
+script = ExtResource("1_cdpqp")
 
-[node name="PlayerUI" parent="." instance=ExtResource("2_on7tm")]
+[node name="PlayerUI" parent="." instance=ExtResource("2_mosti")]
 
-[node name="MainMenu" parent="." instance=ExtResource("3_623xc")]
+[node name="MainMenu" parent="." instance=ExtResource("3_pyk08")]
 
-[node name="DebugWindow" parent="." instance=ExtResource("4_yfvt8")]
-visible = false
+[node name="DebugWindow" parent="." instance=ExtResource("4_yagm1")]
 
-[node name="AnimationPlayer" parent="." instance=ExtResource("5_rn8an")]
+[node name="AnimationPlayer" parent="." instance=ExtResource("5_1260u")]
 
-[node name="PlayerFollowCamera" parent="." instance=ExtResource("6_snheb")]
+[node name="PlayerFollowCamera" parent="." instance=ExtResource("6_bgdig")]
 position = Vector2(0, -25)
 lookahead_x_distance = 40.0
 lookahead_y_distance = 50.0
@@ -953,7 +1019,7 @@ lookahead_y_distance = 50.0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7vxoj")
 
-[node name="PlayerManager" parent="." instance=ExtResource("7_frmt5")]
+[node name="PlayerManager" parent="." instance=ExtResource("7_rsgto")]
 
 [node name="BackgroundParallax" type="Node2D" parent="."]
 
@@ -964,7 +1030,7 @@ repeat_times = 25
 
 [node name="2" type="Sprite2D" parent="BackgroundParallax/BgParallaxBack"]
 position = Vector2(121, -131)
-texture = ExtResource("8_pvxtd")
+texture = ExtResource("8_55wyc")
 
 [node name="BgParallaxMiddle" type="Parallax2D" parent="BackgroundParallax"]
 scroll_scale = Vector2(0.8, 1)
@@ -974,7 +1040,7 @@ repeat_times = 25
 [node name="3" type="Sprite2D" parent="BackgroundParallax/BgParallaxMiddle"]
 material = SubResource("ShaderMaterial_1fr6y")
 position = Vector2(524, -131)
-texture = ExtResource("10_vydoe")
+texture = ExtResource("10_yvqwu")
 
 [node name="BgParallaxFront" type="Parallax2D" parent="BackgroundParallax"]
 repeat_size = Vector2(576, 0)
@@ -986,350 +1052,350 @@ position = Vector2(52, -87)
 [node name="Sprite2D35" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(1266, -1)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(424, 96, 72, 224)
 
 [node name="Sprite2D36" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(1815, -145)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(424, 96, 72, 224)
 
 [node name="Sprite2D37" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(1521, -378)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(424, 96, 72, 224)
 
 [node name="Sprite2D38" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(377, -385)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(424, 96, 72, 224)
 
 [node name="Sprite2D39" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(283, -374)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(424, 96, 72, 224)
 
 [node name="Sprite2D40" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(187, -241)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(424, 96, 72, 224)
 
 [node name="Sprite2D" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(-173, 3)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(0, 0, 160, 176)
 
 [node name="Sprite2D42" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(-427, -67)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(176, 16, 56, 64)
 
 [node name="Sprite2D43" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(700, 58)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(176, 16, 56, 64)
 
 [node name="Sprite2D44" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(1347, 24)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(176, 16, 56, 64)
 
 [node name="Sprite2D45" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(1753, -101)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(176, 16, 56, 64)
 
 [node name="Sprite2D46" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(1871, -312)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(176, 16, 56, 64)
 
 [node name="Sprite2D47" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(342, -920)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(176, 16, 56, 64)
 
 [node name="Sprite2D48" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(-234, -981)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(176, 16, 56, 64)
 
 [node name="Sprite2D49" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(-1018, -1159)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(176, 16, 56, 64)
 
 [node name="Sprite2D50" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(499, -1735)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(176, 16, 56, 64)
 
 [node name="Sprite2D41" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(-173, 3)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(0, 0, 160, 176)
 
 [node name="Sprite2D33" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(-173, 3)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(0, 0, 160, 176)
 
 [node name="Sprite2D34" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(-173, 3)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(0, 0, 160, 176)
 
 [node name="Sprite2D24" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(-11, 9)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(256, 8, 152, 168)
 
 [node name="Sprite2D25" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(1082, -352)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(256, 8, 152, 168)
 
 [node name="Sprite2D26" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(1470, -355)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(256, 8, 152, 168)
 
 [node name="Sprite2D27" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(-144, -456)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(256, 8, 152, 168)
 
 [node name="Sprite2D28" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(-1447, -550)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(256, 8, 152, 168)
 
 [node name="Sprite2D29" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(-1312, -1027)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(256, 8, 152, 168)
 
 [node name="Sprite2D30" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(-1312, -1027)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(256, 8, 152, 168)
 
 [node name="Sprite2D31" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(-948, -1382)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(256, 8, 152, 168)
 
 [node name="Sprite2D2" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(1147, -369)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(0, 0, 160, 176)
 
 [node name="Sprite2D7" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(494, -941)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(0, 0, 160, 176)
 
 [node name="Sprite2D8" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(981, -1023)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(0, 0, 160, 176)
 
 [node name="Sprite2D9" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(1202, -1006)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(0, 0, 160, 176)
 
 [node name="Sprite2D10" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(637, -1775)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(0, 0, 160, 176)
 
 [node name="Sprite2D3" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(-1333, -527)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(0, 0, 160, 176)
 
 [node name="Sprite2D4" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(-991, -1362)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(0, 200, 80, 120)
 
 [node name="Sprite2D11" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(-18, -1955)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(0, 200, 80, 120)
 
 [node name="Sprite2D12" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(742, -1732)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(0, 200, 80, 120)
 
 [node name="Sprite2D13" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(403, -1777)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(0, 200, 80, 120)
 
 [node name="Sprite2D32" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(-875, -1389)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(0, 0, 160, 176)
 
 [node name="Sprite2D14" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(1491, -2146)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(0, 200, 80, 120)
 
 [node name="Sprite2D5" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(-474, -995)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(0, 200, 80, 120)
 
 [node name="Sprite2D6" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(439, -915)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(0, 200, 80, 120)
 
 [node name="Sprite2D15" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(271, -968)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(80, 224, 64, 96)
 
 [node name="Sprite2D16" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(613, -935)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(80, 224, 64, 96)
 
 [node name="Sprite2D17" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(955, -1655)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(80, 224, 64, 96)
 
 [node name="Sprite2D18" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(1409, -2165)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(80, 224, 64, 96)
 
 [node name="Sprite2D19" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(-604, 10)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(80, 224, 64, 96)
 
 [node name="Sprite2D20" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(232, 41)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(80, 224, 64, 96)
 
 [node name="Sprite2D21" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(288, -328)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(80, 224, 64, 96)
 
 [node name="Sprite2D22" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(1243, -327)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(80, 224, 64, 96)
 
 [node name="Sprite2D23" type="Sprite2D" parent="trees"]
 material = SubResource("ShaderMaterial_ebxd8")
 position = Vector2(1243, -327)
-texture = ExtResource("11_cwqyj")
+texture = ExtResource("11_kjrse")
 region_enabled = true
 region_rect = Rect2(80, 224, 64, 96)
 
@@ -1337,23 +1403,187 @@ region_rect = Rect2(80, 224, 64, 96)
 z_index = 1
 position = Vector2(-35, -4)
 
-[node name="deathbox" parent="deathboxes" instance=ExtResource("12_qocqu")]
+[node name="deathbox" parent="deathboxes" instance=ExtResource("12_p3fyh")]
 position = Vector2(243, -497)
 
-[node name="deathbox2" parent="deathboxes" instance=ExtResource("12_qocqu")]
-position = Vector2(-540, -868)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="deathboxes/deathbox"]
+polygon = PackedVector2Array(60, 53, 55, 23, 22, 10, -8, 7, -27, 36, 26, 37, 41, 53)
 
-[node name="deathbox6" parent="deathboxes" instance=ExtResource("12_qocqu")]
+[node name="DangerSprites2" type="Sprite2D" parent="deathboxes"]
+position = Vector2(242, -476)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("13_neu6k")
+region_enabled = true
+region_rect = Rect2(98.14017, 83.00007, 58.532486, 32.69123)
+
+[node name="DangerSprites3" type="Sprite2D" parent="deathboxes"]
+position = Vector2(293, -459)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("13_neu6k")
+region_enabled = true
+region_rect = Rect2(67.053154, 83.87738, 25.715355, 31.512459)
+
+[node name="deathbox2" parent="deathboxes" instance=ExtResource("12_p3fyh")]
+position = Vector2(-533, -865)
+
+[node name="DangerSprites9" type="Sprite2D" parent="deathboxes/deathbox2"]
+position = Vector2(4.7683716e-07, 32)
+rotation = -0.4257658
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("14_fuelx")
+region_enabled = true
+region_rect = Rect2(0.20560837, 28.477352, 40.08483, 20.233887)
+
+[node name="DangerSprites4" type="Sprite2D" parent="deathboxes/deathbox2"]
+position = Vector2(-9.000001, 44)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("14_fuelx")
+region_enabled = true
+region_rect = Rect2(0.20560837, 28.477352, 40.08483, 20.233887)
+
+[node name="DangerSprites10" type="Sprite2D" parent="deathboxes/deathbox2"]
+position = Vector2(24, 14)
+rotation = -0.7494191
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("14_fuelx")
+region_enabled = true
+region_rect = Rect2(0.20560837, 28.477352, 40.08483, 20.233887)
+
+[node name="DangerSprites5" type="Sprite2D" parent="deathboxes/deathbox2"]
+position = Vector2(-47.999996, 44)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("14_fuelx")
+region_enabled = true
+region_rect = Rect2(0.20560837, 28.477352, 40.08483, 20.233887)
+
+[node name="DangerSprites6" type="Sprite2D" parent="deathboxes/deathbox2"]
+position = Vector2(20.999996, 31)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("14_fuelx")
+region_enabled = true
+region_rect = Rect2(4.890785, 1.9591341, 24.426594, 14.330749)
+
+[node name="DangerSprites7" type="Sprite2D" parent="deathboxes/deathbox2"]
+position = Vector2(38.999992, 15.000001)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("14_fuelx")
+region_enabled = true
+region_rect = Rect2(4.890785, 1.9591341, 24.426594, 14.330749)
+
+[node name="DangerSprites8" type="Sprite2D" parent="deathboxes/deathbox2"]
+position = Vector2(52.999992, -0.9999981)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("14_fuelx")
+region_enabled = true
+region_rect = Rect2(4.890785, 1.9591341, 24.426594, 14.330749)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="deathboxes/deathbox2"]
+polygon = PackedVector2Array(-68, 53, -56, 36, -17, 37, -6, 25, 10, 20, 20, 6, 38, 2, 47, -6, 64, -5, 64, 5, 32, 40, -23, 55)
+
+[node name="deathbox6" parent="deathboxes" instance=ExtResource("12_p3fyh")]
 position = Vector2(2153, -619)
+scale = Vector2(0.6162061, 1)
 
-[node name="deathbox4" parent="deathboxes" instance=ExtResource("12_qocqu")]
+[node name="DangerSprites6" type="Sprite2D" parent="deathboxes/deathbox6"]
+position = Vector2(-43.816376, 25)
+texture = ExtResource("13_neu6k")
+region_enabled = true
+region_rect = Rect2(45.076866, 30.927488, 103.89622, 25.136187)
+
+[node name="DangerSprites7" type="Sprite2D" parent="deathboxes/deathbox6"]
+position = Vector2(51.930534, 25)
+texture = ExtResource("13_neu6k")
+region_enabled = true
+region_rect = Rect2(45.076866, 30.927488, 105.54893, 25.136187)
+
+[node name="DangerSprites8" type="Sprite2D" parent="deathboxes/deathbox6"]
+z_index = -1
+position = Vector2(144.43205, 25)
+texture = ExtResource("13_neu6k")
+region_enabled = true
+region_rect = Rect2(45.076866, 30.927488, 105.54893, 25.136187)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="deathboxes/deathbox6"]
+polygon = PackedVector2Array(-92.501465, 32, -66.53613, 15, 173.64307, 17, 176.88892, 32)
+
+[node name="deathbox4" parent="deathboxes" instance=ExtResource("12_p3fyh")]
 position = Vector2(1188, -1658)
 
-[node name="deathbox5" parent="deathboxes" instance=ExtResource("12_qocqu")]
-position = Vector2(2153, -72)
+[node name="DangerSprites11" type="Sprite2D" parent="deathboxes/deathbox4"]
+position = Vector2(38, 34)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("15_ib86h")
+region_enabled = true
+region_rect = Rect2(68.8429, 3.1943603, 55.036858, 61.236755)
 
-[node name="deathbox3" parent="deathboxes" instance=ExtResource("12_qocqu")]
-position = Vector2(969, -48)
+[node name="DangerSprites12" type="Sprite2D" parent="deathboxes/deathbox4"]
+position = Vector2(-44, -15)
+scale = Vector2(-1, 1)
+texture = ExtResource("15_ib86h")
+region_enabled = true
+region_rect = Rect2(68.8429, 3.1943603, 55.036858, 61.236755)
+
+[node name="DangerSprites15" type="Sprite2D" parent="deathboxes/deathbox4"]
+z_index = -1
+position = Vector2(-3.000002, 7.000004)
+rotation = 0.46708533
+scale = Vector2(-1, 1)
+texture = ExtResource("15_ib86h")
+region_enabled = true
+region_rect = Rect2(68.8429, 3.1943603, 55.036858, 61.236755)
+
+[node name="DangerSprites13" type="Sprite2D" parent="deathboxes/deathbox4"]
+position = Vector2(-11, 13)
+scale = Vector2(-1, 1)
+texture = ExtResource("15_ib86h")
+region_enabled = true
+region_rect = Rect2(35.335625, 24.741034, 25.027382, 41.784843)
+
+[node name="DangerSprites14" type="Sprite2D" parent="deathboxes/deathbox4"]
+position = Vector2(7, 33)
+scale = Vector2(-1, 1)
+texture = ExtResource("15_ib86h")
+region_enabled = true
+region_rect = Rect2(2.4102135, 31.791298, 26.768417, 35.25596)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="deathboxes/deathbox4"]
+polygon = PackedVector2Array(-28, -44, -16, -25, 2, -11, 26, -10, 33, 17, 63, 18, 65, 65, 17, 64, -30, 15, -59, 16, -72, -23, -50, -40)
+
+[node name="deathbox5" parent="deathboxes" instance=ExtResource("12_p3fyh")]
+position = Vector2(2159, -52.999996)
+scale = Vector2(0.8399805, 0.71999997)
+
+[node name="DangerSprites4" type="Sprite2D" parent="deathboxes/deathbox5"]
+position = Vector2(-28.572021, 16.66666)
+rotation = 3.1415927
+scale = Vector2(1.1905038, -1.388889)
+texture = ExtResource("13_neu6k")
+region_enabled = true
+region_rect = Rect2(160.29028, 23.953304, 69.99597, 59.301327)
+
+[node name="DangerSprites5" type="Sprite2D" parent="deathboxes/deathbox5"]
+position = Vector2(41.667725, -26.388893)
+scale = Vector2(1.1905038, 1.388889)
+texture = ExtResource("13_neu6k")
+region_enabled = true
+region_rect = Rect2(160.29028, 23.953304, 48.856216, 59.301327)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="deathboxes/deathbox5"]
+polygon = PackedVector2Array(-64.28711, 56.944443, -63.09668, 8.333328, 3.5715332, -25.000008, 21.4292, -65.277794, 60.71582, -50.000008, 64.28711, 12.499992)
+
+[node name="deathbox3" parent="deathboxes" instance=ExtResource("12_p3fyh")]
+position = Vector2(988, -1.1920929e-07)
+scale = Vector2(0.87999994, 0.15999955)
+
+[node name="DangerSprites" type="Sprite2D" parent="deathboxes/deathbox3"]
+position = Vector2(-7.954468, -25.000042)
+scale = Vector2(1.1363636, 6.250017)
+texture = ExtResource("13_neu6k")
+region_enabled = true
+region_rect = Rect2(47.8444, 0, 96.94187, 20.518751)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="deathboxes/deathbox3"]
+polygon = PackedVector2Array(-62.49994, 31.25011, -27.272705, -81.2502, 28.40918, -81.2502, 46.590942, 31.25011)
 
 [node name="Ground_Deco" type="Node2D" parent="."]
 
@@ -1361,103 +1591,103 @@ position = Vector2(969, -48)
 
 [node name="Sprite2D3" type="Sprite2D" parent="Ground_Deco/Rocks"]
 position = Vector2(188, -7)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 48, 48, 16)
 
 [node name="Sprite2D4" type="Sprite2D" parent="Ground_Deco/Rocks"]
 position = Vector2(1170, -39)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 48, 48, 16)
 
 [node name="Sprite2D5" type="Sprite2D" parent="Ground_Deco/Rocks"]
 position = Vector2(1273, -134)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 48, 48, 16)
 
 [node name="Sprite2D6" type="Sprite2D" parent="Ground_Deco/Rocks"]
 position = Vector2(1428, -39)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 48, 48, 16)
 
 [node name="Sprite2D7" type="Sprite2D" parent="Ground_Deco/Rocks"]
 position = Vector2(1722, -39)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 48, 48, 16)
 
 [node name="Sprite2D8" type="Sprite2D" parent="Ground_Deco/Rocks"]
 position = Vector2(1755, -375)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 48, 48, 16)
 
 [node name="Sprite2D9" type="Sprite2D" parent="Ground_Deco/Rocks"]
 position = Vector2(1504, -598)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 48, 48, 16)
 
 [node name="Sprite2D10" type="Sprite2D" parent="Ground_Deco/Rocks"]
 position = Vector2(1504, -598)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 48, 48, 16)
 
 [node name="Sprite2D11" type="Sprite2D" parent="Ground_Deco/Rocks"]
 position = Vector2(2056, -375)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 48, 48, 16)
 
 [node name="Sprite2D12" type="Sprite2D" parent="Ground_Deco/Rocks"]
 position = Vector2(145, -983)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 48, 48, 16)
 
 [node name="Sprite2D13" type="Sprite2D" parent="Ground_Deco/Rocks"]
 position = Vector2(-313, -1239)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 48, 48, 16)
 
 [node name="Sprite2D14" type="Sprite2D" parent="Ground_Deco/Rocks"]
 position = Vector2(-711, -1398)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 48, 48, 16)
 
 [node name="Sprite2D15" type="Sprite2D" parent="Ground_Deco/Rocks"]
 position = Vector2(154, -1735)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 48, 48, 16)
 
 [node name="Sprite2D16" type="Sprite2D" parent="Ground_Deco/Rocks"]
 position = Vector2(853, -1751)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 48, 48, 16)
 
 [node name="Sprite2D17" type="Sprite2D" parent="Ground_Deco/Rocks"]
 position = Vector2(-1199, -484)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 48, 48, 16)
 
 [node name="Sprite2D18" type="Sprite2D" parent="Ground_Deco/Rocks"]
 position = Vector2(-1352, -582)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 48, 48, 16)
 
 [node name="Sprite2D19" type="Sprite2D" parent="Ground_Deco/Rocks"]
 position = Vector2(-605, -38)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 48, 48, 16)
 
@@ -1465,271 +1695,271 @@ region_rect = Rect2(144, 48, 48, 16)
 
 [node name="Sprite2D3" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(-20, -11)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 8, 32, 24)
 
 [node name="Sprite2D3" type="Sprite2D" parent="Ground_Deco/Flowers/Sprite2D3"]
 position = Vector2(362, -2384)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 8, 32, 24)
 
 [node name="Sprite2D4" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(491, -11)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 8, 32, 24)
 
 [node name="Sprite2D5" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(1012, -474)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 8, 32, 24)
 
 [node name="Sprite2D6" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(1841, -603)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 8, 32, 24)
 
 [node name="Sprite2D7" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(1445, -1019)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 8, 32, 24)
 
 [node name="Sprite2D8" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(892, -1739)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 8, 16, 24)
 
 [node name="Sprite2D9" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(892, -1739)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 8, 16, 24)
 
 [node name="Sprite2D10" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(489, -1819)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 8, 16, 24)
 
 [node name="Sprite2D11" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(119, -1995)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 8, 16, 24)
 
 [node name="Sprite2D12" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(119, -1995)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 8, 16, 24)
 
 [node name="Sprite2D13" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(-59, -1963)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 8, 16, 24)
 
 [node name="Sprite2D14" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(-650, -1451)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 8, 16, 24)
 
 [node name="Sprite2D15" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(-1344, -1195)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 8, 16, 24)
 
 [node name="Sprite2D16" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(-1206, -1115)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 8, 16, 24)
 
 [node name="Sprite2D17" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(-1279, -539)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 8, 16, 24)
 
 [node name="Sprite2D18" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(-819, -475)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 8, 16, 24)
 
 [node name="Sprite2D19" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(-640, -571)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 8, 16, 24)
 
 [node name="Sprite2D20" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(125, -11)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 8, 16, 24)
 
 [node name="Sprite2D21" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(215, -315)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 8, 16, 24)
 
 [node name="Sprite2D22" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(398, -411)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 8, 16, 24)
 
 [node name="Sprite2D23" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(276, -619)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(144, 8, 16, 24)
 
 [node name="Sprite2D24" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(297, -603)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(160, 8, 16, 24)
 
 [node name="Sprite2D25" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(192, -715)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(160, 8, 16, 24)
 
 [node name="Sprite2D26" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(680, -731)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(160, 8, 16, 24)
 
 [node name="Sprite2D27" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(776, -571)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(160, 8, 16, 24)
 
 [node name="Sprite2D28" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(1544, -411)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(160, 8, 16, 24)
 
 [node name="Sprite2D29" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(1579, -603)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(160, 8, 16, 24)
 
 [node name="Sprite2D30" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(2098, -379)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(160, 8, 16, 24)
 
 [node name="Sprite2D31" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(1991, -59)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(160, 8, 16, 24)
 
 [node name="Sprite2D32" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(1945, -107)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(160, 8, 16, 24)
 
 [node name="Sprite2D33" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(1689, -43)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(160, 8, 16, 24)
 
 [node name="Sprite2D34" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(1201, -139)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(160, 8, 16, 24)
 
 [node name="Sprite2D35" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(1320, -251)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(160, 8, 16, 24)
 
 [node name="Sprite2D36" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(-810, -603)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(160, 8, 16, 24)
 
 [node name="Sprite2D37" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(-917, -763)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(160, 8, 16, 24)
 
 [node name="Sprite2D38" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(-1170, -1051)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(160, 8, 16, 24)
 
 [node name="Sprite2D39" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(-829, -1403)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(160, 8, 16, 24)
 
 [node name="Sprite2D40" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(558, -1803)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(160, 8, 16, 24)
 
 [node name="Sprite2D41" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(901, -1736)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(160, 8, 16, 24)
 
 [node name="Sprite2D42" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(87, -1995)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(160, 8, 16, 24)
 
 [node name="Sprite2D43" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(-49, -1003)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(160, 8, 16, 24)
 
 [node name="Sprite2D44" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(251, -1019)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(160, 8, 16, 24)
 
 [node name="Sprite2D45" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(706, -987)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(160, 8, 16, 24)
 
 [node name="Sprite2D46" type="Sprite2D" parent="Ground_Deco/Flowers"]
 position = Vector2(856, -1115)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(160, 8, 16, 24)
 
@@ -1737,235 +1967,235 @@ region_rect = Rect2(160, 8, 16, 24)
 
 [node name="Sprite2D6" type="Sprite2D" parent="Ground_Deco/Mushrooms"]
 position = Vector2(-150, -451)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(0, 24, 16, 8)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D6"]
 position = Vector2(352, -256)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(0, 24, 16, 8)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D6/Sprite2D"]
 position = Vector2(152, 96)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(0, 24, 16, 8)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D6/Sprite2D/Sprite2D"]
 position = Vector2(27, 0)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(0, 24, 16, 8)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D6/Sprite2D/Sprite2D/Sprite2D"]
 position = Vector2(316, -368)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(0, 24, 16, 8)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D6/Sprite2D/Sprite2D/Sprite2D/Sprite2D"]
 position = Vector2(-289, 0)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(0, 24, 16, 8)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D6/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D"]
 position = Vector2(873, -624)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(0, 24, 16, 8)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D6/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D"]
 position = Vector2(-56, 0)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(0, 24, 16, 8)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D6/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D"]
 position = Vector2(-513, -176)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(0, 24, 16, 8)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D6/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D"]
 position = Vector2(-214, -32)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(0, 24, 16, 8)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D6/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D"]
 position = Vector2(-281, -176)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(0, 24, 16, 8)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D6/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D"]
 position = Vector2(68, 224)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(0, 24, 16, 8)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D6"]
 position = Vector2(150, 448)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(0, 24, 16, 8)
 
 [node name="Sprite2D3" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D6"]
 position = Vector2(90, 448)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(0, 24, 16, 8)
 
 [node name="Sprite2D4" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D6"]
 position = Vector2(222, 448)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(0, 24, 16, 8)
 
 [node name="Sprite2D5" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D6"]
 position = Vector2(492, 368)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(0, 24, 16, 8)
 
 [node name="Sprite2D6" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D6"]
 position = Vector2(-380, 416)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(0, 24, 16, 8)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground_Deco/Mushrooms"]
 position = Vector2(1191, -131)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(0, 24, 16, 8)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D"]
 position = Vector2(110, 0)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(0, 24, 16, 8)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D/Sprite2D"]
 position = Vector2(-5, -112)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(0, 24, 16, 8)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D/Sprite2D/Sprite2D"]
 position = Vector2(454, 208)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(0, 24, 16, 8)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Ground_Deco/Mushrooms"]
 position = Vector2(80, -11)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(80, 8, 16, 24)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D2"]
 position = Vector2(-420, -112)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(80, 8, 16, 24)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D2/Sprite2D2"]
 position = Vector2(-353, -32)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(80, 40, 16, 24)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D2/Sprite2D2/Sprite2D2"]
 position = Vector2(96, -80)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(80, 8, 16, 24)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2"]
 position = Vector2(1027, -176)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(80, 8, 16, 24)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2"]
 position = Vector2(-62, -208)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(80, 8, 16, 24)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2"]
 position = Vector2(390, 48)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(80, 40, 16, 24)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2"]
 position = Vector2(493, 192)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(80, 8, 16, 24)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2"]
 position = Vector2(196, -208)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(80, 8, 16, 24)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2"]
 position = Vector2(167, 192)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(80, 40, 16, 24)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2"]
 position = Vector2(366, 16)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(80, 8, 16, 24)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2"]
 position = Vector2(232, -224)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(80, 8, 16, 24)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2"]
 position = Vector2(-298, 448)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(80, 8, 16, 24)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2"]
 position = Vector2(-802, -863)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(80, 8, 16, 24)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2/Sprite2D2"]
 position = Vector2(-747, -785)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(80, 8, 16, 24)
 
 [node name="Sprite2D3" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D2"]
 position = Vector2(-1008, -752)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(80, 8, 16, 24)
 
 [node name="Sprite2D4" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D2"]
 position = Vector2(-1290, -1104)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(80, 8, 16, 24)
 
 [node name="Sprite2D5" type="Sprite2D" parent="Ground_Deco/Mushrooms/Sprite2D2"]
 position = Vector2(-1072, -1392)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(80, 8, 16, 24)
 
@@ -1973,97 +2203,97 @@ region_rect = Rect2(80, 8, 16, 24)
 
 [node name="Sprite2D3" type="Sprite2D" parent="Ground_Deco/Grass"]
 position = Vector2(161, -14)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(192, 0, 32, 32)
 
 [node name="Sprite2D4" type="Sprite2D" parent="Ground_Deco/Grass"]
 position = Vector2(421, -15)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(192, 0, 32, 32)
 
 [node name="Sprite2D5" type="Sprite2D" parent="Ground_Deco/Grass"]
 position = Vector2(1048, -47)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(192, 0, 32, 32)
 
 [node name="Sprite2D6" type="Sprite2D" parent="Ground_Deco/Grass"]
 position = Vector2(1524, -255)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(192, 0, 32, 32)
 
 [node name="Sprite2D7" type="Sprite2D" parent="Ground_Deco/Grass"]
 position = Vector2(1976, -48)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(192, 0, 32, 32)
 
 [node name="Sprite2D8" type="Sprite2D" parent="Ground_Deco/Grass"]
 position = Vector2(1954, -383)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(192, 0, 32, 32)
 
 [node name="Sprite2D9" type="Sprite2D" parent="Ground_Deco/Grass"]
 position = Vector2(1157, -383)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(192, 0, 32, 32)
 
 [node name="Sprite2D10" type="Sprite2D" parent="Ground_Deco/Grass"]
 position = Vector2(427, -639)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(192, 0, 32, 32)
 
 [node name="Sprite2D11" type="Sprite2D" parent="Ground_Deco/Grass"]
 position = Vector2(67, -541)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(192, 0, 32, 32)
 
 [node name="Sprite2D12" type="Sprite2D" parent="Ground_Deco/Grass"]
 position = Vector2(-516, -508)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(192, 0, 32, 32)
 
 [node name="Sprite2D13" type="Sprite2D" parent="Ground_Deco/Grass"]
 position = Vector2(-1104, -461)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(192, 0, 32, 32)
 
 [node name="Sprite2D14" type="Sprite2D" parent="Ground_Deco/Grass"]
 position = Vector2(-991, -402)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(192, 0, 32, 32)
 
 [node name="Sprite2D15" type="Sprite2D" parent="Ground_Deco/Grass"]
 position = Vector2(-876, -1407)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(192, 0, 32, 32)
 
 [node name="Sprite2D16" type="Sprite2D" parent="Ground_Deco/Grass"]
 position = Vector2(242, -1759)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(192, 0, 32, 32)
 
 [node name="Sprite2D17" type="Sprite2D" parent="Ground_Deco/Grass"]
 position = Vector2(56, -1998)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(192, 0, 32, 32)
 
 [node name="Sprite2D18" type="Sprite2D" parent="Ground_Deco/Grass"]
 position = Vector2(401, -2398)
-texture = ExtResource("13_qmbm0")
+texture = ExtResource("16_gsxqv")
 region_enabled = true
 region_rect = Rect2(192, 0, 32, 32)
 
@@ -2105,23 +2335,48 @@ tile_map_data = PackedByteArray("AAAMAAAAAAAFAAEAAAALAAAAAAACAAEAAAAKAAAAAAAIAAE
 tile_set = SubResource("TileSet_d2bti")
 
 [node name="decorations" type="Node2D" parent="."]
+visible = false
 z_index = 1
 
 [node name="5" type="Sprite2D" parent="decorations"]
 position = Vector2(365, 8)
-texture = ExtResource("16_4m3ih")
+texture = ExtResource("19_hhdp1")
 
 [node name="6" type="Sprite2D" parent="decorations"]
 position = Vector2(447, 8)
-texture = ExtResource("17_lnhya")
+texture = ExtResource("20_kb5np")
 
 [node name="8" type="Sprite2D" parent="decorations"]
 position = Vector2(554, 9)
-texture = ExtResource("18_ldr3g")
+texture = ExtResource("21_y1ums")
 
 [node name="9" type="Sprite2D" parent="decorations"]
 position = Vector2(235, 9)
-texture = ExtResource("19_0wrmg")
+texture = ExtResource("22_dycbu")
+
+[node name="7" type="Sprite2D" parent="decorations"]
+position = Vector2(684.5, 8)
+texture = ExtResource("19_hhdp1")
+
+[node name="10" type="Sprite2D" parent="decorations"]
+position = Vector2(766.5, 8)
+texture = ExtResource("20_kb5np")
+
+[node name="11" type="Sprite2D" parent="decorations"]
+position = Vector2(873.5, 9)
+texture = ExtResource("21_y1ums")
+
+[node name="12" type="Sprite2D" parent="decorations"]
+position = Vector2(684.5, 8)
+texture = ExtResource("19_hhdp1")
+
+[node name="13" type="Sprite2D" parent="decorations"]
+position = Vector2(766.5, 8)
+texture = ExtResource("20_kb5np")
+
+[node name="14" type="Sprite2D" parent="decorations"]
+position = Vector2(873.5, 9)
+texture = ExtResource("21_y1ums")
 
 [node name="water" type="ColorRect" parent="."]
 z_index = 1
@@ -2142,7 +2397,7 @@ repeat_times = 35
 
 [node name="5" type="Sprite2D" parent="ForegroundParallax/FgParallax"]
 position = Vector2(334, -73)
-texture = ExtResource("21_y0vku")
+texture = ExtResource("24_fkvqy")
 
 [node name="FgParallax2" type="Parallax2D" parent="ForegroundParallax"]
 modulate = Color(0.12591085, 0.12591085, 0.12591082, 1)
@@ -2153,7 +2408,7 @@ repeat_times = 35
 
 [node name="5" type="Sprite2D" parent="ForegroundParallax/FgParallax2"]
 position = Vector2(334, -73)
-texture = ExtResource("21_y0vku")
+texture = ExtResource("24_fkvqy")
 
 [node name="FgParallax3" type="Parallax2D" parent="ForegroundParallax"]
 modulate = Color(0.12591085, 0.12591085, 0.12591082, 1)
@@ -2165,7 +2420,7 @@ repeat_times = 35
 
 [node name="5" type="Sprite2D" parent="ForegroundParallax/FgParallax3"]
 position = Vector2(334, -73)
-texture = ExtResource("21_y0vku")
+texture = ExtResource("24_fkvqy")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 1466.0
@@ -2183,80 +2438,80 @@ text = "YOU WIN"
 
 [node name="grapple_points" type="Node2D" parent="."]
 
-[node name="grapple point" parent="grapple_points" instance=ExtResource("22_86uf3")]
+[node name="grapple point" parent="grapple_points" instance=ExtResource("25_l28j8")]
 position = Vector2(17, -696)
 
-[node name="grapple point2" parent="grapple_points" instance=ExtResource("22_86uf3")]
+[node name="grapple point2" parent="grapple_points" instance=ExtResource("25_l28j8")]
 position = Vector2(-234, -648)
 
-[node name="grapple point3" parent="grapple_points" instance=ExtResource("22_86uf3")]
+[node name="grapple point3" parent="grapple_points" instance=ExtResource("25_l28j8")]
 position = Vector2(-482, -629)
 
-[node name="grapple point13" parent="grapple_points" instance=ExtResource("22_86uf3")]
+[node name="grapple point13" parent="grapple_points" instance=ExtResource("25_l28j8")]
 position = Vector2(-150, -1847)
 
-[node name="grapple point12" parent="grapple_points" instance=ExtResource("22_86uf3")]
+[node name="grapple point12" parent="grapple_points" instance=ExtResource("25_l28j8")]
 position = Vector2(-308, -1521)
 
-[node name="grapple point7" parent="grapple_points" instance=ExtResource("22_86uf3")]
+[node name="grapple point7" parent="grapple_points" instance=ExtResource("25_l28j8")]
 position = Vector2(586, -1187)
 
-[node name="grapple point19" parent="grapple_points" instance=ExtResource("22_86uf3")]
+[node name="grapple point19" parent="grapple_points" instance=ExtResource("25_l28j8")]
 position = Vector2(346, -1187)
 
-[node name="grapple point20" parent="grapple_points" instance=ExtResource("22_86uf3")]
+[node name="grapple point20" parent="grapple_points" instance=ExtResource("25_l28j8")]
 position = Vector2(100, -1187)
 
-[node name="grapple point21" parent="grapple_points" instance=ExtResource("22_86uf3")]
+[node name="grapple point21" parent="grapple_points" instance=ExtResource("25_l28j8")]
 position = Vector2(-144, -1187)
 
-[node name="grapple point14" parent="grapple_points" instance=ExtResource("22_86uf3")]
+[node name="grapple point14" parent="grapple_points" instance=ExtResource("25_l28j8")]
 position = Vector2(393, -2019)
 
-[node name="grapple point15" parent="grapple_points" instance=ExtResource("22_86uf3")]
+[node name="grapple point15" parent="grapple_points" instance=ExtResource("25_l28j8")]
 position = Vector2(652, -2025)
 
-[node name="grapple point16" parent="grapple_points" instance=ExtResource("22_86uf3")]
+[node name="grapple point16" parent="grapple_points" instance=ExtResource("25_l28j8")]
 position = Vector2(900, -2030)
 
-[node name="grapple point17" parent="grapple_points" instance=ExtResource("22_86uf3")]
+[node name="grapple point17" parent="grapple_points" instance=ExtResource("25_l28j8")]
 position = Vector2(1142, -2036)
 
-[node name="grapple point18" parent="grapple_points" instance=ExtResource("22_86uf3")]
+[node name="grapple point18" parent="grapple_points" instance=ExtResource("25_l28j8")]
 position = Vector2(1015, -2365)
 
-[node name="grapple point22" parent="grapple_points" instance=ExtResource("22_86uf3")]
+[node name="grapple point22" parent="grapple_points" instance=ExtResource("25_l28j8")]
 position = Vector2(805, -2365)
 
-[node name="grapple point8" parent="grapple_points" instance=ExtResource("22_86uf3")]
+[node name="grapple point8" parent="grapple_points" instance=ExtResource("25_l28j8")]
 position = Vector2(977, -1192)
 
-[node name="grapple point9" parent="grapple_points" instance=ExtResource("22_86uf3")]
+[node name="grapple point9" parent="grapple_points" instance=ExtResource("25_l28j8")]
 position = Vector2(1210, -1192)
 
-[node name="grapple point11" parent="grapple_points" instance=ExtResource("22_86uf3")]
+[node name="grapple point11" parent="grapple_points" instance=ExtResource("25_l28j8")]
 position = Vector2(1446, -1192)
 
-[node name="grapple point10" parent="grapple_points" instance=ExtResource("22_86uf3")]
+[node name="grapple point10" parent="grapple_points" instance=ExtResource("25_l28j8")]
 position = Vector2(1434, -1435)
 
 [node name="movables" type="Node2D" parent="."]
 
-[node name="MovableBlock" parent="movables" instance=ExtResource("23_w4e1e")]
+[node name="MovableBlock" parent="movables" instance=ExtResource("26_dmy51")]
 position = Vector2(1107, -63)
 
-[node name="MovableBlock2" parent="movables" instance=ExtResource("23_w4e1e")]
+[node name="MovableBlock2" parent="movables" instance=ExtResource("26_dmy51")]
 position = Vector2(1652, -64)
 
-[node name="MovableBlock3" parent="movables" instance=ExtResource("23_w4e1e")]
+[node name="MovableBlock3" parent="movables" instance=ExtResource("26_dmy51")]
 position = Vector2(1339, -159)
 
-[node name="MovableBlock4" parent="movables" instance=ExtResource("23_w4e1e")]
+[node name="MovableBlock4" parent="movables" instance=ExtResource("26_dmy51")]
 position = Vector2(1485, -401)
 
 [node name="finish" type="Area2D" parent="."]
 position = Vector2(365, -2402)
-script = ExtResource("24_6ibx8")
+script = ExtResource("27_inp5q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="finish"]
 position = Vector2(-3, -15.5)
@@ -2264,3 +2519,5 @@ shape = SubResource("RectangleShape2D_bjha6")
 
 [connection signal="time_updated" from="." to="PlayerUI" method="_on_node_2d_time_updated"]
 [connection signal="body_entered" from="finish" to="finish" method="_on_body_entered"]
+
+[editable path="deathboxes/deathbox2"]
