@@ -1,0 +1,183 @@
+[gd_scene load_steps=17 format=3 uid="uid://dvheq846mv3wj"]
+
+[ext_resource type="Script" uid="uid://c717anwyjkful" path="res://core/voice_lines_manager.gd" id="1_bp8wx"]
+[ext_resource type="AudioStream" uid="uid://d2h8hlth54ha" path="res://assets/voice_lines/vox_9.mp3" id="2_ppo2v"]
+[ext_resource type="AudioStream" uid="uid://b005mec5xf3hi" path="res://assets/voice_lines/vox_exclaim_generic_2.mp3" id="3_md0o8"]
+[ext_resource type="AudioStream" uid="uid://dmjj8nn7yjkeg" path="res://assets/voice_lines/vox_exclaim_generic.mp3" id="4_yhvcd"]
+[ext_resource type="AudioStream" uid="uid://bswexm7s3l4f2" path="res://assets/voice_lines/vox_exclaim_wings.mp3" id="5_jpegd"]
+[ext_resource type="AudioStream" uid="uid://wyj5sh6w0jr3" path="res://assets/voice_lines/vox_exclaim_wall_climb.mp3" id="6_r7hh2"]
+[ext_resource type="AudioStream" uid="uid://dybk1v50bmcrs" path="res://assets/voice_lines/vox_exclaim_tongue.mp3" id="7_swogh"]
+[ext_resource type="AudioStream" uid="uid://du8eyu0g32ndd" path="res://assets/voice_lines/vox_exclaim_nikes.mp3" id="8_320ii"]
+[ext_resource type="AudioStream" uid="uid://l51ea1qou8yk" path="res://assets/voice_lines/vox_1.mp3" id="9_6duqb"]
+[ext_resource type="AudioStream" uid="uid://shvf1wfr0yle" path="res://assets/voice_lines/vox_2.mp3" id="10_5ik67"]
+[ext_resource type="AudioStream" uid="uid://b0jxdiufn73u1" path="res://assets/voice_lines/vox_3.mp3" id="11_8dbe2"]
+[ext_resource type="AudioStream" uid="uid://c73r1nq0vw44y" path="res://assets/voice_lines/vox_4.mp3" id="12_ke4xg"]
+[ext_resource type="AudioStream" uid="uid://brek0wgaxxhj2" path="res://assets/voice_lines/vox_5.mp3" id="13_xl6uo"]
+[ext_resource type="AudioStream" uid="uid://djm3f6fst0anj" path="res://assets/voice_lines/vox_6.mp3" id="14_g6s67"]
+[ext_resource type="AudioStream" uid="uid://c730xtu1snjpp" path="res://assets/voice_lines/vox_7.mp3" id="15_g5mcw"]
+[ext_resource type="AudioStream" uid="uid://csinshkco61vy" path="res://assets/voice_lines/vox_8.mp3" id="16_mmngp"]
+
+[node name="VoiceLinesManager" type="Node"]
+script = ExtResource("1_bp8wx")
+ability_unlock_lines = Array[AudioStream]([ExtResource("2_ppo2v"), ExtResource("4_yhvcd"), ExtResource("5_jpegd"), ExtResource("3_md0o8"), ExtResource("6_r7hh2"), ExtResource("7_swogh"), ExtResource("8_320ii")])
+background_narration = Array[AudioStream]([ExtResource("9_6duqb"), ExtResource("10_5ik67"), ExtResource("11_8dbe2"), ExtResource("12_ke4xg"), ExtResource("13_xl6uo"), ExtResource("14_g6s67"), ExtResource("15_g5mcw"), ExtResource("16_mmngp")])
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = 14.0
+
+[node name="AfterUnlockNarrationTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="BetweenNarrationTimer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+
+[node name="DialogueVisibleTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="DialogueLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogueLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="DialogueLayer/MarginContainer"]
+layout_mode = 2
+
+[node name="TextContainer" type="MarginContainer" parent="DialogueLayer/MarginContainer/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="LabelUnlock0" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]
+visible = false
+custom_minimum_size = Vector2(612, 0)
+layout_mode = 2
+text = "Here, we can see a cyprinus carpio , better known as the common carp.
+SPACE to flop around."
+autowrap_mode = 3
+
+[node name="LabelUnlock1" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]
+visible = false
+custom_minimum_size = Vector2(612, 0)
+layout_mode = 2
+text = "Carp come in many shapes and sizes. This carp is... unique.
+A D keys to move."
+autowrap_mode = 3
+
+[node name="LabelUnlock2" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]
+visible = false
+custom_minimum_size = Vector2(612, 0)
+layout_mode = 2
+text = "My apologies, this does not appear to be a carp at all. It must be a member of the Exocoetidae family, more commonly known as flying fish.
+SPACE to jump."
+autowrap_mode = 3
+
+[node name="LabelUnlock3" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]
+visible = false
+custom_minimum_size = Vector2(612, 0)
+layout_mode = 2
+text = "Are those…? Hold on.
+Move into blocks to push them."
+autowrap_mode = 3
+
+[node name="LabelUnlock4" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]
+visible = false
+custom_minimum_size = Vector2(612, 0)
+layout_mode = 2
+text = "Our fish had an epiphany, imbued with the knowledge of wall climbing… what is this?? (SPACE on wall to wall jump)"
+autowrap_mode = 3
+
+[node name="LabelUnlock5" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]
+visible = false
+custom_minimum_size = Vector2(612, 0)
+layout_mode = 2
+text = "Okay, what     next, a tongue?
+(Hold SPACE in air to hover)"
+autowrap_mode = 3
+
+[node name="LabelUnlock6" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]
+visible = false
+custom_minimum_size = Vector2(612, 0)
+layout_mode = 2
+text = "okay. I’m done. You don’t pay me enough for this.
+H key to grapple to a fly."
+autowrap_mode = 3
+
+[node name="LabelUnlock7" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]
+visible = false
+custom_minimum_size = Vector2(612, 0)
+layout_mode = 2
+text = "You obtained a pair of Nikes.
+J key to BIG jump from a wall."
+autowrap_mode = 3
+
+[node name="LabelBackground0" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]
+visible = false
+custom_minimum_size = Vector2(612, 0)
+layout_mode = 2
+text = "This is a bayou. There are bayous across much of the gulf coast of the United States, with a concentration in the Lower Mississippi River Valley."
+autowrap_mode = 3
+
+[node name="LabelBackground1" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]
+visible = false
+custom_minimum_size = Vector2(612, 0)
+layout_mode = 2
+text = "A bayou is a slow-moving body of water, often in a low lying and relatively flat area. "
+autowrap_mode = 3
+
+[node name="LabelBackground2" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]
+visible = false
+custom_minimum_size = Vector2(612, 0)
+layout_mode = 2
+text = "It could be a creek, a lake, or any number of water bodies. This bayou is a marsh."
+autowrap_mode = 3
+
+[node name="LabelBackground3" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]
+visible = false
+custom_minimum_size = Vector2(612, 0)
+layout_mode = 2
+text = "Because they are so slow moving, bayous often become stagnant and brackish. "
+autowrap_mode = 3
+
+[node name="LabelBackground4" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]
+visible = false
+custom_minimum_size = Vector2(612, 0)
+layout_mode = 2
+text = "This combines with the warm climate to produce a humid environment, suited to a large variety of flora and fauna."
+autowrap_mode = 3
+
+[node name="LabelBackground5" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]
+visible = false
+custom_minimum_size = Vector2(612, 0)
+layout_mode = 2
+text = "Crawfish, shrimp, frogs , salamanders, newts, American alligators and many more creatures call this swampy place home."
+autowrap_mode = 3
+
+[node name="LabelBackground6" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]
+visible = false
+custom_minimum_size = Vector2(612, 0)
+layout_mode = 2
+text = "There are also many not-so-welcome members of the animal kingdom. For example, this carp here."
+autowrap_mode = 3
+
+[node name="LabelBackground7" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]
+visible = false
+custom_minimum_size = Vector2(612, 0)
+layout_mode = 2
+text = "Carp are native to west Asia, but have been introduced to ecosystems around the world for commercial and recreational fishing, and bayous are no exception."
+autowrap_mode = 3

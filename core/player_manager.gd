@@ -86,4 +86,4 @@ func revive_player():
 		get_parent().add_child(player)
 		player.camera = camera
 		apply_abilities(player)
-		SignalBus.player_spawned.emit()
+		SignalBus.player_spawned.emit(death_counter)
