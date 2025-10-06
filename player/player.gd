@@ -113,6 +113,10 @@ var is_grappling: bool = false:
 @onready var back_wing: Node2D = $Visuals/BackWing
 @onready var front_wing: Node2D = $Visuals/FrontWing
 
+@onready var die_sfx_player: RandomAudioPlayer2D = $SFX/DieSFXPlayer
+@onready var spawn_sfx_player: RandomAudioPlayer2D = $SFX/SpawnSFXPlayer
+
+
 
 
 #===================================================================================================
@@ -126,6 +130,8 @@ func _ready() -> void:
 	back_wing.hide()
 	front_wing.hide()
 	tongue.hide()
+	
+	spawn_sfx_player.play_random()
 
 
 func _physics_process(delta):
@@ -162,6 +168,9 @@ func _physics_process(delta):
 func die():
 	SignalBus.sig_player_died.emit()
 	_leave_corpse()
+	die_sfx_player.play_random()
+	
+	await die_sfx_player.finished
 	queue_free()
 
 

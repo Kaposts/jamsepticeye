@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://c42tatqhkdecw"]
+[gd_scene load_steps=74 format=3 uid="uid://c42tatqhkdecw"]
 
 [ext_resource type="Script" uid="uid://blm6nncupiinf" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://b0uv88pfk7aed" path="res://assets/art/player_character/body_sneakers_front.png" id="2_hg6s5"]
@@ -10,6 +10,21 @@
 [ext_resource type="Texture2D" uid="uid://5ndfuc8h6sgl" path="res://assets/art/player_character/body_legs_back.png" id="5_8t03j"]
 [ext_resource type="Texture2D" uid="uid://dt5g84uuh086k" path="res://assets/art/player_character/body_wings_front.png" id="6_rgyib"]
 [ext_resource type="Texture2D" uid="uid://b3qa00fqw463i" path="res://assets/art/player_character/body_tongue.png" id="7_hg6s5"]
+[ext_resource type="PackedScene" uid="uid://cs2msqcudcidd" path="res://components/random_audio_player/random_audio_player_2d_component.tscn" id="11_tqiix"]
+[ext_resource type="AudioStream" uid="uid://c25n8hwalxfvc" path="res://assets/sfx/death_1.wav" id="12_e7oew"]
+[ext_resource type="AudioStream" uid="uid://mu66hixtj1km" path="res://assets/sfx/death_2.wav" id="13_c35mf"]
+[ext_resource type="AudioStream" uid="uid://cmtalfwu4vhs4" path="res://assets/sfx/death_4.wav" id="14_65viv"]
+[ext_resource type="AudioStream" uid="uid://dwy3cvwadlcbb" path="res://assets/sfx/fish_flop_1.wav" id="15_x7c3f"]
+[ext_resource type="AudioStream" uid="uid://bjgrit3ujxx2w" path="res://assets/sfx/fish_flop_2.wav" id="16_bjvpn"]
+[ext_resource type="AudioStream" uid="uid://c0q48ic5j6k1p" path="res://assets/sfx/fish_flop_3.wav" id="17_s7qer"]
+[ext_resource type="AudioStream" uid="uid://cd4t4vm6l8ppi" path="res://assets/sfx/wings_flap_1.wav" id="18_65viv"]
+[ext_resource type="AudioStream" uid="uid://dk55axr08uaou" path="res://assets/sfx/wings_flap_2.wav" id="19_x7c3f"]
+[ext_resource type="AudioStream" uid="uid://cpg65resm02u" path="res://assets/sfx/wings_flap_3.wav" id="20_bjvpn"]
+[ext_resource type="AudioStream" uid="uid://s2ubnpbk4q8a" path="res://assets/sfx/tongue_out_1.wav" id="21_g4c7l"]
+[ext_resource type="AudioStream" uid="uid://4sweh5nxjwel" path="res://assets/sfx/tongue_out_2.wav" id="22_knn7v"]
+[ext_resource type="AudioStream" uid="uid://bdvgvxvy83j3r" path="res://assets/sfx/tongue_out_3.wav" id="23_7pqkx"]
+[ext_resource type="AudioStream" uid="uid://dga7blsewixp" path="res://assets/sfx/grab_sfx.wav" id="24_uw77l"]
+[ext_resource type="AudioStream" uid="uid://iy8yjexf8kmf" path="res://assets/sfx/respawn.wav" id="25_knn7v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qjkh3"]
 shader = ExtResource("2_yw30f")
@@ -583,6 +598,23 @@ tracks/9/keys = {
 "update": 1,
 "values": [Vector2(0, 0), Vector2(2, 0), Vector2(0, 0), Vector2(-2, 0), Vector2(0, 0), Vector2(0, 0)]
 }
+tracks/10/type = "method"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("SFX/WingFlapSFXPlayer")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_random"
+}, {
+"args": [],
+"method": &"play_random"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_hg6s5"]
 resource_name = "idle"
@@ -811,6 +843,20 @@ tracks/11/keys = {
 "update": 1,
 "values": [Vector2(-4, 5)]
 }
+tracks/12/type = "method"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("SFX/WingFlapSFXPlayer")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_random"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_32hag"]
 resource_name = "jump_prep"
@@ -1038,6 +1084,20 @@ tracks/5/keys = {
 "update": 1,
 "values": [Vector2(0, 0), Vector2(-4, -6), Vector2(-8, 0), Vector2(-5, 0), Vector2(-3, 0), Vector2(0, 0)]
 }
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SFX/FlopSFXPlayer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_random"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_wodsf"]
 resource_name = "wall_hang"
@@ -1211,6 +1271,20 @@ tracks/13/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [Vector2(0, 0), Vector2(-2, 0), Vector2(0, 0), Vector2(2, 0), Vector2(0, 0)]
+}
+tracks/14/type = "method"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("SFX/TongueAttachedSFXPlayer")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_random"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8t03j"]
@@ -1460,6 +1534,27 @@ position = Vector2(-8, 1)
 [node name="TongueSprite" type="Sprite2D" parent="Visuals/Tongue"]
 texture = ExtResource("7_hg6s5")
 offset = Vector2(0, 3)
+
+[node name="SFX" type="Node2D" parent="."]
+
+[node name="DieSFXPlayer" parent="SFX" instance=ExtResource("11_tqiix")]
+streams = Array[AudioStream]([ExtResource("12_e7oew"), ExtResource("13_c35mf"), ExtResource("14_65viv")])
+
+[node name="FlopSFXPlayer" parent="SFX" instance=ExtResource("11_tqiix")]
+streams = Array[AudioStream]([ExtResource("15_x7c3f"), ExtResource("16_bjvpn"), ExtResource("17_s7qer")])
+
+[node name="WingFlapSFXPlayer" parent="SFX" instance=ExtResource("11_tqiix")]
+volume_db = 8.0
+streams = Array[AudioStream]([ExtResource("18_65viv"), ExtResource("19_x7c3f"), ExtResource("20_bjvpn")])
+
+[node name="TongueOutSFXPlayer" parent="SFX" instance=ExtResource("11_tqiix")]
+streams = Array[AudioStream]([ExtResource("21_g4c7l"), ExtResource("22_knn7v"), ExtResource("23_7pqkx")])
+
+[node name="TongueAttachedSFXPlayer" parent="SFX" instance=ExtResource("11_tqiix")]
+streams = Array[AudioStream]([ExtResource("24_uw77l")])
+
+[node name="SpawnSFXPlayer" parent="SFX" instance=ExtResource("11_tqiix")]
+streams = Array[AudioStream]([ExtResource("25_knn7v")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
