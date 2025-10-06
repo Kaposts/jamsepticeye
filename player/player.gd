@@ -181,6 +181,7 @@ func die():
 	# _leave_corpse()
 	$ColorRect.queue_free()
 	$AnimationPlayer.queue_free()
+	$AnimationTree.queue_free()
 	remove_from_group("player")
 	die_sfx_player.play_random()
 	set_script(null)
