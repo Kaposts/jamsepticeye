@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://d4h3brjh8eoak"]
+[gd_scene load_steps=25 format=3 uid="uid://d4h3brjh8eoak"]
 
 [ext_resource type="Script" uid="uid://dxvvaeuefb73w" path="res://menus/options_menu.gd" id="1_5a0sy"]
 [ext_resource type="PackedScene" uid="uid://cuneiert8cmjs" path="res://menus/scroll.tscn" id="1_prnvy"]
@@ -11,9 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://c1pcsoyb2dm88" path="res://assets/art/UI/CloseButton_Normal.png" id="6_38txh"]
 [ext_resource type="Texture2D" uid="uid://b1qdycp22iqor" path="res://assets/art/UI/CloseButton_Pressed.png" id="7_5a0sy"]
 [ext_resource type="Texture2D" uid="uid://bu5g0nvpes6mh" path="res://assets/art/UI/CloseButton_Hover.png" id="8_g5vgl"]
+[ext_resource type="Script" uid="uid://dxgm76upds6xq" path="res://components/ui/sound_sliders/sound_h_slider.gd" id="9_xomjh"]
 [ext_resource type="Texture2D" uid="uid://drlas0kkvw64a" path="res://assets/art/UI/Menu_Buttons/KeyBindings1.png" id="11_033dp"]
 [ext_resource type="Texture2D" uid="uid://bo6wtjg5a8twh" path="res://assets/art/UI/Menu_Buttons/KeyBindings3.png" id="12_fpdr8"]
-[ext_resource type="Script" uid="uid://rshby7i10tv0" path="res://components/sound_buttons/sound_texture_button.gd" id="12_rjhje"]
+[ext_resource type="Script" uid="uid://rshby7i10tv0" path="res://components/ui/sound_buttons/sound_texture_button.gd" id="12_rjhje"]
 [ext_resource type="Texture2D" uid="uid://dqvubuyvvqwrc" path="res://assets/art/UI/Menu_Buttons/KeyBindings2.png" id="13_r103k"]
 [ext_resource type="PackedScene" uid="uid://ccr1wrc6qi70g" path="res://menus/keybinds_settings/keybinds_settings.tscn" id="15_q1sgk"]
 
@@ -143,6 +144,8 @@ theme = SubResource("Theme_srb65")
 max_value = 1.0
 step = 0.01
 value = 0.5
+script = ExtResource("9_xomjh")
+metadata/_custom_type_script = "uid://dxgm76upds6xq"
 
 [node name="Music" type="Label" parent="Options/GridContainer"]
 layout_mode = 2
@@ -158,6 +161,8 @@ theme = SubResource("Theme_srb65")
 max_value = 1.0
 step = 0.01
 value = 0.5
+script = ExtResource("9_xomjh")
+metadata/_custom_type_script = "uid://dxgm76upds6xq"
 
 [node name="SFX" type="Label" parent="Options/GridContainer"]
 layout_mode = 2
@@ -173,6 +178,8 @@ theme = SubResource("Theme_srb65")
 max_value = 1.0
 step = 0.01
 value = 0.5
+script = ExtResource("9_xomjh")
+metadata/_custom_type_script = "uid://dxgm76upds6xq"
 
 [node name="Voice" type="Label" parent="Options/GridContainer"]
 layout_mode = 2
@@ -188,6 +195,8 @@ theme = SubResource("Theme_srb65")
 max_value = 1.0
 step = 0.01
 value = 0.5
+script = ExtResource("9_xomjh")
+metadata/_custom_type_script = "uid://dxgm76upds6xq"
 
 [node name="CloseButton" type="TextureButton" parent="Options"]
 layout_mode = 0

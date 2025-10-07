@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://iggsotruamx2" path="res://menus/keybinds_settings/keybinds_settings.gd" id="1_61xkn"]
 [ext_resource type="PackedScene" uid="uid://dxsi4uxrr2jjs" path="res://menus/keybinds_settings/input_button.tscn" id="1_mewpe"]
-[ext_resource type="Script" uid="uid://chq86xw3eirpr" path="res://components/sound_buttons/sound_button.gd" id="3_babvj"]
+[ext_resource type="Script" uid="uid://chq86xw3eirpr" path="res://components/ui/sound_buttons/sound_button.gd" id="3_babvj"]
 [ext_resource type="PackedScene" uid="uid://yey23xnr0h7w" path="res://components/random_audio_player/random_audio_player_component.tscn" id="3_fa428"]
 [ext_resource type="AudioStream" uid="uid://c4ihke1fq63s0" path="res://assets/sfx/ui/key_rebind_accept.wav" id="4_3k2h1"]
 

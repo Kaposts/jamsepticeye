@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cuneiert8cmjs" path="res://menus/scroll.tscn" id="2_0oi4c"]
 [ext_resource type="LabelSettings" uid="uid://b650eiaqfr53c" path="res://assets/font/creadit_headig_label.tres" id="3_7emq5"]
 [ext_resource type="LabelSettings" uid="uid://b0rpv6lccgued" path="res://assets/font/name_label.tres" id="4_803yc"]
-[ext_resource type="Script" uid="uid://rshby7i10tv0" path="res://components/sound_buttons/sound_texture_button.gd" id="8_1ocs3"]
+[ext_resource type="Script" uid="uid://rshby7i10tv0" path="res://components/ui/sound_buttons/sound_texture_button.gd" id="8_1ocs3"]
 [ext_resource type="Texture2D" uid="uid://c1pcsoyb2dm88" path="res://assets/art/UI/CloseButton_Normal.png" id="8_asoyt"]
 [ext_resource type="Texture2D" uid="uid://b1qdycp22iqor" path="res://assets/art/UI/CloseButton_Pressed.png" id="9_utbgc"]
 [ext_resource type="Texture2D" uid="uid://bu5g0nvpes6mh" path="res://assets/art/UI/CloseButton_Hover.png" id="10_6k1fu"]

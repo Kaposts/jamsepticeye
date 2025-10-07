@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://7q0jqmeul2b0" path="res://assets/art/UI/Menu_Buttons/Start2.png" id="5_q855l"]
 [ext_resource type="Texture2D" uid="uid://t5y3o0rn2dhp" path="res://assets/art/UI/Menu_Buttons/Options1.png" id="6_53v7h"]
 [ext_resource type="PackedScene" uid="uid://d4h3brjh8eoak" path="res://menus/options_menu.tscn" id="6_xvotp"]
-[ext_resource type="Script" uid="uid://rshby7i10tv0" path="res://components/sound_buttons/sound_texture_button.gd" id="7_047xs"]
+[ext_resource type="Script" uid="uid://rshby7i10tv0" path="res://components/ui/sound_buttons/sound_texture_button.gd" id="7_047xs"]
 [ext_resource type="Texture2D" uid="uid://hr13wo427e1y" path="res://assets/art/UI/Menu_Buttons/Options3.png" id="7_s36xt"]
 [ext_resource type="Texture2D" uid="uid://rjppdir64yhi" path="res://assets/art/UI/Menu_Buttons/Options2.png" id="8_43bnc"]
 [ext_resource type="Texture2D" uid="uid://cbgcp7w42uay8" path="res://assets/art/UI/Menu_Buttons/Credits1.png" id="9_w5jp5"]
@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://do1sdt11xa2md" path="res://assets/art/UI/logo_new.png" id="16_kqtkm"]
 [ext_resource type="Texture2D" uid="uid://cywy3ynqrr0o4" path="res://assets/art/UI/Menu_Buttons/Quit_Button2.png" id="16_tvv58"]
 [ext_resource type="PackedScene" uid="uid://rowd5l4byabr" path="res://menus/credits.tscn" id="17_ysyx0"]
-[ext_resource type="Script" uid="uid://chq86xw3eirpr" path="res://components/sound_buttons/sound_button.gd" id="18_hplot"]
+[ext_resource type="Script" uid="uid://chq86xw3eirpr" path="res://components/ui/sound_buttons/sound_button.gd" id="18_hplot"]
 [ext_resource type="PackedScene" uid="uid://dpxx5cdx4sxyg" path="res://leaderboard/leader_board.tscn" id="19_kqtkm"]
 
 [sub_resource type="Animation" id="Animation_kqtkm"]

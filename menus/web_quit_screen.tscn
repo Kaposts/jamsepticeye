@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dxn558tk5k2su" path="res://assets/art/UI/Menu_Buttons/Main_Menu_Button1.png" id="5_3b7r2"]
 [ext_resource type="Texture2D" uid="uid://b5t6ipnomgjwp" path="res://assets/art/UI/Menu_Buttons/Main_Menu_Button3.png" id="6_aydwv"]
 [ext_resource type="Texture2D" uid="uid://bvnk7ccapyija" path="res://assets/art/UI/Menu_Buttons/Main_Menu_Button2.png" id="7_0nocf"]
-[ext_resource type="Script" uid="uid://rshby7i10tv0" path="res://components/sound_buttons/sound_texture_button.gd" id="8_aydwv"]
+[ext_resource type="Script" uid="uid://rshby7i10tv0" path="res://components/ui/sound_buttons/sound_texture_button.gd" id="8_aydwv"]
 
 [sub_resource type="Animation" id="Animation_72c83"]
 length = 0.001

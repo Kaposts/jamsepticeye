@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bwf4fs1vxtyxa" path="res://menus/level_finished_window.gd" id="1_iibka"]
 [ext_resource type="PackedScene" uid="uid://dpxx5cdx4sxyg" path="res://leaderboard/leader_board.tscn" id="2_aua3a"]
-[ext_resource type="Script" uid="uid://chq86xw3eirpr" path="res://components/sound_buttons/sound_button.gd" id="2_cgfwt"]
+[ext_resource type="Script" uid="uid://chq86xw3eirpr" path="res://components/ui/sound_buttons/sound_button.gd" id="2_cgfwt"]
 
 [node name="LevelFinishedWindow" type="Control"]
 layout_mode = 3
