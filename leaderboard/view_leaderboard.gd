@@ -36,7 +36,7 @@ func _on_request_completed(result, response_code, headers, body):
 		emit_signal("leaderboard_loaded")
 
 		print("--- Leaderboard ---")
-		for i in range(min(10, leaderboard_data.size())):
+		for i in range(leaderboard_data.size()):
 			var entry = leaderboard_data[i]
 			print("%d. %s - %.2f s" % [i + 1, entry.name, entry.time])
 			var entry_instance = entry_scene.instantiate()

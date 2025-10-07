@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cxrn7l2wlwqut" path="res://menus/main_menu.tscn" id="4_htxhm"]
 [ext_resource type="PackedScene" uid="uid://b0bg77uyqmjdp" path="res://menus/pause_menu.tscn" id="4_kq58d"]
 [ext_resource type="PackedScene" uid="uid://dah2f52xwyrbs" path="res://debug/debug_window.tscn" id="5_jq2sk"]
-[ext_resource type="PackedScene" path="res://player/animation_player.tscn" id="6_4k2k6"]
+[ext_resource type="PackedScene" uid="uid://67uwelotfqx1" path="res://player/animation_player.tscn" id="6_4k2k6"]
 [ext_resource type="PackedScene" uid="uid://c7edv1edu6rrw" path="res://camera/player_follow_camera.tscn" id="7_0rl1p"]
 [ext_resource type="Texture2D" uid="uid://cvsr0ew5klrxo" path="res://assets/art/free-swamp-game-tileset-pixel-art/2 Background/Layers/2.png" id="8_ok6jj"]
 [ext_resource type="Shader" uid="uid://t0bw3n8dln3p" path="res://shaders/foliage_wind.gdshader" id="9_facbu"]

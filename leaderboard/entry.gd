@@ -11,4 +11,4 @@ func _ready():
 
 	var minutes = int(score / 60)
 	var seconds = fmod(score, 60.0)
-	score_label.text = "Time: %02d:%05.2f" % [minutes, seconds]
+	score_label.text = "%02d:%05.2f" % [minutes, seconds]

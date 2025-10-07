@@ -37,6 +37,7 @@ offset_top = 158.0
 offset_right = 237.0
 offset_bottom = 189.0
 placeholder_text = "Enter your name"
+max_length = 25
 
 [node name="submit" type="Button" parent="."]
 layout_mode = 0

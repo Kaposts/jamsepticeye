@@ -6,8 +6,10 @@
 script = ExtResource("1_g0lxx")
 
 [node name="name" type="Label" parent="."]
+custom_minimum_size = Vector2(245, 0)
 layout_mode = 2
 text = "NAME"
+clip_text = true
 
 [node name="score" type="Label" parent="."]
 layout_direction = 3
