@@ -1,9 +1,9 @@
 extends Control
 
-@onready var time_label: Label = $TimeLabel
-@onready var name_line_edit: LineEdit = $NameLineEdit
-@onready var submit_button: SoundButton = $SubmitButton
-@onready var menu_button: SoundButton = $MenuButton
+@onready var time_label: Label = %TimeLabel
+@onready var name_line_edit: LineEdit = %NameLineEdit
+@onready var submit_button: SoundButton = %SubmitButton
+@onready var menu_button: SoundButton = %MenuButton
 
 
 var time: float = 0

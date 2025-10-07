@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://rshby7i10tv0" path="res://components/ui/sound_buttons/sound_texture_button.gd" id="6_n6cmo"]
 
 [node name="LeaderBoard" type="Control"]
+custom_minimum_size = Vector2(308, 186)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_uta7o")
@@ -16,17 +17,8 @@ entry_scene = ExtResource("2_leds7")
 [node name="PanelContainer" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(308, 186)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -154.0
-offset_top = -93.0
-offset_right = 154.0
-offset_bottom = 93.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 308.0
+offset_bottom = 186.0
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
@@ -57,10 +49,10 @@ size_flags_horizontal = 3
 
 [node name="CloseButton" type="TextureButton" parent="."]
 layout_mode = 1
-offset_left = 103.0
-offset_top = -84.0
-offset_right = 199.0
-offset_bottom = -4.0
+offset_left = 257.0
+offset_top = 9.0
+offset_right = 353.0
+offset_bottom = 89.0
 scale = Vector2(0.5, 0.5)
 size_flags_horizontal = 8
 size_flags_vertical = 8

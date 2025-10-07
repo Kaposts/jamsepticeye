@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=25 format=3 uid="uid://ue13yhfpi673"]
+[gd_resource type="Theme" load_steps=28 format=3 uid="uid://ue13yhfpi673"]
 
 [ext_resource type="Texture2D" uid="uid://n2ehuwrbuow4" path="res://assets/ui/main_theme/button_green.png" id="1_466ly"]
 [ext_resource type="Texture2D" uid="uid://dk4rft1o3fmdh" path="res://assets/ui/main_theme/button_focus.png" id="1_py0i1"]
@@ -94,6 +94,21 @@ texture_margin_right = 7.0
 texture_margin_bottom = 9.0
 region_rect = Rect2(0, 5, 30, 27)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_py0i1"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sxwih"]
+load_path = "res://.godot/imported/wood_panel.png-51db0771d543e0d398e1b8bbda65a2f0.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rt4o7"]
+content_margin_left = 16.0
+content_margin_right = 16.0
+texture = SubResource("CompressedTexture2D_sxwih")
+texture_margin_left = 9.0
+texture_margin_top = 13.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+region_rect = Rect2(2, 37, 28, 27)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x127s"]
 texture = ExtResource("5_rt4o7")
 texture_margin_left = 9.0
@@ -153,12 +168,24 @@ HSlider/styles/slider = SubResource("StyleBoxTexture_bjb6u")
 Label/colors/font_color = Color(1, 0.5647059, 0.48235294, 1)
 Label/colors/font_outline_color = Color(0.21960784, 0.12941177, 0.11372549, 1)
 Label/colors/font_shadow_color = Color(0.12941177, 0.05882353, 0.05882353, 1)
-Label/constants/outline_size = 5
-Label/constants/shadow_offset_x = 2
-Label/constants/shadow_offset_y = 2
-Label/constants/shadow_outline_size = 4
+Label/constants/outline_size = 11
+Label/constants/shadow_offset_x = 4
+Label/constants/shadow_offset_y = 3
+Label/constants/shadow_outline_size = 6
 LeftPanelContainer/base_type = &"PanelContainer"
 LeftPanelContainer/styles/panel = SubResource("StyleBoxTexture_qjhx0")
+LineEdit/colors/caret_color = Color(0.1, 0.037, 0.04750002, 1)
+LineEdit/colors/font_color = Color(1, 0.5647059, 0.48235294, 1)
+LineEdit/colors/font_outline_color = Color(0.21960784, 0.12941177, 0.11372549, 1)
+LineEdit/colors/font_placeholder_color = Color(1, 0.5666667, 0.48000002, 0.49019608)
+LineEdit/colors/font_selected_color = Color(0.7529412, 0.21960784, 0.32156864, 1)
+LineEdit/colors/font_uneditable_color = Color(0.59, 0.48143998, 0.44839996, 0.63529414)
+LineEdit/colors/selection_color = Color(0.16170788, 0.25473619, 0.36399773, 1)
+LineEdit/constants/caret_width = 4
+LineEdit/constants/outline_size = 13
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_py0i1")
+LineEdit/styles/normal = SubResource("StyleBoxTexture_rt4o7")
+LineEdit/styles/read_only = SubResource("StyleBoxTexture_x127s")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_x127s")
 ProgressBar/styles/background = SubResource("StyleBoxTexture_biaja")
 ProgressBar/styles/fill = SubResource("StyleBoxTexture_vnc4k")
