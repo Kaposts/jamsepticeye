@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cuneiert8cmjs"]
+[gd_scene load_steps=9 format=3 uid="uid://cuneiert8cmjs"]
 
 [ext_resource type="Texture2D" uid="uid://dakxhryfymt7f" path="res://assets/ui/Scroll_Base.png" id="1_pd2jm"]
 [ext_resource type="Texture2D" uid="uid://cc27ovcysdntv" path="res://assets/ui/Right_Scroll.png" id="2_xyluh"]
@@ -344,6 +344,8 @@ _data = {
 &"Scroll_Open": SubResource("Animation_l40sm")
 }
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_46dyd"]
+
 [node name="Scroll" type="Control"]
 layout_mode = 3
 anchors_preset = 8
@@ -373,6 +375,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_46dyd")
 
 [node name="Node2D" type="Node2D" parent="PanelContainer"]
 

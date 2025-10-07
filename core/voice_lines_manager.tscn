@@ -26,10 +26,6 @@ background_narration = Array[AudioStream]([ExtResource("9_6duqb"), ExtResource("
 volume_db = 14.0
 bus = &"Voice"
 
-[node name="AfterUnlockNarrationTimer" type="Timer" parent="."]
-wait_time = 10.0
-one_shot = true
-
 [node name="BetweenNarrationTimer" type="Timer" parent="."]
 wait_time = 20.0
 one_shot = true
@@ -69,70 +65,66 @@ theme_override_constants/margin_bottom = 6
 visible = false
 custom_minimum_size = Vector2(612, 0)
 layout_mode = 2
-text = "Here, we can see a cyprinus carpio, better known as the common carp.
-SPACE to flop around."
+text = "Here, we can see a cyprinus carpio, better known as the common carp."
 autowrap_mode = 3
 
 [node name="LabelUnlock1" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]
 visible = false
 custom_minimum_size = Vector2(612, 0)
 layout_mode = 2
-text = "Carp come in many shapes and sizes. This carp is... unique.
-A D keys to move."
+text = "Carp come in many shapes and sizes. This carp is... unique."
 autowrap_mode = 3
 
 [node name="LabelUnlock2" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]
 visible = false
 custom_minimum_size = Vector2(612, 0)
 layout_mode = 2
-text = "My apologies, this does not appear to be a carp at all. It must be a member of the Exocoetidae family, more commonly known as flying fish.
-SPACE to jump."
+text = "My apologies, this does not appear to be a carp at all.
+It must be a member of the Exocoetidae family,
+more commonly known as flying fish."
 autowrap_mode = 3
 
 [node name="LabelUnlock3" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]
 visible = false
 custom_minimum_size = Vector2(612, 0)
 layout_mode = 2
-text = "Are those…? Hold on.
-Move into blocks to push them."
+text = "Are those…? Hold on."
 autowrap_mode = 3
 
 [node name="LabelUnlock4" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]
 visible = false
 custom_minimum_size = Vector2(612, 0)
 layout_mode = 2
-text = "Our fish had an epiphany, imbued with the knowledge of wall climbing… what is this?? (SPACE on wall to wall jump)"
+text = "Our fish had an epiphany, imbued with the knowledge of… wall climbing… What is this??"
 autowrap_mode = 3
 
 [node name="LabelUnlock5" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]
 visible = false
 custom_minimum_size = Vector2(612, 0)
 layout_mode = 2
-text = "Okay, what     next, a tongue?
-(Hold SPACE in air to hover)"
+text = "Okay, what's next, a tongue?"
 autowrap_mode = 3
 
 [node name="LabelUnlock6" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]
 visible = false
 custom_minimum_size = Vector2(612, 0)
 layout_mode = 2
-text = "okay. I’m done. You don’t pay me enough for this.
-H key to grapple to a fly."
+text = "Okay. I’m done. You don’t pay me enough for this."
 autowrap_mode = 3
 
 [node name="LabelUnlock7" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]
 visible = false
 custom_minimum_size = Vector2(612, 0)
 layout_mode = 2
-text = "You obtained a pair of Nikes.
-J key to BIG jump from a wall."
+text = "You obtained a pair of Nikes."
 autowrap_mode = 3
 
 [node name="LabelBackground0" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]
 visible = false
 custom_minimum_size = Vector2(612, 0)
 layout_mode = 2
-text = "This is a bayou. There are bayous across much of the gulf coast of the United States, with a concentration in the Lower Mississippi River Valley."
+text = "This is a bayou.
+There are bayous across much of the gulf coast of the United States, with a concentration in the Lower Mississippi River Valley."
 autowrap_mode = 3
 
 [node name="LabelBackground1" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]
@@ -153,7 +145,8 @@ autowrap_mode = 3
 visible = false
 custom_minimum_size = Vector2(612, 0)
 layout_mode = 2
-text = "Because they are so slow moving, bayous often become stagnant and brackish. "
+text = "Because they are so slow moving,
+bayous often become stagnant and brackish. "
 autowrap_mode = 3
 
 [node name="LabelBackground4" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]

@@ -22,7 +22,7 @@ func _ready() -> void:
 	if _player:
 		_player.interest_point_detected.connect(_on_signal_point_detected)
 	
-	SignalBus.player_spawned.connect(_on_player_spawned)
+	SignalBus.sig_player_spawned.connect(_on_player_spawned)
 	SignalBus.sig_player_died.connect(_on_player_died)
 
 

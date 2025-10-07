@@ -13,8 +13,6 @@ const ASSET_PATHS: Dictionary[StringName, StringName] = {
 }
 
 
-const INPUT_ACTION_JUMP = "jump"
-
 func _ready():
 	SignalBus.sig_game_paused.connect(_on_sig_game_paused)
 	SignalBus.sig_game_unpaused.connect(_on_sig_game_unpaused)

@@ -18,6 +18,7 @@ const KEY_BIND_PRESET_3: Dictionary[StringName, int] = {
 	"finger" : MOUSE_BUTTON_RIGHT,
 }
 
+
 var INPUT_ACTIONS: Dictionary[StringName, StringName] = {
 	"move_left" : "Move Left",
 	"move_right" : "Move Right",
@@ -63,6 +64,8 @@ func _input(event: InputEvent) -> void:
 			InputMap.action_erase_events(action_to_map)
 			InputMap.action_add_event(action_to_map, event)
 			_update_action_list(remapping_button, event)
+			
+			SignalBus.sig_key_remapped.emit(action_to_map)
 			
 			is_remapping = false
 			action_to_map = ""
