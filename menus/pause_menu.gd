@@ -1,7 +1,7 @@
 class_name PauseMenu
 extends Control
 
-const ANIM_SPEED_MODIFIER: float = 3.0
+const ANIM_SPEED_MODIFIER: float = 4.0
 
 @export var web_quit_screen: PackedScene
 
