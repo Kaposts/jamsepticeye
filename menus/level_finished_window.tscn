@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iibka")
 
-[node name="Label" type="Label" parent="."]
+[node name="CompletedLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 47.0
 offset_top = 80.0
@@ -21,7 +21,7 @@ offset_right = 288.0
 offset_bottom = 103.0
 text = "You have completed the level"
 
-[node name="time" type="Label" parent="."]
+[node name="TimeLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 44.0
 offset_top = 112.0
@@ -31,7 +31,7 @@ text = "Time: 00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="."]
+[node name="NameLineEdit" type="LineEdit" parent="."]
 layout_mode = 0
 offset_left = 22.0
 offset_top = 158.0
@@ -39,13 +39,14 @@ offset_right = 237.0
 offset_bottom = 189.0
 placeholder_text = "Enter your name"
 
-[node name="submit" type="Button" parent="."]
+[node name="SubmitButton" type="Button" parent="."]
+custom_minimum_size = Vector2(70, 34)
 layout_mode = 0
 offset_left = 245.0
 offset_top = 158.0
 offset_right = 307.0
 offset_bottom = 189.0
-text = "submit"
+text = "Submit"
 script = ExtResource("2_cgfwt")
 metadata/_custom_type_script = "uid://chq86xw3eirpr"
 
@@ -67,16 +68,17 @@ text = "close"
 script = ExtResource("2_cgfwt")
 metadata/_custom_type_script = "uid://chq86xw3eirpr"
 
-[node name="menu" type="Button" parent="."]
+[node name="MenuButton" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 34)
 layout_mode = 0
 offset_left = 31.0
 offset_top = 201.0
 offset_right = 84.0
 offset_bottom = 232.0
-text = "menu"
+text = "Main Menu"
 script = ExtResource("2_cgfwt")
 metadata/_custom_type_script = "uid://chq86xw3eirpr"
 
-[connection signal="pressed" from="submit" to="." method="_on_submit_pressed"]
+[connection signal="pressed" from="SubmitButton" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="close" to="." method="_on_close_pressed"]
-[connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_pressed"]

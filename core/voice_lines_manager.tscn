@@ -54,7 +54,7 @@ theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
 [node name="PanelContainer" type="PanelContainer" parent="DialogueLayer/MarginContainer"]
-self_modulate = Color(1, 1, 1, 0.5019608)
+self_modulate = Color(1, 1, 1, 0.3019608)
 layout_mode = 2
 
 [node name="TextContainer" type="MarginContainer" parent="DialogueLayer/MarginContainer/PanelContainer"]
@@ -69,7 +69,7 @@ theme_override_constants/margin_bottom = 6
 visible = false
 custom_minimum_size = Vector2(612, 0)
 layout_mode = 2
-text = "Here, we can see a cyprinus carpio , better known as the common carp.
+text = "Here, we can see a cyprinus carpio, better known as the common carp.
 SPACE to flop around."
 autowrap_mode = 3
 
