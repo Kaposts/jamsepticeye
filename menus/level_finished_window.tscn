@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cbv2e8v2yjmtk"]
 
-[ext_resource type="Script" uid="uid://bwf4fs1vxtyxa" path="res://level_finished_window.gd" id="1_nodxu"]
-[ext_resource type="PackedScene" uid="uid://dpxx5cdx4sxyg" path="res://leaderboard/leader_board.tscn" id="2_svpd8"]
+[ext_resource type="Script" uid="uid://bwf4fs1vxtyxa" path="res://menus/level_finished_window.gd" id="1_iibka"]
+[ext_resource type="PackedScene" uid="uid://dpxx5cdx4sxyg" path="res://leaderboard/leader_board.tscn" id="2_aua3a"]
 
 [node name="LevelFinishedWindow" type="Control"]
 layout_mode = 3
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_nodxu")
+script = ExtResource("1_iibka")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -46,7 +46,7 @@ offset_right = 307.0
 offset_bottom = 189.0
 text = "submit"
 
-[node name="LeaderBoard" parent="." instance=ExtResource("2_svpd8")]
+[node name="LeaderBoard" parent="." instance=ExtResource("2_aua3a")]
 layout_mode = 0
 offset_left = 469.0
 offset_top = 167.0
