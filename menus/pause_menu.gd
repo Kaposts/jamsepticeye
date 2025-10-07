@@ -1,9 +1,12 @@
 class_name PauseMenu
 extends Control
 
+const ANIM_SPEED_MODIFIER: float = 4.0
+
 @export var web_quit_screen: PackedScene
 
 @onready var back_button: TextureButton = $PauseOptions/BackButton
+
 @onready var scroll_anim: AnimationPlayer = $Scroll/AnimationPlayer
 @onready var menu_anim: AnimationPlayer = $AnimationPlayer
 @onready var options_scroll_anim: AnimationPlayer = $Options/Scroll/AnimationPlayer
@@ -22,6 +25,11 @@ var is_animating: bool = false
 
 func _ready() -> void:
 	hide()
+	
+	scroll_anim.speed_scale *= ANIM_SPEED_MODIFIER
+	menu_anim.speed_scale *= ANIM_SPEED_MODIFIER
+	options_scroll_anim.speed_scale *= ANIM_SPEED_MODIFIER
+	options_anim.speed_scale *= ANIM_SPEED_MODIFIER
 	
 	back_button.pressed.connect(_on_back_button_pressed)
 	restart_button.pressed.connect(_on_restart_button_pressed)

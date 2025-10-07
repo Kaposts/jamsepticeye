@@ -191,15 +191,7 @@ offset_bottom = 149.0
 grow_horizontal = 2
 texture = ExtResource("16_kqtkm")
 
-[node name="Options" parent="ControlRoot" instance=ExtResource("6_xvotp")]
-visible = false
-layout_mode = 1
-
-[node name="Credits" parent="ControlRoot" instance=ExtResource("17_ysyx0")]
-visible = false
-layout_mode = 1
-
-[node name="LeaderBoard" type="Button" parent="ControlRoot"]
+[node name="LeaderboardButton" type="Button" parent="ControlRoot"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 7.0
@@ -207,11 +199,18 @@ offset_right = 113.0
 offset_bottom = 38.0
 text = "Leaderboard"
 
-[node name="LeaderBoardWindow" parent="." instance=ExtResource("19_kqtkm")]
+[node name="LeaderboardWindow" parent="ControlRoot" instance=ExtResource("19_kqtkm")]
 visible = false
+layout_mode = 0
 offset_left = 294.0
 offset_top = 194.0
 offset_right = 294.0
 offset_bottom = 194.0
 
-[connection signal="pressed" from="ControlRoot/LeaderBoard" to="." method="_on_leader_board_pressed"]
+[node name="Options" parent="ControlRoot" instance=ExtResource("6_xvotp")]
+visible = false
+layout_mode = 1
+
+[node name="Credits" parent="ControlRoot" instance=ExtResource("17_ysyx0")]
+visible = false
+layout_mode = 1

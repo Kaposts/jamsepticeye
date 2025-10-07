@@ -22,6 +22,7 @@ var is_animating: bool = false:
 func _ready() -> void:
 	close_button.pressed.connect(_on_close_button_pressed)
 	keybinding_button.pressed.connect(_on_keybinding_button_pressed)
+	visibility_changed.connect(_on_visibility_changed)
 	
 	master_slider.value_changed.connect(_on_audio_slider_changed.bind("Master"))
 	music_slider.value_changed.connect(_on_audio_slider_changed.bind("Music"))
@@ -89,3 +90,8 @@ func _on_keybinding_button_pressed() -> void:
 
 func _on_audio_slider_changed(value: float, bus_name: String) -> void:
 	set_bus_volume_percent(bus_name, value)
+
+
+func _on_visibility_changed() -> void:
+	if visible:
+		update_display()
