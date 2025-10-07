@@ -2,6 +2,8 @@ extends Control
 
 @export var entry_scene: PackedScene
 
+@onready var entry_container: VBoxContainer = %EntryContainer
+@onready var close_button: SoundTextureButton = $CloseButton
 @onready var http := HTTPRequest.new()
 
 var leaderboard_data: Array = []
@@ -14,10 +16,18 @@ func _ready():
 
 	load_leaderboard()
 	SignalBus.sig_score_submitted.connect(load_leaderboard)
+	close_button.pressed.connect(_on_close_button_pressed)
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		_close()
+
 
 func load_leaderboard():
 	http.request(url)
 	http.request_completed.connect(_on_request_completed, CONNECT_ONE_SHOT)
+
 
 func _on_request_completed(result, response_code, headers, body):
 	if response_code != 200:
@@ -42,4 +52,13 @@ func _on_request_completed(result, response_code, headers, body):
 			var entry_instance = entry_scene.instantiate()
 			entry_instance.entry_name = str(i+1) + ". "+entry.name
 			entry_instance.score = entry.time
-			$Panel/ScrollContainer/VBoxContainer.add_child(entry_instance)
+			entry_container.add_child(entry_instance)
+
+
+func _close() -> void:
+	if owner.visible and visible:
+		hide()
+
+
+func _on_close_button_pressed() -> void:
+	_close()

@@ -54,6 +54,7 @@ theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
 [node name="PanelContainer" type="PanelContainer" parent="DialogueLayer/MarginContainer"]
+self_modulate = Color(1, 1, 1, 0.5019608)
 layout_mode = 2
 
 [node name="TextContainer" type="MarginContainer" parent="DialogueLayer/MarginContainer/PanelContainer"]

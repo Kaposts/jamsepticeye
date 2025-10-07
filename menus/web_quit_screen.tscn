@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://yi5yjkjfewk8" path="res://menus/web_quit_screen.gd" id="1_3bl5y"]
 [ext_resource type="PackedScene" uid="uid://cuneiert8cmjs" path="res://menus/scroll.tscn" id="1_7uifh"]
-[ext_resource type="Texture2D" uid="uid://dakxhryfymt7f" path="res://assets/art/UI/Scroll_Base.png" id="2_cvdtd"]
+[ext_resource type="Texture2D" uid="uid://dakxhryfymt7f" path="res://assets/ui/Scroll_Base.png" id="2_cvdtd"]
 [ext_resource type="LabelSettings" uid="uid://dsebf1ximwajw" path="res://assets/font/default_label.tres" id="4_72c83"]
-[ext_resource type="Texture2D" uid="uid://dxn558tk5k2su" path="res://assets/art/UI/Menu_Buttons/Main_Menu_Button1.png" id="5_3b7r2"]
-[ext_resource type="Texture2D" uid="uid://b5t6ipnomgjwp" path="res://assets/art/UI/Menu_Buttons/Main_Menu_Button3.png" id="6_aydwv"]
-[ext_resource type="Texture2D" uid="uid://bvnk7ccapyija" path="res://assets/art/UI/Menu_Buttons/Main_Menu_Button2.png" id="7_0nocf"]
+[ext_resource type="Texture2D" uid="uid://dxn558tk5k2su" path="res://assets/ui/Menu_Buttons/Main_Menu_Button1.png" id="5_3b7r2"]
+[ext_resource type="Texture2D" uid="uid://b5t6ipnomgjwp" path="res://assets/ui/Menu_Buttons/Main_Menu_Button3.png" id="6_aydwv"]
+[ext_resource type="Texture2D" uid="uid://bvnk7ccapyija" path="res://assets/ui/Menu_Buttons/Main_Menu_Button2.png" id="7_0nocf"]
 [ext_resource type="Script" uid="uid://rshby7i10tv0" path="res://components/ui/sound_buttons/sound_texture_button.gd" id="8_aydwv"]
 
 [sub_resource type="Animation" id="Animation_72c83"]

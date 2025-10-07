@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://cuneiert8cmjs"]
 
-[ext_resource type="Texture2D" uid="uid://dakxhryfymt7f" path="res://assets/art/UI/Scroll_Base.png" id="1_pd2jm"]
-[ext_resource type="Texture2D" uid="uid://cc27ovcysdntv" path="res://assets/art/UI/Right_Scroll.png" id="2_xyluh"]
-[ext_resource type="Texture2D" uid="uid://bt8piwqwdm1tk" path="res://assets/art/UI/Left_Scroll.png" id="3_jx8js"]
+[ext_resource type="Texture2D" uid="uid://dakxhryfymt7f" path="res://assets/ui/Scroll_Base.png" id="1_pd2jm"]
+[ext_resource type="Texture2D" uid="uid://cc27ovcysdntv" path="res://assets/ui/Right_Scroll.png" id="2_xyluh"]
+[ext_resource type="Texture2D" uid="uid://bt8piwqwdm1tk" path="res://assets/ui/Left_Scroll.png" id="3_jx8js"]
 
 [sub_resource type="Animation" id="Animation_aqslg"]
 length = 0.001
