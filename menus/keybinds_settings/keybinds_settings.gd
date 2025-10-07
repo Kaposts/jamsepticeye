@@ -56,7 +56,7 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if is_remapping:
 		if event is InputEventKey or (event is InputEventMouseButton and event.is_pressed()):
-			# Turen double click into single click
+			# Turns double click into single click
 			if event is InputEventMouseButton and event.double_click:
 				event.double_click = false
 			

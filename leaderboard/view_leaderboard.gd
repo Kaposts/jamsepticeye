@@ -3,7 +3,7 @@ extends Control
 @export var entry_scene: PackedScene
 
 @onready var entry_container: VBoxContainer = %EntryContainer
-@onready var close_button: SoundTextureButton = $CloseButton
+@onready var close_button: SoundTextureButton = %CloseButton
 @onready var http := HTTPRequest.new()
 
 var leaderboard_data: Array = []
