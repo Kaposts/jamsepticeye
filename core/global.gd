@@ -1,5 +1,18 @@
 extends Node
 
+const SCENE_PATHS: Dictionary[StringName, String] = {
+	"random_audio_player_component" : "uid://yey23xnr0h7w",
+	
+}
+
+
+const ASSET_PATHS: Dictionary[StringName, StringName] = {
+	"button_hover" : "uid://dsohwmrdb15vg",
+	"button_pressed" : "uid://bfgkgyiaspngk",
+	
+}
+
+
 const INPUT_ACTION_JUMP = "jump"
 
 func _ready():

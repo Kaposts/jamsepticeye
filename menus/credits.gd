@@ -1,6 +1,6 @@
 extends Control
 
-@onready var close_button: TextureButton = $Credits/Back_Button
+@onready var close_button: TextureButton = $Credits/CloseButton
 @onready var scroll_anim: AnimationPlayer = $Scroll/AnimationPlayer
 @onready var menu_anim: AnimationPlayer = $AnimationPlayer
 

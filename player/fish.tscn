@@ -5,12 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://c83kr17f34g5x" path="res://assets/art/player_character/base_fish_dead.png" id="2_n041c"]
 [ext_resource type="Texture2D" uid="uid://8eiw3s1pgdtq" path="res://assets/art/player_character/base_fish_alive.png" id="2_o703u"]
 [ext_resource type="PackedScene" uid="uid://cs2msqcudcidd" path="res://components/random_audio_player/random_audio_player_2d_component.tscn" id="5_qgu6n"]
-[ext_resource type="AudioStream" uid="uid://c25n8hwalxfvc" path="res://assets/sfx/death_1.wav" id="6_7l3nw"]
-[ext_resource type="AudioStream" uid="uid://mu66hixtj1km" path="res://assets/sfx/death_2.wav" id="7_btqjo"]
-[ext_resource type="AudioStream" uid="uid://cmtalfwu4vhs4" path="res://assets/sfx/death_4.wav" id="8_t8m0l"]
-[ext_resource type="AudioStream" uid="uid://dwy3cvwadlcbb" path="res://assets/sfx/fish_flop_1.wav" id="9_tuq5h"]
-[ext_resource type="AudioStream" uid="uid://bjgrit3ujxx2w" path="res://assets/sfx/fish_flop_2.wav" id="10_dwd0r"]
-[ext_resource type="AudioStream" uid="uid://c0q48ic5j6k1p" path="res://assets/sfx/fish_flop_3.wav" id="11_lp82r"]
+[ext_resource type="AudioStream" uid="uid://c25n8hwalxfvc" path="res://assets/sfx/fish/death_1.wav" id="6_7l3nw"]
+[ext_resource type="AudioStream" uid="uid://mu66hixtj1km" path="res://assets/sfx/fish/death_2.wav" id="7_btqjo"]
+[ext_resource type="AudioStream" uid="uid://cmtalfwu4vhs4" path="res://assets/sfx/fish/death_4.wav" id="8_t8m0l"]
+[ext_resource type="AudioStream" uid="uid://dwy3cvwadlcbb" path="res://assets/sfx/fish/fish_flop_1.wav" id="9_tuq5h"]
+[ext_resource type="AudioStream" uid="uid://bjgrit3ujxx2w" path="res://assets/sfx/fish/fish_flop_2.wav" id="10_dwd0r"]
+[ext_resource type="AudioStream" uid="uid://c0q48ic5j6k1p" path="res://assets/sfx/fish/fish_flop_3.wav" id="11_lp82r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ir8iy"]
 radius = 7.0

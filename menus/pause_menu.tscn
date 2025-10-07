@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://b0bg77uyqmjdp"]
+[gd_scene load_steps=21 format=3 uid="uid://b0bg77uyqmjdp"]
 
 [ext_resource type="Script" uid="uid://cxvkq1q6pkda8" path="res://menus/pause_menu.gd" id="1_taale"]
 [ext_resource type="PackedScene" uid="uid://cuneiert8cmjs" path="res://menus/scroll.tscn" id="2_u8tnp"]
 [ext_resource type="Texture2D" uid="uid://c1pcsoyb2dm88" path="res://assets/art/UI/CloseButton_Normal.png" id="5_524vl"]
+[ext_resource type="Script" uid="uid://rshby7i10tv0" path="res://components/sound_buttons/sound_texture_button.gd" id="6_0dmhi"]
 [ext_resource type="Texture2D" uid="uid://b1qdycp22iqor" path="res://assets/art/UI/CloseButton_Pressed.png" id="6_0fi7f"]
 [ext_resource type="Texture2D" uid="uid://btiwtiljsnxq2" path="res://assets/art/UI/Menu_Buttons/Quit_Button1.png" id="6_q7fiq"]
 [ext_resource type="Texture2D" uid="uid://diypjletpqjj" path="res://assets/art/UI/Menu_Buttons/Quit_Button3.png" id="7_6wqnn"]
@@ -89,6 +90,8 @@ offset_bottom = 345.0
 texture_normal = ExtResource("5_524vl")
 texture_pressed = ExtResource("6_0fi7f")
 texture_hover = ExtResource("7_uscpe")
+script = ExtResource("6_0dmhi")
+metadata/_custom_type_script = "uid://rshby7i10tv0"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Root/PauseOptions"]
 layout_mode = 1
@@ -110,18 +113,24 @@ layout_mode = 2
 texture_normal = ExtResource("8_lfukh")
 texture_pressed = ExtResource("9_dxesn")
 texture_hover = ExtResource("10_7apfi")
+script = ExtResource("6_0dmhi")
+metadata/_custom_type_script = "uid://rshby7i10tv0"
 
 [node name="Options" type="TextureButton" parent="Root/PauseOptions/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("9_h7ojb")
 texture_pressed = ExtResource("10_wqpeb")
 texture_hover = ExtResource("11_tekra")
+script = ExtResource("6_0dmhi")
+metadata/_custom_type_script = "uid://rshby7i10tv0"
 
 [node name="Quit" type="TextureButton" parent="Root/PauseOptions/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("6_q7fiq")
 texture_pressed = ExtResource("7_6wqnn")
 texture_hover = ExtResource("8_1ymcx")
+script = ExtResource("6_0dmhi")
+metadata/_custom_type_script = "uid://rshby7i10tv0"
 
 [node name="Options" parent="Root" instance=ExtResource("17_lfukh")]
 visible = false
@@ -131,5 +140,3 @@ layout_mode = 1
 libraries = {
 &"": SubResource("AnimationLibrary_hvj8k")
 }
-
-[connection signal="pressed" from="Root/PauseOptions/BackButton" to="Root/PauseOptions/BackButton" method="_on_pressed"]

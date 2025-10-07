@@ -35,6 +35,7 @@ const INPUT_LABEL: String = "LabelInput"
 @onready var preset_button_2: Button = %PresetButton2
 @onready var preset_button_3: Button = %PresetButton3
 @onready var back_button: Button = %BackButton
+@onready var key_rebind_sfx_player: RandomAudioPlayer = $KeyRebindSFXPlayer
 
 
 var is_remapping: bool = false
@@ -67,6 +68,7 @@ func _input(event: InputEvent) -> void:
 			action_to_map = ""
 			remapping_button = null
 			
+			key_rebind_sfx_player.play_random()
 			accept_event()
 
 

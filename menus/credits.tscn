@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://rowd5l4byabr"]
+[gd_scene load_steps=13 format=3 uid="uid://rowd5l4byabr"]
 
 [ext_resource type="Script" uid="uid://d0y8j6hxg8iq" path="res://menus/credits.gd" id="1_rlyo5"]
 [ext_resource type="PackedScene" uid="uid://cuneiert8cmjs" path="res://menus/scroll.tscn" id="2_0oi4c"]
 [ext_resource type="LabelSettings" uid="uid://b650eiaqfr53c" path="res://assets/font/creadit_headig_label.tres" id="3_7emq5"]
 [ext_resource type="LabelSettings" uid="uid://b0rpv6lccgued" path="res://assets/font/name_label.tres" id="4_803yc"]
+[ext_resource type="Script" uid="uid://rshby7i10tv0" path="res://components/sound_buttons/sound_texture_button.gd" id="8_1ocs3"]
 [ext_resource type="Texture2D" uid="uid://c1pcsoyb2dm88" path="res://assets/art/UI/CloseButton_Normal.png" id="8_asoyt"]
 [ext_resource type="Texture2D" uid="uid://b1qdycp22iqor" path="res://assets/art/UI/CloseButton_Pressed.png" id="9_utbgc"]
 [ext_resource type="Texture2D" uid="uid://bu5g0nvpes6mh" path="res://assets/art/UI/CloseButton_Hover.png" id="10_6k1fu"]
@@ -195,7 +196,7 @@ theme_override_constants/h_separation = 28
 theme_override_constants/v_separation = 11
 columns = 2
 
-[node name="Back_Button" type="TextureButton" parent="Credits"]
+[node name="CloseButton" type="TextureButton" parent="Credits"]
 layout_mode = 0
 offset_left = 436.0
 offset_top = 265.0
@@ -204,10 +205,10 @@ offset_bottom = 345.0
 texture_normal = ExtResource("8_asoyt")
 texture_pressed = ExtResource("9_utbgc")
 texture_hover = ExtResource("10_6k1fu")
+script = ExtResource("8_1ocs3")
+metadata/_custom_type_script = "uid://rshby7i10tv0"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_hvj8k")
 }
-
-[connection signal="pressed" from="Credits/Back_Button" to="Credits/Back_Button" method="_on_pressed"]

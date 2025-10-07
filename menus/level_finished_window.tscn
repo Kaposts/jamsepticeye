@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbv2e8v2yjmtk"]
+[gd_scene load_steps=4 format=3 uid="uid://cbv2e8v2yjmtk"]
 
 [ext_resource type="Script" uid="uid://bwf4fs1vxtyxa" path="res://menus/level_finished_window.gd" id="1_iibka"]
 [ext_resource type="PackedScene" uid="uid://dpxx5cdx4sxyg" path="res://leaderboard/leader_board.tscn" id="2_aua3a"]
+[ext_resource type="Script" uid="uid://chq86xw3eirpr" path="res://components/sound_buttons/sound_button.gd" id="2_cgfwt"]
 
 [node name="LevelFinishedWindow" type="Control"]
 layout_mode = 3
@@ -45,6 +46,8 @@ offset_top = 158.0
 offset_right = 307.0
 offset_bottom = 189.0
 text = "submit"
+script = ExtResource("2_cgfwt")
+metadata/_custom_type_script = "uid://chq86xw3eirpr"
 
 [node name="LeaderBoard" parent="." instance=ExtResource("2_aua3a")]
 layout_mode = 0
@@ -61,6 +64,8 @@ offset_top = 242.0
 offset_right = 79.0
 offset_bottom = 273.0
 text = "close"
+script = ExtResource("2_cgfwt")
+metadata/_custom_type_script = "uid://chq86xw3eirpr"
 
 [node name="menu" type="Button" parent="."]
 layout_mode = 0
@@ -69,6 +74,8 @@ offset_top = 201.0
 offset_right = 84.0
 offset_bottom = 232.0
 text = "menu"
+script = ExtResource("2_cgfwt")
+metadata/_custom_type_script = "uid://chq86xw3eirpr"
 
 [connection signal="pressed" from="submit" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="close" to="." method="_on_close_pressed"]
