@@ -1,12 +1,39 @@
 extends Control
 ## Keybinds Settings Menu
 
+
+const KEY_BIND_PRESET_2: Dictionary[StringName, int] = {
+	"move_left" : KEY_LEFT,
+	"move_right" : KEY_RIGHT,
+	"jump" : KEY_SPACE,
+	"grapple" : KEY_F,
+	"finger" : KEY_D,
+}
+
+const KEY_BIND_PRESET_3: Dictionary[StringName, int] = {
+	"move_left" : KEY_A,
+	"move_right" : KEY_D,
+	"jump" : KEY_SPACE,
+	"grapple" : MOUSE_BUTTON_LEFT,
+	"finger" : MOUSE_BUTTON_RIGHT,
+}
+
+var INPUT_ACTIONS: Dictionary[StringName, StringName] = {
+	"move_left" : "Move Left",
+	"move_right" : "Move Right",
+	"jump" : "Jump",
+	"grapple" : "Tongue Hook",
+	"finger" : "BIG Jump",
+}
+
 const ACTION_LABEL: String = "LabelAction"
 const INPUT_LABEL: String = "LabelInput"
 
 @export var input_button: PackedScene
 @onready var action_list: VBoxContainer = %ActionList
-@onready var reset_button: Button = %ResetButton
+@onready var preset_button_1: Button = %PresetButton1
+@onready var preset_button_2: Button = %PresetButton2
+@onready var preset_button_3: Button = %PresetButton3
 @onready var back_button: Button = %BackButton
 
 
@@ -15,19 +42,12 @@ var action_to_map: StringName = ""
 var remapping_button = null
 
 
-var input_actions: Dictionary[StringName, StringName] = {
-	"move_left" : "Move Left",
-	"move_right" : "Move Right",
-	"jump" : "Jump",
-	"grapple" : "Tongue Hook",
-	"finger" : "BIG Jump",
-}
-
-
 func _ready() -> void:
 	_create_action_list()
 	
-	reset_button.pressed.connect(_on_reset_button_pressed)
+	preset_button_1.pressed.connect(_on_preset_button_pressed.bind(1))
+	preset_button_2.pressed.connect(_on_preset_button_pressed.bind(2))
+	preset_button_3.pressed.connect(_on_preset_button_pressed.bind(3))
 	back_button.pressed.connect(_on_back_button_pressed)
 	visibility_changed.connect(_on_visibility_changed)
 
@@ -55,12 +75,12 @@ func _create_action_list() -> void:
 	for item in action_list.get_children():
 		item.queue_free()
 	
-	for action in input_actions:
+	for action in INPUT_ACTIONS:
 		var button: Button = input_button.instantiate()
 		var action_label: Label = button.find_child(ACTION_LABEL)
 		var input_label: Label = button.find_child(INPUT_LABEL)
 		
-		action_label.text = input_actions[action]
+		action_label.text = INPUT_ACTIONS[action]
 		
 		var events: Array[InputEvent] = InputMap.action_get_events(action)
 		if not events.is_empty():
@@ -80,9 +100,42 @@ func _update_current_input_map() -> void:
 	for button in action_list.get_children():
 		var action_label: Label = button.find_child(ACTION_LABEL)
 		var input_label: Label = button.find_child(INPUT_LABEL)
-		var action_name: StringName = input_actions.find_key(action_label.text)
+		var action_name: StringName = INPUT_ACTIONS.find_key(action_label.text)
 		var events: Array[InputEvent] = InputMap.action_get_events(action_name)
 		input_label.text = events[0].as_text().trim_suffix(" (Physical)")
+
+
+func _load_key_binds_preset(preset_index: int) -> void:
+	# Loads from default project settings
+	if preset_index == 1:
+		_create_action_list()
+		return
+	
+	var preset: Dictionary[StringName, int] = {}
+	match preset_index:
+		2: preset = KEY_BIND_PRESET_2
+		3: preset = KEY_BIND_PRESET_3
+		_:
+			printerr("No key preset index found")
+			return
+	
+	for action in INPUT_ACTIONS:
+		# Loads preset keys or mouse buttons into a new InputEvent
+		var new_event: InputEvent
+		
+		# If preset key is an unprintable ASCII decimal number (<32) aka invalid key binds,
+		# assume it is from mouse button:
+		if preset[action] < 32:
+			new_event = InputEventMouseButton.new()
+			new_event.button_index = preset[action]
+		else:
+			new_event = InputEventKey.new()
+			new_event.physical_keycode = preset[action]
+		
+		InputMap.action_erase_events(action)
+		InputMap.action_add_event(action, new_event)
+	
+	_update_current_input_map()
 
 
 func _on_input_button_pressed(button: Button, action: StringName) -> void:
@@ -90,11 +143,7 @@ func _on_input_button_pressed(button: Button, action: StringName) -> void:
 		is_remapping = true
 		action_to_map = action
 		remapping_button = button
-		button.find_child(INPUT_LABEL).text = "Press key to bind..."
-
-
-func _on_reset_button_pressed() -> void:
-	_create_action_list()
+		button.find_child(INPUT_LABEL).text = "Press key or mouse button to bind..."
 
 
 func _on_back_button_pressed() -> void:
@@ -104,3 +153,7 @@ func _on_back_button_pressed() -> void:
 func _on_visibility_changed() -> void:
 	if visible:
 		_update_current_input_map()
+
+
+func _on_preset_button_pressed(index: int) -> void:
+	_load_key_binds_preset(index)
