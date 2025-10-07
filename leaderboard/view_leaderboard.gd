@@ -11,13 +11,13 @@ signal leaderboard_loaded
 func _ready():
 	add_child(http)
 	url = EnvParser.parse("FIREBASE_URL") + EnvParser.parse("LEADERBOARD_PATH")
+	http.request_completed.connect(_on_request_completed, CONNECT_ONE_SHOT)
 
 	load_leaderboard()
 	SignalBus.sig_score_submitted.connect(load_leaderboard)
 
 func load_leaderboard():
 	http.request(url)
-	http.request_completed.connect(_on_request_completed, CONNECT_ONE_SHOT)
 
 func _on_request_completed(result, response_code, headers, body):
 	if response_code != 200:
