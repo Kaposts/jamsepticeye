@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b0bg77uyqmjdp"]
+[gd_scene load_steps=23 format=3 uid="uid://b0bg77uyqmjdp"]
 
 [ext_resource type="Script" uid="uid://cxvkq1q6pkda8" path="res://menus/pause_menu.gd" id="1_taale"]
 [ext_resource type="PackedScene" uid="uid://cuneiert8cmjs" path="res://menus/scroll.tscn" id="2_u8tnp"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://cft23qm7m2v2b" path="res://assets/ui/Restart_Button2.png" id="10_7apfi"]
 [ext_resource type="Texture2D" uid="uid://hr13wo427e1y" path="res://assets/ui/Menu_Buttons/Options3.png" id="10_wqpeb"]
 [ext_resource type="Texture2D" uid="uid://rjppdir64yhi" path="res://assets/ui/Menu_Buttons/Options2.png" id="11_tekra"]
+[ext_resource type="Script" uid="uid://chq86xw3eirpr" path="res://components/ui/sound_buttons/sound_button.gd" id="16_dxesn"]
+[ext_resource type="PackedScene" uid="uid://dg130eibwd8xj" path="res://menus/tutorial_summary.tscn" id="16_lfukh"]
 [ext_resource type="PackedScene" uid="uid://d4h3brjh8eoak" path="res://menus/options_menu.tscn" id="17_lfukh"]
 
 [sub_resource type="Animation" id="Animation_srb65"]
@@ -131,6 +133,26 @@ texture_pressed = ExtResource("7_6wqnn")
 texture_hover = ExtResource("8_1ymcx")
 script = ExtResource("6_0dmhi")
 metadata/_custom_type_script = "uid://rshby7i10tv0"
+
+[node name="TutorialSummaryButton" type="Button" parent="Root/PauseOptions"]
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 0
+offset_left = 404.0
+offset_top = 169.0
+offset_right = 564.0
+offset_bottom = 209.0
+text = "Tutorial Summary"
+script = ExtResource("16_dxesn")
+metadata/_custom_type_script = "uid://chq86xw3eirpr"
+
+[node name="TutorialSummary" parent="Root" instance=ExtResource("16_lfukh")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 
 [node name="Options" parent="Root" instance=ExtResource("17_lfukh")]
 visible = false

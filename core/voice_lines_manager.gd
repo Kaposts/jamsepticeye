@@ -65,9 +65,6 @@ func _on_player_spawned(level: int) -> void:
 	if level == 0 or level > 7:
 		return
 	
-	if audio.playing:
-		_background_narration_index -= 1
-	
 	if level < 7:
 		audio.stream = ability_unlock_lines[level]
 		_display_text(UNLOCK_SUBTITLE, level)

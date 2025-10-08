@@ -95,6 +95,7 @@ func _create_action_list() -> void:
 		
 		action_list.add_child(button)
 		button.pressed.connect(_on_input_button_pressed.bind(button, action))
+		SignalBus.sig_key_remapped.emit(action)
 
 
 func _update_action_list(button: Button, event: InputEvent) -> void:
@@ -139,6 +140,8 @@ func _load_key_binds_preset(preset_index: int) -> void:
 		
 		InputMap.action_erase_events(action)
 		InputMap.action_add_event(action, new_event)
+		
+		SignalBus.sig_key_remapped.emit(action)
 	
 	_update_current_input_map()
 
