@@ -34,7 +34,7 @@ func _on_request_completed(result, response_code, headers, body):
 		push_warning("Failed to load leaderboard: " + str(response_code))
 		return
 
-	for child in $Panel/ScrollContainer/VBoxContainer.get_children():
+	for child in entry_container.get_children():
 		child.queue_free()
 
 	var data = JSON.parse_string(body.get_string_from_utf8())
