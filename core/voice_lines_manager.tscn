@@ -72,7 +72,7 @@ autowrap_mode = 3
 visible = false
 custom_minimum_size = Vector2(612, 0)
 layout_mode = 2
-text = "Carp come in many shapes and sizes. This carp is... unique."
+text = "Carp come in many shapes and sizes. This carp is… unique."
 autowrap_mode = 3
 
 [node name="LabelUnlock2" type="Label" parent="DialogueLayer/MarginContainer/PanelContainer/TextContainer"]

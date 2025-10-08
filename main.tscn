@@ -2473,6 +2473,7 @@ offset_right = 3711.0
 offset_bottom = 313.0
 
 [node name="ForegroundParallax" type="Node2D" parent="."]
+visible = false
 z_index = 1
 
 [node name="FgParallax" type="Parallax2D" parent="ForegroundParallax"]
@@ -2604,7 +2605,7 @@ tile_set = ExtResource("32_htxhm")
 [node name="SignsLayer2" type="TileMapLayer" parent="."]
 material = SubResource("ShaderMaterial_htxhm")
 position = Vector2(4, -16)
-tile_map_data = PackedByteArray("AADv//D/AAAAAAIAAAABAO//AAAAAAIAAADZ/9f/AAAAAAIAAADj/+P/AAABAAIAAAD1/9n/AAAAAAIAAAAVAOH/AAAAAAMAAAA+APT/AAAAAAMAAAAxAO3/AAAAAAIAAAATAOj/AAAAAAIAAAAKAP3/AAAAAAMAAAD8/9D/AAAAAAMAAAA=")
+tile_map_data = PackedByteArray("AADv//D/AAAAAAIAAAABAO//AAAAAAIAAADZ/9f/AAAAAAIAAADj/+P/AAABAAIAAAD1/9n/AAAAAAIAAAAVAOH/AAAAAAMAAAA+APT/AAAAAAMAAAAxAO3/AAAAAAIAAAATAOj/AAAAAAIAAAAKAP3/AAAAAAMAAAD8/9D/AAAAAAMAAAAfAP//AAAAAAIAAAA=")
 tile_set = ExtResource("32_htxhm")
 
 [connection signal="time_updated" from="." to="PlayerUI" method="_on_node_2d_time_updated"]
