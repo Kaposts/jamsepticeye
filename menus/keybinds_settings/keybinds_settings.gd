@@ -56,7 +56,9 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if is_remapping:
-		if event is InputEventKey or (event is InputEventMouseButton and event.is_pressed()):
+		if event is InputEventKey\
+		or (event is InputEventMouseButton and event.is_pressed())\
+		or event is InputEventJoypadButton:
 			# Turns double click into single click
 			if event is InputEventMouseButton and event.double_click:
 				event.double_click = false
@@ -99,7 +101,13 @@ func _create_action_list() -> void:
 
 
 func _update_action_list(button: Button, event: InputEvent) -> void:
-	button.find_child(INPUT_LABEL).text = event.as_text().trim_suffix(" (Physical)")
+	var label: Label = button.find_child(INPUT_LABEL)
+	
+	if event is InputEventJoypadButton:
+		var words: PackedStringArray = event.as_text().split(" ", true, 3)
+		label.text = words[0] + " " + words[1] + " " + words[2]
+	else:
+		label.text = event.as_text().trim_suffix(" (Physical)")
 
 
 func _update_current_input_map() -> void:
@@ -151,7 +159,7 @@ func _on_input_button_pressed(button: Button, action: StringName) -> void:
 		is_remapping = true
 		action_to_map = action
 		remapping_button = button
-		button.find_child(INPUT_LABEL).text = "Press key or mouse button to bind..."
+		button.find_child(INPUT_LABEL).text = "Press any button or mouse to bind..."
 
 
 func _on_back_button_pressed() -> void:

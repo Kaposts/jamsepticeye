@@ -45,9 +45,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			options_menu.close()
 		elif leaderboard_window.visible:
 			leaderboard_window.hide()
-		#else:
-			#
-	
 
 
 func _on_play_button_pressed() -> void:
