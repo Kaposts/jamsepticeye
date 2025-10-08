@@ -1,24 +1,3 @@
-[remap]
-
-importer="wav"
-type="AudioStreamWAV"
-uid="uid://c0q48ic5j6k1p"
-path="res://.godot/imported/fish_flop_3.wav-2864887cc14c189fd713069c4be24284.sample"
-
-[deps]
-
-source_file="res://assets/sfx/fish/fish_flop_3.wav"
-dest_files=["res://.godot/imported/fish_flop_3.wav-2864887cc14c189fd713069c4be24284.sample"]
-
-[params]
-
-force/8_bit=false
-force/mono=false
-force/max_rate=false
-force/max_rate_hz=44100
-edit/trim=false
-edit/normalize=false
-edit/loop_mode=0
-edit/loop_begin=0
-edit/loop_end=-1
-compress/mode=2
+version https://git-lfs.github.com/spec/v1
+oid sha256:803fb9ed497903a6f407c22f5991129ec9f09906867e8dec44533fcbc760dfb8
+size 507
