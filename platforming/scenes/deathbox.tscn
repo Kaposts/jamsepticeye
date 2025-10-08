@@ -1,7 +1,68 @@
-[gd_scene load_steps=3 format=3 uid="uid://byp43elml65d5"]
+[gd_scene load_steps=10 format=3 uid="uid://byp43elml65d5"]
 
 [ext_resource type="Script" uid="uid://f8s22nkom4lc" path="res://platforming/deathbox.gd" id="1_gr72m"]
-[ext_resource type="Texture2D" uid="uid://kdpwgr2d2wrt" path="res://icon.svg" id="2_1dcug"]
+[ext_resource type="Material" uid="uid://pymfjlqrcfg4" path="res://components/deathbox_border_shader/deathbox_material.tres" id="2_1dcug"]
+[ext_resource type="Texture2D" uid="uid://b4pcf257t006y" path="res://assets/art/death_big_spritesheet.png" id="2_gr72m"]
+
+[sub_resource type="Animation" id="Animation_1dcug"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DeathIconSprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gr72m"]
+resource_name = "default"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DeathIconSprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(0, -3), Vector2(0, -6), Vector2(0, -3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1dcug"]
+_data = {
+&"RESET": SubResource("Animation_1dcug"),
+&"default": SubResource("Animation_gr72m")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gr72m"]
+atlas = ExtResource("2_gr72m")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dcug"]
+atlas = ExtResource("2_gr72m")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p4o5j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gr72m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dcug")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="deathbox" type="Area2D"]
 z_index = -1
@@ -9,9 +70,16 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_gr72m")
 
-[node name="Icon" type="Sprite2D" parent="."]
-visible = false
-modulate = Color(1, 0, 0, 0.79607844)
-texture = ExtResource("2_1dcug")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1dcug")
+}
+autoplay = "default"
+
+[node name="DeathIconSprite" type="AnimatedSprite2D" parent="."]
+material = ExtResource("2_1dcug")
+sprite_frames = SubResource("SpriteFrames_p4o5j")
+autoplay = "default"
+frame_progress = 0.5282437
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

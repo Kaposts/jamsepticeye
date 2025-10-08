@@ -1,23 +1,25 @@
-[gd_scene load_steps=23 format=3 uid="uid://cxrn7l2wlwqut"]
+[gd_scene load_steps=25 format=3 uid="uid://cxrn7l2wlwqut"]
 
 [ext_resource type="Script" uid="uid://dtallk0xtca5a" path="res://menus/main_menu.gd" id="1_1edw4"]
-[ext_resource type="Texture2D" uid="uid://cpo7mcmhr44gb" path="res://assets/art/UI/Post.png" id="1_rmbjf"]
+[ext_resource type="Texture2D" uid="uid://cpo7mcmhr44gb" path="res://assets/ui/Post.png" id="1_rmbjf"]
 [ext_resource type="PackedScene" uid="uid://bm3x501r3my1h" path="res://menus/web_quit_screen.tscn" id="2_ysfef"]
-[ext_resource type="Texture2D" uid="uid://blj4ev7loljiv" path="res://assets/art/UI/Menu_Buttons/Start1.png" id="3_3a5co"]
-[ext_resource type="Texture2D" uid="uid://cw8oov3pwp0w1" path="res://assets/art/UI/Menu_Buttons/Start3.png" id="4_ysyx0"]
-[ext_resource type="Texture2D" uid="uid://7q0jqmeul2b0" path="res://assets/art/UI/Menu_Buttons/Start2.png" id="5_q855l"]
-[ext_resource type="Texture2D" uid="uid://t5y3o0rn2dhp" path="res://assets/art/UI/Menu_Buttons/Options1.png" id="6_53v7h"]
+[ext_resource type="Texture2D" uid="uid://blj4ev7loljiv" path="res://assets/ui/Menu_Buttons/Start1.png" id="3_3a5co"]
+[ext_resource type="Texture2D" uid="uid://cw8oov3pwp0w1" path="res://assets/ui/Menu_Buttons/Start3.png" id="4_ysyx0"]
+[ext_resource type="Texture2D" uid="uid://7q0jqmeul2b0" path="res://assets/ui/Menu_Buttons/Start2.png" id="5_q855l"]
+[ext_resource type="Texture2D" uid="uid://t5y3o0rn2dhp" path="res://assets/ui/Menu_Buttons/Options1.png" id="6_53v7h"]
 [ext_resource type="PackedScene" uid="uid://d4h3brjh8eoak" path="res://menus/options_menu.tscn" id="6_xvotp"]
-[ext_resource type="Texture2D" uid="uid://hr13wo427e1y" path="res://assets/art/UI/Menu_Buttons/Options3.png" id="7_s36xt"]
-[ext_resource type="Texture2D" uid="uid://rjppdir64yhi" path="res://assets/art/UI/Menu_Buttons/Options2.png" id="8_43bnc"]
-[ext_resource type="Texture2D" uid="uid://cbgcp7w42uay8" path="res://assets/art/UI/Menu_Buttons/Credits1.png" id="9_w5jp5"]
-[ext_resource type="Texture2D" uid="uid://bhghh3kokhbiy" path="res://assets/art/UI/Menu_Buttons/Credits3.png" id="10_pj5sj"]
-[ext_resource type="Texture2D" uid="uid://dwysc1sr04vyf" path="res://assets/art/UI/Menu_Buttons/Credits2.png" id="11_ab5mb"]
-[ext_resource type="Texture2D" uid="uid://btiwtiljsnxq2" path="res://assets/art/UI/Menu_Buttons/Quit_Button1.png" id="14_8xuee"]
-[ext_resource type="Texture2D" uid="uid://diypjletpqjj" path="res://assets/art/UI/Menu_Buttons/Quit_Button3.png" id="15_u6qb4"]
-[ext_resource type="Texture2D" uid="uid://do1sdt11xa2md" path="res://assets/art/UI/logo_new.png" id="16_kqtkm"]
-[ext_resource type="Texture2D" uid="uid://cywy3ynqrr0o4" path="res://assets/art/UI/Menu_Buttons/Quit_Button2.png" id="16_tvv58"]
+[ext_resource type="Script" uid="uid://rshby7i10tv0" path="res://components/ui/sound_buttons/sound_texture_button.gd" id="7_047xs"]
+[ext_resource type="Texture2D" uid="uid://hr13wo427e1y" path="res://assets/ui/Menu_Buttons/Options3.png" id="7_s36xt"]
+[ext_resource type="Texture2D" uid="uid://rjppdir64yhi" path="res://assets/ui/Menu_Buttons/Options2.png" id="8_43bnc"]
+[ext_resource type="Texture2D" uid="uid://cbgcp7w42uay8" path="res://assets/ui/Menu_Buttons/Credits1.png" id="9_w5jp5"]
+[ext_resource type="Texture2D" uid="uid://bhghh3kokhbiy" path="res://assets/ui/Menu_Buttons/Credits3.png" id="10_pj5sj"]
+[ext_resource type="Texture2D" uid="uid://dwysc1sr04vyf" path="res://assets/ui/Menu_Buttons/Credits2.png" id="11_ab5mb"]
+[ext_resource type="Texture2D" uid="uid://btiwtiljsnxq2" path="res://assets/ui/Menu_Buttons/Quit_Button1.png" id="14_8xuee"]
+[ext_resource type="Texture2D" uid="uid://diypjletpqjj" path="res://assets/ui/Menu_Buttons/Quit_Button3.png" id="15_u6qb4"]
+[ext_resource type="Texture2D" uid="uid://do1sdt11xa2md" path="res://assets/ui/logo_new.png" id="16_kqtkm"]
+[ext_resource type="Texture2D" uid="uid://cywy3ynqrr0o4" path="res://assets/ui/Menu_Buttons/Quit_Button2.png" id="16_tvv58"]
 [ext_resource type="PackedScene" uid="uid://rowd5l4byabr" path="res://menus/credits.tscn" id="17_ysyx0"]
+[ext_resource type="Script" uid="uid://chq86xw3eirpr" path="res://components/ui/sound_buttons/sound_button.gd" id="18_hplot"]
 [ext_resource type="PackedScene" uid="uid://dpxx5cdx4sxyg" path="res://leaderboard/leader_board.tscn" id="19_kqtkm"]
 
 [sub_resource type="Animation" id="Animation_kqtkm"]
@@ -100,6 +102,7 @@ offset_bottom = 2.0
 grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("1_rmbjf")
+expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ControlRoot/Post"]
 layout_mode = 1
@@ -126,6 +129,8 @@ layout_mode = 2
 texture_normal = ExtResource("3_3a5co")
 texture_pressed = ExtResource("4_ysyx0")
 texture_hover = ExtResource("5_q855l")
+script = ExtResource("7_047xs")
+metadata/_custom_type_script = "uid://rshby7i10tv0"
 
 [node name="OptionsButton" type="TextureButton" parent="ControlRoot/Post/VBoxContainer"]
 unique_name_in_owner = true
@@ -133,6 +138,8 @@ layout_mode = 2
 texture_normal = ExtResource("6_53v7h")
 texture_pressed = ExtResource("7_s36xt")
 texture_hover = ExtResource("8_43bnc")
+script = ExtResource("7_047xs")
+metadata/_custom_type_script = "uid://rshby7i10tv0"
 
 [node name="CreditsButton" type="TextureButton" parent="ControlRoot/Post/VBoxContainer"]
 unique_name_in_owner = true
@@ -140,6 +147,8 @@ layout_mode = 2
 texture_normal = ExtResource("9_w5jp5")
 texture_pressed = ExtResource("10_pj5sj")
 texture_hover = ExtResource("11_ab5mb")
+script = ExtResource("7_047xs")
+metadata/_custom_type_script = "uid://rshby7i10tv0"
 
 [node name="Post2" type="TextureRect" parent="ControlRoot"]
 layout_mode = 1
@@ -179,6 +188,8 @@ layout_mode = 2
 texture_normal = ExtResource("14_8xuee")
 texture_pressed = ExtResource("15_u6qb4")
 texture_hover = ExtResource("16_tvv58")
+script = ExtResource("7_047xs")
+metadata/_custom_type_script = "uid://rshby7i10tv0"
 
 [node name="LogoTexture" type="TextureRect" parent="ControlRoot"]
 layout_mode = 1
@@ -191,26 +202,36 @@ offset_bottom = 149.0
 grow_horizontal = 2
 texture = ExtResource("16_kqtkm")
 
-[node name="LeaderboardButton" type="Button" parent="ControlRoot"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 7.0
-offset_right = 113.0
-offset_bottom = 38.0
+[node name="MarginContainer" type="MarginContainer" parent="ControlRoot"]
+layout_mode = 1
+offset_right = 101.0
+offset_bottom = 34.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+
+[node name="LeaderboardButton" type="Button" parent="ControlRoot/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 34)
+layout_mode = 2
 text = "Leaderboard"
+script = ExtResource("18_hplot")
+metadata/_custom_type_script = "uid://chq86xw3eirpr"
 
 [node name="LeaderboardWindow" parent="ControlRoot" instance=ExtResource("19_kqtkm")]
+unique_name_in_owner = true
 visible = false
-layout_mode = 0
-offset_left = 294.0
-offset_top = 194.0
-offset_right = 294.0
-offset_bottom = 194.0
+layout_mode = 1
+offset_left = 154.0
+offset_top = 93.0
+offset_right = 462.0
+offset_bottom = 279.0
 
 [node name="Options" parent="ControlRoot" instance=ExtResource("6_xvotp")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 1
 
 [node name="Credits" parent="ControlRoot" instance=ExtResource("17_ysyx0")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 1

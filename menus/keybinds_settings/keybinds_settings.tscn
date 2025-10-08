@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://ccr1wrc6qi70g"]
+[gd_scene load_steps=6 format=3 uid="uid://ccr1wrc6qi70g"]
 
 [ext_resource type="Script" uid="uid://iggsotruamx2" path="res://menus/keybinds_settings/keybinds_settings.gd" id="1_61xkn"]
 [ext_resource type="PackedScene" uid="uid://dxsi4uxrr2jjs" path="res://menus/keybinds_settings/input_button.tscn" id="1_mewpe"]
+[ext_resource type="Script" uid="uid://chq86xw3eirpr" path="res://components/ui/sound_buttons/sound_button.gd" id="3_babvj"]
+[ext_resource type="PackedScene" uid="uid://yey23xnr0h7w" path="res://components/random_audio_player/random_audio_player_component.tscn" id="3_fa428"]
+[ext_resource type="AudioStream" uid="uid://c4ihke1fq63s0" path="res://assets/sfx/ui/key_rebind_accept.wav" id="4_3k2h1"]
 
 [node name="KeybindsSettings" type="Control"]
 layout_mode = 3
@@ -13,20 +16,8 @@ grow_vertical = 2
 script = ExtResource("1_61xkn")
 input_button = ExtResource("1_mewpe")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -240.0
-offset_top = -170.0
-offset_right = 240.0
-offset_bottom = 170.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.27401456, 0.34140164, 0.10115052, 0.92156863)
+[node name="KeyRebindSFXPlayer" parent="." instance=ExtResource("3_fa428")]
+streams = Array[AudioStream]([ExtResource("4_3k2h1")])
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -72,32 +63,40 @@ theme_override_constants/separation = 16
 
 [node name="PresetButton1" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 24)
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 text = "Preset 1"
+script = ExtResource("3_babvj")
+metadata/_custom_type_script = "uid://chq86xw3eirpr"
 
 [node name="PresetButton2" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 24)
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 text = "Preset 2"
+script = ExtResource("3_babvj")
+metadata/_custom_type_script = "uid://chq86xw3eirpr"
 
 [node name="PresetButton3" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 24)
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 text = "Preset 3"
+script = ExtResource("3_babvj")
+metadata/_custom_type_script = "uid://chq86xw3eirpr"
 
 [node name="BackButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 24)
+custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 size_flags_horizontal = 8
 focus_mode = 0
 text = "Back"
+script = ExtResource("3_babvj")
+metadata/_custom_type_script = "uid://chq86xw3eirpr"

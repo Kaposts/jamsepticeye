@@ -8,16 +8,16 @@ extends CanvasLayer
 @onready var options_button: TextureButton = %OptionsButton
 @onready var credits_button: TextureButton = %CreditsButton
 @onready var quit_button: TextureButton = %QuitButton
-@onready var leaderboard_button: Button = $ControlRoot/LeaderboardButton
+@onready var leaderboard_button: Button = %LeaderboardButton
 
-@onready var options_menu = $ControlRoot/Options
-@onready var credits_menu = $ControlRoot/Credits
-@onready var leaderboard_window: Control = $ControlRoot/LeaderboardWindow
+@onready var options_menu = %Options
+@onready var credits_menu = %Credits
+@onready var leaderboard_window: Control = %LeaderboardWindow
 
-@onready var options_scroll_anim: AnimationPlayer = $ControlRoot/Options/Scroll/AnimationPlayer
-@onready var options_anim: AnimationPlayer = $ControlRoot/Options/AnimationPlayer
-@onready var credits_anim: AnimationPlayer =$ControlRoot/Credits/AnimationPlayer
-@onready var credits_scroll_anim: AnimationPlayer = $ControlRoot/Credits/Scroll/AnimationPlayer
+@onready var options_scroll_anim: AnimationPlayer = options_menu.get_node("Scroll/AnimationPlayer")
+@onready var options_anim: AnimationPlayer = options_menu.get_node("AnimationPlayer")
+@onready var credits_anim: AnimationPlayer = credits_menu.get_node("AnimationPlayer")
+@onready var credits_scroll_anim: AnimationPlayer = credits_menu.get_node("Scroll/AnimationPlayer")
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 

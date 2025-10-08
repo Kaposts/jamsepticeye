@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://8rlxlxk2r7vn" path="res://assets/art/player_character/tongue_tiling.png" id="2_yvots"]
 [ext_resource type="Texture2D" uid="uid://so1x6qjuyr0x" path="res://assets/art/player_character/tongue_tip.png" id="3_e4r4a"]
 [ext_resource type="PackedScene" uid="uid://cs2msqcudcidd" path="res://components/random_audio_player/random_audio_player_2d_component.tscn" id="4_6fyml"]
-[ext_resource type="AudioStream" uid="uid://s2ubnpbk4q8a" path="res://assets/sfx/tongue_out_1.wav" id="5_3g82c"]
-[ext_resource type="AudioStream" uid="uid://4sweh5nxjwel" path="res://assets/sfx/tongue_out_2.wav" id="6_v7wnq"]
-[ext_resource type="AudioStream" uid="uid://bdvgvxvy83j3r" path="res://assets/sfx/tongue_out_3.wav" id="7_rklim"]
+[ext_resource type="AudioStream" uid="uid://s2ubnpbk4q8a" path="res://assets/sfx/fish/tongue_out_1.wav" id="5_3g82c"]
+[ext_resource type="AudioStream" uid="uid://4sweh5nxjwel" path="res://assets/sfx/fish/tongue_out_2.wav" id="6_v7wnq"]
+[ext_resource type="AudioStream" uid="uid://bdvgvxvy83j3r" path="res://assets/sfx/fish/tongue_out_3.wav" id="7_rklim"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5jjua"]
 radius = 100.0

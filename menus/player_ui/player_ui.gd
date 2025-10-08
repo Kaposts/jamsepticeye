@@ -1,10 +1,12 @@
 extends CanvasLayer
 
+@onready var time_panel_container: PanelContainer = %TimePanelContainer
 @onready var game_timer: Label = %GameTimer
+@onready var level_finished_window: Control = %LevelFinishedWindow
 
 func _ready():
-	%LevelFinishedWindow.hide()
-	game_timer.hide()
+	level_finished_window.hide()
+	time_panel_container.hide()
 	SignalBus.sig_game_started.connect(_on_game_started)
 
 
@@ -15,4 +17,4 @@ func _on_node_2d_time_updated(time: float) -> void:
 
 
 func _on_game_started() -> void:
-	game_timer.show()
+	time_panel_container.show()

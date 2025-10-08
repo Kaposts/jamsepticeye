@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://dbe25r5mgvr2l"]
+[gd_scene load_steps=15 format=3 uid="uid://dbe25r5mgvr2l"]
 
 [ext_resource type="Script" uid="uid://v0kcqljto8n0" path="res://menus/player_ui/player_ui.gd" id="1_0aiwo"]
 [ext_resource type="Shader" uid="uid://cs0nu8w547cet" path="res://shaders/fog.gdshader" id="1_x0k1s"]
 [ext_resource type="Shader" uid="uid://bl5uc6al1uuod" path="res://shaders/vignette.gdshader" id="2_0aiwo"]
 [ext_resource type="Script" uid="uid://lpje8g418wbk" path="res://menus/player_ui/game_timer.gd" id="3_im4b0"]
 [ext_resource type="PackedScene" uid="uid://cbv2e8v2yjmtk" path="res://menus/level_finished_window.tscn" id="4_0moda"]
+[ext_resource type="PackedScene" uid="uid://rvcpqoy6yteb" path="res://menus/tutorial_panel_container.tscn" id="5_u1wr6"]
 
 [sub_resource type="Gradient" id="Gradient_ei405"]
 offsets = PackedFloat32Array(0, 0.15714286)
@@ -77,9 +78,24 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_top = 10
+theme_override_constants/margin_top = 4
 
-[node name="GameTimer" type="Label" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TimePanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0.9019608)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TimePanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="GameTimer" type="Label" parent="MarginContainer/VBoxContainer/TimePanelContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
@@ -87,6 +103,9 @@ size_flags_vertical = 0
 text = "00:00.00"
 horizontal_alignment = 1
 script = ExtResource("3_im4b0")
+
+[node name="TutorialPanelContainer" parent="MarginContainer/VBoxContainer" instance=ExtResource("5_u1wr6")]
+layout_mode = 2
 
 [node name="LevelFinishedWindow" parent="." instance=ExtResource("4_0moda")]
 unique_name_in_owner = true

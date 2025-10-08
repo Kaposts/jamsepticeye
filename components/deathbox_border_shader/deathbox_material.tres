@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://pymfjlqrcfg4"]
+
+[ext_resource type="Shader" uid="uid://dxrbiu4r4upuy" path="res://components/deathbox_border_shader/deathbox_border_shader.gdshader" id="1_pbppo"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_pbppo")
+shader_parameter/died = false
+shader_parameter/line_color = Vector4(1, 0, 0, 1)
+shader_parameter/width = 2.0

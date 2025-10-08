@@ -18,6 +18,7 @@ const KEY_BIND_PRESET_3: Dictionary[StringName, int] = {
 	"finger" : MOUSE_BUTTON_RIGHT,
 }
 
+
 var INPUT_ACTIONS: Dictionary[StringName, StringName] = {
 	"move_left" : "Move Left",
 	"move_right" : "Move Right",
@@ -35,6 +36,7 @@ const INPUT_LABEL: String = "LabelInput"
 @onready var preset_button_2: Button = %PresetButton2
 @onready var preset_button_3: Button = %PresetButton3
 @onready var back_button: Button = %BackButton
+@onready var key_rebind_sfx_player: RandomAudioPlayer = $KeyRebindSFXPlayer
 
 
 var is_remapping: bool = false
@@ -55,7 +57,7 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if is_remapping:
 		if event is InputEventKey or (event is InputEventMouseButton and event.is_pressed()):
-			# Turen double click into single click
+			# Turns double click into single click
 			if event is InputEventMouseButton and event.double_click:
 				event.double_click = false
 			
@@ -63,10 +65,13 @@ func _input(event: InputEvent) -> void:
 			InputMap.action_add_event(action_to_map, event)
 			_update_action_list(remapping_button, event)
 			
+			SignalBus.sig_key_remapped.emit(action_to_map)
+			
 			is_remapping = false
 			action_to_map = ""
 			remapping_button = null
 			
+			key_rebind_sfx_player.play_random()
 			accept_event()
 
 
@@ -90,6 +95,7 @@ func _create_action_list() -> void:
 		
 		action_list.add_child(button)
 		button.pressed.connect(_on_input_button_pressed.bind(button, action))
+		SignalBus.sig_key_remapped.emit(action)
 
 
 func _update_action_list(button: Button, event: InputEvent) -> void:
@@ -134,6 +140,8 @@ func _load_key_binds_preset(preset_index: int) -> void:
 		
 		InputMap.action_erase_events(action)
 		InputMap.action_add_event(action, new_event)
+		
+		SignalBus.sig_key_remapped.emit(action)
 	
 	_update_current_input_map()
 
