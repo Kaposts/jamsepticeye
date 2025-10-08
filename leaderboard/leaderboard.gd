@@ -16,7 +16,7 @@ func add_score(name: String, time: float) -> void:
 		"timestamp": Time.get_unix_time_from_system()
 	}
 	var json = JSON.stringify(data)
-    
+	
 	http.request(url, [], HTTPClient.METHOD_POST, json)
 
 func get_leaderboard(callback: Callable) -> void:

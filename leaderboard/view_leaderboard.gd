@@ -33,6 +33,7 @@ func load_leaderboard():
 
 func _on_request_completed(result, response_code, headers, body):
 	if response_code != 200:
+		print(str(result))
 		push_warning("Failed to load leaderboard: " + str(response_code))
 		return
 
