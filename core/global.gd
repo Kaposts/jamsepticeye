@@ -15,7 +15,7 @@ const ASSET_PATHS: Dictionary[StringName, StringName] = {
 
 const TUTORIAL_TEXTS: Array[String] = [
 	"Press [%s] to flop and flip",
-	"Press [%s] to move left and [%s] to move right",
+	"Use [%s] to move left and [%s] to move right",
 	"Press [%s] to jump",
 	"Move towards stone blocks to push them",
 	"Automatically hangs on walls. Press [%s] to wall jump",
@@ -79,6 +79,8 @@ func format_readable_input(event: InputEvent) -> String:
 		var readable: String = words[0].split("", true, 1)[0] + "-" + words[1] + " "\
 								+ ("Left" if direction < 0 else "Right")
 		return readable
+	elif event is InputEventMouseButton:
+		return event.as_text()
 	
 	return ""
 

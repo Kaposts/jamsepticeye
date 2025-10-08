@@ -1,21 +1,81 @@
 extends Control
 ## Keybinds Settings Menu
 
-
-const KEY_BIND_PRESET_2: Dictionary[StringName, int] = {
-	"move_left" : KEY_LEFT,
-	"move_right" : KEY_RIGHT,
-	"jump" : KEY_SPACE,
-	"grapple" : KEY_F,
-	"finger" : KEY_D,
+enum KeybindProperties{
+	TYPE,
+	NAME,
+	AXIS_VALUE,
 }
 
-const KEY_BIND_PRESET_3: Dictionary[StringName, int] = {
-	"move_left" : KEY_A,
-	"move_right" : KEY_D,
-	"jump" : KEY_SPACE,
-	"grapple" : MOUSE_BUTTON_LEFT,
-	"finger" : MOUSE_BUTTON_RIGHT,
+const KEY_BIND_PRESET_2: Dictionary[StringName, Dictionary] = {
+	"move_left" : {
+		KeybindProperties.TYPE : "Keyboard",
+		KeybindProperties.NAME : KEY_LEFT,
+		},
+	"move_right" : {
+		KeybindProperties.TYPE : "Keyboard",
+		KeybindProperties.NAME : KEY_RIGHT,
+		},
+	"jump" : {
+		KeybindProperties.TYPE : "Keyboard",
+		KeybindProperties.NAME : KEY_SPACE,
+		},
+	"grapple" : {
+		KeybindProperties.TYPE : "Keyboard",
+		KeybindProperties.NAME : KEY_F,
+		},
+	"finger" : {
+		KeybindProperties.TYPE : "Keyboard",
+		KeybindProperties.NAME : KEY_D,
+		},
+}
+
+const KEY_BIND_PRESET_3: Dictionary[StringName, Dictionary] = {
+	"move_left" : {
+		KeybindProperties.TYPE : "Keyboard",
+		KeybindProperties.NAME : KEY_A,
+		},
+	"move_right" : {
+		KeybindProperties.TYPE : "Keyboard",
+		KeybindProperties.NAME : KEY_D,
+		},
+	"jump" : {
+		KeybindProperties.TYPE : "Keyboard",
+		KeybindProperties.NAME : KEY_SPACE,
+		},
+	"grapple" : {
+		KeybindProperties.TYPE : "Mouse",
+		KeybindProperties.NAME : MOUSE_BUTTON_LEFT,
+		},
+	"finger" : {
+		KeybindProperties.TYPE : "Mouse",
+		KeybindProperties.NAME : MOUSE_BUTTON_RIGHT,
+		},
+}
+
+const KEY_BIND_PRESET_4: Dictionary[StringName, Dictionary] = {
+	"move_left" : {
+		KeybindProperties.TYPE : "JoypadAxis",
+		KeybindProperties.NAME : JOY_AXIS_LEFT_X,
+		KeybindProperties.AXIS_VALUE : -0.2,
+		},
+	"move_right" : {
+		KeybindProperties.TYPE : "JoypadAxis",
+		KeybindProperties.NAME : JOY_AXIS_LEFT_X,
+		KeybindProperties.AXIS_VALUE : 0.2,
+		},
+	"jump" : {
+		KeybindProperties.TYPE : "JoypadButton",
+		KeybindProperties.NAME : JOY_BUTTON_A,
+		},
+	"grapple" : {
+		KeybindProperties.TYPE : "JoypadButton",
+		KeybindProperties.NAME : JOY_BUTTON_X,
+		},
+	"finger" : {
+		KeybindProperties.TYPE : "JoypadButton",
+		KeybindProperties.NAME : JOY_BUTTON_B,
+		},
 }
 
 
@@ -35,6 +95,7 @@ const INPUT_LABEL: String = "LabelInput"
 @onready var preset_button_1: Button = %PresetButton1
 @onready var preset_button_2: Button = %PresetButton2
 @onready var preset_button_3: Button = %PresetButton3
+@onready var preset_button_controller: SoundButton = %PresetButtonController
 @onready var back_button: Button = %BackButton
 @onready var key_rebind_sfx_player: RandomAudioPlayer = $KeyRebindSFXPlayer
 
@@ -50,6 +111,7 @@ func _ready() -> void:
 	preset_button_1.pressed.connect(_on_preset_button_pressed.bind(1))
 	preset_button_2.pressed.connect(_on_preset_button_pressed.bind(2))
 	preset_button_3.pressed.connect(_on_preset_button_pressed.bind(3))
+	preset_button_controller.pressed.connect(_on_preset_button_pressed.bind(4))
 	back_button.pressed.connect(_on_back_button_pressed)
 	visibility_changed.connect(_on_visibility_changed)
 
@@ -124,10 +186,11 @@ func _load_key_binds_preset(preset_index: int) -> void:
 		_create_action_list()
 		return
 	
-	var preset: Dictionary[StringName, int] = {}
+	var preset: Dictionary[StringName, Dictionary] = {}
 	match preset_index:
 		2: preset = KEY_BIND_PRESET_2
 		3: preset = KEY_BIND_PRESET_3
+		4: preset = KEY_BIND_PRESET_4
 		_:
 			printerr("No key preset index found")
 			return
@@ -136,14 +199,22 @@ func _load_key_binds_preset(preset_index: int) -> void:
 		# Loads preset keys or mouse buttons into a new InputEvent
 		var new_event: InputEvent
 		
-		# If preset key is an unprintable ASCII decimal number (<32) aka invalid key binds,
-		# assume it is from mouse button:
-		if preset[action] < 32:
+		if preset[action][KeybindProperties.TYPE] == "Mouse":
 			new_event = InputEventMouseButton.new()
-			new_event.button_index = preset[action]
-		else:
+			new_event.button_index = preset[action][KeybindProperties.NAME]
+		elif preset[action][KeybindProperties.TYPE] == "Keyboard":
 			new_event = InputEventKey.new()
-			new_event.physical_keycode = preset[action]
+			new_event.physical_keycode = preset[action][KeybindProperties.NAME]
+		elif preset[action][KeybindProperties.TYPE] == "JoypadAxis":
+			new_event = InputEventJoypadMotion.new()
+			new_event.axis = preset[action][KeybindProperties.NAME]
+			new_event.axis_value = preset[action][KeybindProperties.AXIS_VALUE]
+		elif preset[action][KeybindProperties.TYPE] == "JoypadButton":
+			new_event = InputEventJoypadButton.new()
+			new_event.button_index = preset[action][KeybindProperties.NAME]
+		else:
+			printerr("Trying to map an invalid input type in preset")
+			return
 		
 		InputMap.action_erase_events(action)
 		InputMap.action_add_event(action, new_event)

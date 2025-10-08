@@ -91,6 +91,16 @@ text = "Preset 3"
 script = ExtResource("3_babvj")
 metadata/_custom_type_script = "uid://chq86xw3eirpr"
 
+[node name="PresetButtonController" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "Controller"
+script = ExtResource("3_babvj")
+metadata/_custom_type_script = "uid://chq86xw3eirpr"
+
 [node name="BackButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 30)
