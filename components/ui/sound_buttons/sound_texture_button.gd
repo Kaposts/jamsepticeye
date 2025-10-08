@@ -22,7 +22,8 @@ func _ready() -> void:
 
 
 func _on_mouse_entered() -> void:
-	hover_sfx_player.play_random()
+	if not disabled:
+		hover_sfx_player.play_random()
 
 
 func _on_pressed() -> void:

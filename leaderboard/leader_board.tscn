@@ -1,53 +1,79 @@
 [gd_scene load_steps=7 format=3 uid="uid://dpxx5cdx4sxyg"]
 
 [ext_resource type="Script" uid="uid://oihxxo8l6l26" path="res://leaderboard/view_leaderboard.gd" id="1_uta7o"]
-[ext_resource type="PackedScene" uid="uid://ddlh0t6on186c" path="res://leaderboard/entry.tscn" id="2_leds7"]
+[ext_resource type="PackedScene" uid="uid://ddlh0t6on186c" path="res://leaderboard/score_entry.tscn" id="2_leds7"]
 [ext_resource type="Texture2D" uid="uid://dcfr8i46b8sls" path="res://assets/ui/close_button_normal_small.png" id="3_pbki5"]
 [ext_resource type="Texture2D" uid="uid://clw2fu0mi4b4v" path="res://assets/ui/close_button_pressed_small.png" id="4_gq8vs"]
 [ext_resource type="Texture2D" uid="uid://dgsw5waeexjw2" path="res://assets/ui/close_button_hover_small.png" id="5_e63dl"]
 [ext_resource type="Script" uid="uid://rshby7i10tv0" path="res://components/ui/sound_buttons/sound_texture_button.gd" id="6_n6cmo"]
 
-[node name="LeaderBoard" type="Control"]
-custom_minimum_size = Vector2(308, 186)
-layout_mode = 3
-anchors_preset = 0
+[node name="PanelContainer" type="PanelContainer"]
+z_index = 1
+custom_minimum_size = Vector2(400, 186)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -93.0
+offset_right = 200.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_uta7o")
 entry_scene = ExtResource("2_leds7")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(308, 186)
-layout_mode = 1
-offset_right = 308.0
-offset_bottom = 186.0
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 16
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 text = "Leaderboard"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="EntryContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 12
+
+[node name="EntryContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 6
 
-[node name="CloseButton" type="TextureButton" parent="PanelContainer/MarginContainer"]
+[node name="ScoreEntry" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/EntryContainer" instance=ExtResource("2_leds7")]
+layout_mode = 2
+
+[node name="ScoreEntry2" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/EntryContainer" instance=ExtResource("2_leds7")]
+layout_mode = 2
+
+[node name="ScoreEntry3" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/EntryContainer" instance=ExtResource("2_leds7")]
+layout_mode = 2
+
+[node name="ScoreEntry4" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/EntryContainer" instance=ExtResource("2_leds7")]
+layout_mode = 2
+
+[node name="CloseButton" type="TextureButton" parent="MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8

@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://b0bg77uyqmjdp"]
+[gd_scene load_steps=24 format=3 uid="uid://b0bg77uyqmjdp"]
 
 [ext_resource type="Script" uid="uid://cxvkq1q6pkda8" path="res://menus/pause_menu.gd" id="1_taale"]
+[ext_resource type="PackedScene" uid="uid://bm3x501r3my1h" path="res://menus/web_quit_screen.tscn" id="2_7apfi"]
 [ext_resource type="PackedScene" uid="uid://cuneiert8cmjs" path="res://menus/scroll.tscn" id="2_u8tnp"]
 [ext_resource type="Texture2D" uid="uid://c1pcsoyb2dm88" path="res://assets/ui/CloseButton_Normal.png" id="5_524vl"]
 [ext_resource type="Script" uid="uid://rshby7i10tv0" path="res://components/ui/sound_buttons/sound_texture_button.gd" id="6_0dmhi"]
@@ -71,6 +72,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_taale")
+web_quit_screen = ExtResource("2_7apfi")
 
 [node name="Scroll" parent="Root" instance=ExtResource("2_u8tnp")]
 layout_mode = 1

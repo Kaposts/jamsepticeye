@@ -1,13 +1,15 @@
+class_name ScoreEntry
 extends HBoxContainer
+## Entry Scene to show score in leaderboard
 
-@onready var name_label = $name
-@onready var score_label = $score
+@onready var name_label = %name
+@onready var score_label = %score
 
 var entry_name: String
 var score: float
 
 func _ready():
-	name_label.text = " "+entry_name
+	name_label.text = entry_name
 
 	var minutes = int(score / 60)
 	var seconds = fmod(score, 60.0)

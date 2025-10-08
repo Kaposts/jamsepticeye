@@ -219,12 +219,7 @@ metadata/_custom_type_script = "uid://chq86xw3eirpr"
 
 [node name="LeaderboardWindow" parent="ControlRoot" instance=ExtResource("19_kqtkm")]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
-offset_left = 154.0
-offset_top = 93.0
-offset_right = 462.0
-offset_bottom = 279.0
 
 [node name="Options" parent="ControlRoot" instance=ExtResource("6_xvotp")]
 unique_name_in_owner = true
