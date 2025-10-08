@@ -43,6 +43,7 @@ func _ready() -> void:
 	
 	SignalBus.sig_game_restarted.connect(_on_game_restarted)
 	SignalBus.sig_game_started.connect(_on_game_started)
+	SignalBus.sig_pause_menu_requested.connect(_on_pause_menu_requested)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -135,3 +136,8 @@ func _on_game_started() -> void:
 
 func _on_tutorial_summary_pressed() -> void:
 	tutorial_summary.visible = !tutorial_summary.visible
+
+
+func _on_pause_menu_requested() -> void:
+	if not visible:
+		open()

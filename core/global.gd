@@ -14,7 +14,7 @@ const ASSET_PATHS: Dictionary[StringName, StringName] = {
 
 
 const TUTORIAL_TEXTS: Array[String] = [
-	"Press [%s] to flop and flip",
+	"Press [%s] to flop and flip\n[ESC] and [Joypad MENU] to pause",
 	"Use [%s] to move left and [%s] to move right",
 	"Press [%s] to jump",
 	"Move towards stone blocks to push them",

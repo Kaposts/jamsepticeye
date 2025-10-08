@@ -11,5 +11,6 @@ signal sig_game_paused
 signal sig_game_unpaused
 signal sig_game_started
 signal sig_game_restarted
+signal sig_pause_menu_requested
 
 signal sig_key_remapped(action: StringName)
