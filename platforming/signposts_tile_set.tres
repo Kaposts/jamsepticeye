@@ -1,0 +1,27 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://d4jgl3gdvgpwh"]
+
+[ext_resource type="Texture2D" uid="uid://c5yfslfk8f82f" path="res://assets/art/sign_atlas.png" id="1_2cgl6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kq1c5"]
+texture = ExtResource("1_2cgl6")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+1:1/0 = 0
+1:0/0 = 0
+1:3/0 = 0
+0:3/0 = 0
+2:2/0 = 0
+2:1/0 = 0
+2:0/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+3:2/0 = 0
+3:1/0 = 0
+3:0/0 = 0
+
+[resource]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_kq1c5")

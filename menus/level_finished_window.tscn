@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbv2e8v2yjmtk"]
+[gd_scene load_steps=6 format=3 uid="uid://cbv2e8v2yjmtk"]
 
 [ext_resource type="Script" uid="uid://bwf4fs1vxtyxa" path="res://menus/level_finished_window.gd" id="1_iibka"]
 [ext_resource type="PackedScene" uid="uid://dpxx5cdx4sxyg" path="res://leaderboard/leader_board.tscn" id="2_aua3a"]
 [ext_resource type="Script" uid="uid://chq86xw3eirpr" path="res://components/ui/sound_buttons/sound_button.gd" id="2_cgfwt"]
+[ext_resource type="PackedScene" uid="uid://yey23xnr0h7w" path="res://components/random_audio_player/random_audio_player_component.tscn" id="2_f535v"]
+[ext_resource type="AudioStream" uid="uid://b0h30qj3sekbv" path="res://assets/sfx/ui/victory.wav" id="3_fuu81"]
 
 [node name="LevelFinishedWindow" type="Control"]
 layout_mode = 3
@@ -12,6 +14,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iibka")
+
+[node name="VictorySFXPlayer" parent="." instance=ExtResource("2_f535v")]
+streams = Array[AudioStream]([ExtResource("3_fuu81")])
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

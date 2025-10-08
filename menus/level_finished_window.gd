@@ -18,7 +18,8 @@ func _on_sig_level_finished():
 	var minutes = int(time / 60)
 	var seconds = fmod(time, 60.0)
 	time_label.text = "Time: %02d:%05.2f" % [minutes, seconds]
-
+	
+	$VictorySFXPlayer.play_random()
 	show()
 
 func _on_submit_pressed() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://c4d7f3xrnao6t"]
+[gd_scene load_steps=57 format=4 uid="uid://c4d7f3xrnao6t"]
 
 [ext_resource type="Script" uid="uid://pl7q14263x68" path="res://core/level_manager.gd" id="1_qsp4k"]
 [ext_resource type="PackedScene" uid="uid://baftkdlepc3ff" path="res://core/player_manager.tscn" id="2_kq58d"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://iuwfevs5mml6" path="res://platforming/scenes/movable_block.tscn" id="28_e71vb"]
 [ext_resource type="Script" uid="uid://bulq5sk6pbgu6" path="res://platforming/finish.gd" id="29_rnkwl"]
 [ext_resource type="Shader" uid="uid://bpd32c0aufbby" path="res://shaders/external_border_shader/external_border.gdshader" id="31_seu75"]
+[ext_resource type="TileSet" uid="uid://d4jgl3gdvgpwh" path="res://platforming/signposts_tile_set.tres" id="32_htxhm"]
 
 [sub_resource type="Environment" id="Environment_7vxoj"]
 background_mode = 3
@@ -1066,30 +1067,6 @@ shader = ExtResource("31_seu75")
 shader_parameter/died = false
 shader_parameter/line_color = Vector4(1, 1, 1, 1)
 shader_parameter/width = 1.0000000475
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kq1c5"]
-texture = ExtResource("20_f6a44")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-1:1/0 = 0
-1:0/0 = 0
-1:3/0 = 0
-0:3/0 = 0
-2:2/0 = 0
-2:1/0 = 0
-2:0/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-3:2/0 = 0
-3:1/0 = 0
-3:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_ornx7"]
-tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_kq1c5")
 
 [node name="Main" type="Node2D" groups=["level"]]
 script = ExtResource("1_qsp4k")
@@ -2621,8 +2598,14 @@ shape = SubResource("RectangleShape2D_bjha6")
 
 [node name="signs" type="TileMapLayer" parent="."]
 material = SubResource("ShaderMaterial_htxhm")
-tile_map_data = PackedByteArray("AAD3//3/AAAAAAMAAADp/+3/AAAAAAMAAADr/+f/AAABAAIAAADd/+D/AAAAAAMAAAAKAMf/AAAAAAMAAAAHAMH/AAAAAAIAAAArALn/AAABAAIAAAASAO7/AAAAAAMAAAAhAPL/AAAAAAIAAADs/9H/AAAAAAIAAAD3/9v/AAAAAAIAAAAwAN7/AAAAAAMAAAAzAM//AAABAAIAAAD1/8H/AAAAAAIAAAAUAP//AAAAAAIAAAD8////AAABAAIAAAACAP//AAAAAAIAAAA=")
-tile_set = SubResource("TileSet_ornx7")
+tile_map_data = PackedByteArray("AAD3//3/AAAAAAMAAADp/+3/AAAAAAMAAADd/+D/AAAAAAMAAAAKAMf/AAAAAAMAAAAHAMH/AAAAAAIAAAArALn/AAABAAIAAAASAO7/AAAAAAMAAAAhAPL/AAAAAAIAAADs/9H/AAAAAAIAAAAwAN7/AAAAAAMAAAAzAM//AAABAAIAAAD1/8H/AAAAAAIAAAAUAP//AAAAAAIAAAD8////AAABAAIAAAACAP//AAAAAAIAAAAFAOn/AAAAAAIAAADm/+L/AAAAAAIAAADx/+H/AAAAAAMAAAAZANn/AAAAAAIAAAA=")
+tile_set = ExtResource("32_htxhm")
+
+[node name="SignsLayer2" type="TileMapLayer" parent="."]
+material = SubResource("ShaderMaterial_htxhm")
+position = Vector2(4, -16)
+tile_map_data = PackedByteArray("AADv//D/AAAAAAIAAAABAO//AAAAAAIAAADZ/9f/AAAAAAIAAADj/+P/AAABAAIAAAD1/9n/AAAAAAIAAAAVAOH/AAAAAAMAAAA+APT/AAAAAAMAAAAxAO3/AAAAAAIAAAATAOj/AAAAAAIAAAAKAP3/AAAAAAMAAAD8/9D/AAAAAAMAAAA=")
+tile_set = ExtResource("32_htxhm")
 
 [connection signal="time_updated" from="." to="PlayerUI" method="_on_node_2d_time_updated"]
 [connection signal="body_entered" from="finish" to="finish" method="_on_body_entered"]

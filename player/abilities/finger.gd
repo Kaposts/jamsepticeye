@@ -1,5 +1,7 @@
 extends Ability
 
+@onready var big_jump_sfx_component: RandomAudioPlayer2D = $BigJumpSFXComponent
+
 var timer: float
 var finger_buffer_counter: float = 0.0
 var wall_coyote_counter: float = 0.0
@@ -37,3 +39,5 @@ func finger(player, dir):
 	var outward = player.finger_force.x * dir
 	player.velocity.x = outward + (player.input_dir * 150) # input can help steer
 	player.velocity.y = player.finger_force.y
+	
+	big_jump_sfx_component.play_random()

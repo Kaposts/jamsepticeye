@@ -1568,7 +1568,7 @@ streams = Array[AudioStream]([ExtResource("12_e7oew"), ExtResource("13_c35mf"), 
 streams = Array[AudioStream]([ExtResource("15_x7c3f"), ExtResource("16_bjvpn"), ExtResource("17_s7qer")])
 
 [node name="WingFlapSFXPlayer" parent="SFX" instance=ExtResource("11_tqiix")]
-volume_db = 6.0
+volume_db = 4.0
 streams = Array[AudioStream]([ExtResource("18_65viv"), ExtResource("19_x7c3f"), ExtResource("20_bjvpn")])
 min_pitch = 0.8
 max_pitch = 1.2

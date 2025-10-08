@@ -13,6 +13,7 @@ signal leaderboard_loaded
 func _ready():
 	add_child(http)
 	url = EnvParser.parse("FIREBASE_URL") + EnvParser.parse("LEADERBOARD_PATH")
+	http.request_completed.connect(_on_request_completed, CONNECT_ONE_SHOT)
 
 	load_leaderboard()
 	SignalBus.sig_score_submitted.connect(load_leaderboard)
@@ -26,7 +27,6 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func load_leaderboard():
 	http.request(url)
-	http.request_completed.connect(_on_request_completed, CONNECT_ONE_SHOT)
 
 
 func _on_request_completed(result, response_code, headers, body):
@@ -46,7 +46,7 @@ func _on_request_completed(result, response_code, headers, body):
 		emit_signal("leaderboard_loaded")
 
 		print("--- Leaderboard ---")
-		for i in range(min(10, leaderboard_data.size())):
+		for i in range(leaderboard_data.size()):
 			var entry = leaderboard_data[i]
 			print("%d. %s - %.2f s" % [i + 1, entry.name, entry.time])
 			var entry_instance = entry_scene.instantiate()
