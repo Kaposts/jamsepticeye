@@ -13,6 +13,7 @@ extends CanvasLayer
 @onready var options_menu = %Options
 @onready var credits_menu = %Credits
 @onready var leaderboard_window: Control = %LeaderboardWindow
+@onready var keybinds_settings: Control = options_menu.get_node("Options/KeybindsSettings")
 
 @onready var options_scroll_anim: AnimationPlayer = options_menu.get_node("Scroll/AnimationPlayer")
 @onready var options_anim: AnimationPlayer = options_menu.get_node("AnimationPlayer")
@@ -30,6 +31,20 @@ func _ready() -> void:
 	leaderboard_button.pressed.connect(_on_leaderboard_button_pressed)
 	
 	SignalBus.sig_game_restarted.emit()
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		if not visible:
+			return
+		if keybinds_settings.visible:
+			keybinds_settings.hide()
+		elif credits_menu.visible:
+			credits_menu.close()
+		elif options_menu.visible:
+			options_menu.close()
+		elif leaderboard_window.visible:
+			leaderboard_window.hide()
 
 
 func _on_play_button_pressed() -> void:
@@ -70,6 +85,7 @@ func _on_options_button_pressed() -> void:
 	options_menu.enable_ui()
 	options_menu.is_animating = false
 	leaderboard_window.hide()
+
 
 func _on_quit_button_pressed() -> void:
 	var platform_name: StringName = OS.get_name()
