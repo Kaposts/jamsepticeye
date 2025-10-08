@@ -35,7 +35,7 @@ func set_tutorial_label(label: Label, index: int, action: StringName = "") -> bo
 		0, 2, 4, 5: match action:
 			"", "jump":
 				label.text = Global.TUTORIAL_TEXTS[index] %\
-					InputMap.action_get_events("jump")[0].as_text().trim_suffix(" (Physical)")
+					_format_readable_input(InputMap.action_get_events("jump")[0])
 			_:
 				return false
 		1: match action:
@@ -64,6 +64,18 @@ func set_tutorial_label(label: Label, index: int, action: StringName = "") -> bo
 			return false
 	
 	return true
+
+
+## Return the event as text in human readable format
+func _format_readable_input(event: InputEvent) -> String:
+	if event is InputEventKey:
+		return event.as_text().trim_suffix(" (Physical)")
+	elif event is InputEventJoypadButton:
+		var words: PackedStringArray = event.as_text().split(" ", true, 3)
+		return words[0] + " " + words[1] + " " + words[2]
+	
+	
+	return ""
 
 
 func _on_sig_game_paused():
