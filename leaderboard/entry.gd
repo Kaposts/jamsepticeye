@@ -7,7 +7,7 @@ var entry_name: String
 var score: float
 
 func _ready():
-	name_label.text = entry_name
+	name_label.text = " "+entry_name
 
 	var minutes = int(score / 60)
 	var seconds = fmod(score, 60.0)
