@@ -66,7 +66,7 @@ func _on_close_button() -> void:
 
 func _on_game_started() -> void:
 	_current_index = 0
-	await get_tree().create_timer(5.0, false).timeout
+	await get_tree().create_timer(3.0, false).timeout
 	_show_tutorial()
 
 
