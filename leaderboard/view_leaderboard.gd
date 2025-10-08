@@ -1,5 +1,4 @@
-extends Control
-
+extends PanelContainer
 @export var entry_scene: PackedScene
 
 @onready var entry_container: VBoxContainer = %EntryContainer
@@ -11,10 +10,13 @@ var url: String
 signal leaderboard_loaded
 
 func _ready():
+	for child in entry_container.get_children():
+		child.queue_free()
+	
 	add_child(http)
 	url = EnvParser.parse("FIREBASE_URL") + EnvParser.parse("LEADERBOARD_PATH")
 	http.request_completed.connect(_on_request_completed, CONNECT_ONE_SHOT)
-
+	
 	load_leaderboard()
 	SignalBus.sig_score_submitted.connect(load_leaderboard)
 	close_button.pressed.connect(_on_close_button_pressed)
@@ -56,7 +58,7 @@ func _on_request_completed(result, response_code, headers, body):
 
 
 func _close() -> void:
-	if owner.visible and visible:
+	if visible:
 		hide()
 
 

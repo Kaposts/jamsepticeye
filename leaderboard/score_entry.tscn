@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddlh0t6on186c"]
+
+[ext_resource type="Script" uid="uid://chc6edeog87hx" path="res://leaderboard/score_entry.gd" id="1_1rtoe"]
+
+[node name="ScoreEntry" type="HBoxContainer"]
+offset_right = 285.0
+offset_bottom = 19.0
+size_flags_horizontal = 3
+script = ExtResource("1_1rtoe")
+
+[node name="name" type="Label" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(245, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "NAME"
+text_overrun_behavior = 3
+
+[node name="score" type="Label" parent="."]
+unique_name_in_owner = true
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 10
+text = "8:00"

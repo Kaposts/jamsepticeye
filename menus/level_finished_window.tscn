@@ -40,6 +40,7 @@ layout_mode = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 6
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer"]
 layout_mode = 2
@@ -50,10 +51,14 @@ theme_override_constants/margin_bottom = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
+size_flags_vertical = 4
 
 [node name="CompletedLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Game Cleared! Congratulations!"
+size_flags_horizontal = 4
+text = "Game Cleared!
+Congratulations!"
+horizontal_alignment = 1
 
 [node name="TimeLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -62,28 +67,29 @@ text = "Time: 00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="NameLineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="NameLineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 6
 placeholder_text = "Enter your name"
+alignment = 1
 caret_blink = true
 
-[node name="SubmitButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="SubmitButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(70, 34)
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 3
 text = "Submit"
 script = ExtResource("2_cgfwt")
 metadata/_custom_type_script = "uid://chq86xw3eirpr"
-
-[node name="Spacer" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(2, 0)
-layout_mode = 2
 
 [node name="CloseButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -95,24 +101,9 @@ text = "Close"
 script = ExtResource("2_cgfwt")
 metadata/_custom_type_script = "uid://chq86xw3eirpr"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Spacer" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(2, 0)
-layout_mode = 2
-
-[node name="MenuButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 34)
-layout_mode = 2
-size_flags_horizontal = 0
-text = "Main Menu"
-script = ExtResource("2_cgfwt")
-metadata/_custom_type_script = "uid://chq86xw3eirpr"
-
 [node name="LeaderBoard" parent="VBoxContainer/HBoxContainer" instance=ExtResource("2_aua3a")]
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -130,6 +121,19 @@ text = "Please rate the game and leave your comments.
 We would love to hear you feedback to improve the game!"
 horizontal_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/SubmitButton" to="." method="_on_submit_pressed"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="MenuButton" type="Button" parent="VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 34)
+layout_mode = 2
+text = "Main Menu"
+script = ExtResource("2_cgfwt")
+metadata/_custom_type_script = "uid://chq86xw3eirpr"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/SubmitButton" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/CloseButton" to="." method="_on_close_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/MenuButton" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/MenuButton" to="." method="_on_menu_pressed"]

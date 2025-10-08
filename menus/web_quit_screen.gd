@@ -50,4 +50,4 @@ func _on_main_menu_pressed() -> void:
 	await animation_player.animation_finished
 	get_tree().paused = false
 	_reset_audio()
-	queue_free()
+	get_tree().reload_current_scene()

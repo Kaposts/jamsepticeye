@@ -24,11 +24,17 @@ extends CanvasLayer
 
 
 func _ready() -> void:
+	leaderboard_window.hide()
+	options_menu.hide()
+	credits_menu.hide()
+	
 	play_button.pressed.connect(_on_play_button_pressed)
 	options_button.pressed.connect(_on_options_button_pressed)
 	credits_button.pressed.connect(_on_credits_button_pressed)
 	quit_button.pressed.connect(_on_quit_button_pressed)
 	leaderboard_button.pressed.connect(_on_leaderboard_button_pressed)
+	
+	leaderboard_window.visibility_changed.connect(_on_leaderboard_visibility_changed)
 	
 	SignalBus.sig_game_restarted.emit()
 
@@ -65,6 +71,8 @@ func _enable_all_buttons() -> void:
 	options_button.disabled = false
 	credits_button.disabled = false
 	quit_button.disabled = false
+	leaderboard_button.disabled = false
+
 
 
 func _disable_all_buttons() -> void:
@@ -109,3 +117,10 @@ func _on_leaderboard_button_pressed() -> void:
 	else: 
 		leaderboard_window.show()
 		leaderboard_window.load_leaderboard()
+
+
+func _on_leaderboard_visibility_changed() -> void:
+	if leaderboard_window.visible:
+		_disable_all_buttons()
+	else:
+		_enable_all_buttons()

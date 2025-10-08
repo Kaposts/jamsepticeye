@@ -1,7 +1,9 @@
+class_name ScoreEntry
 extends HBoxContainer
+## Entry Scene to show score in leaderboard
 
-@onready var name_label = $name
-@onready var score_label = $score
+@onready var name_label = %name
+@onready var score_label = %score
 
 var entry_name: String
 var score: float
