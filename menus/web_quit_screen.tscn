@@ -71,7 +71,7 @@ _data = {
 
 [node name="WebQuitScreen" type="CanvasLayer"]
 process_mode = 3
-layer = 5
+layer = 10
 script = ExtResource("1_3bl5y")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
