@@ -44,7 +44,7 @@ func _ready() -> void:
 	_camera = get_tree().get_first_node_in_group("player_follow_camera")
 	assert(_camera != null, "CameraState must be a child of Player Follow Camera node")
 	
-	SignalBus.player_spawned.connect(_on_player_spawned)
+	SignalBus.sig_player_spawned.connect(_on_player_spawned)
 	SignalBus.sig_player_died.connect(_on_player_died)
 
 

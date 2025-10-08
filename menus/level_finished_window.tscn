@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbv2e8v2yjmtk"]
+[gd_scene load_steps=6 format=3 uid="uid://cbv2e8v2yjmtk"]
 
 [ext_resource type="Script" uid="uid://bwf4fs1vxtyxa" path="res://menus/level_finished_window.gd" id="1_iibka"]
 [ext_resource type="PackedScene" uid="uid://dpxx5cdx4sxyg" path="res://leaderboard/leader_board.tscn" id="2_aua3a"]
+[ext_resource type="Script" uid="uid://chq86xw3eirpr" path="res://components/ui/sound_buttons/sound_button.gd" id="2_cgfwt"]
+[ext_resource type="PackedScene" uid="uid://yey23xnr0h7w" path="res://components/random_audio_player/random_audio_player_component.tscn" id="2_f535v"]
+[ext_resource type="AudioStream" uid="uid://b0h30qj3sekbv" path="res://assets/sfx/ui/victory.wav" id="3_fuu81"]
 
 [node name="LevelFinishedWindow" type="Control"]
 layout_mode = 3
@@ -12,65 +15,121 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iibka")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 47.0
-offset_top = 80.0
-offset_right = 288.0
-offset_bottom = 103.0
-text = "You have completed the level"
+[node name="VictorySFXPlayer" parent="." instance=ExtResource("2_f535v")]
+streams = Array[AudioStream]([ExtResource("3_fuu81")])
 
-[node name="time" type="Label" parent="."]
-layout_mode = 0
-offset_left = 44.0
-offset_top = 112.0
-offset_right = 285.0
-offset_bottom = 135.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -291.0
+offset_top = -93.0
+offset_right = 291.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="CompletedLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Game Cleared! Congratulations!"
+
+[node name="TimeLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
 text = "Time: 00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="."]
-layout_mode = 0
-offset_left = 22.0
-offset_top = 158.0
-offset_right = 237.0
-offset_bottom = 189.0
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="NameLineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
 placeholder_text = "Enter your name"
-max_length = 25
+caret_blink = true
 
-[node name="submit" type="Button" parent="."]
-layout_mode = 0
-offset_left = 245.0
-offset_top = 158.0
-offset_right = 307.0
-offset_bottom = 189.0
-text = "submit"
+[node name="SubmitButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 34)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Submit"
+script = ExtResource("2_cgfwt")
+metadata/_custom_type_script = "uid://chq86xw3eirpr"
 
-[node name="LeaderBoard" parent="." instance=ExtResource("2_aua3a")]
-layout_mode = 0
-offset_left = 469.0
-offset_top = 167.0
-offset_right = 469.0
-offset_bottom = 167.0
+[node name="Spacer" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
 
-[node name="close" type="Button" parent="."]
+[node name="CloseButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 visible = false
-layout_mode = 0
-offset_left = 31.0
-offset_top = 242.0
-offset_right = 79.0
-offset_bottom = 273.0
-text = "close"
+custom_minimum_size = Vector2(60, 34)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Close"
+script = ExtResource("2_cgfwt")
+metadata/_custom_type_script = "uid://chq86xw3eirpr"
 
-[node name="menu" type="Button" parent="."]
-layout_mode = 0
-offset_left = 31.0
-offset_top = 201.0
-offset_right = 84.0
-offset_bottom = 232.0
-text = "menu"
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
 
-[connection signal="pressed" from="submit" to="." method="_on_submit_pressed"]
-[connection signal="pressed" from="close" to="." method="_on_close_pressed"]
-[connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]
+[node name="Spacer" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+
+[node name="MenuButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 34)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Main Menu"
+script = ExtResource("2_cgfwt")
+metadata/_custom_type_script = "uid://chq86xw3eirpr"
+
+[node name="LeaderBoard" parent="VBoxContainer/HBoxContainer" instance=ExtResource("2_aua3a")]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+text = "Please rate the game and leave your comments.
+We would love to hear you feedback to improve the game!"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/SubmitButton" to="." method="_on_submit_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/CloseButton" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/MenuButton" to="." method="_on_menu_pressed"]

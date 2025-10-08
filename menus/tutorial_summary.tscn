@@ -1,0 +1,126 @@
+[gd_scene load_steps=6 format=3 uid="uid://dg130eibwd8xj"]
+
+[ext_resource type="Script" uid="uid://cgnq0pg2a363" path="res://menus/tutorial_summary.gd" id="1_7cqdp"]
+[ext_resource type="Texture2D" uid="uid://dcfr8i46b8sls" path="res://assets/ui/close_button_normal_small.png" id="2_6r381"]
+[ext_resource type="Texture2D" uid="uid://clw2fu0mi4b4v" path="res://assets/ui/close_button_pressed_small.png" id="3_1rq8j"]
+[ext_resource type="Texture2D" uid="uid://dgsw5waeexjw2" path="res://assets/ui/close_button_hover_small.png" id="4_xpb1j"]
+[ext_resource type="Script" uid="uid://rshby7i10tv0" path="res://components/ui/sound_buttons/sound_texture_button.gd" id="5_lvcp8"]
+
+[node name="TutorialSummary" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7cqdp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(560, 280)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -160.0
+offset_right = 275.0
+offset_bottom = 179.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+theme_override_constants/separation = -6
+
+[node name="CloseButton" type="TextureButton" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture_normal = ExtResource("2_6r381")
+texture_pressed = ExtResource("3_1rq8j")
+texture_hover = ExtResource("4_xpb1j")
+script = ExtResource("5_lvcp8")
+metadata/_custom_type_script = "uid://rshby7i10tv0"
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(560, 280)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 4
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 16
+
+[node name="TutorialContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TutorialLabel0" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/MarginContainer/TutorialContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(477, 0)
+layout_mode = 2
+text = "Press [%s] to flop and flip"
+autowrap_mode = 2
+
+[node name="TutorialLabel1" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/MarginContainer/TutorialContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(477, 0)
+layout_mode = 2
+text = "Press [%s] to move left and [%s] to move right"
+autowrap_mode = 2
+
+[node name="TutorialLabel2" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/MarginContainer/TutorialContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(477, 0)
+layout_mode = 2
+text = "Press [%s] to jump"
+autowrap_mode = 2
+
+[node name="TutorialLabel3" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/MarginContainer/TutorialContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(477, 0)
+layout_mode = 2
+text = "Move towards stone blocks to push them"
+autowrap_mode = 2
+
+[node name="TutorialLabel4" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/MarginContainer/TutorialContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(477, 0)
+layout_mode = 2
+text = "Automatically hangs on walls. Press [Psace] to wall jump"
+autowrap_mode = 2
+
+[node name="TutorialLabel5" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/MarginContainer/TutorialContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(477, 0)
+layout_mode = 2
+text = "Hold [%s] in the air to hover"
+autowrap_mode = 2
+
+[node name="TutorialLabel6" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/MarginContainer/TutorialContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(477, 0)
+layout_mode = 2
+text = "Press [%s] to tongue-grapple to a fly"
+autowrap_mode = 2
+
+[node name="TutorialLabel7" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/MarginContainer/TutorialContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(477, 0)
+layout_mode = 2
+text = "Press [%s] key to BIG jump from a wall"
+autowrap_mode = 2
