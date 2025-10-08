@@ -1,24 +1,3 @@
-[remap]
-
-importer="wav"
-type="AudioStreamWAV"
-uid="uid://4sweh5nxjwel"
-path="res://.godot/imported/tongue_out_2.wav-99d3d86200892af90dd700c4affb2b8e.sample"
-
-[deps]
-
-source_file="res://assets/sfx/fish/tongue_out_2.wav"
-dest_files=["res://.godot/imported/tongue_out_2.wav-99d3d86200892af90dd700c4affb2b8e.sample"]
-
-[params]
-
-force/8_bit=false
-force/mono=false
-force/max_rate=false
-force/max_rate_hz=44100
-edit/trim=false
-edit/normalize=false
-edit/loop_mode=0
-edit/loop_begin=0
-edit/loop_end=-1
-compress/mode=2
+version https://git-lfs.github.com/spec/v1
+oid sha256:03e808b453bcb37176308eecbb2f3a39e9b043f795ca415e54039c52d5067f3f
+size 509

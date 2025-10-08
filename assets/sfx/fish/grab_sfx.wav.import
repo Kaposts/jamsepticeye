@@ -1,24 +1,3 @@
-[remap]
-
-importer="wav"
-type="AudioStreamWAV"
-uid="uid://dga7blsewixp"
-path="res://.godot/imported/grab_sfx.wav-ed23757991fdfe27dde53ccef400240c.sample"
-
-[deps]
-
-source_file="res://assets/sfx/fish/grab_sfx.wav"
-dest_files=["res://.godot/imported/grab_sfx.wav-ed23757991fdfe27dde53ccef400240c.sample"]
-
-[params]
-
-force/8_bit=false
-force/mono=false
-force/max_rate=false
-force/max_rate_hz=44100
-edit/trim=false
-edit/normalize=false
-edit/loop_mode=0
-edit/loop_begin=0
-edit/loop_end=-1
-compress/mode=2
+version https://git-lfs.github.com/spec/v1
+oid sha256:f289be0adcca642c16369307aea0277d270dad66b43cecac985211bc2c2756f9
+size 497
