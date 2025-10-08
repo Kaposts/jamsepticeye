@@ -71,6 +71,7 @@ func _on_player_spawned(level: int) -> void:
 		audio.play()
 	elif level == 7:
 		_display_text(UNLOCK_SUBTITLE, level)
+		dialogue_visible_timer.start(7.0)
 
 
 func _on_narration_timer_timeout() -> void:
