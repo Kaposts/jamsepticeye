@@ -229,7 +229,7 @@ func _on_input_button_pressed(button: Button, action: StringName) -> void:
 		is_remapping = true
 		action_to_map = action
 		remapping_button = button
-		button.find_child(INPUT_LABEL).text = "Press any button or mouse to bind…"
+		button.find_child(INPUT_LABEL).text = "Press any key, mouse or controller button…"
 
 
 func _on_back_button_pressed() -> void:
