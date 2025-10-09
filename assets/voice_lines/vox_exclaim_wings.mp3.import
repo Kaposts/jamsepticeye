@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9d7243b85dd8c9f47d4cba228e9fcec6c2eabf1127d630b82d08a6b691dccb86
-size 399
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bswexm7s3l4f2"
+path="res://.godot/imported/vox_exclaim_wings.mp3-6969e078490e4ede30a605802779761c.mp3str"
+
+[deps]
+
+source_file="res://assets/voice_lines/vox_exclaim_wings.mp3"
+dest_files=["res://.godot/imported/vox_exclaim_wings.mp3-6969e078490e4ede30a605802779761c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

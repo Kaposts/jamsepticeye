@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6e763619cbcf4500f3078ea1f62704f059890da9804abb6f73752278c24b27d8
-size 362
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://shvf1wfr0yle"
+path="res://.godot/imported/vox_2.mp3-86d2ead2201ac5e565a8c9555edb682a.mp3str"
+
+[deps]
+
+source_file="res://assets/voice_lines/vox_2.mp3"
+dest_files=["res://.godot/imported/vox_2.mp3-86d2ead2201ac5e565a8c9555edb682a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

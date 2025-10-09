@@ -8,6 +8,7 @@ extends PanelContainer
 @onready var tutorial_label: Label = %TutorialLabel
 @onready var timer: Timer = $Timer
 
+var _game_started: bool = false
 var _current_index: int = 0
 var _tween: Tween
 
@@ -16,6 +17,7 @@ func _ready() -> void:
 	hide()
 	
 	SignalBus.sig_game_started.connect(_on_game_started)
+	SignalBus.sig_game_restarted.connect(_on_game_restarted)
 	SignalBus.sig_key_remapped.connect(_on_key_remapped)
 	SignalBus.sig_player_spawned.connect(_on_player_spawned)
 	SignalBus.sig_tutorial_display_toggled.connect(_on_tutorial_display_toggled)
@@ -70,6 +72,7 @@ func _on_close_button() -> void:
 
 
 func _on_game_started() -> void:
+	_game_started = true
 	_current_index = 0
 	await get_tree().create_timer(5.0, false).timeout
 	_show_tutorial()
@@ -89,10 +92,14 @@ func _on_tiner_timeout() -> void:
 
 
 func _on_tutorial_display_toggled(toggled_on: bool) -> void:
-	if toggled_on and Global.game_started:
+	if toggled_on and _game_started:
 		show()
 		modulate.a = 1.0
 		timer.start()
 	else:
 		hide()
 		timer.stop()
+
+
+func _on_game_restarted() -> void:
+	_game_started = false

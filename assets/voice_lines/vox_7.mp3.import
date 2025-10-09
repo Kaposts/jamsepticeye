@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1d16eea88b85229afabf3c0bdca177ef59408e127cc5e1eb2edfb5973a3de71a
-size 363
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c730xtu1snjpp"
+path="res://.godot/imported/vox_7.mp3-8a1b7354d15fd30b0bc4abea9e6d3ac2.mp3str"
+
+[deps]
+
+source_file="res://assets/voice_lines/vox_7.mp3"
+dest_files=["res://.godot/imported/vox_7.mp3-8a1b7354d15fd30b0bc4abea9e6d3ac2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
