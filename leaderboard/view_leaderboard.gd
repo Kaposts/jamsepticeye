@@ -29,11 +29,17 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func load_leaderboard():
 	http.request(url)
+	#http.request(url,["Content-Type: application/json"])
 
 
 func _on_request_completed(result, response_code, headers, body):
 	if response_code != 200:
-		print(str(result))
+		#print(result)
+		#print(response_code)
+		#print(headers)
+		#print(body)
+		#print(body.get_string_from_utf8())
+		
 		push_warning("Failed to load leaderboard: " + str(response_code))
 		return
 

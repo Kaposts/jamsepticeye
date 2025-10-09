@@ -9,6 +9,10 @@ const BACKGROUND_SUBTITLE: String = "LabelBackground"
 @export var background_narration: Array[AudioStream]
 @export var subtitle_animation_duration: float = 2.0
 
+var subtitle_enabled: bool = true:
+	set(flag):
+		subtitle_enabled = flag
+		dialogue_layer.visible = subtitle_enabled
 var _background_narration_index: int = 0
 
 @onready var audio: AudioStreamPlayer = $AudioStreamPlayer
@@ -32,8 +36,6 @@ func _ready() -> void:
 
 
 func _display_text(prefix: String, index: int) -> void:
-	dialogue_layer.show()
-	
 	var label: Label = text_container.find_child(prefix + "%d" % index)
 	label.visible_ratio = 0.0
 	label.visible_characters_behavior = TextServer.VC_CHARS_AFTER_SHAPING
@@ -46,6 +48,11 @@ func _display_text(prefix: String, index: int) -> void:
 		tween.tween_property(label, "visible_ratio", 1.0, subtitle_animation_duration)
 	else:
 		tween.tween_property(label, "visible_ratio", 1.0, audio_length)
+	
+	if subtitle_enabled:
+		dialogue_layer.show()
+	else:
+		dialogue_layer.hide()
 
 
 func _hide_all_labels() -> void:

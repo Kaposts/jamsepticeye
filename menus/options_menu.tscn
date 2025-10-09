@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://d4h3brjh8eoak"]
+[gd_scene load_steps=26 format=3 uid="uid://d4h3brjh8eoak"]
 
 [ext_resource type="Script" uid="uid://dxvvaeuefb73w" path="res://menus/options_menu.gd" id="1_5a0sy"]
 [ext_resource type="PackedScene" uid="uid://cuneiert8cmjs" path="res://menus/scroll.tscn" id="1_prnvy"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b1qdycp22iqor" path="res://assets/ui/CloseButton_Pressed.png" id="7_5a0sy"]
 [ext_resource type="Texture2D" uid="uid://bu5g0nvpes6mh" path="res://assets/ui/CloseButton_Hover.png" id="8_g5vgl"]
 [ext_resource type="Script" uid="uid://dxgm76upds6xq" path="res://components/ui/sound_sliders/sound_h_slider.gd" id="9_xomjh"]
+[ext_resource type="Script" uid="uid://sxrby2j02qd4" path="res://components/ui/sound_buttons/sound_check_box.gd" id="10_wlqc5"]
 [ext_resource type="Texture2D" uid="uid://drlas0kkvw64a" path="res://assets/ui/Menu_Buttons/KeyBindings1.png" id="11_033dp"]
 [ext_resource type="Texture2D" uid="uid://bo6wtjg5a8twh" path="res://assets/ui/Menu_Buttons/KeyBindings3.png" id="12_fpdr8"]
 [ext_resource type="Script" uid="uid://rshby7i10tv0" path="res://components/ui/sound_buttons/sound_texture_button.gd" id="12_rjhje"]
@@ -96,8 +97,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5a0sy")
 
-[node name="Scroll_Base" type="Sprite2D" parent="."]
-visible = false
+[node name="ScrollBase" type="Sprite2D" parent="."]
 position = Vector2(323, 178)
 texture = ExtResource("2_vyep7")
 
@@ -137,6 +137,7 @@ label_settings = ExtResource("4_vyep7")
 horizontal_alignment = 2
 
 [node name="MasterSlider" type="HSlider" parent="Options/GridContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_vertical = 1
@@ -154,6 +155,7 @@ label_settings = ExtResource("4_vyep7")
 horizontal_alignment = 2
 
 [node name="MusicSlider" type="HSlider" parent="Options/GridContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_vertical = 1
@@ -171,6 +173,7 @@ label_settings = ExtResource("4_vyep7")
 horizontal_alignment = 2
 
 [node name="SFXSlider" type="HSlider" parent="Options/GridContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_vertical = 1
@@ -188,6 +191,7 @@ label_settings = ExtResource("4_vyep7")
 horizontal_alignment = 2
 
 [node name="VoiceSlider" type="HSlider" parent="Options/GridContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_vertical = 1
@@ -198,7 +202,26 @@ value = 0.5
 script = ExtResource("9_xomjh")
 metadata/_custom_type_script = "uid://dxgm76upds6xq"
 
+[node name="Subtitle" type="Label" parent="Options/GridContainer"]
+layout_mode = 2
+text = "Subtitle"
+label_settings = ExtResource("4_vyep7")
+horizontal_alignment = 2
+
+[node name="SubtitleCheckBox" type="CheckBox" parent="Options/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+focus_mode = 0
+button_pressed = true
+text = "On"
+alignment = 1
+script = ExtResource("10_wlqc5")
+metadata/_custom_type_script = "uid://sxrby2j02qd4"
+
 [node name="CloseButton" type="TextureButton" parent="Options"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 436.0
 offset_top = 265.0
@@ -210,17 +233,18 @@ texture_hover = ExtResource("8_g5vgl")
 script = ExtResource("12_rjhje")
 metadata/_custom_type_script = "uid://rshby7i10tv0"
 
-[node name="KeyBindings" type="TextureButton" parent="Options"]
+[node name="KeyBindingsButton" type="TextureButton" parent="Options"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -176.0
-offset_top = 37.0
-offset_right = 76.0
-offset_bottom = 169.0
+offset_left = -196.0
+offset_top = -92.0
+offset_right = 56.0
+offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
@@ -231,6 +255,7 @@ script = ExtResource("12_rjhje")
 metadata/_custom_type_script = "uid://rshby7i10tv0"
 
 [node name="KeybindsSettings" parent="Options" instance=ExtResource("15_q1sgk")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 1
 
