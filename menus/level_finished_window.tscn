@@ -105,6 +105,9 @@ metadata/_custom_type_script = "uid://chq86xw3eirpr"
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="CloseButton" parent="VBoxContainer/HBoxContainer/LeaderBoard/MarginContainer" index="1"]
+visible = false
+
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
 layout_mode = 2
 
@@ -137,3 +140,5 @@ metadata/_custom_type_script = "uid://chq86xw3eirpr"
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/SubmitButton" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/CloseButton" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/MenuButton" to="." method="_on_menu_pressed"]
+
+[editable path="VBoxContainer/HBoxContainer/LeaderBoard"]
