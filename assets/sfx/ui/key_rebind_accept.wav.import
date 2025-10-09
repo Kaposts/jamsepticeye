@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6289faa2af86f041495f4c1879650a6817bc05f550676fff6f27eb39239f39bd
-size 523
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c4ihke1fq63s0"
+path="res://.godot/imported/key_rebind_accept.wav-161368b15a29b5d93c5063a871c9dd9e.sample"
+
+[deps]
+
+source_file="res://assets/sfx/ui/key_rebind_accept.wav"
+dest_files=["res://.godot/imported/key_rebind_accept.wav-161368b15a29b5d93c5063a871c9dd9e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

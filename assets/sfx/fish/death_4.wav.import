@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:21475d360a5d45db503408336cd54615620b3712e17d1d8a825e9f8c638507cd
-size 495
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cmtalfwu4vhs4"
+path="res://.godot/imported/death_4.wav-4eee2113aea8e930e2423e4bd28940c5.sample"
+
+[deps]
+
+source_file="res://assets/sfx/fish/death_4.wav"
+dest_files=["res://.godot/imported/death_4.wav-4eee2113aea8e930e2423e4bd28940c5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

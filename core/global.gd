@@ -15,7 +15,7 @@ const ASSET_PATHS: Dictionary[StringName, StringName] = {
 
 const TUTORIAL_TEXTS: Array[String] = [
 	"Press [%s] to flop and flip\n[ESC] and [Joypad MENU] to pause",
-	"Use [%s] to move left and [%s] to move right",
+	"Use [%s] and [%s] to move around",
 	"Press [%s] to jump",
 	"Move towards stone blocks to push them",
 	"Automatically hangs on walls. Press [%s] to wall jump",
@@ -24,14 +24,10 @@ const TUTORIAL_TEXTS: Array[String] = [
 	"Press [%s] key to BIG jump from a wall"
 ]
 
-
-var game_started: bool = false
 var tutorial_enabled: bool = true
 
 
 func _ready():
-	SignalBus.sig_game_started.connect(_on_game_started)
-	SignalBus.sig_game_restarted.connect(_on_game_restarted)
 	SignalBus.sig_game_paused.connect(_on_sig_game_paused)
 	SignalBus.sig_game_unpaused.connect(_on_sig_game_unpaused)
 
@@ -97,12 +93,3 @@ func _on_sig_game_paused():
 
 func _on_sig_game_unpaused():
 	get_tree().paused = false
-
-
-func _on_game_started() -> void:
-	await get_tree().create_timer(1.5, false).timeout
-	game_started = true
-
-
-func _on_game_restarted() -> void:
-	game_started = false
