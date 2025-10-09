@@ -28,6 +28,8 @@ var tutorial_enabled: bool = true
 
 
 func _ready():
+	InputMap.load_from_project_settings()
+	
 	SignalBus.sig_game_paused.connect(_on_sig_game_paused)
 	SignalBus.sig_game_unpaused.connect(_on_sig_game_unpaused)
 
