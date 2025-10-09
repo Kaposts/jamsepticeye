@@ -12,7 +12,10 @@ const BACKGROUND_SUBTITLE: String = "LabelBackground"
 var subtitle_enabled: bool = true:
 	set(flag):
 		subtitle_enabled = flag
-		dialogue_layer.visible = subtitle_enabled
+		if _game_started:
+			dialogue_layer.visible = subtitle_enabled
+
+var _game_started: bool = false
 var _background_narration_index: int = 0
 
 @onready var audio: AudioStreamPlayer = $AudioStreamPlayer
@@ -61,9 +64,11 @@ func _hide_all_labels() -> void:
 
 
 func _on_game_started() -> void:
+	await get_tree().create_timer(2.0, false).timeout
 	audio.stream = ability_unlock_lines[0]
 	audio.play()
 	_display_text(UNLOCK_SUBTITLE, 0)
+	_game_started = true
 
 
 func _on_player_spawned(level: int) -> void:
@@ -106,6 +111,7 @@ func _on_game_restarted() -> void:
 	dialogue_visible_timer.stop()
 	
 	_background_narration_index = 0
+	_game_started = false
 
 
 func _on_audio_finished() -> void:
