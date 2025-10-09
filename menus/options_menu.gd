@@ -46,7 +46,7 @@ func update_display() -> void:
 	sfx_slider.value = get_bus_volume_percent("SFX")
 	voice_slider.value = get_bus_volume_percent("Voice")
 	subtitle_check_box.button_pressed = VoiceLinesManager.subtitle_enabled
-	#tutorial_check_box.button_pressed = VoiceLinesManager.subtitle_enabled
+	tutorial_check_box.button_pressed = Global.tutorial_enabled
 
 
 func get_bus_volume_percent(bus_name: String) -> float:
@@ -111,4 +111,6 @@ func _on_subtitle_toggled(toggled_on: bool) -> void:
 
 
 func _on_tutorial_toggled(toggled_on: bool) -> void:
-	return
+	Global.tutorial_enabled = toggled_on
+	tutorial_check_box.text = "ON" if toggled_on else "OFF"
+	SignalBus.sig_tutorial_display_toggled.emit(toggled_on)
