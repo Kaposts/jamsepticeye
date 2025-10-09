@@ -145,7 +145,6 @@ func _input(event: InputEvent) -> void:
 
 
 func _create_action_list() -> void:
-	InputMap.load_from_project_settings()
 	for item in action_list.get_children():
 		item.queue_free()
 	
@@ -183,6 +182,7 @@ func _update_current_input_map() -> void:
 func _load_key_binds_preset(preset_index: int) -> void:
 	# Loads from default project settings
 	if preset_index == 1:
+		InputMap.load_from_project_settings()
 		_create_action_list()
 		return
 	
