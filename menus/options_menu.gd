@@ -1,16 +1,17 @@
 extends Control
 
-@onready var close_button: TextureButton = $Options/CloseButton
+@onready var close_button: TextureButton =%CloseButton
 @onready var scroll_anim: AnimationPlayer = $Scroll/AnimationPlayer
 @onready var menu_anim: AnimationPlayer = $AnimationPlayer
-@onready var keybinding_button : TextureButton = $Options/KeyBindings
+@onready var key_bindings_button: SoundTextureButton = %KeyBindingsButton
 
-@onready var master_slider: HSlider = $Options/GridContainer/MasterSlider
-@onready var music_slider: HSlider = $Options/GridContainer/MusicSlider
-@onready var sfx_slider: HSlider = $Options/GridContainer/SFXSlider
-@onready var voice_slider: HSlider = $Options/GridContainer/VoiceSlider
+@onready var master_slider: HSlider = %MasterSlider
+@onready var music_slider: HSlider = %MusicSlider
+@onready var sfx_slider: HSlider = %SFXSlider
+@onready var voice_slider: HSlider = %VoiceSlider
+@onready var subtitle_check_box: SoundCheckBox = %SubtitleCheckBox
 
-@onready var keybinds_settings: Control = $Options/KeybindsSettings
+@onready var keybinds_settings: Control = %KeybindsSettings
 
 var is_animating: bool = false:
 	set(flag):
@@ -21,17 +22,20 @@ var is_animating: bool = false:
 
 func _ready() -> void:
 	close_button.pressed.connect(_on_close_button_pressed)
-	keybinding_button.pressed.connect(_on_keybinding_button_pressed)
+	key_bindings_button.pressed.connect(_on_key_bindings_button_pressed)
 	visibility_changed.connect(_on_visibility_changed)
 	
 	master_slider.value_changed.connect(_on_audio_slider_changed.bind("Master"))
 	music_slider.value_changed.connect(_on_audio_slider_changed.bind("Music"))
 	sfx_slider.value_changed.connect(_on_audio_slider_changed.bind("SFX"))
 	voice_slider.value_changed.connect(_on_audio_slider_changed.bind("Voice"))
+	subtitle_check_box.toggled.connect(_on_subtitle_toggled)
 	
 	update_display()
 	enable_ui()
 	keybinds_settings.hide()
+	
+	$ScrollBase.hide()
 
 
 func update_display() -> void:
@@ -39,6 +43,7 @@ func update_display() -> void:
 	music_slider.value = get_bus_volume_percent("Music")
 	sfx_slider.value = get_bus_volume_percent("SFX")
 	voice_slider.value = get_bus_volume_percent("Voice")
+	subtitle_check_box.button_pressed = VoiceLinesManager.subtitle_enabled
 
 
 func get_bus_volume_percent(bus_name: String) -> float:
@@ -68,7 +73,7 @@ func enable_ui() -> void:
 	music_slider.editable = true
 	voice_slider.editable = true
 	close_button.disabled = false
-	keybinding_button.disabled = false
+	key_bindings_button.disabled = false
 
 
 func disable_ui() -> void:
@@ -77,14 +82,14 @@ func disable_ui() -> void:
 	music_slider.editable = false
 	voice_slider.editable = false
 	close_button.disabled = true
-	keybinding_button.disabled = true
+	key_bindings_button.disabled = true
 
 
 func _on_close_button_pressed() -> void:
 	close()
 
 
-func _on_keybinding_button_pressed() -> void:
+func _on_key_bindings_button_pressed() -> void:
 	keybinds_settings.show()
 
 
@@ -95,3 +100,8 @@ func _on_audio_slider_changed(value: float, bus_name: String) -> void:
 func _on_visibility_changed() -> void:
 	if visible:
 		update_display()
+
+
+func _on_subtitle_toggled(toggled_on: bool) -> void:
+	VoiceLinesManager.subtitle_enabled = toggled_on
+	subtitle_check_box.text = "ON" if toggled_on else "OFF"

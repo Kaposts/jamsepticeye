@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=36 format=3 uid="uid://ue13yhfpi673"]
+[gd_resource type="Theme" load_steps=38 format=3 uid="uid://ue13yhfpi673"]
 
 [ext_resource type="FontFile" uid="uid://bfxfq1opn3tuy" path="res://assets/font/monogram.ttf" id="1_0kida"]
 [ext_resource type="Texture2D" uid="uid://n2ehuwrbuow4" path="res://assets/ui/main_theme/button_green.png" id="1_466ly"]
@@ -57,6 +57,20 @@ texture_margin_top = 1.0
 texture_margin_right = 1.0
 texture_margin_bottom = 1.0
 region_rect = Rect2(0, 0, 22, 21)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_70bsv"]
+texture = ExtResource("2_sxwih")
+texture_margin_left = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(0, 1, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hr40q"]
+texture = ExtResource("2_sxwih")
+texture_margin_left = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(0, 1, 22, 22)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0kida"]
 texture = ExtResource("8_7hjjl")
@@ -178,7 +192,7 @@ default_font_size = 24
 Button/colors/font_color = Color(1, 0.5647059, 0.48235294, 1)
 Button/colors/font_disabled_color = Color(1, 0.5666667, 0.48000002, 0.5019608)
 Button/colors/font_focus_color = Color(1, 0.7490196, 0.45882353, 1)
-Button/colors/font_hover_color = Color(1, 0.748, 0.45999998, 1)
+Button/colors/font_hover_color = Color(1, 0.7490196, 0.45882353, 1)
 Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 Button/colors/font_outline_color = Color(0.21960784, 0.12941177, 0.11372549, 1)
 Button/colors/font_pressed_color = Color(0.92156863, 0.34509805, 0.23921569, 1)
@@ -199,6 +213,11 @@ Button/styles/focus = SubResource("StyleBoxTexture_1i34x")
 Button/styles/hover = SubResource("StyleBoxTexture_yhfeq")
 Button/styles/normal = SubResource("StyleBoxTexture_0ahyh")
 Button/styles/pressed = SubResource("StyleBoxTexture_83bj2")
+CheckBox/colors/font_hover_pressed_color = Color(0.92156863, 0.34509805, 0.23921569, 1)
+CheckBox/icons/checked = ExtResource("9_wnmfn")
+CheckBox/icons/unchecked = ExtResource("8_7hjjl")
+CheckBox/styles/focus = SubResource("StyleBoxTexture_70bsv")
+CheckBox/styles/hover_pressed = SubResource("StyleBoxTexture_hr40q")
 HScrollBar/styles/grabber = SubResource("StyleBoxTexture_0kida")
 HScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_nxip8")
 HScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_nxip8")
