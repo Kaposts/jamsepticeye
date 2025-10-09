@@ -12,7 +12,9 @@ const BACKGROUND_SUBTITLE: String = "LabelBackground"
 var subtitle_enabled: bool = true:
 	set(flag):
 		subtitle_enabled = flag
-		dialogue_layer.visible = subtitle_enabled
+		if Global.game_started:
+			dialogue_layer.visible = subtitle_enabled
+
 var _background_narration_index: int = 0
 
 @onready var audio: AudioStreamPlayer = $AudioStreamPlayer
@@ -20,6 +22,7 @@ var _background_narration_index: int = 0
 @onready var text_container: MarginContainer = %TextContainer
 @onready var dialogue_layer: CanvasLayer = $DialogueLayer
 @onready var dialogue_visible_timer: Timer = $DialogueVisibleTimer
+@onready var game_start_dialogue_timer: Timer = $GameStartDialogueTimer
 
 
 func _ready() -> void:
@@ -31,6 +34,7 @@ func _ready() -> void:
 	
 	between_narration_timer.timeout.connect(_on_narration_timer_timeout)
 	dialogue_visible_timer.timeout.connect(_on_dialogue_timer_timeout)
+	game_start_dialogue_timer.timeout.connect(_on_game_start_timer_timeout)
 	
 	audio.finished.connect(_on_audio_finished)
 
@@ -61,9 +65,7 @@ func _hide_all_labels() -> void:
 
 
 func _on_game_started() -> void:
-	audio.stream = ability_unlock_lines[0]
-	audio.play()
-	_display_text(UNLOCK_SUBTITLE, 0)
+	game_start_dialogue_timer.start()
 
 
 func _on_player_spawned(level: int) -> void:
@@ -104,6 +106,7 @@ func _on_game_restarted() -> void:
 	
 	between_narration_timer.stop()
 	dialogue_visible_timer.stop()
+	game_start_dialogue_timer.stop()
 	
 	_background_narration_index = 0
 
@@ -111,3 +114,11 @@ func _on_game_restarted() -> void:
 func _on_audio_finished() -> void:
 	dialogue_visible_timer.start()
 	between_narration_timer.start()
+
+
+func _on_game_start_timer_timeout() -> void:
+	if not Global.game_started:
+		return
+	audio.stream = ability_unlock_lines[0]
+	audio.play()
+	_display_text(UNLOCK_SUBTITLE, 0)

@@ -34,6 +34,10 @@ one_shot = true
 wait_time = 4.0
 one_shot = true
 
+[node name="GameStartDialogueTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
 [node name="DialogueLayer" type="CanvasLayer" parent="."]
 
 [node name="MarginContainer" type="MarginContainer" parent="DialogueLayer"]

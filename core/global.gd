@@ -25,7 +25,13 @@ const TUTORIAL_TEXTS: Array[String] = [
 ]
 
 
+var game_started: bool = false
+var tutorial_enabled: bool = true
+
+
 func _ready():
+	SignalBus.sig_game_started.connect(_on_game_started)
+	SignalBus.sig_game_restarted.connect(_on_game_restarted)
 	SignalBus.sig_game_paused.connect(_on_sig_game_paused)
 	SignalBus.sig_game_unpaused.connect(_on_sig_game_unpaused)
 
@@ -87,5 +93,16 @@ func format_readable_input(event: InputEvent) -> String:
 
 func _on_sig_game_paused():
 	get_tree().paused = true
+
+
 func _on_sig_game_unpaused():
 	get_tree().paused = false
+
+
+func _on_game_started() -> void:
+	await get_tree().create_timer(1.5, false).timeout
+	game_started = true
+
+
+func _on_game_restarted() -> void:
+	game_started = false

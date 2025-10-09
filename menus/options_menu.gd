@@ -10,6 +10,7 @@ extends Control
 @onready var sfx_slider: HSlider = %SFXSlider
 @onready var voice_slider: HSlider = %VoiceSlider
 @onready var subtitle_check_box: SoundCheckBox = %SubtitleCheckBox
+@onready var tutorial_check_box: SoundCheckBox = %TutorialCheckBox
 
 @onready var keybinds_settings: Control = %KeybindsSettings
 
@@ -30,6 +31,7 @@ func _ready() -> void:
 	sfx_slider.value_changed.connect(_on_audio_slider_changed.bind("SFX"))
 	voice_slider.value_changed.connect(_on_audio_slider_changed.bind("Voice"))
 	subtitle_check_box.toggled.connect(_on_subtitle_toggled)
+	tutorial_check_box.toggled.connect(_on_tutorial_toggled)
 	
 	update_display()
 	enable_ui()
@@ -44,6 +46,7 @@ func update_display() -> void:
 	sfx_slider.value = get_bus_volume_percent("SFX")
 	voice_slider.value = get_bus_volume_percent("Voice")
 	subtitle_check_box.button_pressed = VoiceLinesManager.subtitle_enabled
+	tutorial_check_box.button_pressed = Global.tutorial_enabled
 
 
 func get_bus_volume_percent(bus_name: String) -> float:
@@ -105,3 +108,9 @@ func _on_visibility_changed() -> void:
 func _on_subtitle_toggled(toggled_on: bool) -> void:
 	VoiceLinesManager.subtitle_enabled = toggled_on
 	subtitle_check_box.text = "ON" if toggled_on else "OFF"
+
+
+func _on_tutorial_toggled(toggled_on: bool) -> void:
+	Global.tutorial_enabled = toggled_on
+	tutorial_check_box.text = "ON" if toggled_on else "OFF"
+	SignalBus.sig_tutorial_display_toggled.emit(toggled_on)

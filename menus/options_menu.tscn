@@ -127,7 +127,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)
 theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 10
+theme_override_constants/v_separation = 2
 columns = 2
 
 [node name="Master" type="Label" parent="Options/GridContainer"]
@@ -220,6 +220,24 @@ alignment = 1
 script = ExtResource("10_wlqc5")
 metadata/_custom_type_script = "uid://sxrby2j02qd4"
 
+[node name="Tutorial" type="Label" parent="Options/GridContainer"]
+layout_mode = 2
+text = "Tutorial"
+label_settings = ExtResource("4_vyep7")
+horizontal_alignment = 2
+
+[node name="TutorialCheckBox" type="CheckBox" parent="Options/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+focus_mode = 0
+button_pressed = true
+text = "On"
+alignment = 1
+script = ExtResource("10_wlqc5")
+metadata/_custom_type_script = "uid://sxrby2j02qd4"
+
 [node name="CloseButton" type="TextureButton" parent="Options"]
 unique_name_in_owner = true
 layout_mode = 0
@@ -241,10 +259,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -196.0
-offset_top = -92.0
-offset_right = 56.0
-offset_bottom = 40.0
+offset_left = -191.0
+offset_top = -103.0
+offset_right = 61.0
+offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)

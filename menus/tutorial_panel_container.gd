@@ -18,6 +18,7 @@ func _ready() -> void:
 	SignalBus.sig_game_started.connect(_on_game_started)
 	SignalBus.sig_key_remapped.connect(_on_key_remapped)
 	SignalBus.sig_player_spawned.connect(_on_player_spawned)
+	SignalBus.sig_tutorial_display_toggled.connect(_on_tutorial_display_toggled)
 	close_button.pressed.connect(_on_close_button)
 	timer.timeout.connect(_on_tiner_timeout)
 
@@ -30,9 +31,13 @@ func _set_action_input_texts(index: int) -> void:
 
 func _show_tutorial() -> void:
 	_set_action_input_texts(_current_index)
-	show()
 	close_button.disabled = false
 	timer.stop()
+	
+	if not Global.tutorial_enabled:
+		return
+	
+	show()
 	
 	modulate.a = 0.0
 	
@@ -66,7 +71,7 @@ func _on_close_button() -> void:
 
 func _on_game_started() -> void:
 	_current_index = 0
-	await get_tree().create_timer(3.0, false).timeout
+	await get_tree().create_timer(5.0, false).timeout
 	_show_tutorial()
 
 
@@ -81,3 +86,13 @@ func _on_player_spawned(level: int) -> void:
 
 func _on_tiner_timeout() -> void:
 	_close()
+
+
+func _on_tutorial_display_toggled(toggled_on: bool) -> void:
+	if toggled_on and Global.game_started:
+		show()
+		modulate.a = 1.0
+		timer.start()
+	else:
+		hide()
+		timer.stop()
