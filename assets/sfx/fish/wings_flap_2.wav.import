@@ -1,24 +1,3 @@
-[remap]
-
-importer="wav"
-type="AudioStreamWAV"
-uid="uid://dk55axr08uaou"
-path="res://.godot/imported/wings_flap_2.wav-8975b1903352a3fe2ecaea4e3f9db05a.sample"
-
-[deps]
-
-source_file="res://assets/sfx/fish/wings_flap_2.wav"
-dest_files=["res://.godot/imported/wings_flap_2.wav-8975b1903352a3fe2ecaea4e3f9db05a.sample"]
-
-[params]
-
-force/8_bit=false
-force/mono=false
-force/max_rate=false
-force/max_rate_hz=44100
-edit/trim=false
-edit/normalize=false
-edit/loop_mode=0
-edit/loop_begin=0
-edit/loop_end=-1
-compress/mode=2
+version https://git-lfs.github.com/spec/v1
+oid sha256:9d41871777904935833588d57964822a8d9ae02fdb28a66cb9ef1947aa58989d
+size 510
