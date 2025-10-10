@@ -17,7 +17,9 @@ func add_score(name: String, time: float) -> void:
 	}
 	var json = JSON.stringify(data)
 	
-	http.request(url, [], HTTPClient.METHOD_POST, json)
+	await http.request(url, [], HTTPClient.METHOD_POST, json)
+
+	SignalBus.sig_score_submitted.emit()
 
 func get_leaderboard(callback: Callable) -> void:
 	http.request(url, [], HTTPClient.METHOD_GET)

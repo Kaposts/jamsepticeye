@@ -15,7 +15,7 @@ func _ready():
 	
 	add_child(http)
 	url = EnvParser.parse("FIREBASE_URL") + EnvParser.parse("LEADERBOARD_PATH")
-	http.request_completed.connect(_on_request_completed, CONNECT_ONE_SHOT)
+	http.request_completed.connect(_on_request_completed)
 	
 	load_leaderboard()
 	SignalBus.sig_score_submitted.connect(load_leaderboard)
