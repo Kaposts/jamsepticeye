@@ -95,11 +95,11 @@ func _on_options_button_pressed() -> void:
 func _on_quit_button_pressed() -> void:
 	var platform_name: StringName = OS.get_name()
 	match platform_name:
-		"Windows":
-			get_tree().quit()
 		"Web":
 			var quit_screen_instance: CanvasLayer = web_quit_screen.instantiate()
 			add_child(quit_screen_instance)
+		_:
+			get_tree().quit()
 
 
 func close():
