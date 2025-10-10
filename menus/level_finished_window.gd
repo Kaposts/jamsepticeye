@@ -24,9 +24,9 @@ func _on_sig_level_finished():
 
 func _on_submit_pressed() -> void:
 	time = get_tree().get_first_node_in_group("level").level_time
+	time = 99999
 	Leaderboard.add_score(name_line_edit.text, time)
 	submit_button.disabled = true
-	SignalBus.sig_score_submitted.emit()
 
 
 func _on_close_pressed() -> void:
